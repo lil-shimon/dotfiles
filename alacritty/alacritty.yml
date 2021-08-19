@@ -1,0 +1,60 @@
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - --login
+    - --command
+    - tmux attach || tmux
+font:
+  size: 12
+  normal:
+    family: DroidSansMono Nerd Font
+    style: Book
+  bold:
+    family: DroidSansMono Nerd Font
+    style: Bold
+  italic:
+    family: DroidSansMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: DroidSansMono Nerd Font
+    style: Bold Italic
+window:
+  padding:
+    x: 0
+    y: 0
+  dimensions:
+    columns: 250
+    lines: 70
+  decorations: none
+background_opacity: 0.9
+colors:
+  name: SOS
+  author: Rooster
+  primary:
+    background: "#373b43"
+    foreground: "#78796f"
+  cursor:
+    text: "#373b43"
+    cursor: "#78796f"
+  normal:
+    black: "#373b43"
+    red: "#fdcd39"
+    green: "#fbfd59"
+    yellow: "#deac40"
+    blue: "#afb171"
+    magenta: "#b387e7"
+    cyan: "#63e860"
+    white: "#efdecb"
+  bright:
+    black: "#373b43"
+    red: "#fdcd39"
+    green: "#fbfd59"
+    yellow: "#deac40"
+    blue: "#afb171"
+    magenta: "#b387e7"
+    cyan: "#63e860"
+    white: "#efdecb"
+env:
+  TERM: alacritty
+cursor:
+  style: Underline

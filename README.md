@@ -1,6 +1,6 @@
 # dotfiles
 dotfiles
-
+<pre>
 ├── alacritty
 │   └── alacritty.yml
 ├── fish
@@ -2697,3 +2697,5 @@ dotfiles
 │       └── utils.lua
 ├── setup.sh
 └── tmux
+
+</pre>

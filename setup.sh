@@ -27,6 +27,7 @@ done
 
 for file in ${configsymfiles}; do
   echo "$file >>> symbolink creating....."
+  ln -sf ${dotfiledir}/${file} ${homedir}/.config/${file}
 done
 
 ## brew ############################################################

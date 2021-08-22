@@ -106,6 +106,9 @@ repo = 'altercation/vim-colors-solarized'
 [[plugins]] 
 repo = "jnurmine/Zenburn"
 name = "zenburn"
+hook_add = """
+  colorscheme zenburn
+"""
 
 
 # -----------------------------------------
@@ -438,7 +441,6 @@ name = 'paige'
 repo = 'alexanderjeurissen/lumiere.vim'
 name = 'lumiere'
 hook_add = """
-  colorscheme abyss
 """
 
 # ---------------------------------------

@@ -400,8 +400,7 @@ Plug 'whatyouhide/vim-gotham'
 " ---------------------------------------
 Plug 'shaunsingh/moonlight.nvim'
 
-
-" ---------------------------------------
+"---------------------------------------
 "         hrsh7th/nvim-compe 
 " ---------------------------------------
 Plug 'hrsh7th/nvim-compe'

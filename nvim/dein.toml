@@ -243,21 +243,6 @@ repo = 'easymotion/vim-easymotion'
 [[plugins]]
 repo = "tpope/vim-commentary"
 
-# ---------------------------------------
-#              undo plugin
-# ---------------------------------------
-# [[plugins]]
-# repo = 'mbbill/undotree'
-# hook_add = """
-# nmap <F5> :Und<CR>
-# """
-
-# [[plugins]]
-# repo = 'tpope/vim-surround'
-# "Hello world!" cs"' -> 'Hello world!'
-# ds' -> Hello world!のように'を削除
-# 矩形ビジュアルモードでHello world!を選択した後でS"を入力すると"Hello world!"のように"で囲むことができる
-
 
 # -----------------------------------------
 #           neovim terminal 強化
@@ -299,20 +284,6 @@ repo = "tpope/vim-repeat"
 
 
 # -----------------------------------------
-#             vim-easy-align 
-# -----------------------------------------
-# [[plugins]]
-# repo = "junegunn/vim-easy-align"
-# hook_add = """
-# " Start interactive EasyAlign in visual mode (e.g. vipga)
-# xmap ga <Plug>(EasyAlign)
-
-# " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-# nmap ga <Plug>(EasyAlign)
-# """
-
-
-# -----------------------------------------
 #         vim-highlightedyank 
 # -----------------------------------------
 [[plugins]]
@@ -329,17 +300,6 @@ let g:highlightedyank_highlight_duration = 1000
 # repo = 'phpactor/phpactor'
 # on_ft = ['php']
 # build = 'composer install'
-
-
-# ---------------------------------------
-#            preview-markdown
-# ---------------------------------------
-# use glow for preview markdown
-# [[plugins]]
-# repo = "skanehira/preview-markdown.vim"
-# hook_add = """
-# let g:preview_markdown_auto_update = 1
-# """
 
 
 # ---------------------------------------
@@ -440,7 +400,6 @@ name = 'paige'
 repo = 'alexanderjeurissen/lumiere.vim'
 name = 'lumiere'
 hook_add = """
-  colorscheme abyss
 """
 
 # ---------------------------------------
@@ -449,6 +408,9 @@ hook_add = """
 [[plugins]] 
 repo = "ulwlu/abyss.vim"
 name = "abyss"
+hook_add = """
+  colorscheme abyss
+"""
 
 
 # ---------------------------------------

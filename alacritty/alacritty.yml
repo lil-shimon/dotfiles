@@ -28,32 +28,32 @@ window:
   decorations: none
 background_opacity: 0.7
 colors:
-  name: VisiBlue
-  author: ""
+  name: Codeschool (dark)
+  author: Chris Kempson
   primary:
-    background: "#000000"
-    foreground: "#666699"
+    background: "#232c31"
+    foreground: "#9ea7a6"
   cursor:
-    text: "#000000"
-    cursor: "#666699"
+    text: "#232c31"
+    cursor: "#9ea7a6"
   normal:
-    black: "#333366"
-    red: "#6666cc"
-    green: "#0099cc"
-    yellow: "#3366cc"
-    blue: "#006699"
-    magenta: "#0066ff"
-    cyan: "#669999"
-    white: "#99cccc"
+    black: "#232c31"
+    red: "#2a5491"
+    green: "#237986"
+    yellow: "#a03b1e"
+    blue: "#484d79"
+    magenta: "#c59820"
+    cyan: "#b02f30"
+    white: "#9ea7a6"
   bright:
-    black: "#333399"
-    red: "#9999ff"
-    green: "#00ccff"
-    yellow: "#6699ff"
-    blue: "#0099cc"
-    magenta: "#0099ff"
-    cyan: "#66cccc"
-    white: "#ccffff"
+    black: "#3f4944"
+    red: "#2a5491"
+    green: "#237986"
+    yellow: "#a03b1e"
+    blue: "#484d79"
+    magenta: "#c59820"
+    cyan: "#b02f30"
+    white: "#b5d8f6"
 env:
   TERM: alacritty
 cursor:

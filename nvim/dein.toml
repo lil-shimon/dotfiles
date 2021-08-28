@@ -44,7 +44,7 @@ name = "papercolor-theme"
 # ---------------------------------------
 [[plugins]] 
 repo = 'miyakogi/seiya.vim'
-    
+
 
 # ---------------------------------------
 #               indentLine

@@ -39,12 +39,6 @@ name = "gruvbox"
 repo = "NLKNguyen/papercolor-theme"
 name = "papercolor-theme"
 
-# ---------------------------------------
-#               背景透過
-# ---------------------------------------
-[[plugins]] 
-repo = 'miyakogi/seiya.vim'
-
 
 # ---------------------------------------
 #               indentLine

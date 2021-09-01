@@ -68,6 +68,7 @@ nvim_lsp.intelephense.setup {}
 nvim_lsp.dockerls.setup{}
 nvim_lsp.dartls.setup{}
 nvim_lsp.dockerls.setup{}
+require'lspconfig'.gopls.setup{}
 nvim_lsp.yamlls.setup{}
 flutter_lsp.setup{
   ui = {

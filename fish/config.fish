@@ -115,6 +115,7 @@ alias mg='git merge'
 alias dev='sh ~/shellscript/dev.sh'
 alias signageRelease='sh ~/shellscript/dev.sh'
 alias ordermanagement='sh ~/shellscript/ordermanagement.sh'
+alias orderdev="sh ~/shellscript/devordermanagement.sh"
 alias shcom='cd ~/shellscript'
 alias fishconf="sh ~/shellscript/pathtofishconfig.sh"
 alias naviconf="sh ~/shellscript/navicheat.sh"

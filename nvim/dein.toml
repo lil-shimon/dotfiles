@@ -403,7 +403,7 @@ hook_add = """
 repo = "ulwlu/abyss.vim"
 name = "abyss"
 hook_add = """
-  colorscheme slate
+  colorscheme aylin
 """
 
 

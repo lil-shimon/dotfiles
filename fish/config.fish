@@ -183,6 +183,8 @@ alias b="bat"
 alias fishcolorconf="fish_config"
 alias termcolor="alacritty-themes"
 alias symcheck=" exa -abghHliS | rg "
+alias globalquestar="ssh questar@questar.cloud-sign.com"
+alias questarRouter="questar@192.168.0.5"
 
 ## >>> bobthefish config #########################################################
 #

@@ -5,7 +5,7 @@
 # list files what you want to add symbolink
 homesymfiles="tmux.conf tmux.conf.osx tmux.powerline.conf"
 configsymfiles="fish nvim alacritty"
-brewfiles="gopls"
+brewfiles="gopls java"
 
 homedir=$HOME
 

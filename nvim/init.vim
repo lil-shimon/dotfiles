@@ -31,6 +31,12 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 
 "-----------------------------------------
+"             font settings
+"-----------------------------------------
+set guifont=Monospace\ Bold\ 100
+
+
+"-----------------------------------------
 "              ColorScheme
 "-----------------------------------------
 set termguicolors     " enable true colors support

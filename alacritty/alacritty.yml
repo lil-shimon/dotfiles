@@ -5,10 +5,10 @@ shell:
     - --command
     - tmux attach || tmux
 font:
-  size: 12
+  size: 14
   normal:
-    family: DroidSansMono Nerd Font
-    style: Book
+    family: Unifont
+    style: Regular
   bold:
     family: DroidSansMono Nerd Font
     style: Bold
@@ -31,7 +31,7 @@ colors:
   name: Codeschool (dark)
   author: Chris Kempson
   primary:
-    background: "#232c31"
+    background: "#fff"
     foreground: "#9ea7a6"
   cursor:
     text: "#232c31"

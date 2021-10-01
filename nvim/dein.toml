@@ -184,50 +184,6 @@ repo = 'peitalin/vim-jsx-typescript'
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 
-# -----------------------------------------
-#               CocSettings
-# -----------------------------------------
-#  tabとshift+tabで補完候補切り替え
-#  CRで確定
-# [[plugins]]                                    
-# repo = "neoclide/coc.nvim"
-# merge = 0
-# rev  = "release"
-# hook_add = """
-# source ~/.config/nvim/plugins/coc.rc.vim
-# """
-
-# [[plugins]]
-# repo = "Shougo/defx.nvim"
-# depends = ["defx-git", 'defx.icons']
-# hook_add = """
-#  source ~/.config/nvim/plugins/defx.rc.vim
-# """
-
-# [[plugins]]
-# repo = 'kristijanhusak/defx-icons'
-
-# [[plugins]]
-# repo = 'kristijanhusak/defx-git'
-
-# [[plugins]]
-# repo = "Shougo/denite.nvim"
-# hook_add = """
-#   source ~/.config/nvim/plugins/denite.rc.vim
-# """
-
-# [[plugins]]
-# repo = 'Shougo/deoppet.nvim'
-
-# [[plugins]]
-# repo = "Shougo/neocomplete.vim"
-
-# [[plugins]]
-# repo = 'dart-lang/dart-vim-plugin'
-
-# [[plugins]]
-# repo = 'thosakwe/vim-flutter'
-
 # ---------------------------------------
 #             comment plugin
 # ---------------------------------------

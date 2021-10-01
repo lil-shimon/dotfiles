@@ -422,6 +422,28 @@ let g:dart_format_on_save = 1
 " ---------------------------------------
 Plug 'artanikin/vim-synthwave84'
 
+try 
+  if filereadable(expand("~/dotfiles/nvim/plugged/darktango.vim/colors/darktango.vim"))
+      colorscheme darktango
+  endif
+catch
+  try 
+    if filereadable(expand("~/dotfiles/nvim/plugged/vim-synthwave84/colors/synthwave84.vim"))
+      colorscheme synthwave84
+    endif
+  catch
+      try
+        if filereadable(expand("~/dotfiles/nvim/plugged/moonlight.nvim/colors/moonlight.vim"))
+          colorscheme moonlight
+        endif
+      catch
+        try
+          colorscheme ayu
+        catch
+        endtry
+      endtry
+  endtry
+endtry
 
 
 call plug#end()

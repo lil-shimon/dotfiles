@@ -451,6 +451,5 @@ catch
   endtry
 endtry
 
-
 call plug#end()
 

@@ -43,10 +43,10 @@ set termguicolors     " enable true colors support
 let g:seiya_auto_enable=1 "背景透過 for vim
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg'] "for neovim
 
-autocmd ColorScheme * highlight CursorLine guibg=#8C1D06
-autocmd ColorScheme * highlight CursorColumn guibg=#002c54
-autocmd ColorScheme * highlight Visual guifg=#E72D21
-autocmd ColorScheme * highlight Search guibg=#002c54 guifg=#E72D21 
+au ColorScheme * highlight CursorLine guibg=#8C1D06
+au ColorScheme * highlight CursorColumn guibg=#002c54
+au ColorScheme * highlight Visual guifg=#E72D21
+au ColorScheme * highlight Search guibg=#002c54 guifg=#E72D21 
 
 
 "-----------------------------------------

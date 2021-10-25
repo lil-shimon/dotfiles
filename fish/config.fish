@@ -262,4 +262,3 @@ set -g theme_newline_prompt '$ '
 eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
-

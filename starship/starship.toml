@@ -5,7 +5,87 @@ add_newline = true
 [character]                            # 設定しようとしているモジュールの名前は "character" です。
 success_symbol = "[➜](bold green)"     # "success_symbol" セグメントが「太字の緑色」スタイルの "➜" に設定されています
 
-# packageモジュールを無効にし、プロンプトから完全に隠します
-[package]
-disabled = true
+# カスタムフォーマットを利用します
+format = """
+[┌───────────────────>](bold green)
+[│](bold green)$directory$rust$package
+[└─>](bold green) """
 
+# starshipが現在のディレクトリ下のファイルをチェックするまで10ミリ秒待ちます
+scan_timeout = 10
+
+# packageモジュールを無効にし、プロンプトから完全に隠します
+# [package]
+# disabled = true
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "

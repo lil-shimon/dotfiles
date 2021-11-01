@@ -74,10 +74,6 @@ alias nvm="nv"
 #
 ###############################################################################
 
-# starship init fish | source
-# set fish_theme zish 
-export STARSHIP_CONFIG=~/.starship/config.toml
-
 # peco 
 # set fish_plugins theme peco
 # function fish_user_key_bindings
@@ -85,7 +81,7 @@ export STARSHIP_CONFIG=~/.starship/config.toml
 # end
 
 # for fisher plugin fzf
-set -U FZF_LEGACY_KEYBINDINGS 0
+#set -U FZF_LEGACY_KEYBINDINGS 0
 
 # set color on ls command
 # set -x LSCOLORS gxfxcxdxbxegedabagacad
@@ -196,66 +192,66 @@ alias symcheck=" exa -abghHliS | rg "
 alias globalquestar="ssh questar@questar.cloud-sign.com"
 alias questarRouter="questar@192.168.0.5"
 
-## >>> bobthefish config #########################################################
-#
-# bob the fish (fish prompt plugin)
-#
-##################################################################################
-set -g theme_display_git no
-set -g theme_display_git_dirty no
-set -g theme_display_git_untracked no
-set -g theme_display_git_ahead_verbose yes
-set -g theme_display_git_dirty_verbose yes
-set -g theme_display_git_stashed_verbose yes
+### >>> bobthefish config #########################################################
+##
+## bob the fish (fish prompt plugin)
+##
+###################################################################################
+#set -g theme_display_git no
+#set -g theme_display_git_dirty no
+#set -g theme_display_git_untracked no
+#set -g theme_display_git_ahead_verbose yes
+#set -g theme_display_git_dirty_verbose yes
+#set -g theme_display_git_stashed_verbose yes
 
-# By default theme will hide/collapse the branch name in your prompt when you are using a Git default branch 
-# i.e. historically master and often main now. 
-# Set to yes to stop these branches from being hidden/collapsed.
-set -g theme_display_git_default_branch yes
+## By default theme will hide/collapse the branch name in your prompt when you are using a Git default branch 
+## i.e. historically master and often main now. 
+## Set to yes to stop these branches from being hidden/collapsed.
+#set -g theme_display_git_default_branch yes
 
-# The big cloud repos (GitHub, Bitbucket, GitLab et al.) are moving away from using master as the default branch name, 
-# and allow you to choose your own. 
-# As of version 2.28, Git also supports custom default branch names via the init.defaultBranch config option. 
-# If our defaults of master main don't suit you, you can add/remove names in thist list 
-# i.e. main trunk. 
-# This ensures correct hiding/collapsing behaviour with custom default branch names (unless option above is activated).
-set -g theme_git_default_branches master main
+## The big cloud repos (GitHub, Bitbucket, GitLab et al.) are moving away from using master as the default branch name, 
+## and allow you to choose your own. 
+## As of version 2.28, Git also supports custom default branch names via the init.defaultBranch config option. 
+## If our defaults of master main don't suit you, you can add/remove names in thist list 
+## i.e. main trunk. 
+## This ensures correct hiding/collapsing behaviour with custom default branch names (unless option above is activated).
+#set -g theme_git_default_branches master main
 
-set -g theme_git_worktree_support yes
-set -g theme_use_abbreviated_branch_name yes
-set -g theme_display_vagrant yes
-set -g theme_display_docker_machine no
-set -g theme_display_k8s_context yes
-set -g theme_display_hg yes
-set -g theme_display_virtualenv no
-set -g theme_display_nix no
-set -g theme_display_ruby no
-set -g theme_display_node yes
-set -g theme_display_user ssh
-set -g theme_display_hostname ssh
+#set -g theme_git_worktree_support yes
+#set -g theme_use_abbreviated_branch_name yes
+#set -g theme_display_vagrant yes
+#set -g theme_display_docker_machine no
+#set -g theme_display_k8s_context yes
+#set -g theme_display_hg yes
+#set -g theme_display_virtualenv no
+#set -g theme_display_nix no
+#set -g theme_display_ruby no
+#set -g theme_display_node yes
+#set -g theme_display_user ssh
+#set -g theme_display_hostname ssh
 
-# By default the vi mode indicator will be shown if vi or hybrid key bindings are enabled. 
-# Use no to hide the indicator, or yes to show the indicator.
-set -g theme_display_vi no
-set -g theme_display_date no
-set -g theme_display_cmd_duration yes
-set -g theme_title_display_process yes
-set -g theme_title_display_path no
-set -g theme_title_display_user yes
-set -g theme_title_use_abbreviated_path no
-set -g theme_date_format "+%a %H:%M"
-set -g theme_date_timezone America/Los_Angeles
-set -g theme_avoid_ambiguous_glyphs yes
-set -g theme_powerline_fonts yes
-set -g theme_nerd_fonts yes
-set -g theme_show_exit_status yes
-set -g theme_display_jobs_verbose yes
-set -g default_user your_normal_user
-set -g theme_color_scheme dark
-set -g fish_prompt_pwd_dir_length 0
-set -g theme_project_dir_length 1
-set -g theme_newline_cursor yes
-set -g theme_newline_prompt '$ '
+## By default the vi mode indicator will be shown if vi or hybrid key bindings are enabled. 
+## Use no to hide the indicator, or yes to show the indicator.
+#set -g theme_display_vi no
+#set -g theme_display_date no
+#set -g theme_display_cmd_duration yes
+#set -g theme_title_display_process yes
+#set -g theme_title_display_path no
+#set -g theme_title_display_user yes
+#set -g theme_title_use_abbreviated_path no
+#set -g theme_date_format "+%a %H:%M"
+#set -g theme_date_timezone America/Los_Angeles
+#set -g theme_avoid_ambiguous_glyphs yes
+#set -g theme_powerline_fonts yes
+#set -g theme_nerd_fonts yes
+#set -g theme_show_exit_status yes
+#set -g theme_display_jobs_verbose yes
+#set -g default_user your_normal_user
+#set -g theme_color_scheme dark
+#set -g fish_prompt_pwd_dir_length 0
+#set -g theme_project_dir_length 1
+#set -g theme_newline_cursor yes
+#set -g theme_newline_prompt '$ '
 
 ## <<< bobthefish config #########################################################
 # bob the fish (fish prompt plugin)
@@ -271,3 +267,9 @@ set -g theme_newline_prompt '$ '
 eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
+## >>> starship config ############################################################
+#
+# 初期化のためのスクリプトを追加
+#starship init fish | source
+export STARSHIP_CONFIG=~/.starship/config.toml
+###############################################################################

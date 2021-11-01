@@ -37,6 +37,7 @@
 - `<zz> : scroll screen center
 - `<zt> : scroll screen top
 - `<zb> : scroll screen bottom
+- `<gc>` : comment out
 
 
 ## Insert Mode 

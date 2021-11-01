@@ -444,7 +444,7 @@ catch
         endif
       catch
         try
-          colorscheme ayu
+          colorscheme default
         catch
         endtry
       endtry

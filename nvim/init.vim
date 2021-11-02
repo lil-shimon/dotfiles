@@ -428,6 +428,12 @@ let g:dart_format_on_save = 1
 " ---------------------------------------
 Plug 'artanikin/vim-synthwave84'
 
+
+" - AI pairpro ------------------
+"    github/copilot.vim
+" ---------------------------------------
+Plug 'github/copilot.vim'
+
 try 
   if filereadable(expand("~/dotfiles/nvim/plugged/darktango.vim/colors/darktango.vim"))
       colorscheme darktango

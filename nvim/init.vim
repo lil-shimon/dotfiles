@@ -4,7 +4,7 @@ noremap <Space>w :<C-u>w<CR>
 set shell=fish
 set completeopt=menuone,noselect
 
-"-----------------------------------------
+"----a -------------------------------------
 "              Linter (ale)
 "-----------------------------------------
 " C-k -> 前の警告へジャンプ C-j -> 後ろの警告へジャンプ
@@ -431,8 +431,15 @@ Plug 'artanikin/vim-synthwave84'
 
 " - AI pairpro ------------------
 "    github/copilot.vim
-" ---------------------------------------
+" -------------------------------
 Plug 'github/copilot.vim'
+
+
+" - vim sandwich ------------------
+"    machakann/vim-sandwich
+" ---------------------------------
+Plug 'machakann/vim-sandwich'
+
 
 try 
   if filereadable(expand("~/dotfiles/nvim/plugged/darktango.vim/colors/darktango.vim"))

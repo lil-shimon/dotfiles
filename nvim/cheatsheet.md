@@ -229,3 +229,16 @@
 
 - `<C-R>` : peco ( search history )
 
+
+## vim-sandwich
+
+[詳細](https://github.com/machakann/vim-sandwich)
+
+| 説明 | 例 | 説明 |
+| --- | --- | --- |
+| sa{motion/textobject}{addition} | saiw | カーソル上の文字を()でかこむ|
+| delete | sdb | カーソル上の文字を削除する |
+| delete | sd( | カーソル上の文字を削除する |
+| replace | srb" | カーソル上の文字を"に置き換える |
+| replace | sr(" | カーソル上の(を"に置き換える |
+

@@ -4,7 +4,7 @@ noremap <Space>w :<C-u>w<CR>
 set shell=fish
 set completeopt=menuone,noselect
 
-"----a -------------------------------------
+"-----------------------------------------
 "              Linter (ale)
 "-----------------------------------------
 " C-k -> 前の警告へジャンプ C-j -> 後ろの警告へジャンプ
@@ -439,6 +439,11 @@ Plug 'github/copilot.vim'
 "    machakann/vim-sandwich
 " ---------------------------------
 Plug 'machakann/vim-sandwich'
+
+" - UltiSnips   ------------------
+"    SirVer/ultisnips
+" ---------------------------------
+Plug 'SirVer/ultisnips'
 
 
 try 

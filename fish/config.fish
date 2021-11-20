@@ -109,9 +109,10 @@ alias cb='git pull origin'
 alias ft='git fetch'
 alias mg='git merge'
 alias cz='git cz; and git push origin HEAD'
+alias addgitremote="sh ~/shellscript/add-git-remote.sh"
 alias push='bash ~/shellscript/cz.sh'
 alias dev='sh ~/shellscript/dev.sh'
-alias signageRelease='sh ~/shellscript/dev.sh'
+alias signageRelease='sh ~/shellscript/signageReleash.sh'
 alias ordermanagement='sh ~/shellscript/ordermanagement.sh'
 alias orderdev="sh ~/shellscript/devordermanagement.sh"
 alias shcom='cd ~/shellscript'
@@ -135,7 +136,7 @@ alias pw='cd ~/questar/power_control/'
 alias pwdoc='cd ~/questar/power_control/docker-compose/power-control-local'
 alias pwfront='sh ~/questar/power_control/script/local-debug.sh startFrontend'
 alias pwsocket='sh ~/questar/power_control/script/local-debug.sh startWebSocketServer'
-alias pwstorybook='cd ~/questar/power_control/frontend; and npm run storybook'
+alias pwstorybook='bash ~/shellscript/power-controller-storybook.sh'
 alias mmz="cd ~/questar/mamozn.com"
 alias bmmz="cd ~/questar/back.mamozon.com"
 alias smmz="cd ~/questar/sign.mamozon.com"
@@ -193,6 +194,8 @@ alias termcolor="alacritty-themes"
 alias symcheck=" exa -abghHliS | rg "
 alias globalquestar="ssh questar@questar.cloud-sign.com"
 alias questarRouter="questar@192.168.0.5"
+alias p="pwd"
+alias samBTC="cd ~/development/aws-bitcoin; and sam local invoke PurchaseBTCFunction"
 
 ### >>> bobthefish config #########################################################
 ##

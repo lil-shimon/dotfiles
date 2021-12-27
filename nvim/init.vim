@@ -458,7 +458,7 @@ catch
   catch
       try
         if filereadable(expand("~/dotfiles/nvim/plugged/moonlight.nvim/colors/moonlight.vim"))
-          colorscheme moonlight
+          colorscheme gruvbox
         endif
       catch
         try

@@ -377,24 +377,3 @@ name = "pop-punk"
 [[plugins]] 
 repo = "neovim/nvim-lspconfig"
 
-
-# ---------------------------------------
-#        dense-analysis/ale
-#        plugin for prettier
-# ---------------------------------------
-[[plugins]]
-repo = 'dense-analysis/ale'
-hook_add = """
-let g:ale_fixers = {
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
-\   'javascript': ['prettier'],
-\   'javascriptreact': ['prettier'],
-\   'css': ['prettier'],
-\}
-
-let g:ale_fix_on_save = 1
-### if the project has .prettier.rc, it will use that settings.
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
-"""

@@ -2,6 +2,12 @@ if !exists('g:lspconfig')
   finish
 endif
 
+""""""""""""""""""""""
+
+"   nvim-lspconfig
+"
+""""""""""""""""""""""
+
 lua << EOF
 
 local nvim_lsp = require('lspconfig')

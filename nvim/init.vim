@@ -293,6 +293,7 @@ endif
 
 call plug#begin()
 
+
 "  ---------------------------------------
 "                lspconfig 
 "  ---------------------------------------
@@ -304,7 +305,6 @@ Plug 'neovim/nvim-lspconfig',
 "  ---------------------------------------
 Plug 'glepnir/lspsaga.nvim'
 " show hover doc
-
 
 "  ---------------------------------------
 "              treesitter 
@@ -336,22 +336,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 
 
-
-"  ---------------------------------------
-"            lua snip (future) 
-"  ---------------------------------------
-Plug 'L3MON4D3/LuaSnip/'
-
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-
-snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-
-imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-
-
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -360,13 +344,6 @@ Plug 'nvim-lua/plenary.nvim'
 "           formatter 
 " ---------------------------------------
 Plug 'mhartington/formatter.nvim'
-
-
-" ---------------------------------------
-"           wakatime.vim 
-"         programming stats
-" ---------------------------------------
-Plug 'wakatime/vim-wakatime'
 
 " ---------------------------------------
 "           rafamadriz/neon 
@@ -429,22 +406,10 @@ let g:dart_format_on_save = 1
 Plug 'artanikin/vim-synthwave84'
 
 
-" - AI pairpro ------------------
-"    github/copilot.vim
-" -------------------------------
-Plug 'github/copilot.vim'
-
-
 " - vim sandwich ------------------
 "    machakann/vim-sandwich
 " ---------------------------------
 Plug 'machakann/vim-sandwich'
-
-" - UltiSnips   ------------------
-"    SirVer/ultisnips
-" ---------------------------------
-Plug 'SirVer/ultisnips'
-
 
 try 
   if filereadable(expand("~/dotfiles/nvim/plugged/darktango.vim/colors/darktango.vim"))

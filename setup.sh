@@ -6,6 +6,7 @@
 homesymfiles="tmux.conf tmux.conf.osx tmux.powerline.conf"
 configsymfiles="fish nvim alacritty"
 brewfiles="gopls java"
+npmGlobals="git-cz intelephense diagnostic-languageserver typescript typescript-language-server"
 
 homedir=$HOME
 

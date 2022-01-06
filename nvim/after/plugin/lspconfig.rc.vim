@@ -3,7 +3,7 @@ if !exists('g:lspconfig')
 endif
 
 """"""""""""""""""""""
-
+"
 "   nvim-lspconfig
 "
 """"""""""""""""""""""
@@ -14,6 +14,8 @@ local nvim_lsp = require('lspconfig')
 local flutter_lsp = require('flutter-tools')
 local protocol = require('vim.lsp.protocol')
 local on_attach = function(client, bufnr)
+
+nvim_lsp.intelephense.setup{}
   
 require'completion'.on_attach(client, bufnr)
    protocol.CompletionItemKind = {
@@ -44,6 +46,7 @@ require'completion'.on_attach(client, bufnr)
     '', -- TypeParameter
   }
 
+
   -- formatting
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
@@ -64,10 +67,10 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.rust_analyzer.setup{}
 nvim_lsp.rls.setup{}
 nvim_lsp.pyright.setup{}
-nvim_lsp.intelephense.setup {}
 nvim_lsp.dockerls.setup{}
 nvim_lsp.dartls.setup{}
 nvim_lsp.dockerls.setup{}
+nvim_lsp.dotls.setup{}
 require'lspconfig'.gopls.setup{}
 nvim_lsp.yamlls.setup{}
 flutter_lsp.setup{

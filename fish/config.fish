@@ -194,6 +194,7 @@ alias globalquestar="ssh questar@questar.cloud-sign.com"
 alias questarRouter="questar@192.168.0.5"
 alias p="pwd"
 alias samBTC="cd ~/development/aws-bitcoin; and sam local invoke PurchaseBTCFunction"
+alias vimtutor="nvim +Tutor"
 
 ### >>> bobthefish config #########################################################
 ##

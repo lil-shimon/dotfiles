@@ -51,6 +51,9 @@ echo -e "####################################################################\n
 ####################################################################\n"
 
 
-### for git cz
-npm i -g git-cz
+for file in ${npmGlobals}; do
+  echo "$file >>> npm i ..."
+  npm i -g $file
+done
+
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc

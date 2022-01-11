@@ -38,6 +38,9 @@ set -x PATH $HOME/.nodebrew/current/bin $PATH
 # rust path
 set PATH ~/.cargo/bin $PATH
 
+# lvim path
+set PATH ~/.local/bin/lvim $PATH
+
 ## <<< rust config ############################################################
 #
 ###############################################################################
@@ -87,7 +90,8 @@ alias nvm="nv"
 # set -x LSCOLORS gxfxcxdxbxegedabagacad
 
 # fish alias
-alias vi='nvim'
+# alias vi='nvim'
+alias vi='/Users/shimozawakenta/.local/bin/lvim'
 alias someapi='cd ~/project/someone-api'
 alias somefront='cd ~/project/someone-front'
 alias ide='sh ~/ide.sh'

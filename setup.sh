@@ -15,7 +15,9 @@ dotfiledir=${homedir}/dotfiles
 
 echo -e "install lunarVim"
 bash
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+## install roll version of lunarvim
+LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+
 
 ####################################################################
 

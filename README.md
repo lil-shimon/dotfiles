@@ -6,3 +6,7 @@
 - [alacritty]()
 - [edex]()
 - [tmux]()
+
+## TODO list
+### vim
+- [ ] implement nice float term plugin

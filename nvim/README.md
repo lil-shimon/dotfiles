@@ -121,3 +121,6 @@ Some commands are in cheatsheet.md.
 - Toml
 - Markdown
 
+
+## TODO
+- [ ] replace neovim to lvim 

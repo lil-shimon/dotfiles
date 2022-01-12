@@ -17,7 +17,8 @@ echo -e "install lunarVim"
 bash
 ## install roll version of lunarvim
 LV_BRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
-
+rm -rf ${homedir}/.config/lvim/config.lua
+cp ${dotfiledir}/lvim/config.lua ${homedir}/.config/
 
 ####################################################################
 

@@ -199,6 +199,7 @@ alias questarRouter="questar@192.168.0.5"
 alias p="pwd"
 alias samBTC="cd ~/development/aws-bitcoin; and sam local invoke PurchaseBTCFunction"
 alias vimtutor="nvim +Tutor"
+alias lunarSync="bash ~/shellscript/syncLvim.sh"
 
 ### >>> bobthefish config #########################################################
 ##

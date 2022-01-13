@@ -200,11 +200,23 @@ lvim.plugins = {
        end
     },
 --------------------------
--- symbolsOutline
+-- symbolsOutline [SymbolsOutline github](https://github.com/simrat39/symbols-outline.nvim)
 --------------------------
     {
        "simrat39/symbols-outline.nvim",
        cmd = "SymbolsOutline",
+    },
+--------------------------
+-- indent-blankline [indent-blankline github](https://github.com/lukas-reineke/indent-blankline.nvim)
+--------------------------
+    {
+      "lukas-reineke/indent-blankline.nvim",
+      event = "BufRead",
+      setup = function()
+        vim.g.indentLine_enabled = 1
+        vim.g.show_end_of_line = true
+        vim.g.space_char_blankline = " "
+      end
     },
 }
 

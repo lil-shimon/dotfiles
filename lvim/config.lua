@@ -62,6 +62,14 @@ lvim.builtin.which_key.mappings["t"] = {
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 }
 
+--- NOTE: goto_preview keymappings
+lvim.builtin.which_key.mappings["g"] = {
+  name = "goto-preview",
+  d = {"<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Definition"},
+  i = {"<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Implementation"},
+  w = {"<cmd>lua require('goto-preview').close_all_win()<CR>", "Close all windows"},
+}
+
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
@@ -164,6 +172,22 @@ lvim.plugins = {
         require("todo-comments").setup()
       end,
     },
+    {
+--------------------------
+-- preview variables etc....
+--------------------------
+      "rmagatti/goto-preview",
+       config = function()
+       require('goto-preview').setup {
+        width = 120;
+        height = 25;
+        default_mappings = false;
+        debug = false;
+        opacity = nil;
+        post_open_hook = nil;
+       }
+       end
+    }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

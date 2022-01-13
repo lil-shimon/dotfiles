@@ -62,13 +62,24 @@ lvim.builtin.which_key.mappings["t"] = {
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 }
 
---- NOTE: goto_preview keymappings
+-- NOTE: goto_preview keymappings
 lvim.builtin.which_key.mappings["g"] = {
   name = "goto-preview",
   d = {"<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Definition"},
   i = {"<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Implementation"},
   w = {"<cmd>lua require('goto-preview').close_all_win()<CR>", "Close all windows"},
 }
+
+-- NOTE: SymbolsOutline keymappings
+-- Escape	Close outline
+-- Enter	Go to symbol location in code
+-- o	Go to symbol location in code without losing focus
+-- Ctrl+Space	Hover current symbol
+-- K	Toggles the current symbol preview
+-- r	Rename symbol
+-- a	Code actions
+-- ?	Show help message
+lvim.builtin.which_key.mappings["o"] = {"<cmd>SymbolsOutline<CR>", "SymbolsOutline"}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -187,7 +198,14 @@ lvim.plugins = {
         post_open_hook = nil;
        }
        end
-    }
+    },
+--------------------------
+-- symbolsOutline
+--------------------------
+    {
+       "simrat39/symbols-outline.nvim",
+       cmd = "SymbolsOutline",
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

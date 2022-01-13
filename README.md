@@ -10,4 +10,4 @@
 ## TODO list
 ### vim
 - [ ] implement nice float term plugin
-- [ ] easy motion -> [hop](https://github.com/phaazon/hop.nvim)
+- [x] easy motion -> [hop](https://github.com/phaazon/hop.nvim)

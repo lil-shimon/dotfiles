@@ -81,6 +81,20 @@ lvim.builtin.which_key.mappings["g"] = {
 -- ?	Show help message
 lvim.builtin.which_key.mappings["o"] = {"<cmd>SymbolsOutline<CR>", "SymbolsOutline"}
 
+-- NOTE: Terminal keymappings
+lvim.builtin.which_key.mappings["d"] = {"<cmd>ToggleTerm<CR>", "Terminal"}
+
+-- NOTE: hop keymappings
+lvim.builtin.which_key.mappings["k"] = {
+  name = "hop (easy motion)",
+  w = {"<cmd>HopWord<CR>", "HopWord"},
+  l = {"<cmd>HopLine<CR>", "HopLine"},
+  f = {"<cmd>HopChar2<CR>", "HopChar2"}
+}
+
+-- NOTE: hop simplified keymapping
+lvim.builtin.which_key.mappings["j"] = {"<cmd>HopChar2<CR>", "HopChar2"}
+
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
@@ -167,6 +181,7 @@ lvim.plugins = {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
+
 --------------------------
 -- highlight some comments
 -- colored comment list --
@@ -183,10 +198,11 @@ lvim.plugins = {
         require("todo-comments").setup()
       end,
     },
-    {
+
 --------------------------
 -- preview variables etc....
 --------------------------
+    {
       "rmagatti/goto-preview",
        config = function()
        require('goto-preview').setup {
@@ -199,6 +215,7 @@ lvim.plugins = {
        }
        end
     },
+
 --------------------------
 -- symbolsOutline [SymbolsOutline github](https://github.com/simrat39/symbols-outline.nvim)
 --------------------------
@@ -206,6 +223,7 @@ lvim.plugins = {
        "simrat39/symbols-outline.nvim",
        cmd = "SymbolsOutline",
     },
+
 --------------------------
 -- indent-blankline [indent-blankline github](https://github.com/lukas-reineke/indent-blankline.nvim)
 --------------------------
@@ -217,6 +235,17 @@ lvim.plugins = {
         vim.g.show_end_of_line = true
         vim.g.space_char_blankline = " "
       end
+    },
+
+--------------------------
+-- hop [hop github](https://github.com/phaazon/hop.nvim)
+--------------------------
+    {
+      "phaazon/hop.nvim",
+      event = "BufRead",
+      config = function()
+        require("hop").setup()
+      end,
     },
 }
 

@@ -200,6 +200,7 @@ alias p="pwd"
 alias samBTC="cd ~/development/aws-bitcoin; and sam local invoke PurchaseBTCFunction"
 alias vimtutor="nvim +Tutor"
 alias lunarSync="bash ~/shellscript/syncLvim.sh"
+alias cleanDesktop="bash ~/shellscript/cleanDesktop.sh"
 
 ### >>> bobthefish config #########################################################
 ##

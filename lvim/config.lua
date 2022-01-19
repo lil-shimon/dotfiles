@@ -25,6 +25,7 @@ vim.cmd("set timeoutlen=300")
 
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<sv>"] = ":vsplit<cr>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
@@ -51,6 +52,7 @@ lvim.builtin.telescope.defaults.mappings = {
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["v"] = { "<cmd>vsplit<CR>", "Projects" }
 -- NOTE: add shifit menu (in this case t = Trouble)
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",

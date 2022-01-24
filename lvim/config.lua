@@ -248,6 +248,10 @@ lvim.plugins = {
         require("hop").setup()
       end,
     },
+--------------------------
+-- heavenshell/vim-jsdoc TODO: setup
+--------------------------
+    {"heavenshell/vim-jsdoc"}
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

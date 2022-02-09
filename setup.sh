@@ -6,6 +6,7 @@
 homesymfiles="tmux.conf tmux.conf.osx tmux.powerline.conf"
 configsymfiles="fish nvim alacritty"
 brewfiles="gopls java"
+brewWithCask="kitty"
 npmGlobals="git-cz intelephense diagnostic-languageserver typescript typescript-language-server"
 
 homedir=$HOME
@@ -48,6 +49,11 @@ echo -e "####################################################################\n
 
 ### for java.
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+for brewWithCask in ${brew}; do
+  echo "$brew >>> installing....."
+  brew install --cask $brew
+done
 
 
 ## npm #############################################################

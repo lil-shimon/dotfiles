@@ -9,6 +9,7 @@
 # flutter path
 set -x PATH ~/Develop/flutter/bin $PATH
 
+set -x PATH ~/Qt/5.15.2/clang_64/bin/:$PATH
 ## <<< flutter config #########################################################
 #
 ###############################################################################
@@ -187,7 +188,8 @@ alias p="pwd"
 alias samBTC="cd ~/development/aws-bitcoin; and sam local invoke PurchaseBTCFunction"
 alias vimtutor="nvim +Tutor"
 alias lunarSync="bash ~/shellscript/syncLvim.sh"
-alias cleanDesktop="bash ~/shellscript/cleanDesktop.sh"
+alias cleanDesktop="cd ~/utils/file-cleaner; and bash test.sh"
+alias prod-test="bash ~/shellscript/prod-react-test.sh"
 
 ### >>> bobthefish config #########################################################
 ##

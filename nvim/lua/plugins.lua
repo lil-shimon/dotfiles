@@ -29,5 +29,9 @@ require'packer'.startup(function()
 		end,
 	}
 
+	-- treesitter
     	use {'nvim-treesitter/nvim-treesitter', after='nvim-ts-rainbow', config='require"treesitter"'}
+
+	-- telescope
+	use {'nvim-telescope/telescope.nvim', requires={{'nvim-lua/plenary.nvim'}}}
 end)

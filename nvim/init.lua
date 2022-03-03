@@ -1,5 +1,6 @@
 --- load plugins
 require'plugins'
+require'lsconfig'
 
 --- 自動コンパイル設定
 vim.cmd[[autocmd BufWritePost plugins.lua PackerCompile]]

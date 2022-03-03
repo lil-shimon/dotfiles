@@ -92,7 +92,7 @@ alias nvm="nv"
 
 # fish alias
 # alias vi='nvim'
-alias vi='/Users/shimozawakenta/.local/bin/lvim'
+alias vi='nvim'
 alias someapi='cd ~/project/someone-api'
 alias somefront='cd ~/project/someone-front'
 alias ide='sh ~/ide.sh'

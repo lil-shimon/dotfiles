@@ -74,6 +74,46 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
     url = "https://github.com/max397574/better-escape.nvim"
+  },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesiteter"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/nvim-treesiteter",
+    url = "https://github.com/nvim-treesitter/nvim-treesiteter"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/shimozawakenta/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   }
 }
 

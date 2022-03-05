@@ -4,137 +4,11 @@ noremap <Space>w :<C-u>w<CR>
 set shell=fish
 set completeopt=menuone,noselect
 
-"-----------------------------------------
-"              Linter (ale)
-"-----------------------------------------
-" C-k -> 前の警告へジャンプ C-j -> 後ろの警告へジャンプ
-" let b:ale_linters = {
-" \   'javascript': ['eslint', 'eslint-plugin-vue'],
-" \   'python': ['pyflakes', 'pep8'],
-" \   'ruby': ['rubocop'],
-" \   'tex': ['textlint'],
-" \   'markdown': ['textlint'],
-" \   'css': ['stylelint'],
-" \}
-
-" let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
-" let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
-
-" let g:maplocalleader = 'm'
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-" let g:ale_fix_auto_save = 1
-
-" ローカルの設定ファイルを考慮する
-" let g:ale_javascript_prettier_use_local_config = 1
-
 
 "-----------------------------------------
 "             font settings
 "-----------------------------------------
 set guifont=Monospace\ Bold\ 100
-
-
-"-----------------------------------------
-"              ColorScheme
-"-----------------------------------------
-set termguicolors     " enable true colors support
-let g:seiya_auto_enable=1 "背景透過 for vim
-let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg'] "for neovim
-
-au ColorScheme * highlight CursorLine guibg=#8C1D06
-au ColorScheme * highlight CursorColumn guibg=#002c54
-au ColorScheme * highlight Visual guifg=#E72D21
-au ColorScheme * highlight Search guibg=#002c54 guifg=#E72D21 
-
-
-"-----------------------------------------
-"       ColorScheme function (hi)
-"-----------------------------------------
-"this is the function what you can find
-"the syntax group what u cursor on
-"call func -> :SyntaxInfo
-function! s:get_syn_id(transparent)
-  let synid = synID(line("."), col("."), 1)
-  if a:transparent
-    return synIDtrans(synid)
-  else
-    return synid
-  endif
-endfunction
-function! s:get_syn_attr(synid)
-  let name = synIDattr(a:synid, "name")
-  let ctermfg = synIDattr(a:synid, "fg", "cterm")
-  let ctermbg = synIDattr(a:synid, "bg", "cterm")
-  let guifg = synIDattr(a:synid, "fg", "gui")
-  let guibg = synIDattr(a:synid, "bg", "gui")
-  return {
-        \ "name": name,
-        \ "ctermfg": ctermfg,
-        \ "ctermbg": ctermbg,
-        \ "guifg": guifg,
-        \ "guibg": guibg}
-endfunction
-function! s:get_syn_info()
-  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-  echo "name: " . baseSyn.name .
-        \ " ctermfg: " . baseSyn.ctermfg .
-        \ " ctermbg: " . baseSyn.ctermbg .
-        \ " guifg: " . baseSyn.guifg .
-        \ " guibg: " . baseSyn.guibg
-  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-  echo "link to"
-  echo "name: " . linkedSyn.name .
-        \ " ctermfg: " . linkedSyn.ctermfg .
-        \ " ctermbg: " . linkedSyn.ctermbg .
-        \ " guifg: " . linkedSyn.guifg .
-        \ " guibg: " . linkedSyn.guibg
-endfunction
-command! SyntaxInfo call s:get_syn_info()
-
-" "-----------------------------------------
-" "              easymotion
-" "-----------------------------------------
-" map  <Leader> <Plug>(easymotion-prefix)
-" " <Leader>f{char} to move to {char}
-" map  <Leader>f <Plug>(easymotion-bd-f)
-" nmap <Leader>f <Plug>(easymotion-overwin-f)
-" 
-" " s{char}{char} to move to {char}{char}
-" nmap ff <Plug>(easymotion-overwin-f2)
-" 
-" " Move to line
-" map  <Leader>L <Plug>(easymotion-bd-jk)
-" nmap <Leader>L <Plug>(easymotion-overwin-line)
-" 
-" " Move to word
-" map  <Leader>w <Plug>(easymotion-bd-w)
-" nmap <Leader>w <Plug>(easymotion-overwin-w)
-" 
-" nmap m <Plug>(easymotion-s2)
-" xmap m <Plug>(easymotion-s2)
-" nmap <Leader>t <Plug>(easymotion-t2)
-" 
-" map  <Leader>/ <Plug>(easymotion-sn)
-" omap <Leader>/ <Plug>(easymotion-tn)
-" 
-" " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
-" " Without these mappings, `n` & `N` works fine. (These mappings just provide
-" " different highlight method and have some other features )
-" map  n <Plug>(easymotion-next)
-" map  P <Plug>(easymotion-prev)
-" 
-" map  <Leader>l <Plug>(easymotion-lineforward)
-" map  <Leader>j <Plug>(easymotion-j)
-" map  <Leader>k <Plug>(easymotion-k)
-" map  <Leader>h <Plug>(easymotion-linebackward)
-" 
-" let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-" 
-" let g:EasyMotion_smartcase = 1
-" " Smartsign (type `3` and match `3`&`#`)
-" let g:EasyMotion_use_smartsign_us = 1
 
 " Search
 set ignorecase
@@ -151,17 +25,6 @@ au BufNewFile,BufRead *.es6 setf javascript
 " TypeScript
 au BufNewFile,BufRead *.tsx setf typescript
 
-" Insert Modas
-inoremap <silent> jj <ESC>
-map <Leader> <Plug>(easymotion-prefix)
-
-" Insert mode movekey bind
-inoremap <C-d> <BS>
-inoremap <C-h> <Left>                                                                                                                 
-inoremap <C-l> <Right>
-inoremap <C-k> <Up>                          
-inoremap <C-j> <Down>
-
 " encode setting                                                                           
 set encoding=utf-8
 
@@ -174,24 +37,19 @@ set wildmenu                                                    " コマンド�
 set clipboard+=unnamed
 set laststatus=2
 
-"keymap
-let g:mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR> 
-nnoremap <Leader>q :q<CR> 
-nnoremap <ESC><ESC> :nohlsearch<CR> 
-nnoremap <Leader>. :new ~/.config/nvim/init.vim<CR>
-
-"search files (fzf)
-nmap ;f :FZF<CR>
-nmap <Leader>ag :Ag<CR>
-
-
 "cursorl setting
 set ruler                                                       " カーソルの位置表示
 set cursorline                                                  " カーソルハイライト
 set cursorcolumn
 filetype on
 
+" Keymap
+let g:mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR> 
+nnoremap <Leader>q :q<CR> 
+nnoremap <ESC><ESC> :nohlsearch<CR> 
+nnoremap <Leader>. :new ~/.config/nvim/init.vim<CR>
+inoremap <silent> jj <ESC>
 
 " ---------------------------------------
 "           window settings 
@@ -210,12 +68,6 @@ map sh <C-w>h
 map sk <C-w>k
 map sj <C-w>j
 map sl <C-w>l
-
-" Resize Window
-nmap <C-w><left> <C-w><
-nmap <C-w><right> <C-w>>
-nmap <C-w><up> <C-w>+
-nmap <C-w><down> <C-w>-
 
 
 " ---------------------------------------
@@ -240,6 +92,7 @@ set smartindent
 
 augroup vimrc-filetype
   autocmd!
+
  " ---------------------------------------
  "           php indent settings 
  " ---------------------------------------

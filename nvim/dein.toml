@@ -74,55 +74,6 @@ on_ft = ['javascript', 'javascript.jsx']
 
 
 # -----------------------------------------
-#           colorscheme dracula
-# -----------------------------------------
-[[plugins]]
-repo = 'dracula/vim'
-name = 'dracula'
-
-[[plugins]]
-repo = 'tobyS/pdv'
-
-[[plugins]]
-repo = 'tobyS/vmustache'
-
-
-# -----------------------------------------
-#           colorscheme solarized
-# -----------------------------------------
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-
-
-# ---------------------------------------
-#         colorscheme Zenburn
-# ---------------------------------------
-[[plugins]] 
-repo = "jnurmine/Zenburn"
-name = "zenburn"
-hook_add = """
-"""
-
-
-# -----------------------------------------
-#            Fugitive Settings
-# -----------------------------------------
-#  git plugin
-#  command list
-#  Gstatus
-#  Gwrite
-#  Gcommit
-#  Gblame
-#  Gdiff
-#  Gmerge
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-hook_add = """
-source ~/.config/nvim/plugins/plugins-vim-fugitive.vim
-"""
-
-
-# -----------------------------------------
 #              Git Gutters
 #          < show diff + - ~ >
 # -----------------------------------------
@@ -140,38 +91,19 @@ hook_add = """
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
-[[plugins]]
-repo = 'tpope/vim-rhubarb'
 
-[[plugins]]
-repo = 'vim-snippets'
-
-[[plugins]]
-repo = 'mlaursen/vim-react-snippets'
-
-[[plugins]]
-repo = 'Galooshi/import-js'
-
+# -----------------------------------------
+#          auto pairs 
+# -----------------------------------------
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
+# -----------------------------------------
+#          auto close 
+# -----------------------------------------
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
-[[plugins]]
-repo = 'tpope/vim-endwise'
-
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-hook_add = """
-let g:typescript_indent_disable = 1
-"""
-
-[[plugins]]
-repo = 'peitalin/vim-jsx-typescript'
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
 
 # ---------------------------------------
 #             comment plugin
@@ -216,13 +148,6 @@ repo = 'ervandew/supertab'
 
 
 # -----------------------------------------
-#             vim-repeat .
-# -----------------------------------------
-[[plugins]]
-repo = "tpope/vim-repeat"
-
-
-# -----------------------------------------
 #         vim-highlightedyank 
 # -----------------------------------------
 [[plugins]]
@@ -230,50 +155,6 @@ repo = 'machakann/vim-highlightedyank'
 hook_add = """
 let g:highlightedyank_highlight_duration = 1000
 """
-
-
-# ---------------------------------------
-#               phpactor
-# ---------------------------------------
-# [[plugins]]
-# repo = 'phpactor/phpactor'
-# on_ft = ['php']
-# build = 'composer install'
-
-
-# ---------------------------------------
-#             fzf install
-# ---------------------------------------
-[[plugins]] 
-repo = "junegunn/fzf"
-build = './install --all'
-
-# ---------------------------------------
-#               fzf.vim
-# ---------------------------------------
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-
-
-# ---------------------------------------
-#               nerdtree
-# ---------------------------------------
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-  let g:NERDTreeShowBookmarks=1
-  let g:NERDTreeShowHidden = 1
-  let g:NERDTreeDirArrows = 1
-  let NERDTreeIgnore = ['\.git$', 'node_modules']
-  autocmd StdinReadPre * let s:std_in=1
-  map <C-a> :NERDTreeToggle<CR>
-'''
-
-# ---------------------------------------
-#               nerdtree
-# ---------------------------------------
-[[plugins]] 
-repo = "preservim/nerdtree"
 
 
 # ---------------------------------------
@@ -310,87 +191,9 @@ let g:closetag_regions = {
 
 
 # ---------------------------------------
-#             vim-cyberpunk
-# ---------------------------------------
-[[plugins]] 
-repo = "thedenisnikulin/vim-cyberpunk"
-name="cyberpunk"
-
-
-# ---------------------------------------
-#             shadotheme
-# ---------------------------------------
-[[plugins]] 
-repo = "Shadorain/shadotheme"
-name = "shadotheme"
-hook_add = """"
-"""
-
-
-# ---------------------------------------
-#        Leon-Plickat/paige
-# ---------------------------------------
-[[plugins]]
-repo = 'Leon-Plickat/paige'
-name = 'paige'
-
-
-[[plugins]]
-repo = 'alexanderjeurissen/lumiere.vim'
-name = 'lumiere'
-hook_add = """
-"""
-
-# ---------------------------------------
-#           ulwlu/abyss.vim
-# ---------------------------------------
-[[plugins]] 
-repo = "ulwlu/abyss.vim"
-name = "abyss"
-hook_add = """
-  colorscheme aylin
-"""
-
-
-# ---------------------------------------
-#        bignimbus/pop-punk.vim
-# ---------------------------------------
-[[plugins]] 
-repo = "bignimbus/pop-punk.vim"
-name = "pop-punk"
-
-
-# ---------------------------------------
 #        neovim/nvim-lspconfig
 # ---------------------------------------
 [[plugins]] 
 repo = "neovim/nvim-lspconfig"
 
-# ---------------------------------------
-#        dense-analysis/ale
-#        plugin for prettier
-# ---------------------------------------
-[[plugins]]
-repo = 'dense-analysis/ale'
-hook_add = """
- 
-let g:ale_fixers = {
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
-\   'javascript': ['prettier'],
-\   'javascriptreact': ['prettier'],
-\   'css': ['prettier'],
-\}
 
-let g:ale_sign_error = 'P>'
-let g:ale_sign_warning = 'P-'
-let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-let g:ale_statusline_format = ['E%d', 'W%d', 'OK']
-nmap <silent> <C-w>j <Plug>(ale_next_wrap)
-nmap <silent> <C-w>k <Plug>(ale_previous_wrap)
-let g:ale_fix_on_save = 1
-
-### if the project has .prettier.rc, it will use that settings.
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
-"""

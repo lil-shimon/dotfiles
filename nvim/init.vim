@@ -18,6 +18,64 @@ set incsearch
 set hlsearch
 set pumblend=10
 
+
+"-----------------------------------------
+"              ColorScheme
+"-----------------------------------------
+set termguicolors     " enable true colors support
+let g:seiya_auto_enable=1 "背景透過 for vim
+let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg'] "for neovim
+
+au ColorScheme * highlight CursorLine guibg=#8C1D06
+au ColorScheme * highlight CursorColumn guibg=#002c54
+au ColorScheme * highlight Visual guifg=#E72D21
+au ColorScheme * highlight Search guibg=#002c54 guifg=#E72D21 
+
+
+"-----------------------------------------
+"       ColorScheme function (hi)
+"-----------------------------------------
+"this is the function what you can find
+"the syntax group what u cursor on
+"call func -> :SyntaxInfo
+function! s:get_syn_id(transparent)
+  let synid = synID(line("."), col("."), 1)
+  if a:transparent
+    return synIDtrans(synid)
+  else
+    return synid
+  endif
+endfunction
+function! s:get_syn_attr(synid)
+  let name = synIDattr(a:synid, "name")
+  let ctermfg = synIDattr(a:synid, "fg", "cterm")
+  let ctermbg = synIDattr(a:synid, "bg", "cterm")
+  let guifg = synIDattr(a:synid, "fg", "gui")
+  let guibg = synIDattr(a:synid, "bg", "gui")
+  return {
+        \ "name": name,
+        \ "ctermfg": ctermfg,
+        \ "ctermbg": ctermbg,
+        \ "guifg": guifg,
+        \ "guibg": guibg}
+endfunction
+function! s:get_syn_info()
+  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
+  echo "name: " . baseSyn.name .
+        \ " ctermfg: " . baseSyn.ctermfg .
+        \ " ctermbg: " . baseSyn.ctermbg .
+        \ " guifg: " . baseSyn.guifg .
+        \ " guibg: " . baseSyn.guibg
+  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
+  echo "link to"
+  echo "name: " . linkedSyn.name .
+        \ " ctermfg: " . linkedSyn.ctermfg .
+        \ " ctermbg: " . linkedSyn.ctermbg .
+        \ " guifg: " . linkedSyn.guifg .
+        \ " guibg: " . linkedSyn.guibg
+endfunction
+command! SyntaxInfo call s:get_syn_info()
+
 set suffixesadd=.js,.ts,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
 " JavaScript
@@ -264,28 +322,20 @@ Plug 'artanikin/vim-synthwave84'
 " ---------------------------------
 Plug 'machakann/vim-sandwich'
 
-try 
-  if filereadable(expand("~/dotfiles/nvim/plugged/darktango.vim/colors/darktango.vim"))
-      colorscheme darktango
-  endif
-catch
-  try 
-    if filereadable(expand("~/dotfiles/nvim/plugged/vim-synthwave84/colors/synthwave84.vim"))
-      colorscheme synthwave84
-    endif
-  catch
-      try
-        if filereadable(expand("~/dotfiles/nvim/plugged/moonlight.nvim/colors/moonlight.vim"))
-          colorscheme gruvbox
-        endif
-      catch
-        try
-          colorscheme default
-        catch
-        endtry
-      endtry
-  endtry
-endtry
+
+" - fzf ------------------
+"    machakann/vim-sandwich
+" ---------------------------------
+Plug 'junegunn/fzf.vim'
+
+
+" - colorscheme ------------------
+"    ulwlu/elly.vim
+" ---------------------------------
+Plug 'ulwlu/elly.vim'
 
 call plug#end()
+
+" この位置(plug#end)じゃないとエラー
+colorscheme elly
 

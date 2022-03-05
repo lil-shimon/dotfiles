@@ -14,7 +14,6 @@ set -x PATH ~/Qt/5.15.2/clang_64/bin/:$PATH
 #
 ###############################################################################
 
-
 ## >>> nodebrew config ########################################################
 #
 # nodebrew configs
@@ -29,6 +28,13 @@ set -x PATH $HOME/.nodebrew/current/bin $PATH
 ###############################################################################
 
 
+# for android development
+set --export ANDROID $HOME/Library/Android;
+set --export ANDROID_HOME $ANDROID/sdk;
+set -gx PATH $ANDROID_HOME/tools $PATH;
+set -gx PATH $ANDROID_HOME/tools/bin $PATH;
+set -gx PATH $ANDROID_HOME/platform-tools $PATH;
+set -gx PATH $ANDROID_HOME/emulator $PATH
 
 ## >>> rust config ############################################################
 #
@@ -91,7 +97,6 @@ alias nvm="nv"
 # set -x LSCOLORS gxfxcxdxbxegedabagacad
 
 # fish alias
-# alias vi='nvim'
 alias vi='nvim'
 alias someapi='cd ~/project/someone-api'
 alias somefront='cd ~/project/someone-front'
@@ -270,5 +275,5 @@ eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | s
 #
 # 初期化のためのスクリプトを追加
 #starship init fish | source
-export STARSHIP_CONFIG=~/.starship/config.toml
+#export STARSHIP_CONFIG=~/.starship/config.toml
 ###############################################################################

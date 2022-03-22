@@ -71,6 +71,9 @@ function nv
 	neovide $argv[1] && alacritty & 
 end
 
+# pecl path
+set -x PATH $PATH:$HOME/pear/bin/
+
 alias nvm="nv"
 
 ## <<< neovide config #########################################################
@@ -110,6 +113,7 @@ alias addgitremote="sh ~/shellscript/add-git-remote.sh"
 alias push='bash ~/shellscript/cz.sh'
 alias dev='sh ~/shellscript/dev.sh'
 alias signageRelease='sh ~/shellscript/signageReleash.sh'
+alias powerControllerRelease='sh ~/shellscript/powerControllerServer.sh'
 alias ordermanagement='sh ~/shellscript/ordermanagement.sh'
 alias orderdev="sh ~/shellscript/devordermanagement.sh"
 alias shcom='cd ~/shellscript'
@@ -128,6 +132,8 @@ alias sgnstart='sh ~/shellscript/startsignage.sh'
 alias sgn='cd ~/questar/cloud-sign.com'
 alias sgnreact='cd ~/questar/cloud-sign-react'
 alias sgndoc='cd ~/questar/cloud-sign.com/docker-compose/local'
+alias mamdoc='cd ~/questar/back.mamozon.com/docker-compose/mamozon_local'
+alias asaadmin='cd ~/questar/asasuma-admin'
 alias pw='cd ~/questar/power_control/'
 alias pwdoc='cd ~/questar/power_control/docker-compose/power-control-local'
 alias pwfront='sh ~/questar/power_control/script/local-debug.sh startFrontend'
@@ -195,6 +201,9 @@ alias vimtutor="nvim +Tutor"
 alias lunarSync="bash ~/shellscript/syncLvim.sh"
 alias cleanDesktop="cd ~/utils/file-cleaner; and bash test.sh"
 alias prod-test="bash ~/shellscript/prod-react-test.sh"
+alias questar="bash ~/utils/questar-handler/run.sh"
+alias makeswiftformat="swift-format --mode dump-configuration > .swift-format"
+alias swiftformat="swift-format -r . -i"
 
 ### >>> bobthefish config #########################################################
 ##

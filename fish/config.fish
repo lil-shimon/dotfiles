@@ -7,7 +7,9 @@
 ###############################################################################
 
 # flutter path
-set -x PATH ~/Develop/flutter/bin $PATH
+# set -x PATH ~/Develop/flutter/bin $PATH
+#set PATH /usr/local/bin /usr/sbin $PATH
+set -x PATH ~/flutter/bin $PATH
 
 set -x PATH ~/Qt/5.15.2/clang_64/bin/:$PATH
 ## <<< flutter config #########################################################

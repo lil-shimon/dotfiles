@@ -154,7 +154,6 @@ augroup vimrc-filetype
  " ---------------------------------------
  "           php indent settings 
  " ---------------------------------------
-  autocmd BufNewFile,BufRead *.php set filetype=php
   autocmd FileType php setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 
@@ -337,5 +336,6 @@ Plug 'ulwlu/elly.vim'
 call plug#end()
 
 " この位置(plug#end)じゃないとエラー
-colorscheme elly
+" colorscheme elly
 
+colorscheme elflord

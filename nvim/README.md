@@ -1,15 +1,16 @@
 # neovim-config
 
-**My dev env: tmux + neovim 0.5 + alacritty**
+**My dev env: tmux + neovim 0.7 + alacritty**
 
 If you want to try this neovim file, feel free to clone this.
 Some commands are in cheatsheet.md.
- 
+
 > command list: [cheatsheet.md](https://github.com/lil-shimon/neovim-config/blob/master/cheatsheet.md)
 
 ---
 
 ## plugins
+
 - neovim/nvim-lspconfig
 - glepnir/lspsaga.nvim
 - nvim-treesitter/nvim-treesitter
@@ -84,10 +85,10 @@ Some commands are in cheatsheet.md.
 - [hrsh7th/nvim-compe](https://github.com/hrsh7th/nvim-compe)
 - [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)
 
-
 ---
 
 ## colorscheme
+
 - aylin (favorite)
 - ayu
 - dracula
@@ -105,13 +106,16 @@ Some commands are in cheatsheet.md.
 ---
 
 ## plugin manager
+
 - dein (for nvim 0.4.4)
 - vim-plug (for nvim 0.5)
 
 ---
 
 ## snippets
+
 `i'm gonna add golang snippets soon...`
+
 - Flutter
 - React
 - Laravel
@@ -121,6 +125,6 @@ Some commands are in cheatsheet.md.
 - Toml
 - Markdown
 
-
 ## TODO
-- [ ] replace neovim to lvim 
+
+- [ ] replace neovim to lvim

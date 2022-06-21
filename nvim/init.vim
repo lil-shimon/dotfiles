@@ -41,6 +41,16 @@ au BufNewFile,BufRead *.es6 setf javascript
 "-----------------------------------------
 au BufNewFile,BufRead *.tsx setf typescript
 
+" paste from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
+" prettier and eslint settings
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
 
 "-----------------------------------------
 "            Encoding config
@@ -161,7 +171,6 @@ call plug#begin()
 "  ---------------------------------------
 Plug 'neovim/nvim-lspconfig',
 
-
 "  ---------------------------------------
 "                lspsaga 
 "  ---------------------------------------
@@ -173,7 +182,6 @@ Plug 'glepnir/lspsaga.nvim'
 "  ---------------------------------------
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-
 "  ---------------------------------------
 "               telescope 
 "  ---------------------------------------
@@ -184,8 +192,6 @@ nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>l <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
-
-
 
 "  ---------------------------------------
 "                icons 
@@ -286,6 +292,15 @@ Plug 'junegunn/fzf.vim'
 "    ulwlu/elly.vim
 " ---------------------------------
 Plug 'ulwlu/elly.vim'
+
+" - Coc nvim ------------------
+"    neoclide/coc.nvim
+"    paste from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
+" ---------------------------------
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 
 call plug#end()
 

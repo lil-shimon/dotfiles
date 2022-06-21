@@ -93,13 +93,13 @@ repo = 'tyru/open-browser.vim'
 
 
 # -----------------------------------------
-#          auto pairs 
+#               auto pairs 
 # -----------------------------------------
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
 # -----------------------------------------
-#          auto close 
+#               auto close 
 # -----------------------------------------
 [[plugins]]
 repo = 'Townk/vim-autoclose'
@@ -141,7 +141,7 @@ hook_add = """
 """
 
 # -----------------------------------------
-#          supertab (tab補完)
+#           supertab (tab補完)
 # -----------------------------------------
 [[plugins]]
 repo = 'ervandew/supertab'

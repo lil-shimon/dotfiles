@@ -4,13 +4,15 @@ noremap <Space>w :<C-u>w<CR>
 set shell=fish
 set completeopt=menuone,noselect
 
-
 "-----------------------------------------
 "             font settings
 "-----------------------------------------
 set guifont=Monospace\ Bold\ 100
 
-" Search
+
+"-----------------------------------------
+"             Search config
+"-----------------------------------------
 set ignorecase
 set smartcase
 set wrapscan
@@ -23,71 +25,34 @@ set pumblend=10
 "              ColorScheme
 "-----------------------------------------
 set termguicolors     " enable true colors support
-let g:seiya_auto_enable=1 "背景透過 for vim
-let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg'] "for neovim
 
-au ColorScheme * highlight CursorLine guibg=#8C1D06
-au ColorScheme * highlight CursorColumn guibg=#002c54
-au ColorScheme * highlight Visual guifg=#E72D21
-au ColorScheme * highlight Search guibg=#002c54 guifg=#E72D21 
-
-
-"-----------------------------------------
-"       ColorScheme function (hi)
-"-----------------------------------------
-"this is the function what you can find
-"the syntax group what u cursor on
-"call func -> :SyntaxInfo
-function! s:get_syn_id(transparent)
-  let synid = synID(line("."), col("."), 1)
-  if a:transparent
-    return synIDtrans(synid)
-  else
-    return synid
-  endif
-endfunction
-function! s:get_syn_attr(synid)
-  let name = synIDattr(a:synid, "name")
-  let ctermfg = synIDattr(a:synid, "fg", "cterm")
-  let ctermbg = synIDattr(a:synid, "bg", "cterm")
-  let guifg = synIDattr(a:synid, "fg", "gui")
-  let guibg = synIDattr(a:synid, "bg", "gui")
-  return {
-        \ "name": name,
-        \ "ctermfg": ctermfg,
-        \ "ctermbg": ctermbg,
-        \ "guifg": guifg,
-        \ "guibg": guibg}
-endfunction
-function! s:get_syn_info()
-  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-  echo "name: " . baseSyn.name .
-        \ " ctermfg: " . baseSyn.ctermfg .
-        \ " ctermbg: " . baseSyn.ctermbg .
-        \ " guifg: " . baseSyn.guifg .
-        \ " guibg: " . baseSyn.guibg
-  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-  echo "link to"
-  echo "name: " . linkedSyn.name .
-        \ " ctermfg: " . linkedSyn.ctermfg .
-        \ " ctermbg: " . linkedSyn.ctermbg .
-        \ " guifg: " . linkedSyn.guifg .
-        \ " guibg: " . linkedSyn.guibg
-endfunction
-command! SyntaxInfo call s:get_syn_info()
 
 set suffixesadd=.js,.ts,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
-" JavaScript
+
+"-----------------------------------------
+"              JavaScript
+"-----------------------------------------
 au BufNewFile,BufRead *.es6 setf javascript
-" TypeScript
+
+
+"-----------------------------------------
+"              TypeScript
+"-----------------------------------------
 au BufNewFile,BufRead *.tsx setf typescript
 
-" encode setting                                                                           
+
+"-----------------------------------------
+"            Encoding config
+"-----------------------------------------
 set encoding=utf-8
 
-" editer setting
+
+"-----------------------------------------
+"            Editor settings
+"-----------------------------------------
 set number
+set relativenumber
 set splitbelow                                                  " 水平分割時に下に表示
 set splitright                                                  " 縦分割時を右に表示
 set noequalalways                                               " 分割時に自動調整を無効化
@@ -95,18 +60,15 @@ set wildmenu                                                    " コマンド�
 set clipboard+=unnamed
 set laststatus=2
 
-"cursorl setting
-set ruler                                                       " カーソルの位置表示
-set cursorline                                                  " カーソルハイライト
-set cursorcolumn
 filetype on
 
-" Keymap
+
+"-----------------------------------------
+"              Keymapping
+"-----------------------------------------
 let g:mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR> 
 nnoremap <Leader>q :q<CR> 
-nnoremap <ESC><ESC> :nohlsearch<CR> 
-nnoremap <Leader>. :new ~/.config/nvim/init.vim<CR>
 inoremap <silent> jj <ESC>
 
 " ---------------------------------------
@@ -129,10 +91,8 @@ map sl <C-w>l
 
 
 " ---------------------------------------
-"        vim to browser settings 
+"        open browser settings 
 " ---------------------------------------
-
-"open-browser
 nmap <Leader>b <Plug>(openbrowser-smart-search)
 vmap <Leader>b <Plug>(openbrowser-smart-search)
 
@@ -140,29 +100,23 @@ vmap <Leader>b <Plug>(openbrowser-smart-search)
 " ---------------------------------------
 "           indent settings 
 " ---------------------------------------  
-
-" tab setting
 set expandtab                                                   
-set tabstop=2                                                   
-set shiftwidth=2                                                
+set tabstop=4
+set shiftwidth=4
 set autoindent
 set smartindent
-
 augroup vimrc-filetype
   autocmd!
 
- " ---------------------------------------
- "           php indent settings 
- " ---------------------------------------
-  autocmd FileType php setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+" ---------------------------------------
+"           php indent settings 
+" ---------------------------------------
+autocmd FileType php setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
-
-  autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
-
-
-if &compatible    
-  set nocompatible               " Be iMproved    
-endif  
+" ---------------------------------------
+"          python indent settings 
+" ---------------------------------------
+autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 
 " ---------------------------------------
@@ -336,6 +290,4 @@ Plug 'ulwlu/elly.vim'
 call plug#end()
 
 " この位置(plug#end)じゃないとエラー
-" colorscheme elly
-
 colorscheme elflord

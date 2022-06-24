@@ -41,16 +41,6 @@ au BufNewFile,BufRead *.es6 setf javascript
 "-----------------------------------------
 au BufNewFile,BufRead *.tsx setf typescript
 
-" paste from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
-" prettier and eslint settings
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
-
 
 "-----------------------------------------
 "            Encoding config
@@ -292,15 +282,6 @@ Plug 'junegunn/fzf.vim'
 "    ulwlu/elly.vim
 " ---------------------------------
 Plug 'ulwlu/elly.vim'
-
-" - Coc nvim ------------------
-"    neoclide/coc.nvim
-"    paste from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
-" ---------------------------------
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = [
-  \ 'coc-tsserver'
-  \ ]
 
 call plug#end()
 

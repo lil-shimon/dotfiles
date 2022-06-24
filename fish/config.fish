@@ -31,11 +31,11 @@ set -x PATH $HOME/.nodebrew/current/bin $PATH
 
 
 # for android development
-set --export ANDROID $HOME/Library/Android;
-set --export ANDROID_HOME $ANDROID/sdk;
-set -gx PATH $ANDROID_HOME/tools $PATH;
-set -gx PATH $ANDROID_HOME/tools/bin $PATH;
-set -gx PATH $ANDROID_HOME/platform-tools $PATH;
+set --export ANDROID $HOME/Library/Android
+set --export ANDROID_HOME $ANDROID/sdk
+set -gx PATH $ANDROID_HOME/tools $PATH
+set -gx PATH $ANDROID_HOME/tools/bin $PATH
+set -gx PATH $ANDROID_HOME/platform-tools $PATH
 set -gx PATH $ANDROID_HOME/emulator $PATH
 
 ## >>> rust config ############################################################
@@ -68,9 +68,12 @@ set -x PATH ~/neovide/target/release/neovide/ $PATH
 set -x PATH ./target/release/neovide/ $PATH
 set -x PATH ~/neovide/ $PATH
 
+# php path
+set -x PATH /Applications/MAMP/bin/php/php8.0.8/bin $PATH
+
 # neovide settings
 function nv
-	neovide $argv[1] && alacritty & 
+    neovide $argv[1] && alacritty &
 end
 
 # pecl path
@@ -279,7 +282,7 @@ alias swiftformat="swift-format -r . -i"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" hook $argv | source
 # <<< conda initialize <<<
 
 ## >>> starship config ############################################################

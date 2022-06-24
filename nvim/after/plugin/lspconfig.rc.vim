@@ -58,10 +58,7 @@ require'completion'.on_attach(client, bufnr)
 end
 
 nvim_lsp.tsserver.setup {
-
   on_attach = on_attach,
-  filetype = {'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact', 'javascript.jsx'}
-
 }
 
 nvim_lsp.rust_analyzer.setup{}

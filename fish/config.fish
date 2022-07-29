@@ -118,6 +118,8 @@ alias addgitremote="sh ~/shellscript/add-git-remote.sh"
 alias push='bash ~/shellscript/cz.sh'
 alias dev='sh ~/shellscript/dev.sh'
 alias signageRelease='sh ~/shellscript/signageReleash.sh'
+alias socketRelease='sh ~/shellscript/wsRelease.sh'
+
 alias powerControllerRelease='sh ~/shellscript/powerControllerServer.sh'
 alias ordermanagement='sh ~/shellscript/ordermanagement.sh'
 alias orderdev="sh ~/shellscript/devordermanagement.sh"

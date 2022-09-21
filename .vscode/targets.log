@@ -6,21 +6,23 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Mon Aug 22 17:38:10 2022
+
+# Make data base, printed on Mon Sep  5 22:21:55 2022
 
 # Variables
 
-# environment
-VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+ 
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-LC_CTYPE = en_GB.UTF-8
+LC_CTYPE = UTF-8
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -38,23 +40,19 @@ _ = /usr/bin/make
 # makefile
 MAKEFILE_LIST := 
 # environment
-GO111MODULE = auto
-# environment
 ANDROID = /Users/shimozawakenta/Library/Android
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
+POWERLINE_CONFIG_COMMAND = powerline-config
+# environment
 VSCODE_CWD = /Users/shimozawakenta/dotfiles
 # environment
-_INTELLIJ_FORCE_SET_GOROOT = /usr/local/Cellar/go/1.16.5/libexec
+PATH = /Applications/MAMP/bin/php/php8.0.8/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide:/Users/shimozawakenta/pear/bin:target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide/target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide/target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.local/bin/lvim:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.cargo/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/emulator:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/platform-tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.nodebrew/current/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/flutter/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Applications/MAMP/bin/php/php8.0.8/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/usr/local/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/usr/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/usr/sbin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/sbin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Library/Apple/usr/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/opt/anaconda3/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/opt/anaconda3/condabin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide/target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.local/bin/lvim:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.cargo/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/emulator:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/platform-tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.nodebrew/current/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/flutter/bin:/Users/shimozawakenta/pear/bin
 # environment
-PATH = /Applications/MAMP/bin/php/php8.0.8/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide:/Users/shimozawakenta/pear/bin:target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide/target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide/target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.local/bin/lvim:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.cargo/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/emulator:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/platform-tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.nodebrew/current/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/flutter/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Applications/MAMP/bin/php/php8.0.8/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/usr/local/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/usr/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/usr/sbin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/sbin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Library/Apple/usr/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/usr/local/Cellar/go/1.16.5/libexec/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/go/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/opt/anaconda3/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/opt/anaconda3/condabin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/neovide/target/release/neovide:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.local/bin/lvim:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.cargo/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/emulator:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/platform-tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Library/Android/sdk/tools:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/.nodebrew/current/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/Qt/5.15.2/clang_64/bin:/Users/shimozawakenta/pear/bin:/Users/shimozawakenta/flutter/bin:/Users/shimozawakenta/pear/bin
+ALACRITTY_LOG = /var/folders/26/bdb151xn5f1f01xh0s3mnxk40000gn/T/Alacritty-28748.log
 # environment
-GOROOT = /usr/local/Cellar/go/1.16.5/libexec
-# environment
-GOPATH = /Users/shimozawakenta/go
-# environment
-LaunchInstanceID = 5F4113CA-FA49-49C4-9682-CB0616DDB505
+LaunchInstanceID = 77E6A431-A90F-4FF9-B8DD-BBC6FFD6258E
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
@@ -62,36 +60,27 @@ ANDROID_HOME = /Users/shimozawakenta/Library/Android/sdk
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-# environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.JJsB7SgVmr/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.mHvgI9fxbv/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 CONDA_EXE = /Users/shimozawakenta/opt/anaconda3/bin/conda
 # environment
-_INTELLIJ_FORCE_PREPEND_PATH = /usr/local/Cellar/go/1.16.5/libexec/bin:/Users/shimozawakenta/go/bin:
+TMUX_PANE = %0
 # environment
 PWD = /Users/shimozawakenta/dotfiles
-# environment
-LOGIN_SHELL = 1
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
- 
-make: *** No rule to make target `all'.  Stop.
-
 HOME = /Users/shimozawakenta
-# environment
-TERMINAL_EMULATOR = JetBrains-JediTerm
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/shimozawakenta/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+VSCODE_CODE_CACHE_PATH = /Users/shimozawakenta/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LOGNAME = shimozawakenta
 # environment
@@ -103,8 +92,6 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
-MAKELEVEL := 0
-# environment
 CONDA_DEFAULT_ENV = base
 # environment
 XPC_FLAGS = 0x0
@@ -115,15 +102,13 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 5
+SHLVL = 3
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = shimozawakenta
 # makefile
 .DEFAULT_GOAL := 
-# environment
-TERM_SESSION_ID = f9843af2-308d-461e-ae5f-ace1f2854e80
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -131,9 +116,7 @@ CONDA_SHLVL = 1
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # environment
-VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
-# environment
-TERM_PROGRAM = vscode
+TERM_PROGRAM = tmux
 # default
 .VARIABLES := 
 # environment
@@ -141,9 +124,7 @@ TMPDIR = /var/folders/26/bdb151xn5f1f01xh0s3mnxk40000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/shimozawakenta/Library/Application Support/Code/1.70.1-main.sock
-# environment
-VSCODE_GIT_ASKPASS_NODE = /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper
+VSCODE_IPC_HOOK = /Users/shimozawakenta/Library/Application Support/Code/1.70.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -153,23 +134,19 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 1.70.1
+TERM_PROGRAM_VERSION = 3.2a
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.53559203.53559209.89F9208B-454D-4CE1-BBED-123F97C246CE
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.55426953.55426959.D881C518-EB2E-4518-B72E-B5532A2E8113
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# environment
+TMUX = /private/tmp/tmux-501/default,28777,0
 # automatic
 +F = $(notdir $+)
-# environment
-_INTELLIJ_FORCE_SET_GO111MODULE = auto
-# environment
-__INTELLIJ_COMMAND_HISTFILE__ = /Users/shimozawakenta/Library/Caches/JetBrains/IntelliJIdea2022.1/terminal/history/power_control-history
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x2
 # environment
 COMMAND_MODE = unix2003
-# environment
-GIT_ASKPASS = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
 # default
 MAKEFILES := 
 # automatic
@@ -184,22 +161,24 @@ SECURITYSESSIONID = 186a4
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
+# environment
+_CE_M = 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
-_INTELLIJ_FORCE_SET_GOPATH = /Users/shimozawakenta/go
-# environment
-VSCODE_GIT_IPC_HANDLE = /var/folders/26/bdb151xn5f1f01xh0s3mnxk40000gn/T/vscode-git-b331413911.sock
+MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/shimozawakenta/opt/anaconda3
 # environment
-TERM = xterm-256color
+TERM = screen-256color
 # environment
-VSCODE_PID = 7208
+VSCODE_PID = 5062
+# environment
+_CE_CONDA = 
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=92/1024=9%, Rehash=0, Collisions=6/113=5%
+# Load=81/1024=8%, Rehash=0, Collisions=2/102=2%
 
 # Pattern-specific Variable Values
 
@@ -207,9 +186,10 @@ LANG = C
 
 # Directories
 
-# . (device 16777223, inode 9169439): 16 files, no impossibilities.
+# . (device 16777223, inode 9169439): 18 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+ 
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,6 +261,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Mon Aug 22 17:38:10 2022
+# Finished Make data base on Mon Sep  5 22:21:55 2022
 
  

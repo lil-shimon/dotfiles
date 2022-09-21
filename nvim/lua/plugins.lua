@@ -33,4 +33,8 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  -- autopair
+  use 'windwp/nvim-autopairs'
+  -- autotag
+  use 'windwp/nvim-ts-autotag'
 end)

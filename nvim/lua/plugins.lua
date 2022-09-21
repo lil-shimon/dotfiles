@@ -33,8 +33,14 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  -- autopair
+  -- Autopair
   use 'windwp/nvim-autopairs'
-  -- autotag
+  -- Autotag
   use 'windwp/nvim-ts-autotag'
+  -- Common utilities
+  use 'nvim-lua/plenary.nvim'
+  -- Telescope for search file
+  use 'nvim-telescope/telescope.nvim'
+  -- Telescope file browser
+  use 'nvim-telescope/telescope-file-browser.nvim'
 end)

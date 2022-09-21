@@ -43,4 +43,6 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   -- Telescope file browser
   use 'nvim-telescope/telescope-file-browser.nvim'
+  -- File icons
+  use 'kyazdani42/nvim-web-devicons'
 end)

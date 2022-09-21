@@ -80,6 +80,6 @@ vim.keymap.set('n', ' a', '<cmd>lua require("telescope.builtin").resume()<cr>',
 vim.keymap.set('n', ' e', '<cmd>lua require("telescope.builtin").diagnostics()<cr>',
   opts)
 vim.keymap.set('n', '  ',
-  '<cmd>lua require("telescope").extensions.file_browser.file_browser({ path = "%:p:h", cmd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 40 } } )<cr>'
+  '<cmd>lua require("telescope").extensions.file_browser.file_browser({ path = "%:p:h", cmd = telescope_buffer_dir(), respect_git_ignore = true, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 40 } } )<cr>'
   ,
   opts)

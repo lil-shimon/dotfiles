@@ -47,4 +47,6 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   -- Custom buffer line
   use 'akinsho/nvim-bufferline.lua'
+  -- Colorizer
+  use 'norcalli/nvim-colorizer.lua'
 end)

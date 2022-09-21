@@ -49,4 +49,6 @@ packer.startup(function(use)
   use 'akinsho/nvim-bufferline.lua'
   -- Colorizer
   use 'norcalli/nvim-colorizer.lua'
+  -- Lspsaga
+  use 'glepnir/lspsaga.nvim'
 end)

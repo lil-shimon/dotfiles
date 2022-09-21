@@ -45,4 +45,6 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
   -- File icons
   use 'kyazdani42/nvim-web-devicons'
+  -- Custom buffer line
+  use 'akinsho/nvim-bufferline.lua'
 end)

@@ -51,4 +51,15 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   -- Lspsaga
   use 'glepnir/lspsaga.nvim'
+  -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via lua
+  use 'jose-elias-alvarez/null-ls.nvim'
+  -- Prettier
+  use 'MunifTanjim/prettier.nvim'
+  -- Gitsigns
+  use 'lewis6991/gitsigns.nvim'
+  -- Git blame and browse
+  use 'dinhhuy258/git.nvim'
+  -- For help to configure lsp
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 end)

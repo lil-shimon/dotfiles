@@ -34,6 +34,9 @@ vim.opt.wildignore:append { '*/node_modules/*', '*/vender/*' }
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
+-- set ColorScheme
+vim.cmd [[colorscheme tokyonight]]
+
 -- Turn off paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = '*',
@@ -44,3 +47,4 @@ vim.opt.formatoptions:append { 'r' }
 
 vim.wo.number = true
 
+vim.g.neovide_cursor_vfx_mode = "wireframe"

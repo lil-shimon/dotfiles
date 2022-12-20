@@ -10,10 +10,10 @@ packer.startup(function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
   -- ColorScheme solarized
-  use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
+  -- use {
+  --  'svrana/neosolarized.nvim',
+  --  requires = { 'tjdevries/colorbuddy.nvim' }
+  --}
   -- Lualine
   use 'hoob3rt/lualine.nvim'
   -- LSP
@@ -62,4 +62,5 @@ packer.startup(function(use)
   -- For help to configure lsp
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  use 'folke/tokyonight.nvim'
 end)

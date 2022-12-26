@@ -47,7 +47,9 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   -- Custom buffer line
   use 'akinsho/nvim-bufferline.lua'
-  -- Colorizer
+  -- Flutter
+  use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- Colorizr
   use 'norcalli/nvim-colorizer.lua'
   -- Lspsaga
   use 'glepnir/lspsaga.nvim'
@@ -63,4 +65,5 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'folke/tokyonight.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 end)

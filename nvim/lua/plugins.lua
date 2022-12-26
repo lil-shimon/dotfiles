@@ -66,4 +66,6 @@ packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
   use 'folke/tokyonight.nvim'
   use "lukas-reineke/indent-blankline.nvim"
+  -- Terminal
+  use "akinsho/toggleterm.nvim"
 end)

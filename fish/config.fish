@@ -105,7 +105,7 @@ alias nvm="nv"
 # set -x LSCOLORS gxfxcxdxbxegedabagacad
 
 # fish alias
-alias vi='nvim'
+alias vi='neovide'
 alias someapi='cd ~/project/someone-api'
 alias somefront='cd ~/project/someone-front'
 alias ide='sh ~/ide.sh'

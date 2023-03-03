@@ -9,11 +9,13 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
+
   -- ColorScheme solarized
   -- use {
   --  'svrana/neosolarized.nvim',
   --  requires = { 'tjdevries/colorbuddy.nvim' }
   --}
+
   -- Lualine
   use 'hoob3rt/lualine.nvim'
   -- LSP
@@ -64,6 +66,8 @@ packer.startup(function(use)
   -- For help to configure lsp
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  -- Darcula colorscheme
+  use 'doums/darcula'
   use 'folke/tokyonight.nvim'
   use "lukas-reineke/indent-blankline.nvim"
   -- Terminal

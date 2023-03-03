@@ -1,4 +1,5 @@
 vim.cmd('autocmd!')
+vim.cmd('colorscheme darcula')
 
 vim.scriptencoding = 'utf-8'
 
@@ -48,3 +49,4 @@ vim.opt.formatoptions:append { 'r' }
 vim.wo.number = true
 
 vim.g.neovide_cursor_vfx_mode = "wireframe"
+

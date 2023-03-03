@@ -105,7 +105,7 @@ alias nvm="nv"
 # set -x LSCOLORS gxfxcxdxbxegedabagacad
 
 # fish alias
-alias vi='nvim'
+alias vi='neovide'
 alias someapi='cd ~/project/someone-api'
 alias somefront='cd ~/project/someone-front'
 alias ide='sh ~/ide.sh'
@@ -284,7 +284,7 @@ alias swiftformat="swift-format -r . -i"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" hook $argv | source
+# eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" hook $argv | source
 # <<< conda initialize <<<
 
 ## >>> starship config ############################################################
@@ -293,3 +293,5 @@ eval /Users/shimozawakenta/opt/anaconda3/bin/conda "shell.fish" hook $argv | sou
 #starship init fish | source
 #export STARSHIP_CONFIG=~/.starship/config.toml
 ###############################################################################
+alias gcmt=sh /Users/shimozawakenta/commands/lil-cmt/lil-cmt.sh
+alias gcmt=sh /Users/shimozawakenta/commands/lil-cmt/lil-cmt.sh

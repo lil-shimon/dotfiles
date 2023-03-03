@@ -1,4 +1,5 @@
 vim.cmd('autocmd!')
+vim.cmd('colorscheme darcula')
 
 vim.scriptencoding = 'utf-8'
 
@@ -43,4 +44,3 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 vim.opt.formatoptions:append { 'r' }
 
 vim.wo.number = true
-

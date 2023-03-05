@@ -9,6 +9,13 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
+
+  -- ColorScheme solarized
+  -- use {
+  --  'svrana/neosolarized.nvim',
+  --  requires = { 'tjdevries/colorbuddy.nvim' }
+  --}
+
   -- Lualine
   use 'hoob3rt/lualine.nvim'
   -- LSP
@@ -42,7 +49,9 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   -- Custom buffer line
   use 'akinsho/nvim-bufferline.lua'
-  -- Colorizer
+  -- Flutter
+  use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- Colorizr
   use 'norcalli/nvim-colorizer.lua'
   -- Lspsaga
   use 'glepnir/lspsaga.nvim'
@@ -59,4 +68,8 @@ packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
   -- Darcula colorscheme
   use 'doums/darcula'
+  use 'folke/tokyonight.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
+  -- Terminal
+  use "akinsho/toggleterm.nvim"
 end)

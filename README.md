@@ -8,5 +8,3 @@
 - [edex]()
 - [tmux]()
 
-## neovim package manager
-- [packer](https://github.com/wbthomason/packer.nvim)

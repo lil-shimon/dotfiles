@@ -8,7 +8,5 @@
 - [edex]()
 - [tmux]()
 
-## neovim plugin list
-
-- [vim-plug](./nvim/init.vim)
-- [dein](./nvim/dein.toml)
+## neovim package manager
+- [packer](https://github.com/wbthomason/packer.nvim)

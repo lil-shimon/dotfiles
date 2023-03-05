@@ -1,5 +1,5 @@
 vim.cmd('autocmd!')
-vim.cmd('colorscheme darcula')
+vim.cmd('colorscheme darkblue')
 
 vim.scriptencoding = 'utf-8'
 
@@ -40,8 +40,8 @@ vim.cmd [[colorscheme tokyonight]]
 
 -- Turn off paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = '*',
-  command = 'set nopaste'
+	pattern = '*',
+	command = 'set nopaste'
 })
 
 vim.opt.formatoptions:append { 'r' }

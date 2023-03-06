@@ -105,7 +105,6 @@ alias nvm="nv"
 # set -x LSCOLORS gxfxcxdxbxegedabagacad
 
 # fish alias
-alias vi='neovide'
 alias someapi='cd ~/project/someone-api'
 alias somefront='cd ~/project/someone-front'
 alias ide='sh ~/ide.sh'
@@ -151,6 +150,7 @@ alias bmmz="cd ~/questar/back.mamozon.com"
 alias smmz="cd ~/questar/sign.mamozon.com"
 alias ssmmz="cd ~/questar/signs.mamozon.com"
 alias nvimconf='cd ~/.config/nvim; and nvim'
+alias vi='nvim'
 alias la='ls -a'
 alias sgnl="open -a '/Applications/Google Chrome.app' http://test1.example.com"
 alias dbsgnl="open -a '/Applications/Google Chrome.app' http://test1.example.com:8080"

@@ -72,4 +72,11 @@ packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   -- Terminal
   use "akinsho/toggleterm.nvim"
+  -- Comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 end)

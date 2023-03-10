@@ -21,18 +21,18 @@ nvim_lsp.tsserver.setup {
 }
 
 -- Lua
-nvim_lsp.sumneko_lua.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the lang server to recognize the 'vim' global
-        globals = { "vim" }
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
-      }
-    }
-  }
-}
+-- nvim_lsp.lua_lsp.setup {
+--   on_attach = on_attach,
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         -- Get the lang server to recognize the 'vim' global
+--         globals = { "vim" }
+--       },
+--       workspace = {
+--         library = vim.api.nvim_get_runtime_file("", true),
+--         checkThirdParty = false
+--       }
+--     }
+--   }
+-- }

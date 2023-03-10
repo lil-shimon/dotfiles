@@ -20,16 +20,25 @@ if (not status) then return end
 -- Other
 -- when open lsp finder and wanna jump to place where code
 -- type o is working
-saga.init_lsp_saga {
+--
+-- old (before break change)
+-- saga.init_lsp_saga {
+--   server_filetype_map = {}
+-- }
+
+saga.setup {
   server_filetype_map = {}
 }
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<cr>', opts)
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<cr>', opts)
-vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<cr>', opts)
-vim.keymap.set('n', ' k', '<Cmd>Lspsaga lsp_finder<cr>', opts)
-vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<cr>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<cr>', opts)
-vim.keymap.set('n', '<C-k>', '<Cmd>Lspsaga rename<cr>', opts)
-vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)
+
+local keymap = vim.keymap.set
+
+keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<cr>', opts)
+keymap('n', 'K', '<Cmd>Lspsaga hover_doc<cr>', opts)
+keymap('n', 'gd', '<Cmd>Lspsaga lsp_finder<cr>', opts)
+keymap('n', ' k', '<Cmd>Lspsaga lsp_finder<cr>', opts)
+keymap('n', 'gp', '<Cmd>Lspsaga peek_definition<cr>', opts)
+keymap('n', 'gr', '<Cmd>Lspsaga rename<cr>', opts)
+keymap('n', '<C-k>', '<Cmd>Lspsaga rename<cr>', opts)
+keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)

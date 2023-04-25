@@ -20,6 +20,8 @@ vim.opt.scrolloff = 10
 vim.opt.shell = 'fish'
 vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 
+vim.cmd [[ set sessionoptions-=blank]]
+
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smarttab = true

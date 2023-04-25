@@ -11,6 +11,10 @@
 #set PATH /usr/local/bin /usr/sbin $PATH
 set -x PATH ~/flutter/bin $PATH
 
+# ruby path (rbenv)
+set -x PATH $HOME/.rbenv/bin $PATH
+status --is-interactive; and source (rbenv init -|psub)
+
 set -x PATH ~/Qt/5.15.2/clang_64/bin/:$PATH
 ## <<< flutter config #########################################################
 #

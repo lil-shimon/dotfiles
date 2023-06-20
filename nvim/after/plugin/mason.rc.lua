@@ -8,7 +8,7 @@ if (not status2) then return end
 -- :Mason to open dashboard
 mason.setup {}
 lspconfig.setup {
-  ensure_installed = { 'tailwindcss', 'phpactor', 'pylsp', 'pyright', 'intelephense' }
+  ensure_installed = { 'tailwindcss', 'pylsp', 'pyright', 'intelephense' }
 }
 
 require 'lspconfig'.tailwindcss.setup {}

@@ -2,7 +2,7 @@ vim.cmd('autocmd!')
 
 -- set ColorScheme
 -- vim.cmd [[colorscheme tokyonight]]
-vim.cmd('colorscheme darkblue')
+vim.cmd [[colorscheme gruvbox]]
 
 vim.scriptencoding = 'utf-8'
 

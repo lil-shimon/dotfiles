@@ -68,7 +68,8 @@ packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
   -- Darcula colorscheme
   use 'doums/darcula'
-  use 'folke/tokyonight.nvim'
+  -- Gruvbox
+  use 'morhetz/gruvbox'
   use "lukas-reineke/indent-blankline.nvim"
   -- Terminal
   use "akinsho/toggleterm.nvim"

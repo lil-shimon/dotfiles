@@ -86,7 +86,7 @@ require("lazy").setup({
     opts = {},
     keys = {
       {
-        "s",
+        "f",
         mode = { "n", "x", "o" },
         function()
           require("flash").jump()
@@ -94,7 +94,7 @@ require("lazy").setup({
         desc = "Flash",
       },
       {
-        "S",
+        "F",
         mode = { "n", "o", "x" },
         function()
           require("flash").treesitter()

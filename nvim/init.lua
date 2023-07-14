@@ -102,6 +102,17 @@ require("lazy").setup({
         desc = "Flash Treesitter",
       },
     },
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+
+    },
+    dependencies = {
+      "munifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
   }
 })
 
@@ -123,3 +134,4 @@ require('other')
 require('p-tree')
 require('p-yanky')
 require('p-comment')
+require('p-noice')

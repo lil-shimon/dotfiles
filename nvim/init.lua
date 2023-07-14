@@ -39,6 +39,7 @@ require("lazy").setup({
   },
 
   "nvim-telescope/telescope.nvim",
+  "nvim-telescope/telescope-file-browser.nvim",
   "nvim-lua/plenary.nvim",
 
   "hrsh7th/cmp-nvim-lsp",

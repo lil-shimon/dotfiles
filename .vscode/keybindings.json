@@ -1,179 +1,321 @@
-[
-  {
-    "command": "editor.action.formatDocument",
-    "key": "ctrl+shift+l",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+{
+  "[blade]": {
+    "editor.defaultFormatter": "onecentlin.laravel-blade"
   },
-  {
-    "command": "-editor.action.formatDocument",
-    "key": "shift+alt+f",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnType": false,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
   },
-  // {
-  //   "key": "shift+Enter",
-  //   "command": "workbench.action.terminal.focus",
-  //   "when":"editorTextFocus"
-  // },
-  // {
-  //   "key": "shift+Enter",
-  //   "command": "workbench.action.focusFirstEditorGroup",
-  //   "when":"terminalFocus"
-  // },
-  {
-    "command": "workbench.action.splitEditor",
-    "key": "shift+Enter",
-    "when": "editorTextFocus"
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  {
-    "command": "-workbench.action.splitEditor",
-    "key": "cmd+\\"
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  {
-    "command": "-workbench.action.moveEditorLeftInGroup",
-    "key": "cmd+k shift+cmd+left"
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  {
-    "command": "-workbench.action.moveEditorRightInGroup",
-    "key": "cmd+k shift+cmd+right"
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
-  {
-    "command": "-workbench.action.moveActiveEditorGroupLeft",
-    "key": "cmd+k left"
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnType": true
   },
-  {
-    "command": "-workbench.action.moveActiveEditorGroupRight",
-    "key": "cmd+k right"
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  {
-    "command": "-python.execSelectionInTerminal",
-    "key": "shift+enter",
-    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  {
-    "command": "projectManager.listGitProjects#sideBarGit",
-    "key": "cmd+o"
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  {
-    "command": "expand_region",
-    "key": "ctrl+=",
-    "when": "editorTextFocus"
+  "blade.format.enable": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.wordWrap": "off",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true,
+    "source.organizeImports": true
   },
-  {
-    "command": "undo_expand_region",
-    "key": "ctrl+-",
-    "when": "editorTextFocus && editorHasSelection"
+  "editor.codeLensFontFamily": "JetBrains Mono",
+  // カーソルのスムース移動
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontWeight": "bold",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": false,
+  "editor.guides.indentation": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.inlayHints.fontFamily": "JetBrains Mono",
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.suggest.insertMode": "replace",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+  "eslint.debug": true,
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "git.autofetch": true,
+  "gitlens.defaultDateLocale": "system",
+  "gitlens.defaultTimeFormat": null,
+  "notebook.formatOnSave.enabled": true,
+  "prettier.requireConfig": true,
+  "prettier.semi": true,
+
+  "projectManager.git.baseFolders": [
+    "$home/workspace"
+  ],
+  "projectManager.sortList": "Recent",
+  "sortJSON.orderOverride": [
+    "name",
+    "version",
+    "description",
+    "author",
+    "license"
+  ],
+  "sortJSON.orderUnderride": [
+    "dependencies",
+    "devDependencies"
+  ],
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.env.osx": {},
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.profiles.osx": {
+    "fish": {
+      "args": [
+        "-l"
+      ],
+      "path": "/opt/homebrew/bin/fish"
+    }
   },
-  {
-    "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+e"
+  "terminal.integrated.scrollback": 10000,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "CHANGED",
+    "REVIEW",
+    "NOTE:"
+  ],
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.easymotion": true,
+  "vim.foldfix": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
   },
-  {
-    "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+e",
-    "when": "editorTextFocus"
+  "vim.highlightedyank.color": "rgba(250, 97, 89, 0.7)",
+  "vim.highlightedyank.duration": 300,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "white",
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "after": [
+        "<Esc>"
+      ],
+      "before": [
+        "j",
+        "j"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "after": [
+        ":w!"
+      ],
+      "before": [
+        "<leader>",
+        "w"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "command": [
+        ":q!"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "command": [
+        ":x!"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "command": [
+        "editor.action.peekDeclaration"
+      ]
+    },
+    {
+      "before": [
+        "<c-a>"
+      ],
+      "command": [
+        "g",
+        "g",
+        "V",
+        "G"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "command": [
+        "editor.action.mark.next"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "command": [
+        "editor.action.mark.prev"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "a"
+      ],
+      "command": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "after": [
+        "d",
+        "d"
+      ],
+      "before": [
+        "<leader>",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    }
+  ],
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "[Stranger Things]": {
+      "activityBar.background": "#000000",
+      "activityBar.foreground": "#ffffff",
+      "activityBarBadge.background": "#ff0000",
+      "editor.background": "#000000",
+      "editor.foreground": "#ffffff",
+      "editor.inactiveSelectionBackground": "#330000",
+      "editor.lineHighlightBackground": "#220000",
+      "editor.selectionBackground": "#440000",
+      "editorGroupHeader.tabsBackground": "#000000",
+      "editorGroupHeader.tabsBorder": "#ff0000",
+      "editorLineNumber.foreground": "#cc0000",
+      "list.activeSelectionBackground": "#440000",
+      "list.activeSelectionForeground": "#ffffff",
+      "list.hoverBackground": "#220000",
+      "list.hoverForeground": "#ffffff",
+      "list.inactiveSelectionBackground": "#330000",
+      "sideBar.background": "#000000",
+      "sideBar.foreground": "#ffffff",
+      "sideBarSectionHeader.background": "#330000",
+      "sideBarSectionHeader.foreground": "#ffffff",
+      "statusBar.background": "#000000",
+      "statusBar.foreground": "#ffffff",
+      "statusBarItem.hoverBackground": "#550000",
+      "tab.activeBackground": "#220000",
+      "tab.activeForeground": "#ffffff",
+      "tab.inactiveBackground": "#330000",
+      "tab.inactiveForeground": "#cc0000",
+      "terminal.ansiBlack": "#000000",
+      "terminal.ansiBlue": "#0000ff",
+      "terminal.ansiBrightBlack": "#555555",
+      "terminal.ansiBrightBlue": "#5555ff",
+      "terminal.ansiBrightCyan": "#55ffff",
+      "terminal.ansiBrightGreen": "#55ff55",
+      "terminal.ansiBrightMagenta": "#ff55ff",
+      "terminal.ansiBrightRed": "#ff5555",
+      "terminal.ansiBrightWhite": "#ffffff",
+      "terminal.ansiBrightYellow": "#ffff55",
+      "terminal.ansiCyan": "#00ffff",
+      "terminal.ansiGreen": "#00ff00",
+      "terminal.ansiMagenta": "#ff00ff",
+      "terminal.ansiRed": "#ff0000",
+      "terminal.ansiWhite": "#ffffff",
+      "terminal.ansiYellow": "#ffff00",
+      "terminal.background": "#000000",
+      "terminal.foreground": "#ffffff",
+      "titleBar.activeBackground": "#000000",
+      "titleBar.activeForeground": "#ff0000",
+      "titleBar.inactiveBackground": "#330000",
+      "titleBar.inactiveForeground": "#cc0000"
+    },
+    "tab.activeBackground": "#483D8B"
   },
-  {
-    "command": "explorer.newFile",
-    "key": "a",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "renameFile",
-    "key": "r",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.copy",
-    "key": "c",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.paste",
-    "key": "p",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "deleteFile",
-    "key": "d",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "key": "ctrl+n",
-    "when": "editorFocus"
-  },
-  {
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "key": "ctrl+n",
-    "when": "editorFocus"
-  },
-  {
-    "command": "-workbench.action.files.save",
-    "key": "cmd+s"
-  },
-  {
-    "command": "saveAll",
-    "key": "cmd+s"
-  },
-  {
-    "command": "-editor.action.addSelectionToNextFindMatch",
-    "key": "cmd+d",
-    "when": "editorFocus"
-  },
-  {
-    "command": "-extension.vim_cmd+d",
-    "key": "cmd+d",
-    "when": "editorTextFocus && vim.active && vim.use<D-d> && !inDebugRepl"
-  },
-  {
-    "command": "workbench.action.splitEditor",
-    "key": "cmd+d"
-  },
-  {
-    "command": "-workbench.action.splitEditor",
-    "key": "cmd+\\"
-  },
-  {
-    "command": "turboConsoleLog.displayLogMessage",
-    "key": "cmd+i"
-  },
-  {
-    "command": "-turboConsoleLog.displayLogMessage",
-    "key": "ctrl+alt+l"
-  },
-  {
-    "command": "-undo",
-    "key": "cmd+z"
-  },
-  {
-    "command": "-interactiveEditor.unstash",
-    "key": "cmd+z",
-    "when": "interactiveEditorHasStashedSession && !editorReadonly"
-  },
-  {
-    "command": "workbench.action.toggleZenMode",
-    "key": "cmd+z"
-  },
-  {
-    "command": "-workbench.action.toggleZenMode",
-    "key": "cmd+k z"
-  },
-  {
-    "command": "-editor.action.selectAll",
-    "key": "cmd+a"
-  },
-  {
-    "command": "editor.action.selectAll",
-    "key": "cmd+a"
-  },
-  {
-    "command": "workbench.action.terminal.toggleTerminal",
-    "key": "ctrl+\\",
-    "when": "terminal.active"
-  },
-  {
-    "command": "-workbench.action.terminal.toggleTerminal",
-    "key": "ctrl+`",
-    "when": "terminal.active"
-  }
-]
+  "workbench.colorTheme": "Everforest Dark",
+  // 別のファイルをクリックするとさっき見ていたファイルが閉じられるのを阻止
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.tree.indent": 4,
+  "workbench.view.alwaysShowHeaderActions": true,
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false
+}

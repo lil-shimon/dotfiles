@@ -5,7 +5,7 @@ shell:
     - --command
     - tmux attach || tmux
 font:
-  size: 21
+  size: 27
   normal:
     family: Hack Nerd Font
     style: Regular

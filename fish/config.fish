@@ -299,3 +299,16 @@ alias swiftformat="swift-format -r . -i"
 ###############################################################################
 alias gcmt=sh /Users/shimozawakenta/commands/lil-cmt/lil-cmt.sh
 alias gcmt=sh /Users/shimozawakenta/commands/lil-cmt/lil-cmt.sh
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+

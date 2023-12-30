@@ -29,9 +29,6 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "WhoIsSethDaniel/mason-tool-installer.nvim",
 
-  -- 代替ファイル切り替え
-  "rmagatti/alternate-toggler",
-
   -- オートペアリング（括弧やクォートの自動補完）
   "windwp/nvim-autopairs",
 
@@ -93,10 +90,6 @@ require("lazy").setup({
 
   -- ターミナルのトグル
   "akinsho/toggleterm.nvim",
-
-  -- セッション管理
-  "tpope/vim-obsession",
-  "dhruvasagar/vim-prosession",
 
   -- Git blame情報の表示
   "f-person/git-blame.nvim",

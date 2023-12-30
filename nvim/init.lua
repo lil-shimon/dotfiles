@@ -17,6 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- エディタのビジュアルテーマ
   "sainnhe/everforest",
+  "joshdick/onedark.vim",
+  "folke/tokyonight.nvim",
 
   -- ステータスラインのカスタマイズ
   "nvim-lualine/lualine.nvim",

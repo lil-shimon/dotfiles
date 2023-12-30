@@ -115,7 +115,7 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {},
     keys = {
-      { "f", mode = { "n", "x", "o" }, function() require("flash").jump() end,     desc = "Flash" },
+      { "f", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
       { "F", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
     },
   },
@@ -129,7 +129,17 @@ require("lazy").setup({
       "munifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
-  }
+  },
+
+  -- カーソルがいる場所のスコープを矢印で示してくれる
+  -- vscodeでいうところのindent raindowなどの機能も提供してくれる
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
+    config = function()
+      require("hlchunk").setup({})
+    end
+  },
 })
 
 require('base')

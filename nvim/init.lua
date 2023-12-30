@@ -137,10 +137,7 @@ require("lazy").setup({
   -- vscodeでいうところのindent raindowなどの機能も提供してくれる
   {
     "shellRaining/hlchunk.nvim",
-    event = { "UIEnter" },
-    config = function()
-      require("hlchunk").setup({})
-    end
+    event = { "UIEnter" }
   },
 })
 
@@ -163,3 +160,4 @@ require('p-tree')
 require('p-yanky')
 require('p-comment')
 require('p-noice')
+require('p-hlchunk')

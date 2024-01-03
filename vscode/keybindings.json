@@ -1,0 +1,32 @@
+[
+    //
+    // vscode-neovim
+    //
+    // jj -> esc(ノーマルモード)
+    {
+        "command": "vscode-neovim.compositeEscape1",
+        "key": "j",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "j"
+    },
+    // 定義元ジャンプ
+    // Keyを考え中。g dだとトップに行けなくなる（gg）
+    // {
+    //     "key": "g d",
+    //     "command": "editor.action.goToDeclaration",
+    //     "when": "neovim.mode == normal && editorTextFocus"
+    // },
+    // 定義元ジャンプ前に戻る
+    // Keyを考え中。p dだとペーストできなくなる
+    // {
+    //     "key":  "p d",
+    //     "command": "workbench.action.navigateBack",
+    //     "when": "neovim.mode == normal && editorTextFocus",
+    // },
+    // ホバー
+    {
+        "key": "shift k",
+        "command": "editor.action.showHover",
+        "when": "neovim.mode == normal && editorTextFocus"
+    }
+]

@@ -1,3 +1,5 @@
+if not vim.g.vscode != 1 then
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -154,3 +156,6 @@ require('p-yanky')
 require('p-comment')
 require('p-noice')
 require('p-hlchunk')
+else
+  print('vscode')
+end

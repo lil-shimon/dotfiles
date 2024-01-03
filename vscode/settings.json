@@ -1,88 +1,49 @@
 {
-  "[blade]": {
-    "editor.defaultFormatter": "onecentlin.laravel-blade"
-  },
-  "[go]": {
-    "editor.defaultFormatter": "golang.go",
-    "editor.formatOnType": false,
-    "editor.insertSpaces": false,
-    "editor.tabSize": 4
-  },
-  "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
-    "editor.formatOnType": true
-  },
-  "blade.format.enable": true,
-  "cSpell.userWords": [
-    "asasuma",
-    "backtest",
-    "bitflyer",
-    "ccxt",
-    "cosme",
-    "dotenv",
-    "questar",
-    "supabase",
-    "timeframe"
-  ],
-  "editor.codeLensFontFamily": "JetBrains Mono",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "JetBrains Mono",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontLigatures": true,
+  // editor font settings
+  "editor.fontFamily": "JetBrainsMonoExtraBold Nerd Font",
   "editor.fontSize": 16,
-  "editor.formatOnPaste": true,
+  // terminal font settings
+  "terminal.integrated.fontFamily": "JetBrainsMonoExtraBold Nerd Font",
+  "terminal.integrated.fontSize": 18,
+  // format on save
   "editor.formatOnSave": true,
-  "editor.inlayHints.fontFamily": "JetBrains Mono",
-  "editor.inlineSuggest.enabled": true,
+  // minimap
   "editor.minimap.enabled": false,
-  "editor.mouseWheelZoom": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.tabSize": 2,
+  // cursor smooth
+  "editor.cursorSmoothCaretAnimation": "on",
+  // eslint
   "eslint.debug": true,
   "eslint.enable": true,
-  "eslint.format.enable": true,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
-  "git.autofetch": true,
-  "notebook.formatOnSave.enabled": true,
-  "prettier.requireConfig": true,
-  "prettier.semi": true,
-  "sortJSON.orderOverride": [
-    "name",
-    "version",
-    "description",
-    "author",
-    "license"
-  ],
-  "sortJSON.orderUnderride": [
-    "dependencies",
-    "devDependencies"
-  ],
-  "terminal.integrated.fontFamily": "JetBrains Mono",
-  "typescript.inlayHints.parameterNames.enabled": "all",
-  "vim.easymotion": true,
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
+  // format
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "vim.highlightedyank.color": "rgba(250, 97, 89, 0.7)",
-  "vim.highlightedyank.duration": 300,
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.textColor": "white",
-  "vim.hlsearch": true,
-  "vim.incsearch": true,
-  "vim.leader": "<space>",
-  "vim.useCtrlKeys": true,
-  "vim.useSystemClipboard": true,
-  "window.zoomLevel": 1,
+  // vscode-neovim
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  // typescript
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  // neovim ui modifier
+  // 初期設定値をそのままコピー（拡張機能ページ参照）
+  "nvim-ui.nvimColorNormal": "#ffc600",
+  "nvim-ui.nvimColorInsert": "#D32F2F",
+  "nvim-ui.nvimColorVisual": "#673AB7",
+  "nvim-ui.nvimColorReplace": "#000",
+  "nvim-ui.nvimColorCustomizationKeys": [
+    "tab.activeBorder",
+    "editorCursor.foreground"
+  ],
   "workbench.colorCustomizations": {
+    "tab.activeBorder": "#ffc600",
+    "editorCursor.foreground": "#ffc600",
     "[Stranger Things]": {
       "activityBar.background": "#000000",
       "activityBar.foreground": "#ffffff",
@@ -136,8 +97,8 @@
     },
     "tab.activeBackground": "#483D8B"
   },
-  "workbench.colorTheme": "Everforest Dark",
-  "workbench.view.alwaysShowHeaderActions": true,
-  "zenMode.fullScreen": false,
-  "zenMode.hideLineNumbers": false
-}
+  "workbench.colorTheme": "Mayukai Semantic Mirage",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+ }

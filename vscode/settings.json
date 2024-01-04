@@ -1,10 +1,10 @@
 {
   // editor font settings
   "editor.fontFamily": "JetBrainsMonoExtraBold Nerd Font",
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   // terminal font settings
   "terminal.integrated.fontFamily": "JetBrainsMonoExtraBold Nerd Font",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 18,
   // format on save
   "editor.formatOnSave": true,
   // minimap
@@ -100,5 +100,6 @@
   "workbench.colorTheme": "Tokyo Night",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
- }
+  },
+  "workbench.iconTheme": "material-icon-theme"
+}

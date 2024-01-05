@@ -1,6 +1,6 @@
 {
   // editor font settings
-  "editor.fontFamily": "JetBrainsMonoExtraBold Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontSize": 16,
   // terminal font settings
   "terminal.integrated.fontFamily": "JetBrainsMonoExtraBold Nerd Font",

@@ -2,6 +2,7 @@
 alefragnani.project-manager
 asvetliakov.vscode-neovim
 dbaeumer.vscode-eslint
+denoland.vscode-deno
 doinkythederp.nasm-language-support
 dustypomerleau.rust-syntax
 eamodio.gitlens

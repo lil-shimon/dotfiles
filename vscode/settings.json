@@ -3,7 +3,7 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontSize": 16,
   // terminal font settings
-  "terminal.integrated.fontFamily": "JetBrainsMonoExtraBold Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontSize": 18,
   // format on save
   "editor.formatOnSave": true,
@@ -97,9 +97,11 @@
     },
     "tab.activeBackground": "#483D8B"
   },
-  "workbench.colorTheme": "Tokyo Night",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "nxConsole.showNodeVersionOnStartup": false,
+  "workbench.colorTheme": "Tokyo Night",
+  "diffEditor.ignoreTrimWhitespace": false
 }

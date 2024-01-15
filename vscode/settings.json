@@ -103,5 +103,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "nxConsole.showNodeVersionOnStartup": false,
   "workbench.colorTheme": "Tokyo Night",
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

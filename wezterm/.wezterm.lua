@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 -- UI
-config.color_scheme = 'MaterialDesignColors'
+config.color_scheme = 'ayu'
 config.font_size = 16
 config.font = wezterm.font("JetBrains Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
@@ -26,8 +26,9 @@ local keys = {
 local keybind = keys.keys
 -- Leaderキーの設定
 config.leader = { key = ',', mods = "CTRL", timeout_milliseconds = 2000 }
+config.keybind = keybind
 
 -- Tab
-use_fancy_tab_bar = false
+config.use_fancy_tab_bar = false
 
 return config

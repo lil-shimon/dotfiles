@@ -4,9 +4,7 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
   sources = {
     formatting.prettierd.with({
-      extra_args = { "--single-quote", "--trailing-comma=all",
-        "--single-attribute-per-line", "--print-width=120",
-      }
+      -- 設定を追加しないのでプロジェクトのprettier設定を参照する
     }),
   },
 })

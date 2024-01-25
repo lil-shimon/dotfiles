@@ -21,14 +21,15 @@ local keys = {
   { key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection 'Right' },
   { key = 'k', mods = 'LEADER', action = act.ActivatePaneDirection 'Up' },
   { key = 'j', mods = 'LEADER', action = act.ActivatePaneDirection 'Down' },
+  -- copy
+  { key = 'c', mods = 'LEADER', action = act.CopyTo 'ClipboardAndPrimarySelection' },
+  -- past
+  { key = 'v', mods = 'LEADER', action = act.PasteFrom 'Clipboard' },
 }
 -- keybindの設定
 local keybind = keys.keys
 -- Leaderキーの設定
 config.leader = { key = ',', mods = "CTRL", timeout_milliseconds = 2000 }
-config.keybind = keybind
-
--- Tab
-config.use_fancy_tab_bar = false
+config.keys = keybind
 
 return config

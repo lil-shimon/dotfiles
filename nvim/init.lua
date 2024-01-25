@@ -66,8 +66,14 @@ else
     "glepnir/lspsaga.nvim",
 
     -- スニペット機能
-    "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    {
+      "L3MON4D3/LuaSnip",
+      -- follow latest release.
+      version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+      -- install jsregexp (optional!).
+      build = "make install_jsregexp"
+    },
 
     -- TypeScriptに特化したLSP機能
     "jose-elias-alvarez/typescript.nvim",
@@ -182,5 +188,6 @@ else
   require('p-yanky')
   require('p-comment')
   require('p-noice')
-  require('p-hlchunk')
+  -- TODO: fix cannot find p-hlchunk
+  -- require('p-hlchunk')
 end

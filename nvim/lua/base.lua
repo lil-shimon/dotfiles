@@ -16,6 +16,7 @@ opt.sidescrolloff = 5
 opt.hlsearch = true
 opt.incsearch = true
 
+-- マウス有効
 opt.mouse = 'a'
 opt.clipboard:append('unnamedplus')
 

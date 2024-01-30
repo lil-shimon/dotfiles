@@ -36,6 +36,14 @@ opt.swapfile = false
 opt.autoread = true
 bufferOpt.autoread = true
 
+-- バックアップファイルを生成しない
+opt.backup = false
+
+-- あまりよくわからない設定
+-- 全角文字を半角文字として扱う
+-- Vimだと'double'がよい
+opt.ambiwidth = 'single'
+
 -- 行数表示の横に余白を追加
 opt.signcolumn = 'yes'
 opt.list = true

@@ -11,6 +11,8 @@ require('lspsaga').setup({
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 -- エラーを表示
+-- TODO: エラーになるので、確認する
+-- コマンド直打ちでは機能している
 keymap("n", "D", "<cmd>Lspsaga show_line_diagnostic<CR>", opts)
 keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)
 

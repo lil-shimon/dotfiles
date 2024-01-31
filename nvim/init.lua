@@ -36,10 +36,10 @@ else
     "windwp/nvim-autopairs",
 
     -- マルチカーソル機能
-    "mg979/vim-visual-multi",
-
-    -- テキスト選択の拡張機能
-    "gcmt/wildfire.vim",
+    -- "mg979/vim-visual-multi",
+    --
+    -- -- テキスト選択の拡張機能
+    -- "gcmt/wildfire.vim",
 
     -- テキスト周りの操作のカスタマイズ（サラウンド）
     -- TODO: 使えるようにする
@@ -118,15 +118,15 @@ else
     "gbprod/yanky.nvim",
 
     -- フラッシュ機能（検索結果のハイライト）
-    {
-      "folke/flash.nvim",
-      event = "VeryLazy",
-      opts = {},
-      keys = {
-        { "f", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
-        { "F", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      },
-    },
+    -- {
+    --   "folke/flash.nvim",
+    --   event = "VeryLazy",
+    --   opts = {},
+    --   keys = {
+    --     { "f", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
+    --     { "F", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    --   },
+    -- },
 
     -- ノーティフィケーションとUI改善
     {
@@ -171,7 +171,10 @@ else
     {
       "sindrets/diffview.nvim"
     },
-
+    -- テキスト移動をより便利に
+    {
+      "skanehira/jumpcursor.vim",
+    },
     -- Git操作を簡単にする
     {
       "NeogitOrg/neogit",
@@ -206,4 +209,5 @@ else
   require('p-noice')
   -- TODO: fix cannot find p-hlchunk
   -- require('p-hlchunk')
+  require('p-jumpcursor')
 end

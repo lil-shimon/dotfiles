@@ -19,15 +19,4 @@ hlchunk.setup({
       "#c06f98",
     },
   }
-  -- indentのbackground colorが薄く白くなる設定
-  -- blank = {
-  --   enable = true,
-  --   chars = {
-  --     " ",
-  --   },
-  --   style = {
-  --     { bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("cursorline")), "bg", "gui") },
-  --     { bg = "",                                                                         fg = "" },
-  --   },
-  -- }
 })

@@ -64,6 +64,9 @@ else
     "hrsh7th/cmp-cmdline",
     "hrsh7th/nvim-cmp",
     "onsails/lspkind-nvim",
+
+    -- lspのUIを拡張
+    -- hover_docやshow_line_diagnosticなどの機能を提供してくれる
     "glepnir/lspsaga.nvim",
 
     -- スニペット機能

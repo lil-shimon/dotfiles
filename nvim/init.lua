@@ -171,10 +171,20 @@ else
     {
       "sindrets/diffview.nvim"
     },
-
     -- テキスト移動をより便利に
     {
       "skanehira/jumpcursor.vim",
+    },
+    -- Git操作を簡単にする
+    {
+      "NeogitOrg/neogit",
+      dependencies = {
+        "nvim-lua/plenary.nvim",         -- required by neogit
+        "sindrets/diffview.nvim",        -- optional - Diff integration
+
+        "nvim-telescope/telescope.nvim", -- optional
+      },
+      config = true
     }
   })
 

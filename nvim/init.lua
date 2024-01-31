@@ -21,6 +21,7 @@ else
     "sainnhe/everforest",
     "joshdick/onedark.vim",
     "folke/tokyonight.nvim",
+    "Mofiqul/vscode.nvim",
 
     -- ステータスラインのカスタマイズ
     "nvim-lualine/lualine.nvim",
@@ -166,6 +167,18 @@ else
     -- git diffをリッチに表示
     {
       "sindrets/diffview.nvim"
+    },
+
+    -- Git操作を簡単にする
+    {
+      "NeogitOrg/neogit",
+      dependencies = {
+        "nvim-lua/plenary.nvim",         -- required by neogit
+        "sindrets/diffview.nvim",        -- optional - Diff integration
+
+        "nvim-telescope/telescope.nvim", -- optional
+      },
+      config = true
     }
   })
 

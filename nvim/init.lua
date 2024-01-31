@@ -185,7 +185,11 @@ else
         "nvim-telescope/telescope.nvim", -- optional
       },
       config = true
-    }
+    },
+    -- camelCaseとかsnake_caseとかの単語の境界に移動できるプラグイン
+    {
+      "bkad/CamelCaseMotion",
+    },
   })
 
   require('base')
@@ -210,4 +214,5 @@ else
   -- TODO: fix cannot find p-hlchunk
   -- require('p-hlchunk')
   require('p-jumpcursor')
+  require('p-camel')
 end

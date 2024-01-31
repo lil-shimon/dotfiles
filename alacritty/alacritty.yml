@@ -7,16 +7,16 @@ shell:
 font:
   size: 18
   normal:
-    family: Hack Nerd Font
+    family: JetBrains Mono
     style: Regular
   bold:
     family: DroidSansMono Nerd Font
     style: Bold
   italic:
-    family: DroidSansMono Nerd Font
+    family: JetBrains Mono
     style: Italic
   bold_italic:
-    family: DroidSansMono Nerd Font
+    family: JetBrains Mono
     style: Bold Italic
 window:
   padding:
@@ -29,6 +29,23 @@ window:
 background_opacity: 0.99
 
 draw_bold_text_with_bright_colors: true
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # When set to `true`, selected text will be copied to both the primary and
+  # the selection clipboard. Otherwise, it will only be copied to the selection
+  # clipboard.
+  save_to_clipboard: true
 
 # # Cyberpunk-Neon colours
 # colors:

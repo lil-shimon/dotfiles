@@ -21,6 +21,7 @@ else
     "sainnhe/everforest",
     "joshdick/onedark.vim",
     "folke/tokyonight.nvim",
+    "Mofiqul/vscode.nvim",
 
     -- ステータスラインのカスタマイズ
     "nvim-lualine/lualine.nvim",

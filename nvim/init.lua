@@ -185,6 +185,10 @@ else
         "nvim-telescope/telescope.nvim", -- optional
       },
       config = true
+    },
+    -- 移動で記号などを無視してアルファベットの頭に移動できる
+    {
+      "kana/vim-smartword",
     }
   })
 
@@ -210,4 +214,5 @@ else
   -- TODO: fix cannot find p-hlchunk
   -- require('p-hlchunk')
   require('p-jumpcursor')
+  require('p-smartword')
 end

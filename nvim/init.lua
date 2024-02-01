@@ -172,6 +172,12 @@ else
       "sindrets/diffview.nvim"
     },
     -- テキスト移動をより便利に
+    -- 文字の先頭にいく(fで設定)
+    {
+      "hrsh7th/vim-eft",
+    },
+    -- テキスト移動をより便利に
+    -- 画面上全体から移動できる(ffで設定)
     {
       "skanehira/jumpcursor.vim",
     },
@@ -249,4 +255,5 @@ else
   require('p-smartword')
   require('p-camel')
   require('p-insx')
+  require('p-eft')
 end

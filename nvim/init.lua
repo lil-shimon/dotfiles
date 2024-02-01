@@ -194,6 +194,28 @@ else
     {
       "bkad/CamelCaseMotion",
     },
+    -- denops
+    {
+      "vim-denops/denops.vim",
+    },
+    -- ローマ字で日本語を検索できるプラグイン
+    {
+      "lambdalisue/kensaku.vim",
+      dependencies = {
+        "vim-denops/denops.vim",
+      }
+    },
+    -- 下記が機能有効化のためのプラグイン
+    -- nihon -> 日本
+    {
+      "lambdalisue/kensaku-search.vim",
+      config = function()
+        vim.keymap.set('c', "<CR>", '<Plug>(kensaku-search-replace)<CR>')
+      end,
+      dependencies = {
+        "lambdalisue/kensaku.vim",
+      }
+    }
   })
 
   require('base')

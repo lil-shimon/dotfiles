@@ -189,7 +189,11 @@ else
     -- 移動で記号などを無視してアルファベットの頭に移動できる
     {
       "kana/vim-smartword",
-    }
+    },
+    -- camelCaseとかsnake_caseとかの単語の境界に移動できるプラグイン
+    {
+      "bkad/CamelCaseMotion",
+    },
   })
 
   require('base')
@@ -215,4 +219,5 @@ else
   -- require('p-hlchunk')
   require('p-jumpcursor')
   require('p-smartword')
+  require('p-camel')
 end

@@ -12,6 +12,7 @@
   "denops.vim": { "branch": "main", "commit": "16d4bbc5c8e359ab50042f66dc5c9a2cdeabff6e" },
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "everforest": { "branch": "master", "commit": "89080db9637bb297b4c75ae1511e9f6f61ad9c78" },
+  "gin.vim": { "branch": "main", "commit": "c3b5cb3982d2b703b194c5aeff36cecb19081fa0" },
   "git-blame.nvim": { "branch": "master", "commit": "196602b570b1d754b7b8f9a9f75fa7bd88f12ef8" },
   "git.nvim": { "branch": "main", "commit": "741696687486f25f8b73d9e4c76ab2ede9998f39" },
   "gitsigns.nvim": { "branch": "main", "commit": "2c2463dbd82eddd7dbab881c3a62cfbfbe3c67ae" },

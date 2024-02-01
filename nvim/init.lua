@@ -190,7 +190,12 @@ else
 
         "nvim-telescope/telescope.nvim", -- optional
       },
-      config = true
+      config = true,
+    },
+    -- Git操作をVim上でする
+    -- Neogitとどちらが良いか検討する
+    {
+      "lambdalisue/gin.vim"
     },
     -- 移動で記号などを無視してアルファベットの頭に移動できる
     {

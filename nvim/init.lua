@@ -215,6 +215,12 @@ else
       dependencies = {
         "lambdalisue/kensaku.vim",
       }
+    },
+    -- インサートモードを便利にしてくれるプラグイン
+    -- 公式のREADMEの動画を参照
+    -- あまり便利度がわかっていない
+    {
+      "hrsh7th/nvim-insx",
     }
   })
 
@@ -242,4 +248,5 @@ else
   require('p-jumpcursor')
   require('p-smartword')
   require('p-camel')
+  require('p-insx')
 end

@@ -255,7 +255,7 @@ else
   require('p-comment')
   require('p-noice')
   -- TODO: fix cannot find p-hlchunk
-  -- require('p-hlchunk')
+  require('p-hlchunk')
   require('p-jumpcursor')
   require('p-smartword')
   require('p-camel')

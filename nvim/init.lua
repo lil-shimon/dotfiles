@@ -4,8 +4,7 @@ else
   local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
   if not vim.loop.fs_stat(lazypath) then
     print('err')
-    vim.fn.system({
-      "git",
+    vim.fn.system({ "git",
       "clone",
       "--filter=blob:none",
       "https://github.com/folke/lazy.nvim.git",
@@ -254,11 +253,11 @@ else
   require('p-yanky')
   require('p-comment')
   require('p-noice')
-  -- TODO: fix cannot find p-hlchunk
-  -- require('p-hlchunk')
+  require('p-hlchunk')
   require('p-jumpcursor')
   require('p-smartword')
   require('p-camel')
   require('p-insx')
   require('p-eft')
+  require('p-gitsigns')
 end

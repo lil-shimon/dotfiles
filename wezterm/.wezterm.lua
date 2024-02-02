@@ -10,6 +10,12 @@ end
 config.color_scheme = 'ayu'
 config.font_size = 16
 config.font = wezterm.font("JetBrains Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
+-- config.font = wezterm.font_with_fallback {
+--   {
+--     family = 'Monaspace Neon',
+--     harfbuzz_features = { 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig' },
+--   },
+-- }
 
 -- keybindings
 -- デフォルトの設定を無効化

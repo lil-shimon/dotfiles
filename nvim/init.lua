@@ -254,7 +254,6 @@ else
   require('p-yanky')
   require('p-comment')
   require('p-noice')
-  -- TODO: fix cannot find p-hlchunk
   require('p-hlchunk')
   require('p-jumpcursor')
   require('p-smartword')

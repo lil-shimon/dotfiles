@@ -18,9 +18,13 @@ else
   require("lazy").setup({
     -- エディタのビジュアルテーマ
     "sainnhe/everforest",
-    "joshdick/onedark.vim",
+    "navarasu/onedark.vim",
     "folke/tokyonight.nvim",
     "Mofiqul/vscode.nvim",
+    "projekt0n/github-nvim-theme",
+    "tiagovla/tokyodark.nvim",
+    "olivercederborg/poimandres.nvim",
+    "morhetz/gruvbox",
 
     -- ステータスラインのカスタマイズ
     "nvim-lualine/lualine.nvim",
@@ -231,6 +235,30 @@ else
     -- あまり便利度がわかっていない
     {
       "hrsh7th/nvim-insx",
+    },
+
+    -- Show match number and index for searching
+    {
+      "kevinhwang91/nvim-hlslens",
+      branch = "main",
+      keys = { "*", "#", "n", "N" },
+      config = function()
+        require("config.hlslens")
+      end,
+    },
+    -- Show keybindings
+    {
+      "folke/which-key.nvim",
+      event = "VeryLazy",
+      init = function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 300
+      end,
+      opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
     }
   })
 

@@ -1,5 +1,5 @@
 vim.g.everforest_diagnostic_line_highlight = 1
-vim.cmd('colorscheme vscode')
+vim.cmd('colorscheme tokyodark')
 vim.fn.sign_define({
   {
     name = 'DiagnosticSignError',

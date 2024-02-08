@@ -293,4 +293,5 @@ else
   require('p-eft')
   require('p-gitsigns')
   require('p-smoothcursor')
+  require('p-barbar')
 end

@@ -14,7 +14,6 @@ else
   end
   vim.opt.rtp:prepend(lazypath)
 
-
   require("lazy").setup({
     -- エディタのビジュアルテーマ
     "sainnhe/everforest",
@@ -247,19 +246,20 @@ else
       end,
     },
     -- Show keybindings
-    {
-      "folke/which-key.nvim",
-      event = "VeryLazy",
-      init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-      end,
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    },
+    -- MEMO: 入れるとaやsの際にキーバインドが表示されるので一旦コメントアウト
+    -- {
+    --   "folke/which-key.nvim",
+    --   event = "VeryLazy",
+    --   init = function()
+    --     vim.o.timeout = true
+    --     vim.o.timeoutlen = 300
+    --   end,
+    --   opts = {
+    --     -- your configuration comes here
+    --     -- or leave it empty to use the default settings
+    --     -- refer to the configuration section below
+    --   }
+    -- },
     -- Smooth scrolling
     {
       "gen740/SmoothCursor.nvim"

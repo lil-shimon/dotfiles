@@ -18,7 +18,7 @@ else
   require("lazy").setup({
     -- エディタのビジュアルテーマ
     "sainnhe/everforest",
-    "navarasu/onedark.vim",
+    "navarasu/onedark.nvim",
     "folke/tokyonight.nvim",
     "Mofiqul/vscode.nvim",
     "projekt0n/github-nvim-theme",

@@ -259,6 +259,10 @@ else
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
       }
+    },
+    -- Smooth scrolling
+    {
+      "gen740/SmoothCursor.nvim"
     }
   })
 
@@ -288,4 +292,5 @@ else
   require('p-insx')
   require('p-eft')
   require('p-gitsigns')
+  require('p-smoothcursor')
 end

@@ -1,5 +1,60 @@
 if vim.g.vscode == 1 then
-  print('vscode')
+  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+  if not vim.loop.fs_stat(lazypath) then
+    print('err')
+    vim.fn.system({ "git",
+      "clone",
+      "--filter=blob:none",
+      "https://github.com/folke/lazy.nvim.git",
+      "--branch=stable", -- latest stable release
+      lazypath,
+    })
+  end
+  vim.opt.rtp:prepend(lazypath)
+
+  require('lazy').setup({
+    {
+      "hrsh7th/vim-eft",
+    },
+    {
+      "gen740/SmoothCursor.nvim"
+    },
+    {
+      "skanehira/jumpcursor.vim",
+    },
+    {
+      "kevinhwang91/nvim-hlslens",
+      branch = "main",
+      keys = { "*", "#", "n", "N" },
+      config = function()
+        require("config.hlslens")
+      end,
+    },
+    -- ノーティフィケーションとUI改善
+    {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {},
+      dependencies = {
+        "munifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+      }
+    },
+
+    -- カーソルがいる場所のスコープを矢印で示してくれる
+    -- vscodeでいうところのindent raindowなどの機能も提供してくれる
+    {
+      "shellRaining/hlchunk.nvim",
+      event = { "UIEnter" }
+    },
+
+
+  })
+  require('p-eft')
+  require('p-smoothcursor')
+  require('p-jumpcursor')
+  require('p-noice')
+  require('p-hlchunk')
 else
   local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
   if not vim.loop.fs_stat(lazypath) then

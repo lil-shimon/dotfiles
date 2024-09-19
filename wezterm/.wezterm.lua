@@ -40,6 +40,13 @@ local keys = {
     mods = "NONE",
     action = act.PasteFrom "Clipboard"
   },
+  --  CTRL + SHIFT + tで新しいタブを開く
+  -- https://qiita.com/sonarAIT/items/0571c869e5f9ab3be817#%E3%82%BF%E3%83%96%E3%81%A8%E3%83%9A%E3%82%A4%E3%83%B3%E5%88%86%E3%81%91%E3%81%AE%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%E3%82%AD%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B
+  {
+    key = "t",
+    mods = "SHIFT|CTRL",
+    action = act.SpawnTab "CurrentPaneDomain"
+  }
 }
 -- keybindの設定
 local keybind = keys.keys

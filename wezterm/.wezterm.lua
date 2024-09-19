@@ -1,7 +1,6 @@
 local wezterm = require 'wezterm'
 
 local config = {}
-
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
@@ -39,8 +38,8 @@ local keys = {
   {
     event = { Down = { streak = 1, button = "Right" } },
     mods = "NONE",
-    action = wezterm.action.PasteFrom "Clipboard"
-  }
+    action = act.PasteFrom "Clipboard"
+  },
 }
 -- keybindの設定
 local keybind = keys.keys

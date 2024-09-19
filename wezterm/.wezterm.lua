@@ -31,11 +31,17 @@ local keys = {
   { key = 'c', mods = 'LEADER', action = act.CopyTo 'ClipboardAndPrimarySelection' },
   -- past
   { key = 'v', mods = 'LEADER', action = act.PasteFrom 'Clipboard' },
+  -- paste from mouse
+  {
+    event = { Down = { streak = 1, button = "Right" } },
+    mods = "NONE",
+    action = wezterm.action.PasteFrom "Clipboard"
+  }
 }
 -- keybindの設定
 local keybind = keys.keys
 -- Leaderキーの設定
-config.leader = { key = ',', mods = "CTRL", timeout_milliseconds = 2000 }
+config.leader = { key = ',', mods = "CMD|CTRL", timeout_milliseconds = 2000 }
 config.keys = keybind
 
 return config

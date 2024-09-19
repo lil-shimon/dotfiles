@@ -20,8 +20,6 @@ config.window_padding = {
 }
 
 -- keybindings
--- デフォルトの設定を無効化
-config.disable_default_key_bindings = true
 local act = wezterm.action
 -- `keybindings.lua`を読み込み
 local keys = {

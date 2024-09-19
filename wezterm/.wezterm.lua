@@ -32,6 +32,7 @@ local keys = {
   -- past
   { key = 'v', mods = 'LEADER', action = act.PasteFrom 'Clipboard' },
   -- paste from mouse
+  -- https://dev.classmethod.jp/articles/wezterm-get-started/
   {
     event = { Down = { streak = 1, button = "Right" } },
     mods = "NONE",

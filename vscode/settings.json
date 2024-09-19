@@ -1,16 +1,18 @@
 {
   // editor font settings
   "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontSize": 16,
+  "editor.fontSize": 13,
   // terminal font settings
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontSize": 16,
   // format on save
   "editor.formatOnSave": true,
   // minimap
   "editor.minimap.enabled": false,
   // cursor smooth
   "editor.cursorSmoothCaretAnimation": "on",
+  // relative number
+  "editor.lineNumbers": "on",
   // eslint
   "eslint.debug": true,
   "eslint.enable": true,
@@ -29,78 +31,90 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "vscode-neovim.compositeKeys": {
+    "jj": {
+      "command": "vscode-neovim.escape"
+    }
+  },
   // typescript
   "typescript.inlayHints.parameterNames.enabled": "literals",
   // neovim ui modifier
   // 初期設定値をそのままコピー（拡張機能ページ参照）
-  "nvim-ui.nvimColorNormal": "#ffc600",
-  "nvim-ui.nvimColorInsert": "#D32F2F",
-  "nvim-ui.nvimColorVisual": "#673AB7",
-  "nvim-ui.nvimColorReplace": "#000",
-  "nvim-ui.nvimColorCustomizationKeys": [
-    "tab.activeBorder",
-    "editorCursor.foreground"
+  // "nvim-ui.nvimColorNormal": "#ffc600",
+  // "nvim-ui.nvimColorInsert": "#D32F2F",
+  // "nvim-ui.nvimColorVisual": "#673AB7",
+  // "nvim-ui.nvimColorReplace": "#000",
+  // "nvim-ui.nvimColorCustomizationKeys": [
+  //   "tab.activeBorder",
+  //   "editorCursor.foreground"
+  // ],
+  // vscode-vim
+  // esc=jj
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
   ],
-  "workbench.colorCustomizations": {
-    "tab.activeBorder": "#ffc600",
-    "editorCursor.foreground": "#ffc600",
-    "[Stranger Things]": {
-      "activityBar.background": "#000000",
-      "activityBar.foreground": "#ffffff",
-      "activityBarBadge.background": "#ff0000",
-      "editor.background": "#000000",
-      "editor.foreground": "#ffffff",
-      "editor.inactiveSelectionBackground": "#330000",
-      "editor.lineHighlightBackground": "#220000",
-      "editor.selectionBackground": "#440000",
-      "editorGroupHeader.tabsBackground": "#000000",
-      "editorGroupHeader.tabsBorder": "#ff0000",
-      "editorLineNumber.foreground": "#cc0000",
-      "list.activeSelectionBackground": "#440000",
-      "list.activeSelectionForeground": "#ffffff",
-      "list.hoverBackground": "#220000",
-      "list.hoverForeground": "#ffffff",
-      "list.inactiveSelectionBackground": "#330000",
-      "sideBar.background": "#000000",
-      "sideBar.foreground": "#ffffff",
-      "sideBarSectionHeader.background": "#330000",
-      "sideBarSectionHeader.foreground": "#ffffff",
-      "statusBar.background": "#000000",
-      "statusBar.foreground": "#ffffff",
-      "statusBarItem.hoverBackground": "#550000",
-      "tab.activeBackground": "#220000",
-      "tab.activeForeground": "#ffffff",
-      "tab.inactiveBackground": "#330000",
-      "tab.inactiveForeground": "#cc0000",
-      "terminal.ansiBlack": "#000000",
-      "terminal.ansiBlue": "#0000ff",
-      "terminal.ansiBrightBlack": "#555555",
-      "terminal.ansiBrightBlue": "#5555ff",
-      "terminal.ansiBrightCyan": "#55ffff",
-      "terminal.ansiBrightGreen": "#55ff55",
-      "terminal.ansiBrightMagenta": "#ff55ff",
-      "terminal.ansiBrightRed": "#ff5555",
-      "terminal.ansiBrightWhite": "#ffffff",
-      "terminal.ansiBrightYellow": "#ffff55",
-      "terminal.ansiCyan": "#00ffff",
-      "terminal.ansiGreen": "#00ff00",
-      "terminal.ansiMagenta": "#ff00ff",
-      "terminal.ansiRed": "#ff0000",
-      "terminal.ansiWhite": "#ffffff",
-      "terminal.ansiYellow": "#ffff00",
-      "terminal.background": "#000000",
-      "terminal.foreground": "#ffffff",
-      "titleBar.activeBackground": "#000000",
-      "titleBar.activeForeground": "#ff0000",
-      "titleBar.inactiveBackground": "#330000",
-      "titleBar.inactiveForeground": "#cc0000"
-    },
-    "tab.activeBackground": "#483D8B"
-  },
+  // "workbench.colorCustomizations": {
+  //   "tab.activeBorder": "#ffc600",
+  //   "editorCursor.foreground": "#ffc600",
+  //   "[Stranger Things]": {
+  //     "activityBar.background": "#000000",
+  //     "activityBar.foreground": "#ffffff",
+  //     "activityBarBadge.background": "#ff0000",
+  //     "editor.background": "#000000",
+  //     "editor.foreground": "#ffffff",
+  //     "editor.inactiveSelectionBackground": "#330000",
+  //     "editor.lineHighlightBackground": "#220000",
+  //     "editor.selectionBackground": "#440000",
+  //     "editorGroupHeader.tabsBackground": "#000000",
+  //     "editorGroupHeader.tabsBorder": "#ff0000",
+  //     "editorLineNumber.foreground": "#cc0000",
+  //     "list.activeSelectionBackground": "#440000",
+  //     "list.activeSelectionForeground": "#ffffff",
+  //     "list.hoverBackground": "#220000",
+  //     "list.hoverForeground": "#ffffff",
+  //     "list.inactiveSelectionBackground": "#330000",
+  //     "sideBar.background": "#000000",
+  //     "sideBar.foreground": "#ffffff",
+  //     "sideBarSectionHeader.background": "#330000",
+  //     "sideBarSectionHeader.foreground": "#ffffff",
+  //     "statusBar.background": "#000000",
+  //     "statusBar.foreground": "#ffffff",
+  //     "statusBarItem.hoverBackground": "#550000",
+  //     "tab.activeBackground": "#220000",
+  //     "tab.activeForeground": "#ffffff",
+  //     "tab.inactiveBackground": "#330000",
+  //     "tab.inactiveForeground": "#cc0000",
+  //     "terminal.ansiBlack": "#000000",
+  //     "terminal.ansiBlue": "#0000ff",
+  //     "terminal.ansiBrightBlack": "#555555",
+  //     "terminal.ansiBrightBlue": "#5555ff",
+  //     "terminal.ansiBrightCyan": "#55ffff",
+  //     "terminal.ansiBrightGreen": "#55ff55",
+  //     "terminal.ansiBrightMagenta": "#ff55ff",
+  //     "terminal.ansiBrightRed": "#ff5555",
+  //     "terminal.ansiBrightWhite": "#ffffff",
+  //     "terminal.ansiBrightYellow": "#ffff55",
+  //     "terminal.ansiCyan": "#00ffff",
+  //     "terminal.ansiGreen": "#00ff00",
+  //     "terminal.ansiMagenta": "#ff00ff",
+  //     "terminal.ansiRed": "#ff0000",
+  //     "terminal.ansiWhite": "#ffffff",
+  //     "terminal.ansiYellow": "#ffff00",
+  //     "terminal.background": "#000000",
+  //     "terminal.foreground": "#ffffff",
+  //     "titleBar.activeBackground": "#000000",
+  //     "titleBar.activeForeground": "#ff0000",
+  //     "titleBar.inactiveBackground": "#330000",
+  //     "titleBar.inactiveForeground": "#cc0000"
+  //   },
+  //   "tab.activeBackground": "#483D8B"
+  // },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.iconTheme": "material-icon-theme",
   "nxConsole.showNodeVersionOnStartup": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
@@ -108,5 +122,38 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "window.customTitleBarVisibility": "windowed",
+  "cSpell.userWords": [
+    "aespa",
+    "Behaviour",
+    "codegen",
+    "Contentful",
+    "dataid",
+    "FANCLUB",
+    "FANCRUB",
+    "findy",
+    "gravide",
+    "ifrit",
+    "OPENAI",
+    "testid",
+    "typecheck",
+    "yaclock",
+    "Yusha"
+  ],
+  "terminal.integrated.env.osx": {},
+  "accessibility.voice.keywordActivation": "off",
+  "workbench.editor.revealIfOpen": false,
+  // default shell
+  "terminal.integrated.profiles.osx": {
+    "fish": {
+      "path": "/usr/local/bin/fish",
+      "args": ["-l"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "playwright.reuseBrowser": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "wallaby.node": "/Users/shimozawakenta/.nodebrew/current/bin/node",
+  "update.mode": "manual"
 }

@@ -1,14 +1,5 @@
 [
   //
-  // vscode-neovim
-  //
-  // jj -> esc(ノーマルモード)
-  {
-    "command": "vscode-neovim.compositeEscape1",
-    "key": "j",
-    "when": "neovim.mode == insert && editorTextFocus",
-    "args": "j"
-  },
   // 定義元ジャンプ
   // Keyを考え中。g dだとトップに行けなくなる（gg）
   // {
@@ -35,8 +26,13 @@
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+f6",
+    "key": "r",
     "command": "-editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+f6",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
   }
 ]

@@ -23,6 +23,8 @@ keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
 keymap.set('n', 'tn', ':tabnext<Return>', { silent = true })
 -- Previous tab
 keymap.set('n', 'tp', ':tabprevious<Return>', { silent = true })
+-- Close tab
+keymap.set('n', 'tq', ':tabclose<Return>', { silent = true })
 
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })

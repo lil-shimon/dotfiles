@@ -6,7 +6,9 @@ require('mason-tool-installer').setup {
     'json-lsp',
     'prettierd',
     'stylua',
-    'typescript-language-server'
+    'typescript-language-server',
+    'graphql-language-service-cli',
+    'lua-language-server'
   },
   auto_update = true,
 }

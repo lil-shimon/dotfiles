@@ -1,22 +1,23 @@
 local hlchunk = require("hlchunk")
 
 hlchunk.setup({
+  chunk = {
+    enable = true,
+  },
   -- indent-lineのcolor設定
   --
   line_num = {
+    enable = true,
     style = "#806d9c",
+    use_treesitter = true,
   },
 
   -- blankの設定
   --
   indent = {
+    enable = true,
     chars = {
-      "․",
-    },
-    style = {
-      { vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"), "" },
-      "#806d9c",
-      "#c06f98",
+      "│",
     },
   }
 })

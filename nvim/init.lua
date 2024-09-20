@@ -26,9 +26,13 @@ if vim.g.vscode == 1 then
       "kevinhwang91/nvim-hlslens",
       branch = "main",
       keys = { "*", "#", "n", "N" },
-      config = function()
-        require("config.hlslens")
-      end,
+      config= function()
+        require('hlslens').setup({
+            calm_down = true,
+            nearest_only = true,
+            nearest_float_when = 'always'
+        })
+      end
     },
     -- ノーティフィケーションとUI改善
     {
@@ -297,8 +301,12 @@ else
       branch = "main",
       keys = { "*", "#", "n", "N" },
       config = function()
-        require("config.hlslens")
-      end,
+        require('hlslens').setup({
+            calm_down = true,
+            nearest_only = true,
+            nearest_float_when = 'always'
+        })
+      end
     },
     -- Show keybindings
     -- MEMO: 入れるとaやsの際にキーバインドが表示されるので一旦コメントアウト

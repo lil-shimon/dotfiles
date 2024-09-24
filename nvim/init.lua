@@ -273,6 +273,7 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/neotest-jest"
     }
   }
 })
@@ -305,3 +306,4 @@ require('p-eft')
 require('p-gitsigns')
 require('p-smoothcursor')
 require('p-barbar')
+require('p-neotest')

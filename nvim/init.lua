@@ -265,6 +265,16 @@ require("lazy").setup({
   -- Smooth scrolling
   {
     "gen740/SmoothCursor.nvim"
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/neotest-jest"
+    }
   }
 })
 
@@ -296,3 +306,4 @@ require('p-eft')
 require('p-gitsigns')
 require('p-smoothcursor')
 require('p-barbar')
+require('p-neotest')

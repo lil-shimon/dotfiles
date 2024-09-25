@@ -275,6 +275,12 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/neotest-jest"
     }
+  },
+  {
+    "LhKipp/nvim-nu",
+    config = function()
+      require('nu').setup({})
+    end
   }
 })
 

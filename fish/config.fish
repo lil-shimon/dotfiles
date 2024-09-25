@@ -304,11 +304,11 @@ alias gcmt=sh /Users/shimozawakenta/commands/lil-cmt/lil-cmt.sh
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+# nushellの設定ファイルを.config配下を参照するように設定
+set --export XDG_CONFIG_HOME "$HOME/.config"
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
+# default shellはfish
+# fishが起動するときにnushellを起動する
+if status is-interactive
+    exec nu
+end

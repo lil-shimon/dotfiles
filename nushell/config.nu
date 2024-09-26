@@ -898,3 +898,6 @@ $env.config = {
         }
     ]
 }
+
+# https://starship.rs/guide/
+use ~/.cache/starship/init.nu

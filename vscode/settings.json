@@ -1,10 +1,8 @@
 {
-  // editor font settings
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontSize": 13,
+  "editor.fontSize": 12,
   // terminal font settings
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
   // format on save
   "editor.formatOnSave": true,
   // minimap
@@ -124,6 +122,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.customTitleBarVisibility": "windowed",
+
+  // Code Spell Checker
   "cSpell.userWords": [
     "aespa",
     "Behaviour",
@@ -136,11 +136,13 @@
     "gravide",
     "ifrit",
     "OPENAI",
+    "tauri",
     "testid",
     "typecheck",
     "yaclock",
     "Yusha"
   ],
+  "cSpell.allowCompoundWords": false,
   "terminal.integrated.env.osx": {},
   "accessibility.voice.keywordActivation": "off",
   "workbench.editor.revealIfOpen": false,
@@ -154,6 +156,24 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "playwright.reuseBrowser": true,
   "github.copilot.editor.enableAutoCompletions": true,
-  "wallaby.node": "/Users/shimozawakenta/.nodebrew/current/bin/node",
-  "update.mode": "manual"
+  "update.mode": "manual",
+  // vimが重いので追加
+  // https://blog.koh.dev/2019-10-13-vscode-vim/
+  "vim.statusBarColorControl": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "wallaby.startAutomatically": false,
+  "console-ninja.featureSet": "Pro",
+  "gitlens.views.commitDetails.files.layout": "tree",
+
+  // font settings
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "600",
+
+  // customize terminal color
+  "workbench.colorCustomizations": {
+    "terminal.background": "#1E1E2E",
+    "terminal.foreground": "#C678DD",
+    "terminalCursor.foreground": "#A9DC76"
+  }
 }

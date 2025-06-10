@@ -326,4 +326,5 @@ else
   require('p-smoothcursor')
   require('p-barbar')
   require('p-neotest')
+  require('p-git')
 end

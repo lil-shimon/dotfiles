@@ -18,11 +18,21 @@ require('nvim-web-devicons').setup({
 require('telescope').setup {
   pickers = {
     find_files = {
-      hidden = true
+      hidden = true,
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
     }
   },
   defaults = {
-    file_ignore_patterns = { "node_modules", "yarn.lock", ".git" },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case"
+    },
+    file_ignore_patterns = { "node_modules", "yarn.lock", ".git", "dist", "build", ".next", "coverage", "__screenshots__" },
     dynamic_preview_title = true,
     path_display = { 'smart' },
     mappings = {

@@ -8,7 +8,7 @@ windowOpt.number = true
 
 vim.scriptencoding = 'utf-8'
 opt.encoding = 'utf-8'
-opt.fileencoding = 'utf-8'
+vim.o.fileencoding = 'utf-8'
 
 opt.scrolloff = 5
 opt.sidescrolloff = 5

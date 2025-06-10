@@ -58,6 +58,7 @@ else
     -- ファイル検索や様々なリスト表示のための拡張機能
     "nvim-telescope/telescope.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-lua/plenary.nvim",
 
     -- オートコンプリート機能

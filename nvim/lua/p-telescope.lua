@@ -70,6 +70,7 @@ require('telescope').setup {
 
 
 require('telescope').load_extension('file_browser')
+require('telescope').load_extension('fzf')
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', ' f', '<cmd>lua require("telescope.builtin").find_files({ no_ignore = false, hidden = true })<cr>',

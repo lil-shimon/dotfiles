@@ -22,33 +22,47 @@ local lsp_config = {
   end
 }
 
-require('mason-lspconfig').setup_handlers({
-  function(server_name)
-    require('lspconfig')[server_name].setup(lsp_config)
-  end,
-  lua_ls = function()
-    require('lspconfig').lua_ls.setup(vim.tbl_extend('force', lsp_config, {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim' }
-          }
-        }
-      }
-    }))
-  end,
-  tsserver = function()
-    require('typescript').setup({
-      server = vim.tbl_extend('force', lsp_config, {
-        on_attach = function()
-          on_attach()
-        end,
-        init_options = {
-          preferences = {
-            jsxAttributeCompletionStyle = 'none'
-          }
-        }
-      })
-    })
-  end
+local mason_lspconfig = require('mason-lspconfig')
+
+mason_lspconfig.setup({
+  ensure_installed = {
+    'lua_ls',
+    'tsserver',
+    'eslint',
+    'jsonls'
+  }
 })
+
+-- Manual LSP setup since mason-lspconfig handlers might not be working
+local lspconfig = require('lspconfig')
+
+-- Lua LSP
+lspconfig.lua_ls.setup(vim.tbl_extend('force', lsp_config, {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+}))
+
+-- TypeScript LSP
+require('typescript').setup({
+  server = vim.tbl_extend('force', lsp_config, {
+    on_attach = function()
+      on_attach()
+    end,
+    init_options = {
+      preferences = {
+        jsxAttributeCompletionStyle = 'none'
+      }
+    }
+  })
+})
+
+-- ESLint LSP
+lspconfig.eslint.setup(lsp_config)
+
+-- JSON LSP
+lspconfig.jsonls.setup(lsp_config)

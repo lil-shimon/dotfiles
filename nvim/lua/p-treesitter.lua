@@ -25,6 +25,9 @@ require 'nvim-treesitter.configs'.setup {
   },
   context_commentstring = {
     enable = true,
+    -- Treesitterのインストール・設定中にattach関数が呼ばれることを防ぐ
+    -- これにより起動時の警告 "ts_context_commentstring internal.lua:135" を解消
+    enable_autocmd = false,
   },
 }
 

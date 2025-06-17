@@ -37,7 +37,9 @@ mason_lspconfig.setup({
     'lua_ls',
     'ts_ls',  -- Updated from deprecated 'tsserver'
     'eslint',
-    'jsonls'
+    'jsonls',
+    'cssls',  -- CSS language server
+    'sass_ls' -- SCSS/Sass language server
   }
 })
 
@@ -69,3 +71,30 @@ lspconfig.eslint.setup(lsp_config)
 
 -- JSON LSP
 lspconfig.jsonls.setup(lsp_config)
+
+-- CSS LSP
+lspconfig.cssls.setup(vim.tbl_extend('force', lsp_config, {
+  settings = {
+    css = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore", -- CSS Modules対応
+      }
+    },
+    scss = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      }
+    },
+    less = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      }
+    }
+  }
+}))
+
+-- SCSS/Sass LSP
+lspconfig.sass_ls.setup(lsp_config)

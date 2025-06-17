@@ -7,7 +7,7 @@ end
 
 -- UI
 config.color_scheme = 'ayu'
-config.font_size = 16
+config.font_size = 14
 config.font = wezterm.font("JetBrains Mono", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
 -- window padding

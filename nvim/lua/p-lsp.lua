@@ -1,14 +1,24 @@
-local on_attach = function()
-  local Format = vim.api.nvim_create_augroup("Format", { clear = true })
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    group = Format,
-    callback = function()
-      local ts = require('typescript').actions
-      ts.addMissingImports { sync = true }
-      ts.organizeImports { sync = true }
-      vim.lsp.buf.format()
-    end,
-  })
+local on_attach = function(client, bufnr)
+  -- TypeScript specific actions (using native LSP commands)
+  if client.name == "ts_ls" then
+    local Format = vim.api.nvim_create_augroup("Format", { clear = true })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = Format,
+      buffer = bufnr,
+      callback = function()
+        -- Use native LSP commands instead of typescript.nvim
+        vim.lsp.buf.code_action({
+          context = { only = { "source.addMissingImports" } },
+          apply = true,
+        })
+        vim.lsp.buf.code_action({
+          context = { only = { "source.organizeImports" } },
+          apply = true,
+        })
+        vim.lsp.buf.format()
+      end,
+    })
+  end
 end
 
 
@@ -17,9 +27,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_config = {
   capabilities = capabilities,
   group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
-  on_attach = function()
-    on_attach()
-  end
+  on_attach = on_attach
 }
 
 local mason_lspconfig = require('mason-lspconfig')
@@ -27,7 +35,7 @@ local mason_lspconfig = require('mason-lspconfig')
 mason_lspconfig.setup({
   ensure_installed = {
     'lua_ls',
-    'tsserver',
+    'ts_ls',  -- Updated from deprecated 'tsserver'
     'eslint',
     'jsonls'
   }
@@ -47,19 +55,14 @@ lspconfig.lua_ls.setup(vim.tbl_extend('force', lsp_config, {
   }
 }))
 
--- TypeScript LSP
-require('typescript').setup({
-  server = vim.tbl_extend('force', lsp_config, {
-    on_attach = function()
-      on_attach()
-    end,
-    init_options = {
-      preferences = {
-        jsxAttributeCompletionStyle = 'none'
-      }
+-- TypeScript LSP (using native ts_ls instead of typescript.nvim)
+lspconfig.ts_ls.setup(vim.tbl_extend('force', lsp_config, {
+  init_options = {
+    preferences = {
+      jsxAttributeCompletionStyle = 'none'
     }
-  })
-})
+  }
+}))
 
 -- ESLint LSP
 lspconfig.eslint.setup(lsp_config)

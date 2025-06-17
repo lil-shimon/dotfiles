@@ -83,20 +83,17 @@ else
       build = "make install_jsregexp"
     },
 
-    -- TypeScriptに特化したLSP機能
-    "jose-elias-alvarez/typescript.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
+    -- TypeScriptに特化したLSP機能 (archived, using ts_ls LSP instead)
+    "nvimtools/none-ls.nvim",
 
     -- Treesitterベースの構文解析とハイライト
     {
       "nvim-treesitter/nvim-treesitter",
-      dependencies = {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-      },
+      dependencies = {}
     },
     "nvim-treesitter/nvim-treesitter-context",
     "windwp/nvim-ts-autotag",
-    "p00f/nvim-ts-rainbow",
+    "HiPhish/rainbow-delimiters.nvim",
     "axelvc/template-string.nvim",
 
     -- TODOコメントのハイライトと管理
@@ -155,8 +152,6 @@ else
       "romgrk/barbar.nvim"
     },
 
-    -- :Git〇〇でGitの操作を可能にする
-    -- TODO: 挙動の確認ができていない. diffなどができない.
     {
       "dinhhuy258/git.nvim"
     },
@@ -277,7 +272,7 @@ else
         "nvim-lua/plenary.nvim",
         "antoinemadec/FixCursorHold.nvim",
         "nvim-treesitter/nvim-treesitter",
-        "nvim-neotest/neotest-jest"
+        "haydenmeade/neotest-jest" -- 正しいJestアダプター
       }
     },
     {
@@ -327,4 +322,5 @@ else
   require('p-barbar')
   require('p-neotest')
   require('p-git')
+  require('p-neogit')
 end

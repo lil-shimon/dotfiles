@@ -156,6 +156,22 @@ else
       "dinhhuy258/git.nvim"
     },
 
+    -- GitHub/GitLab統合
+    {
+      "ruifm/gitlinker.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
+    },
+
+    -- GitHub CLI統合（PR管理）
+    {
+      "pwntester/octo.nvim",
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim',
+        'nvim-tree/nvim-web-devicons',
+      },
+    },
+
     -- ファイルの変更箇所をおしゃれに表示
     {
       "lewis6991/gitsigns.nvim"
@@ -323,4 +339,7 @@ else
   require('p-neotest')
   require('p-git')
   require('p-neogit')
+  require('p-colorizer')
+  require('p-gitlinker')
+  require('p-octo')
 end

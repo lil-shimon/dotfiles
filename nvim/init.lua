@@ -162,15 +162,6 @@ else
       dependencies = "nvim-lua/plenary.nvim",
     },
 
-    -- GitHub CLI統合（PR管理）
-    {
-      "pwntester/octo.nvim",
-      dependencies = {
-        'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope.nvim',
-        'nvim-tree/nvim-web-devicons',
-      },
-    },
 
     -- ファイルの変更箇所をおしゃれに表示
     {
@@ -341,5 +332,4 @@ else
   require('p-neogit')
   require('p-colorizer')
   require('p-gitlinker')
-  require('p-octo')
 end

@@ -6,15 +6,7 @@ local on_attach = function(client, bufnr)
       group = Format,
       buffer = bufnr,
       callback = function()
-        -- Use native LSP commands instead of typescript.nvim
-        vim.lsp.buf.code_action({
-          context = { only = { "source.addMissingImports" } },
-          apply = true,
-        })
-        vim.lsp.buf.code_action({
-          context = { only = { "source.organizeImports" } },
-          apply = true,
-        })
+        -- フォーマットのみ実行（コードアクションは手動で実行）
         vim.lsp.buf.format()
       end,
     })

@@ -296,6 +296,13 @@ else
       config = function()
         require("claude-code").setup()
       end
+    },
+    -- IDE風のブレッドクラムナビゲーション
+    {
+      "Bekaboo/dropbar.nvim",
+      dependencies = {
+        "nvim-telescope/telescope-fzf-native.nvim",
+      },
     }
   })
 
@@ -332,4 +339,6 @@ else
   require('p-neogit')
   require('p-colorizer')
   require('p-gitlinker')
+  require('p-diagnostic')
+  require('p-dropbar')
 end

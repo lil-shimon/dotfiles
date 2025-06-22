@@ -25,6 +25,7 @@ else
     "tiagovla/tokyodark.nvim",
     "olivercederborg/poimandres.nvim",
     "morhetz/gruvbox",
+    "maxmx03/fluoromachine.nvim",
 
     -- ステータスラインのカスタマイズ
     "nvim-lualine/lualine.nvim",
@@ -297,13 +298,6 @@ else
         require("claude-code").setup()
       end
     },
-    -- IDE風のブレッドクラムナビゲーション
-    {
-      "Bekaboo/dropbar.nvim",
-      dependencies = {
-        "nvim-telescope/telescope-fzf-native.nvim",
-      },
-    }
   })
 
   require('base')
@@ -340,5 +334,4 @@ else
   require('p-colorizer')
   require('p-gitlinker')
   require('p-diagnostic')
-  require('p-dropbar')
 end

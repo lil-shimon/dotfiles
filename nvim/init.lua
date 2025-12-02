@@ -17,7 +17,6 @@ if vim.g.vscode == 1 then
 else
   require("lazy").setup({
     -- エディタのビジュアルテーマ
-    "sainnhe/everforest",
     "navarasu/onedark.nvim",
     "folke/tokyonight.nvim",
     "Mofiqul/vscode.nvim",
@@ -26,6 +25,9 @@ else
     "olivercederborg/poimandres.nvim",
     "morhetz/gruvbox",
     "maxmx03/fluoromachine.nvim",
+
+    -- Markdownレンダリング強化
+    "MeanderingProgrammer/render-markdown.nvim",
 
     -- ステータスラインのカスタマイズ
     "nvim-lualine/lualine.nvim",
@@ -119,18 +121,7 @@ else
     -- クリップボード履歴の管理
     "gbprod/yanky.nvim",
 
-    -- フラッシュ機能（検索結果のハイライト）
-    -- {
-    --   "folke/flash.nvim",
-    --   event = "VeryLazy",
-    --   opts = {},
-    --   keys = {
-    --     { "f", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
-    --     { "F", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    --   },
-    -- },
-
-    -- ノーティフィケーションとUI改善
+     -- ノーティフィケーションとUI改善
     {
       "folke/noice.nvim",
       event = "VeryLazy",
@@ -188,22 +179,6 @@ else
     {
       "skanehira/jumpcursor.vim",
     },
-    -- Git操作を簡単にする
-    {
-      "NeogitOrg/neogit",
-      dependencies = {
-        "nvim-lua/plenary.nvim",         -- required by neogit
-        "sindrets/diffview.nvim",        -- optional - Diff integration
-
-        "nvim-telescope/telescope.nvim", -- optional
-      },
-      config = true,
-    },
-    -- Git操作をVim上でする
-    -- Neogitとどちらが良いか検討する
-    {
-      "lambdalisue/gin.vim"
-    },
     -- 移動で記号などを無視してアルファベットの頭に移動できる
     {
       "kana/vim-smartword",
@@ -234,13 +209,6 @@ else
         "lambdalisue/kensaku.vim",
       }
     },
-    -- インサートモードを便利にしてくれるプラグイン
-    -- 公式のREADMEの動画を参照
-    -- あまり便利度がわかっていない
-    {
-      "hrsh7th/nvim-insx",
-    },
-
     -- Show match number and index for searching
     {
       "kevinhwang91/nvim-hlslens",
@@ -254,21 +222,6 @@ else
         })
       end
     },
-    -- Show keybindings
-    -- MEMO: 入れるとaやsの際にキーバインドが表示されるので一旦コメントアウト
-    -- {
-    --   "folke/which-key.nvim",
-    --   event = "VeryLazy",
-    --   init = function()
-    --     vim.o.timeout = true
-    --     vim.o.timeoutlen = 300
-    --   end,
-    --   opts = {
-    --     -- your configuration comes here
-    --     -- or leave it empty to use the default settings
-    --     -- refer to the configuration section below
-    --   }
-    -- },
     -- Smooth scrolling
     {
       "gen740/SmoothCursor.nvim"
@@ -290,14 +243,57 @@ else
       end
     },
     {
-      "greggh/claude-code.nvim",
-      dependencies = {
-        "nvim-lua/plenary.nvim", -- Required for git operations
-      },
-      config = function()
-        require("claude-code").setup()
-      end
+      'lil-shimon/snapshot-runner',
+      dependencies = {'vim-denops/denops.vim'}
     },
+    -- Claude Code AI integration
+    {
+      'coder/claudecode.nvim',
+      dependencies = { "folke/snacks.nvim" },
+      config = function()
+        require('claudecode').setup({
+          -- alias ではなくフルパスを指定
+          terminal_cmd = "/Users/shimonlil/.claude/local/claude",
+          terminal = {
+            snacks_win_opts = {
+              position = "bottom",
+              height = 0.4,
+            },
+          },
+        })
+        -- キーマップ設定
+        vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<cr>', { desc = "Toggle Claude" })
+        vim.keymap.set('n', '<leader>cf', '<cmd>ClaudeCodeFocus<cr>', { desc = "Focus Claude" })
+        vim.keymap.set('v', '<leader>cs', '<cmd>ClaudeCodeSend<cr>', { desc = "Send selection" })
+        vim.keymap.set('n', '<leader>cb', '<cmd>ClaudeCodeAdd %<cr>', { desc = "Add current file" })
+      end,
+    },
+    -- https://github.com/nekowasabi/hellshake-yano.vim
+    -- zenn https://zenn.dev/takets/articles/vim-plugin-hellshake-yano
+    {
+        'nekowasabi/hellshake-yano.vim',
+        config = function()
+         vim.g.hellshake_yano = {
+            hintPosition = "both",
+  bothMinWordLength = 6,      -- Both-side hints for 6+ character words
+  defaultMinWordLength = 3,   -- Show hints for 3+ character words
+  perKeyMinLength = {
+    w = 4,   -- Word motion - meaningful words only
+    v = 2,   -- Visual mode - more precise hints
+  },
+          motionCount=3,
+          perKeyMotionCount = {
+            w = 1,
+            b=1,
+            e = 1,
+            h = 2,
+            j=2,
+            k=2,
+            l=2,
+          }
+}
+  end
+    }
   })
 
   require('base')
@@ -323,15 +319,14 @@ else
   require('p-jumpcursor')
   require('p-smartword')
   require('p-camel')
-  require('p-insx')
   require('p-eft')
   require('p-gitsigns')
   require('p-smoothcursor')
   require('p-barbar')
   require('p-neotest')
   require('p-git')
-  require('p-neogit')
   require('p-colorizer')
   require('p-gitlinker')
   require('p-diagnostic')
+  require('p-render-markdown')
 end

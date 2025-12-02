@@ -31,7 +31,6 @@ mason_lspconfig.setup({
     'eslint',
     'jsonls',
     'cssls',  -- CSS language server
-    'sass_ls' -- SCSS/Sass language server
   }
 })
 
@@ -88,5 +87,3 @@ lspconfig.cssls.setup(vim.tbl_extend('force', lsp_config, {
   }
 }))
 
--- SCSS/Sass LSP
-lspconfig.sass_ls.setup(lsp_config)

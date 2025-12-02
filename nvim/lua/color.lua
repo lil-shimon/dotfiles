@@ -34,7 +34,7 @@ fm.setup {
   -- overrides = overrides
 }
 
-vim.cmd.colorscheme('fluoromachine')
+vim.cmd.colorscheme('gruvbox')
 
 vim.fn.sign_define({
   {

@@ -22,7 +22,23 @@ config.window_padding = {
 -- keybindings
 local act = wezterm.action
 
+-- Claude Code対応: Ctrl+\ → Ctrl+n → Ctrl+h/j/k/l を送信
+-- https://zenn.dev/moneyforward/articles/cf771d9a51857d
+local function send_key_with_esc(key)
+  return act.Multiple {
+    act.SendKey { key = '\\', mods = 'CTRL' },
+    act.SendKey { key = 'n', mods = 'CTRL' },
+    act.SendKey { key = key, mods = 'CTRL' },
+  }
+end
+
 local keys = {
+  -- Ctrl+h/j/k/l: Neovimウィンドウ移動（Claude Code対応）
+  { key = 'h', mods = 'CTRL', action = send_key_with_esc('h') },
+  { key = 'j', mods = 'CTRL', action = send_key_with_esc('j') },
+  { key = 'k', mods = 'CTRL', action = send_key_with_esc('k') },
+  { key = 'l', mods = 'CTRL', action = send_key_with_esc('l') },
+  -- Leader + h/j/k/l: WezTermペイン移動
   { key = 'h', mods = 'LEADER', action = act.ActivatePaneDirection 'Left' },
   { key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection 'Right' },
   { key = 'k', mods = 'LEADER', action = act.ActivatePaneDirection 'Up' },

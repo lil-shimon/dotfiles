@@ -39,6 +39,11 @@ keymap.set('', 'sl', '<C-w>l')
 keymap.set('', ' j', '<C-w>j')
 keymap.set('', ' h', '<C-w>h')
 keymap.set('', ' l', '<C-w>l')
+-- Ctrl+h/j/k/l: ウィンドウ移動（Claude Code対応）
+keymap.set('n', '<C-h>', '<C-w>h')
+keymap.set('n', '<C-j>', '<C-w>j')
+keymap.set('n', '<C-k>', '<C-w>k')
+keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Delete a word backwards
 keymap.set('n', 'dw', 'vb"_d')

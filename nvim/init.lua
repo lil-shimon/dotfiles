@@ -111,9 +111,6 @@ else
     -- Git blame情報の表示
     "f-person/git-blame.nvim",
 
-    -- GitHub Copilotの統合
-    "github/copilot.vim",
-
     -- ファイルエクスプローラ
     "nvim-tree/nvim-tree.lua",
     "nvim-tree/nvim-web-devicons",

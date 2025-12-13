@@ -25,6 +25,7 @@ else
     "olivercederborg/poimandres.nvim",
     "morhetz/gruvbox",
     "maxmx03/fluoromachine.nvim",
+    "rebelot/kanagawa.nvim",
 
     -- Markdownレンダリング強化
     "MeanderingProgrammer/render-markdown.nvim",

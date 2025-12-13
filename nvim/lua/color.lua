@@ -1,22 +1,6 @@
 ---@type fluoromachine
 local fm = require 'fluoromachine'
 
--- function overrides(c,color)
---     local darken = color.darken
---     local lighten = color.lighten
---     local blend = color.blend
---     local shade = color.shade
---     local tint = color.tint
---     return {
---      TelescopeResultsBorder = { fg = c.bgdark, bg = c.bgdark },
---      TelescopeResultsNormal = { bg = c.bgdark },
---      TelescopePreviewNormal = { bg = c.bg },
---      TelescopePromptBorder = { fg = c.bgdark, bg = c.bgdark },
---      TelescopeTitle = { fg = c.red, bg = shade(c.red,5) },
---      TelescopePromptPrefix = { fg = c.purple },
---     }
--- end
-
 -- https://github.com/maxmx03/fluoromachine.nvim
 fm.setup {
   glow = true,
@@ -34,7 +18,7 @@ fm.setup {
   -- overrides = overrides
 }
 
-vim.cmd.colorscheme('gruvbox')
+vim.cmd.colorscheme('vscode')
 
 vim.fn.sign_define({
   {

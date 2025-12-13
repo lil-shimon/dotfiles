@@ -268,32 +268,11 @@ else
         { "<leader>cb", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current file" },
       },
     },
-    -- https://github.com/nekowasabi/hellshake-yano.vim
-    -- zenn https://zenn.dev/takets/articles/vim-plugin-hellshake-yano
---     {
---         'nekowasabi/hellshake-yano.vim',
---         config = function()
---          vim.g.hellshake_yano = {
---             hintPosition = "both",
---     bothMinWordLength = 6,      -- Both-side hints for 6+ character words
---     defaultMinWordLength = 3,   -- Show hints for 3+ character words
---     perKeyMinLength = {
---       w = 4,   -- Word motion - meaningful words only
---       v = 2,   -- Visual mode - more precise hints
---   },
---           motionCount=3,
---           perKeyMotionCount = {
---             w=1,
---             b=1,
---             e=1,
---             h=2,
---             j=2,
---             k=2,
---             l=2,
---           }
--- }
---   end
---     }
+    -- GitHub Copilot AI integration
+    -- Node.js 22
+    --   {
+    -- "github/copilot.vim"
+    --   },
   })
 
   require('base')

@@ -4,6 +4,9 @@
 require('render-markdown').setup({
   -- マークダウンレンダリングを有効にする
   enabled = true,
+  -- insert modeでもマークダウンレンダリングを有効にする
+  -- https://eiji.page/blog/neovim-render-markdown-nvim/
+  render_modes = true,
   
   -- ファイルタイプの設定
   file_types = { 'markdown' },

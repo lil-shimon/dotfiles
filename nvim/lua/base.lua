@@ -36,6 +36,15 @@ opt.swapfile = false
 opt.autoread = true
 bufferOpt.autoread = true
 
+-- 外部でファイルが変更された場合に自動で再読み込み
+-- FocusGained: ターミナル/ウィンドウにフォーカスが戻った時
+-- BufEnter: バッファに入った時（ファイル切り替えなど）
+-- CursorHold: カーソルが一定時間（updatetime）動かなかった時
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  pattern = "*",
+  command = "checktime",
+})
+
 -- バックアップファイルを生成しない
 opt.backup = false
 

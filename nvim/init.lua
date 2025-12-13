@@ -95,6 +95,8 @@ else
       dependencies = {}
     },
     "nvim-treesitter/nvim-treesitter-context",
+    -- https://github.com/windwp/nvim-ts-autotag
+    -- tsxなどでタグを自動で追加する。必須級プラグイン
     "windwp/nvim-ts-autotag",
     "HiPhish/rainbow-delimiters.nvim",
     "axelvc/template-string.nvim",
@@ -326,4 +328,5 @@ else
   require('p-gitlinker')
   require('p-diagnostic')
   require('p-render-markdown')
+  require('p-autotag')
 end

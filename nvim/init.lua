@@ -143,14 +143,6 @@ else
     {
       "dinhhuy258/git.nvim"
     },
-
-    -- GitHub/GitLab統合
-    {
-      "ruifm/gitlinker.nvim",
-      dependencies = "nvim-lua/plenary.nvim",
-    },
-
-
     -- ファイルの変更箇所をおしゃれに表示
     {
       "lewis6991/gitsigns.nvim"
@@ -309,7 +301,6 @@ else
   require('p-neotest')
   require('p-git')
   require('p-colorizer')
-  require('p-gitlinker')
   require('p-diagnostic')
   require('p-render-markdown')
   require('p-autotag')

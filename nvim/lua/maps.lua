@@ -121,3 +121,7 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
 
 -- Neotest
 -- Neotestのキーマップは`p-neotest.lua`
+
+-- Gitのkeymapは`p-git.lua`
+
+

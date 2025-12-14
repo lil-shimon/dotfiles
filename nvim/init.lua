@@ -295,7 +295,6 @@ else
   require('p-comment')
   require('p-noice')
   require('p-hlchunk')
-  require('p-smartword')
   require('p-gitsigns')
   require('p-smoothcursor')
   require('p-neotest')

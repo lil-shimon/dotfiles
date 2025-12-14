@@ -96,3 +96,25 @@ keymap.set("n", "F", "<Plug>(eft-F)")
 keymap.set("o", "F", "<Plug>(eft-F)")
 keymap.set("x", "F", "<Plug>(eft-F)")
 
+-- Lspsaga
+-- hover_doc
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+
+-- エラーを表示
+-- TODO: エラーになるので、確認する
+-- コマンド直打ちでは機能している
+keymap.set("n", "D", "<cmd>Lspsaga show_line_diagnostic<CR>", opts)
+keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)
+
+-- コードアクション
+keymap.set("n", "V", "<cmd>Lspsaga code_action<CR>", opts)
+
+keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
+keymap.set("n", "pd", "<cmd>Lspsaga peek_definition<CR>", opts)
+
+keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+
+keymap.set("n", "<C-r>", "<cmd>Lspsaga rename<CR>", opts)
+
+keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)

@@ -66,3 +66,6 @@ keymap.set('n', 'ap', '<Cmd>BufferPrevious<CR>', opts)
 keymap.set('n', 'an', '<Cmd>BufferNext<CR>', opts)
 keymap.set('n', 'Ap', '<Cmd>BufferPin<CR>', opts)
 keymap.set('n', 'bd', '<Cmd>BufferClose<CR>', opts)
+
+-- diffview (git diff view) keymap settings
+keymap.set('n', ',s', "<cmd>DiffviewOpen HEAD~1<CR>")

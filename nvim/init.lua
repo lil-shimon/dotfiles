@@ -115,7 +115,6 @@ else
     "f-person/git-blame.nvim",
 
     -- ファイルエクスプローラ
-    "nvim-tree/nvim-tree.lua",
     "nvim-tree/nvim-web-devicons",
 
     -- クリップボード履歴の管理

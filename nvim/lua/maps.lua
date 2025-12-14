@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap
+local opts = { noremap = true, silent = true}
 
 -- Save and Quit
 keymap.set('n', '<leader>q', '<cmd>q<cr>')
@@ -55,8 +56,13 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 keymap.set('n', 'x', '"_x')
 
 -- Oil ( file tree plugin ) keymap settings
-vim.keymap.set("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory"})
-vim.keymap.set("n", "<c-f>", function()
+keymap.set("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory"})
+keymap.set("n", "<c-f>", function()
   require("oil").open(".")
 end, { desc = "Oil ." })
 
+-- Barbar (tab plugin) keymap settings
+keymap.set('n', 'ap', '<Cmd>BufferPrevious<CR>', opts)
+keymap.set('n', 'an', '<Cmd>BufferNext<CR>', opts)
+keymap.set('n', 'Ap', '<Cmd>BufferPin<CR>', opts)
+keymap.set('n', 'bd', '<Cmd>BufferClose<CR>', opts)

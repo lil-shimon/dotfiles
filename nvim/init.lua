@@ -309,7 +309,6 @@ else
   require('p-eft')
   require('p-gitsigns')
   require('p-smoothcursor')
-  require('p-barbar')
   require('p-neotest')
   require('p-git')
   require('p-colorizer')

@@ -11,15 +11,9 @@ local t = ls.text_node
 local i = ls.insert_node
 local d = ls.dynamic_node
 local sn = ls.snippet_node
+local fmt = require('luasnip.extras.fmt').fmt
 
 ls.add_snippets('typescriptreact', {
-  s('log', {
-    t('console.log('),
-    i(1, ''),
-    t(','),
-    i(2, ''),
-    t(')'),
-  }),
   s('rc', {
     t('export type '),
     i(1),
@@ -35,4 +29,6 @@ ls.add_snippets('typescriptreact', {
     end, { 1 }),
     t('(){return null}'),
   }),
+  s('aw', fmt("await {}", i(1))),
+  s('storybook', t("import { Meta, StoryObj } from '@storybook/nextjs';")),
 })

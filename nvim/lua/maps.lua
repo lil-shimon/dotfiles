@@ -1,100 +1,100 @@
 vim.g.mapleader = ' '
-local keymap = vim.keymap
+local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true}
 
 -- Save and Quit
-keymap.set('n', '<leader>q', '<cmd>q<cr>')
-keymap.set('n', '<leader>w', '<cmd>w<cr>')
-keymap.set('n', '<leader>x', '<cmd>x<cr>')
+keymap('n', '<leader>q', '<cmd>q<cr>')
+keymap('n', '<leader>w', '<cmd>w<cr>')
+keymap('n', '<leader>x', '<cmd>x<cr>')
 
-keymap.set('n', '<c-a>', 'ggVG')
+keymap('n', '<c-a>', 'ggVG')
 
-keymap.set('n', 'H', '^')
-keymap.set('n', 'L', '$')
+keymap('n', 'H', '^')
+keymap('n', 'L', '$')
 
-keymap.set('n', "j", [[v:count?'j':'gj']], { noremap = true, expr = true })
-keymap.set('n', "k", [[v:count?'k':'gk']], { noremap = true, expr = true })
+keymap('n', "j", [[v:count?'j':'gj']], { noremap = true, expr = true })
+keymap('n', "k", [[v:count?'k':'gk']], { noremap = true, expr = true })
 
 -- Insert/Terminal to Normal
-keymap.set('i', 'jj', '<esc>')
-keymap.set('t', 'jj', '<C-\\><C-n>')
+keymap('i', 'jj', '<esc>')
+keymap('t', 'jj', '<C-\\><C-n>')
 
 -- New tab
-keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
+keymap('n', 'te', ':tabedit<Return>', { silent = true })
 -- Next tab
-keymap.set('n', 'tn', ':tabnext<Return>', { silent = true })
+keymap('n', 'tn', ':tabnext<Return>', { silent = true })
 -- Previous tab
-keymap.set('n', 'tp', ':tabprevious<Return>', { silent = true })
+keymap('n', 'tp', ':tabprevious<Return>', { silent = true })
 -- Close tab
-keymap.set('n', 'tq', ':tabclose<Return>', { silent = true })
+keymap('n', 'tq', ':tabclose<Return>', { silent = true })
 
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
+keymap('n', 'ss', ':split<Return><C-w>w', { silent = true })
+keymap('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 
 -- Move window
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
-keymap.set('', ' j', '<C-w>j')
-keymap.set('', ' h', '<C-w>h')
-keymap.set('', ' l', '<C-w>l')
+keymap('', 'sh', '<C-w>h')
+keymap('', 'sk', '<C-w>k')
+keymap('', 'sj', '<C-w>j')
+keymap('', 'sl', '<C-w>l')
+keymap('', ' j', '<C-w>j')
+keymap('', ' h', '<C-w>h')
+keymap('', ' l', '<C-w>l')
 -- Ctrl+h/j/k/l: ウィンドウ移動（Claude Code対応）
-keymap.set('n', '<C-h>', '<C-w>h')
-keymap.set('n', '<C-j>', '<C-w>j')
-keymap.set('n', '<C-k>', '<C-w>k')
-keymap.set('n', '<C-l>', '<C-w>l')
+keymap('n', '<C-h>', '<C-w>h')
+keymap('n', '<C-j>', '<C-w>j')
+keymap('n', '<C-k>', '<C-w>k')
+keymap('n', '<C-l>', '<C-w>l')
 
 -- Delete a word backwards
-keymap.set('n', 'dw', 'vb"_d')
+keymap('n', 'dw', 'vb"_d')
 
 -- Select all ( just in case )
-keymap.set('n', '<C-a>', 'gg<S-v>G')
+keymap('n', '<C-a>', 'gg<S-v>G')
 
 -- Do not yank with x
-keymap.set('n', 'x', '"_x')
+keymap('n', 'x', '"_x')
 
--- Oil ( file tree plugin ) keymap settings
-keymap.set("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory"})
-keymap.set("n", "<c-f>", function()
+-- Oil ( file tree plugin ) keymaptings
+keymap("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory"})
+keymap("n", "<c-f>", function()
   require("oil").open(".")
 end, { desc = "Oil ." })
 
--- Barbar (tab plugin) keymap settings
-keymap.set('n', 'ap', '<Cmd>BufferPrevious<CR>', opts)
-keymap.set('n', 'an', '<Cmd>BufferNext<CR>', opts)
-keymap.set('n', 'Ap', '<Cmd>BufferPin<CR>', opts)
-keymap.set('n', 'bd', '<Cmd>BufferClose<CR>', opts)
+-- Barbar (tab plugin) keymaptings
+keymap('n', 'ap', '<Cmd>BufferPrevious<CR>', opts)
+keymap('n', 'an', '<Cmd>BufferNext<CR>', opts)
+keymap('n', 'Ap', '<Cmd>BufferPin<CR>', opts)
+keymap('n', 'bd', '<Cmd>BufferClose<CR>', opts)
 
--- diffview (git diff view) keymap settings
-keymap.set('n', ',s', "<cmd>DiffviewOpen<CR>")
-keymap.set('n', ',a', "<cmd>DiffviewClose<CR>")
+-- diffview (git diff view) keymaptings
+keymap('n', ',s', "<cmd>DiffviewOpen<CR>")
+keymap('n', ',a', "<cmd>DiffviewClose<CR>")
 
--- diagnostic keymap settings
-keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)  -- カーソル位置のエラーをフロートで表示
-keymap.set("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
-keymap.set("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
+-- diagnostic keymaptings
+keymap("n", "<leader>e", vim.diagnostic.open_float, opts)  -- カーソル位置のエラーをフロートで表示
+keymap("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
+keymap("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
 
 -- camel case motion
-keymap.set("n", "w", "<Plug>CamelCaseMotion_w", opts)
-keymap.set("n", "e", "<Plug>CamelCaseMotion_e", opts)
-keymap.set("n", "b", "<Plug>CamelCaseMotion_b", opts)
-keymap.set("n", "ge", "<Plug>CamelCaseMotion_ge", opts)
+keymap("n", "w", "<Plug>CamelCaseMotion_w", opts)
+keymap("n", "e", "<Plug>CamelCaseMotion_e", opts)
+keymap("n", "b", "<Plug>CamelCaseMotion_b", opts)
+keymap("n", "ge", "<Plug>CamelCaseMotion_ge", opts)
 
 -- jump cursor
-keymap.set("n", "ff", "<Plug>(jumpcursor-jump)", opts)
+keymap("n", "ff", "<Plug>(jumpcursor-jump)", opts)
 
 -- eft
 -- move to forward
-keymap.set("n", "f", "<Plug>(eft-f)")
-keymap.set("x", "f", "<Plug>(eft-f)")
-keymap.set("o", "f", "<Plug>(eft-f)")
+keymap("n", "f", "<Plug>(eft-f)")
+keymap("x", "f", "<Plug>(eft-f)")
+keymap("o", "f", "<Plug>(eft-f)")
 
 -- move to backward
-keymap.set("n", "F", "<Plug>(eft-F)")
-keymap.set("o", "F", "<Plug>(eft-F)")
-keymap.set("x", "F", "<Plug>(eft-F)")
+keymap("n", "F", "<Plug>(eft-F)")
+keymap("o", "F", "<Plug>(eft-F)")
+keymap("x", "F", "<Plug>(eft-F)")
 
 -- Lspsaga
 -- hover_doc
@@ -103,18 +103,21 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 -- エラーを表示
 -- TODO: エラーになるので、確認する
 -- コマンド直打ちでは機能している
-keymap.set("n", "D", "<cmd>Lspsaga show_line_diagnostic<CR>", opts)
-keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)
+keymap("n", "D", "<cmd>Lspsaga show_line_diagnostic<CR>", opts)
+keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)
 
 -- コードアクション
-keymap.set("n", "V", "<cmd>Lspsaga code_action<CR>", opts)
+keymap("n", "V", "<cmd>Lspsaga code_action<CR>", opts)
 
-keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
-keymap.set("n", "pd", "<cmd>Lspsaga peek_definition<CR>", opts)
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
+keymap("n", "pd", "<cmd>Lspsaga peek_definition<CR>", opts)
 
-keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 
-keymap.set("n", "<C-r>", "<cmd>Lspsaga rename<CR>", opts)
+keymap("n", "<C-r>", "<cmd>Lspsaga rename<CR>", opts)
 
-keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
+
+-- Neotest
+-- Neotestのキーマップは`p-neotest.lua`

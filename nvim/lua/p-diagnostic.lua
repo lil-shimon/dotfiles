@@ -33,8 +33,3 @@ vim.cmd [[
   hi DiagnosticVirtualTextHint guifg=#10B981 gui=italic
 ]]
 
--- キーマッピング（既存のものに追加）
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)  -- カーソル位置のエラーをフロートで表示
-vim.keymap.set("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
-vim.keymap.set("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ

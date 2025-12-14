@@ -70,3 +70,8 @@ keymap.set('n', 'bd', '<Cmd>BufferClose<CR>', opts)
 -- diffview (git diff view) keymap settings
 keymap.set('n', ',s', "<cmd>DiffviewOpen<CR>")
 keymap.set('n', ',a', "<cmd>DiffviewClose<CR>")
+
+-- diagnostic keymap settings
+keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)  -- カーソル位置のエラーをフロートで表示
+keymap.set("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
+keymap.set("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ

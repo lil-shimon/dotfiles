@@ -54,3 +54,9 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
 
+-- Oil ( file tree plugin ) keymap settings
+vim.keymap.set("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory"})
+vim.keymap.set("n", "<c-f>", function()
+  require("oil").open(".")
+end, { desc = "Oil ." })
+

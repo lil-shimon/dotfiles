@@ -203,6 +203,4 @@ require("oil").setup({
   },
 })
 
--- keymap settings
-vim.keymap.set("n", "<c-e>", "<CMD>Oil<CR>", {})
-
+-- keymapの設定は`maps.lua`にある

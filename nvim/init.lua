@@ -108,9 +108,6 @@ else
     -- コメントの追加と管理
     "numToStr/Comment.nvim",
 
-    -- ターミナルのトグル
-    "akinsho/toggleterm.nvim",
-
     -- Git blame情報の表示
     "f-person/git-blame.nvim",
 
@@ -302,7 +299,6 @@ else
   require('p-cmp')
   require('p-snip')
   require('p-treesitter')
-  require('other')
   require('p-yanky')
   require('p-comment')
   require('p-noice')

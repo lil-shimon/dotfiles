@@ -75,3 +75,9 @@ keymap.set('n', ',a', "<cmd>DiffviewClose<CR>")
 keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)  -- カーソル位置のエラーをフロートで表示
 keymap.set("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
 keymap.set("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
+
+-- camel case motion
+keymap.set("n", "w", "<Plug>CamelCaseMotion_w", opts)
+keymap.set("n", "e", "<Plug>CamelCaseMotion_e", opts)
+keymap.set("n", "b", "<Plug>CamelCaseMotion_b", opts)
+keymap.set("n", "ge", "<Plug>CamelCaseMotion_ge", opts)

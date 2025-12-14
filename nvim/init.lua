@@ -305,7 +305,6 @@ else
   require('p-hlchunk')
   require('p-jumpcursor')
   require('p-smartword')
-  require('p-camel')
   require('p-eft')
   require('p-gitsigns')
   require('p-smoothcursor')

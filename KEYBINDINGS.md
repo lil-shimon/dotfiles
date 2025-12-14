@@ -6,19 +6,16 @@
 - Prefix: `Ctrl+t`
 
 ### ペイン操作
-- `Prefix + |` : 縦分割
-- `Prefix + -` : 横分割
+- `Prefix + h,j,k,l` : ペイン移動
 - `Ctrl+h,j,k,l` : ペイン移動（prefix不要）
 - `Prefix + H,J,K,L` : ペインリサイズ（5単位）
-- `Prefix + m` : ペイン最大化/復元
+- `Prefix + |` : 縦分割（現在のディレクトリで）
+- `Prefix + -` : 横分割（現在のディレクトリで）
 - `Prefix + x` : ペインを閉じる
-- `Prefix + Tab` : 最後のペインに移動
 
 ### ウィンドウ操作
-- `Prefix + c` : 新しいウィンドウ
+- `Prefix + c` : 新しいウィンドウ（現在のディレクトリで）
 - `Shift+←,→` : ウィンドウ切り替え（prefix不要）
-- `Prefix + Space` : 最後のウィンドウに移動
-- `Prefix + &` : ウィンドウを閉じる
 
 ### コピーモード
 - `Prefix + [` : コピーモードに入る
@@ -28,21 +25,67 @@
 - `y` : コピー（macOSクリップボードにも保存）
 - `Y` : 行コピー（macOSクリップボードにも保存）
 - `Prefix + Ctrl+p` : ペースト
+- マウスドラッグ選択でもクリップボードにコピー
 
 ### セッション管理
 - `Prefix + s` : セッション一覧
-- `Prefix + S` : 新しいセッション
 
 ### その他
 - `Prefix + r` : 設定リロード
 
 ## Neovim
 
+### 基本操作
+- `<leader>` : スペースキー
+- `<leader>q` : 閉じる (:q)
+- `<leader>w` : 保存 (:w)
+- `<leader>x` : 保存して閉じる (:x)
+- `jj` : ノーマルモードに戻る（insert/terminal）
+- `Ctrl+a` : 全選択
+- `H` : 行頭へ移動
+- `L` : 行末へ移動
+- `x` : 削除（ヤンクしない）
+
+### ウィンドウ操作
+- `ss` : 水平分割
+- `sv` : 垂直分割
+- `sh,sj,sk,sl` : ウィンドウ移動
+- `Ctrl+h,j,k,l` : ウィンドウ移動
+- `<leader>h,j,l` : ウィンドウ移動
+
+### タブ操作
+- `te` : 新しいタブ
+- `tn` : 次のタブ
+- `tp` : 前のタブ
+- `tq` : タブを閉じる
+
 ### バッファ操作（barbar.nvim）
 - `ap` : 前のバッファ
 - `an` : 次のバッファ
-- `bd` : バッファを閉じる
 - `Ap` : バッファをピン留め
+- `bd` : バッファを閉じる
+
+### ファイル操作（Oil/Telescope）
+- `Ctrl+e` : Oil（現在のバッファのディレクトリ）
+- `Ctrl+f` : Oil（カレントディレクトリ）
+- `<leader>f` : ファイル検索（Telescope）
+- `<leader>g` : 文字列検索（Telescope live_grep）
+- `<leader>r` : 文字列検索（Telescope live_grep）
+- `<leader>d` : 診断一覧（Telescope）
+- `<leader><leader>` : ファイルブラウザ（Telescope）
+
+### LSP操作（Lspsaga）
+- `gd` : 定義へジャンプ
+- `pd` : 定義をプレビュー
+- `K` : ホバー情報
+- `D` : 行の診断を表示
+- `V` : コードアクション
+- `Ctrl+r` : リネーム
+- `<leader>o` : アウトライン表示
+- `[d` / `]d` : 前/次の診断へジャンプ
+- `[e` / `]e` : 前/次のエラーへジャンプ
+- `<leader>e` : カーソル位置のエラーをフロートで表示
+- `Ctrl+k` : シグネチャヘルプ（insertモード）
 
 ### テスト実行（neotest）
 - `<leader>tr` : 最寄りのテスト実行
@@ -50,25 +93,25 @@
 - `<leader>ta` : 全テスト実行
 - `<leader>to` : テスト結果を開く
 - `<leader>ts` : テストサマリー表示/非表示
-- `<leader>tp` : 現在のプロジェクトのテスト実行
+- `<leader>tp` : 現在のNxプロジェクトのテスト実行
 - `<leader>tw` : ウォッチモードでテスト実行
 
-### LSP操作
-- `gd` : 定義へジャンプ
-- `gr` : 参照を表示
-- `K` : ホバー情報
-- `<leader>rn` : リネーム
-- `<leader>ca` : コードアクション
-
-### ファイル操作
-- `<leader>ff` : ファイル検索（Telescope）
-- `<leader>fg` : 文字列検索（Telescope）
-- `<leader>fb` : バッファ検索（Telescope）
-
 ### Git操作
-- `<leader>gs` : Git status
-- `<leader>gc` : Git commit
-- `<leader>gp` : Git push
+- `,s` : DiffviewOpen（差分表示）
+- `,a` : DiffviewClose（差分を閉じる）
+- `<leader>gb` : Git blame
+- `<leader>go` : GitリポジトリをブラウザでOpen
+
+### モーション
+- `w,e,b,ge` : smartword対応（CamelCase考慮）
+- `f` / `F` : eft（前方/後方へ文字検索）
+- `ff` : jumpcursor（ジャンプ）
+
+### Claude Code
+- `<leader>cc` : Claude Codeを開く/閉じる
+- `<leader>cf` : Claude Codeにフォーカス
+- `<leader>cs` : 選択範囲をClaude Codeに送信（visual mode）
+- `<leader>cb` : 現在のファイルをClaude Codeに追加
 
 ## 共通操作
 

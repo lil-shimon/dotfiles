@@ -273,6 +273,20 @@ else
     --   {
     -- "github/copilot.vim"
     --   },
+       {
+  'stevearc/oil.nvim',
+  ---@module 'oil'
+  ---@type oil.SetupOpts
+    opts = {},
+      keys = {
+        "<leader>a"
+      },
+  -- Optional dependencies
+  dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+  -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+  lazy = false,
+}
   })
 
   require('base')
@@ -290,7 +304,6 @@ else
   require('p-snip')
   require('p-treesitter')
   require('other')
-  require('p-tree')
   require('p-yanky')
   require('p-comment')
   require('p-noice')
@@ -309,4 +322,5 @@ else
   require('p-diagnostic')
   require('p-render-markdown')
   require('p-autotag')
+  require("p-oil")
 end

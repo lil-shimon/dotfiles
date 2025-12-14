@@ -85,3 +85,14 @@ keymap.set("n", "ge", "<Plug>CamelCaseMotion_ge", opts)
 -- jump cursor
 keymap.set("n", "ff", "<Plug>(jumpcursor-jump)", opts)
 
+-- eft
+-- move to forward
+keymap.set("n", "f", "<Plug>(eft-f)")
+keymap.set("x", "f", "<Plug>(eft-f)")
+keymap.set("o", "f", "<Plug>(eft-f)")
+
+-- move to backward
+keymap.set("n", "F", "<Plug>(eft-F)")
+keymap.set("o", "F", "<Plug>(eft-F)")
+keymap.set("x", "F", "<Plug>(eft-F)")
+

@@ -304,7 +304,6 @@ else
   require('p-noice')
   require('p-hlchunk')
   require('p-smartword')
-  require('p-eft')
   require('p-gitsigns')
   require('p-smoothcursor')
   require('p-neotest')

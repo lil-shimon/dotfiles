@@ -81,3 +81,7 @@ keymap.set("n", "w", "<Plug>CamelCaseMotion_w", opts)
 keymap.set("n", "e", "<Plug>CamelCaseMotion_e", opts)
 keymap.set("n", "b", "<Plug>CamelCaseMotion_b", opts)
 keymap.set("n", "ge", "<Plug>CamelCaseMotion_ge", opts)
+
+-- jump cursor
+keymap.set("n", "ff", "<Plug>(jumpcursor-jump)", opts)
+

@@ -303,7 +303,6 @@ else
   require('p-comment')
   require('p-noice')
   require('p-hlchunk')
-  require('p-jumpcursor')
   require('p-smartword')
   require('p-eft')
   require('p-gitsigns')

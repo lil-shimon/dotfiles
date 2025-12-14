@@ -97,19 +97,20 @@ neotest.setup({
 })
 
 -- キーマップの設定
+local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- 基本的なテスト実行
-vim.keymap.set("n", "<leader>tr", function() neotest.run.run() end, vim.tbl_extend("force", opts, { desc = "Run nearest test" }))
-vim.keymap.set("n", "<leader>tf", function() neotest.run.run(vim.fn.expand("%")) end, vim.tbl_extend("force", opts, { desc = "Run current file" }))
-vim.keymap.set("n", "<leader>ta", function() neotest.run.run({suite = true}) end, vim.tbl_extend("force", opts, { desc = "Run all tests" }))
+keymap("n", "<leader>tr", function() neotest.run.run() end, vim.tbl_extend("force", opts, { desc = "Run nearest test" }))
+keymap("n", "<leader>tf", function() neotest.run.run(vim.fn.expand("%")) end, vim.tbl_extend("force", opts, { desc = "Run current file" }))
+keymap("n", "<leader>ta", function() neotest.run.run({suite = true}) end, vim.tbl_extend("force", opts, { desc = "Run all tests" }))
 
 -- 結果の表示
-vim.keymap.set("n", "<leader>to", function() neotest.output.open({ enter = true }) end, vim.tbl_extend("force", opts, { desc = "Open test output" }))
-vim.keymap.set("n", "<leader>ts", function() neotest.summary.toggle() end, vim.tbl_extend("force", opts, { desc = "Toggle test summary" }))
+keymap("n", "<leader>to", function() neotest.output.open({ enter = true }) end, vim.tbl_extend("force", opts, { desc = "Open test output" }))
+keymap("n", "<leader>ts", function() neotest.summary.toggle() end, vim.tbl_extend("force", opts, { desc = "Toggle test summary" }))
 
 -- Nxプロジェクト固有のテスト実行
-vim.keymap.set("n", "<leader>tp", function()
+keymap("n", "<leader>tp", function()
   local current_file = vim.fn.expand("%:p")
   if string.find(current_file, "/apps/") then
     local app_name = string.match(current_file, "/apps/([^/]+)/")
@@ -126,6 +127,6 @@ vim.keymap.set("n", "<leader>tp", function()
 end, vim.tbl_extend("force", opts, { desc = "Run current project tests" }))
 
 -- ウォッチモードでのテスト実行
-vim.keymap.set("n", "<leader>tw", function()
+keymap("n", "<leader>tw", function()
   neotest.run.run({ jestCommand = 'npx nx test --watch' })
 end, vim.tbl_extend("force", opts, { desc = "Run tests in watch mode" }))

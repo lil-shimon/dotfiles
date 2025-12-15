@@ -274,7 +274,15 @@ else
   -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
   lazy = false,
-}
+},
+    -- TODO: 設定をする
+    {
+      "mvllow/modes.nvim",
+      tag = "v0.2.1",
+      config = function()
+        require("modes").setup()
+      end
+    }
   })
 
   require('base')

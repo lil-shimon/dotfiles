@@ -4,7 +4,7 @@ local fm = require 'fluoromachine'
 -- https://github.com/maxmx03/fluoromachine.nvim
 fm.setup {
   glow = true,
-  transparent = false,
+  transparent = true,
   overrides = {
        ['@type'] = { italic = true, bold = false },
        ['@function'] = { italic = false, bold = false },

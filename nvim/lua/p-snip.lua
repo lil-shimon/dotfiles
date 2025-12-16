@@ -29,6 +29,15 @@ ls.add_snippets('typescriptreact', {
     end, { 1 }),
     t('(){return null}'),
   }),
+  s('component', {
+    t('export const '),
+    i(1, 'ComponentName'),
+    t({ ' = () => {', '  return (', '    <div>', '      <div>' }),
+    d(2, function(args)
+      return sn(nil, { i(1, args[1]) })
+    end, { 1 }),
+    t({ '</div>', '    </div>', '  );', '};' }),
+  }),
   s('aw', fmt("await {}", i(1))),
   s('storybook', t("import { Meta, StoryObj } from '@storybook/nextjs';")),
 })

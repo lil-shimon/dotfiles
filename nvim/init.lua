@@ -283,6 +283,9 @@ else
       config = function()
         require("modes").setup()
       end
+    },
+    {
+      "github/copilot.vim"
     }
   })
 

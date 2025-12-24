@@ -1,7 +1,7 @@
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = { "typescript", "javascript", "html", "css", "tsx", "lua", "rust", "json", "graphql", "regex",
-    "prisma", "markdown",
-    "markdown_inline" },
+    "prisma", "markdown", "markdown_inline",
+    "go", "gomod", "gosum", "gowork" },
 
   sync_install = false,
   auto_install = true,

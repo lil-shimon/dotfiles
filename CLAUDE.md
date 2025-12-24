@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+## GitHub系の操作
+GitHubの情報を取得するときとかは原則GitHub MCPを利用すること
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 

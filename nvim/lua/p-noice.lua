@@ -1,3 +1,8 @@
+-- nvim-notifyの背景色を設定（透過時の警告を防ぐ）
+require("notify").setup({
+  background_colour = "#000000",
+})
+
 require("noice").setup({
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**

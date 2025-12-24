@@ -289,44 +289,7 @@ else
     },
     -- 背景透過プラグイン
     -- https://github.com/xiyaowong/transparent.nvim
-    {
-      "xiyaowong/transparent.nvim",
-      config = function()
-        require("transparent").setup({
-          groups = {
-            'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
-            'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
-            'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
-            'SignColumn', 'CursorLineNr', 'EndOfBuffer', 'NormalFloat', 'FloatBorder',
-          },
-          extra_groups = {
-            -- NvimTree
-            "NvimTreeNormal",
-            "NvimTreeNormalNC",
-            -- Telescope
-            "TelescopeNormal",
-            "TelescopeBorder",
-            "TelescopePromptNormal",
-            "TelescopePromptBorder",
-            "TelescopeResultsNormal",
-            "TelescopeResultsBorder",
-            "TelescopePreviewNormal",
-            "TelescopePreviewBorder",
-            -- Floating windows
-            "NormalFloat",
-            "FloatBorder",
-            "Pmenu",
-            "PmenuSel",
-            "PmenuSbar",
-            -- Noice
-            "NoicePopup",
-            "NoicePopupBorder",
-            "NoiceCmdlinePopup",
-            "NoiceCmdlinePopupBorder",
-          },
-        })
-      end,
-    }
+    "xiyaowong/transparent.nvim"
   })
 
   require('base')
@@ -356,4 +319,5 @@ else
   require('p-render-markdown')
   require('p-autotag')
   require("p-oil")
+  require("p-transparent")
 end

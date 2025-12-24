@@ -1,5 +1,14 @@
 # Neovim 背景透過設定 - 調査メモ
 
+## ステータス: 諦め (2025-12-24)
+
+**理由**: Neovim 0.11.x の制限により、floating window (Telescope, Noice, Notify等) の
+ターミナル背景透過は現時点で不可能。Neovim 0.12 で修正予定 (Issue #10685)。
+
+**対応**: Neovim 0.12 リリース後に再挑戦する。
+
+---
+
 ## 目標
 - Neovim の背景を透過にする
 - Telescope, Notify などの floating window も透過にする

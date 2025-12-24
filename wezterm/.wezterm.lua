@@ -25,7 +25,7 @@ wezterm.on('toggle-opacity', function(window, pane)
   local overrides = window:get_config_overrides() or {}
   if is_transparent then
     overrides.window_background_opacity = opacity_seethrough
-    overrides.macos_window_background_blur = 5  -- ぼかしも減らす
+    overrides.macos_window_background_blur = 0  -- ぼかしなしでクリアに
   else
     overrides.window_background_opacity = opacity_normal
     overrides.macos_window_background_blur = 20

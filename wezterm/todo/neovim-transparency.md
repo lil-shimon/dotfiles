@@ -136,15 +136,63 @@ vim.g.transparent_groups = vim.list_extend(
 
 README によると「どこでも何度でも実行可能」だが効果なし。
 
+## デバッグ結果
+
+### `:echo g:transparent_enabled`
+**結果: `v:true`**
+→ transparent.nvim は有効
+
+### `:hi NoicePopup`
+**結果: `NoicePopup xxx links to NormalFloat`**
+→ NoicePopup は NormalFloat にリンクしている
+
+### `:hi NormalFloat`
+**結果: `NormalFloat xxx cleared`**
+→ NormalFloat は**クリアされている** (背景なし)
+
+### 重要な発見
+- transparent.nvim は**正しく動作している**
+- ハイライトグループは cleared になっている
+- しかし黒背景が表示される → **別の原因がある**
+
+### 考えられる原因
+1. **winhl** - プラグインがウィンドウローカルでハイライトを上書きしている
+2. **winblend** - 透過ブレンド設定の問題
+3. floating window 作成時に別のハイライトが適用されている
+
+### winblend テスト結果
+- Telescope の `&winblend` デフォルト値: **5**
+- `:set winblend=100` を実行 → **背後のテキストは透けるが、黒背景は残る**
+- これは winblend が「Neovim内の他ウィンドウ」とブレンドしているだけ
+- **ターミナルの背景とはブレンドされない** ← これが根本原因の可能性
+
+### 結論: Neovim の既知の制限 (Issue #10685)
+
+**根本原因**: Neovim は `winblend > 0` の場合、常に色をブレンドする。
+`bg=NONE` でもブレンド計算が行われ、結果として黒背景になる。
+
+bfredl (Neovim コア開発者) のコメント:
+> "It is because with `blend>0` we always blend the color. We could add an edge case for `blend=100` to preserve the back layer background exactly (including `bg=NONE`)"
+
+**現状**: Neovim 0.11.x では floating window のターミナル背景透過は**不可能**
+
+**修正予定**: Issue #10685 は **Neovim 0.12** マイルストーンで 2025/07/10 に closed
+→ Neovim 0.12 にアップグレードすれば解決する可能性あり
+
+### ワークアラウンド (Issue コメントより)
+- `winblend=0` に設定する（ただし透過なし）
+- `NormalFloat` に `bg=NONE` 以外の色を設定する（黒以外の背景色）
+
 ## 次に試すべきこと
 - [x] `:Telescope highlights` で実際のハイライトグループ名を確認 → 存在確認済み
 - [x] `vim.g.transparent_groups` を使う方法を試す → NG
-- [ ] `:echo vim.g.transparent_enabled` で状態確認
-- [ ] `:hi NoicePopup` で現在のハイライト設定を確認
+- [x] `:echo g:transparent_enabled` で状態確認 → v:true (有効)
+- [x] `:hi NoicePopup` で現在のハイライト設定を確認 → links to NormalFloat
+- [x] `:hi NormalFloat` で確認 → cleared (透過設定済み)
+- [ ] floating window 内で `:echo &winhl` を確認
+- [ ] Telescope/Noice の設定で winhl や winblend を調査
 - [ ] on_clear コールバックで clear_prefix を実行する
-- [ ] 手動で `vim.api.nvim_set_hl(0, "NoicePopup", { bg = "NONE" })` を試す
 - [ ] Telescope 自体の設定で背景を制御できるか調査
-- [ ] カラースキーム (vscode.nvim) 側の transparent オプション確認
 - [ ] transparent.nvim 以外のプラグインを検討
 
 ## 参考リンク

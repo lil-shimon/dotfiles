@@ -86,12 +86,66 @@ require("notify").setup({
 2. nvim-notify の警告が消えない / 背景が黒のまま
 3. clear_prefix が期待通りに動作しない原因不明
 
+## 新しい発見 (2024-12-24)
+
+### `:Telescope highlights` で grep した結果
+ハイライトグループは**存在している**:
+
+**Notify:**
+- `NotifyTRACEBorder`, `NotifyTRACETitle`, `NotifyTRACEIcon`, `NotifyTRACEBody`
+
+**Noice:** (大量)
+- `NoicePopup`, `NoicePopupBorder`, `NoiceMini`
+- `NoiceCmdlinePopup`, `NoiceCmdlinePopupBorder`
+- `NoiceFormatLevelError`, `NoiceFormatLevelWarn`, `NoiceFormatLevelInfo`
+- etc.
+
+→ `clear_prefix` が効かない原因は「ハイライトグループが存在しない」ではない
+
+### 考えられる原因
+1. タイミング問題: p-transparent.lua 実行時にはまだ Noice/Notify が読み込まれていない？
+2. vim.g.transparent_enabled が false?
+3. clear_prefix の戻り値/動作確認が必要
+4. **不明** - 全てのアプローチが失敗している
+
+## 試したこと (追加)
+
+### 6. vim.g.transparent_groups を使用
+**結果: NG**
+
+```lua
+-- Noice
+vim.g.transparent_groups = vim.list_extend(
+  vim.g.transparent_groups or {},
+  { "NoicePopup", "NoicePopupBorder", "NoiceMini", "NoiceCmdlinePopup", "NoiceCmdlinePopupBorder" }
+)
+
+-- Telescope
+vim.g.transparent_groups = vim.list_extend(
+  vim.g.transparent_groups or {},
+  { "TelescopeNormal", "TelescopeBorder", "TelescopePromptNormal", "TelescopePromptBorder",
+    "TelescopeResultsNormal", "TelescopeResultsBorder", "TelescopePreviewNormal", "TelescopePreviewBorder" }
+)
+
+-- Floating windows
+vim.g.transparent_groups = vim.list_extend(
+  vim.g.transparent_groups or {},
+  { "NormalFloat", "FloatBorder", "Pmenu", "PmenuSel" }
+)
+```
+
+README によると「どこでも何度でも実行可能」だが効果なし。
+
 ## 次に試すべきこと
-- [ ] `:Telescope highlights` で実際のハイライトグループ名を確認
-- [ ] vim.g.transparent_groups を使う方法を試す
+- [x] `:Telescope highlights` で実際のハイライトグループ名を確認 → 存在確認済み
+- [x] `vim.g.transparent_groups` を使う方法を試す → NG
+- [ ] `:echo vim.g.transparent_enabled` で状態確認
+- [ ] `:hi NoicePopup` で現在のハイライト設定を確認
+- [ ] on_clear コールバックで clear_prefix を実行する
+- [ ] 手動で `vim.api.nvim_set_hl(0, "NoicePopup", { bg = "NONE" })` を試す
 - [ ] Telescope 自体の設定で背景を制御できるか調査
-- [ ] nvim-notify の透過は諦めて、別のアプローチを検討
 - [ ] カラースキーム (vscode.nvim) 側の transparent オプション確認
+- [ ] transparent.nvim 以外のプラグインを検討
 
 ## 参考リンク
 - https://github.com/xiyaowong/transparent.nvim

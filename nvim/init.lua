@@ -316,21 +316,9 @@ else
           desc = "List GitHub PullRequests",
         },
         {
-          "<leader>od",
-          "<CMD>Octo discussion list<CR>",
-          desc = "List GitHub Discussions",
-        },
-        {
           "<leader>on",
           "<CMD>Octo notification list<CR>",
           desc = "List GitHub Notifications",
-        },
-        {
-          "<leader>os",
-          function()
-            require("octo.utils").create_base_search_command { include_current_repo = true }
-          end,
-          desc = "Search GitHub",
         },
       },
       dependencies = {

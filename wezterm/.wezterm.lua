@@ -11,9 +11,27 @@ config.color_scheme = 'Tokyo Night'
 config.font_size = 16
 config.font = wezterm.font("Monaspace Neon", { weight = "Medium", stretch = "Normal", style = "Normal" })
 config.line_height = 0.9
-  -- 背景を半透明 + ぼかし（macOS）
-config.window_background_opacity = 0.6
+
+-- 背景を半透明 + ぼかし（macOS）
+local opacity_normal = 0.6
+local opacity_seethrough = 0.15  -- 透過モード（ブラウザが見えるレベル）
+config.window_background_opacity = opacity_normal
 config.macos_window_background_blur = 20
+
+-- 透明度トグル用のイベント
+local is_transparent = false
+wezterm.on('toggle-opacity', function(window, pane)
+  is_transparent = not is_transparent
+  local overrides = window:get_config_overrides() or {}
+  if is_transparent then
+    overrides.window_background_opacity = opacity_seethrough
+    overrides.macos_window_background_blur = 5  -- ぼかしも減らす
+  else
+    overrides.window_background_opacity = opacity_normal
+    overrides.macos_window_background_blur = 20
+  end
+  window:set_config_overrides(overrides)
+end)
 
 
 -- window padding
@@ -39,6 +57,8 @@ local function send_key_with_esc(key)
 end
 
 local keys = {
+  -- 透明度トグル（ブラウザを見ながら作業）
+  { key = 'o', mods = 'CTRL|SHIFT', action = act.EmitEvent 'toggle-opacity' },
   -- Ctrl+h/j/k/l: Neovimウィンドウ移動（Claude Code対応）
   { key = 'h', mods = 'CTRL', action = send_key_with_esc('h') },
   { key = 'j', mods = 'CTRL', action = send_key_with_esc('j') },

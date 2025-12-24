@@ -6,8 +6,7 @@ if wezterm.config_builder then
 end
 
 -- UI
--- config.color_scheme = 'ayu'
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'Ayu Mirage'
 config.font_size = 16
 config.font = wezterm.font("Monaspace Neon", { weight = "Medium", stretch = "Normal", style = "Normal" })
 config.line_height = 0.9

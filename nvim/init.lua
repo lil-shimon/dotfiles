@@ -27,6 +27,9 @@ else
     "maxmx03/fluoromachine.nvim",
     "rebelot/kanagawa.nvim",
 
+    -- https://github.com/Shatur/neovim-ayu
+    "Shatur/neovim-ayu",
+
     -- Markdownレンダリング強化
     "MeanderingProgrammer/render-markdown.nvim",
 

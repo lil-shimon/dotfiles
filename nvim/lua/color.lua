@@ -18,7 +18,7 @@ fm.setup {
   -- overrides = overrides
 }
 
-vim.cmd.colorscheme('vscode')
+vim.cmd.colorscheme('ayu-mirage')
 
 vim.fn.sign_define({
   {

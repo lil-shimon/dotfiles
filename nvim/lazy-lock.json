@@ -36,6 +36,7 @@
   "modes.nvim": { "branch": "main", "commit": "2cd194d1033ba391d87d386735e15963adbc5f51" },
   "neotest": { "branch": "master", "commit": "deadfb1af5ce458742671ad3a013acb9a6b41178" },
   "neotest-jest": { "branch": "main", "commit": "a36df9109c75bd1ae46b7bad274615dbbe6e4dcd" },
+  "neovim-ayu": { "branch": "master", "commit": "38caa8b5b969010b1dcae8ab1a569d7669a643d5" },
   "noice.nvim": { "branch": "main", "commit": "7bfd942445fb63089b59f97ca487d605e715f155" },
   "none-ls.nvim": { "branch": "main", "commit": "9a5d95cdf9f440683f248f6f0e97f8643804c91b" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },

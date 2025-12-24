@@ -7,9 +7,11 @@ end
 
 -- UI
 config.color_scheme = 'Ayu Mirage'
+
 -- 通常テキストを暖色系に変更（目に優しい）
 config.colors = {
   foreground = '#FFAD66',
+  -- foreground = '#FFDFB3',
   -- foreground = '#CCA088',
 }
 config.font_size = 16

@@ -332,11 +332,6 @@ else
           end,
           desc = "Search GitHub",
         },
-        {
-          "<leader>on",
-          "<CMD>Octo notification list<CR>",
-          desc = "List GitHub Notifications",
-        },
       },
       dependencies = {
         "nvim-lua/plenary.nvim",

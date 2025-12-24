@@ -18,10 +18,10 @@ vim.diagnostic.config({
   -- サイン表示（新しいAPI）
   signs = {
     text = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '',
+      [vim.diagnostic.severity.ERROR] = '󰅚',
+      [vim.diagnostic.severity.WARN] = '󰀪',
+      [vim.diagnostic.severity.INFO] = '󰋽',
+      [vim.diagnostic.severity.HINT] = '󰌶',
     },
     linehl = {
       [vim.diagnostic.severity.ERROR] = 'ErrorLine',
@@ -45,4 +45,3 @@ vim.cmd [[
   hi DiagnosticVirtualTextInfo guifg=#0db9d7 gui=italic
   hi DiagnosticVirtualTextHint guifg=#10B981 gui=italic
 ]]
-

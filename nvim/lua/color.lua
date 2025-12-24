@@ -20,29 +20,4 @@ fm.setup {
 
 vim.cmd.colorscheme('ayu-mirage')
 
-vim.fn.sign_define({
-  {
-    name = 'DiagnosticSignError',
-    text = '',
-    texthl = 'DiagnosticSignError',
-    linehl = 'ErrorLine',
-  },
-  {
-    name = 'DiagnosticSignWarn',
-    text = '',
-    texthl = 'DiagnosticSignWarn',
-    linehl = 'WarningLine',
-  },
-  {
-    name = 'DiagnosticSignInfo',
-    text = '',
-    texthl = 'DiagnosticSignInfo',
-    linehl = 'InfoLine',
-  },
-  {
-    name = 'DiagnosticSignHint',
-    text = '',
-    texthl = 'DiagnosticSignHint',
-    linehl = 'HintLine',
-  },
-})
+-- sign_defineはp-diagnostic.luaに移動（新しいAPI使用）

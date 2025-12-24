@@ -9,6 +9,7 @@ end
 config.color_scheme = 'ayu'
 config.font_size = 16
 config.font = wezterm.font("Monaspace Neon", { weight = "Regular", stretch = "Normal", style = "Normal" })
+config.line_height = 0.9
 
 -- window padding
 -- https://medium.com/@yusuke_h/%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%8C%E3%83%80%E3%82%B5%E3%81%84%E3%81%A8%E3%83%A2%E3%83%86%E3%81%AA%E3%81%84-wezterm%E7%B4%B9%E4%BB%8B%E7%B7%A8-11306091722a

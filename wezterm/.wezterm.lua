@@ -13,7 +13,7 @@ config.font = wezterm.font("Monaspace Neon", { weight = "Medium", stretch = "Nor
 config.line_height = 0.9
 
 -- 背景を半透明 + ぼかし（macOS）
-local opacity_normal = 0.6
+local opacity_normal = 0.9
 local opacity_seethrough = 0.15  -- 透過モード（ブラウザが見えるレベル）
 config.window_background_opacity = opacity_normal
 config.macos_window_background_blur = 20

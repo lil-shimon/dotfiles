@@ -15,8 +15,21 @@ vim.diagnostic.config({
     header = "",
     prefix = "",
   },
-  -- サイン表示
-  signs = true,
+  -- サイン表示（新しいAPI）
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '',
+    },
+    linehl = {
+      [vim.diagnostic.severity.ERROR] = 'ErrorLine',
+      [vim.diagnostic.severity.WARN] = 'WarningLine',
+      [vim.diagnostic.severity.INFO] = 'InfoLine',
+      [vim.diagnostic.severity.HINT] = 'HintLine',
+    },
+  },
   -- テキストの下線
   underline = true,
   -- インサートモードでも更新

@@ -320,6 +320,11 @@ else
           "<CMD>Octo notification list<CR>",
           desc = "List GitHub Notifications",
         },
+        {
+          "gr",
+          "<CMD>Octo review start<CR>",
+          desc = "Start GitHub Review",
+        },
       },
       dependencies = {
         "nvim-lua/plenary.nvim",

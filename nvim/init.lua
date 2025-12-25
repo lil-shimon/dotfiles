@@ -306,17 +306,17 @@ else
       },
       keys = {
         {
-          "<leader>oi",
+          ",oi",
           "<CMD>Octo issue list<CR>",
           desc = "List GitHub Issues",
         },
         {
-          "<leader>op",
+          ",op",
           "<CMD>Octo pr list<CR>",
           desc = "List GitHub PullRequests",
         },
         {
-          "<leader>on",
+          ",on",
           "<CMD>Octo notification list<CR>",
           desc = "List GitHub Notifications",
         },

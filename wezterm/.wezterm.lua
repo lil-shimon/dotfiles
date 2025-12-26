@@ -6,16 +6,16 @@ if wezterm.config_builder then
 end
 
 -- UI
-config.color_scheme = 'Ayu Mirage'
+config.color_scheme = 'Tokyo Night'
 
 -- 通常テキストを暖色系に変更（目に優しい）
 config.colors = {
-  -- foreground = '#FFAD66',
+  foreground = '#FFAD66',
   -- foreground = '#FFDFB3',
-  foreground = '#CCA088',
+  -- foreground = '#CCA088',
 }
 config.font_size = 16
-config.font = wezterm.font("Monaspace Neon", { weight = "Medium", stretch = "Normal", style = "Normal" })
+config.font = wezterm.font("Monaspace Neon", { weight = "Bold", stretch = "Normal", style = "Normal" })
 config.line_height = 0.9
 
 -- 背景を半透明 + ぼかし（macOS）

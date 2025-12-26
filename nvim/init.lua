@@ -340,6 +340,11 @@ else
           "<CMD>Octo issue reload<CR>",
           desc = "Reload GitHub Issue",
         },
+        {
+          "gca",
+          "<CMD>Octo comment add<CR>",
+          desc = "Add GitHub Comment",
+        },
       },
       config = function(_, opts)
         require("octo").setup(opts)

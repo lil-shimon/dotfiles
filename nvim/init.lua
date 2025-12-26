@@ -345,6 +345,11 @@ else
           "<CMD>Octo comment add<CR>",
           desc = "Add GitHub Comment",
         },
+        {
+          "gpm",
+          "<CMD>Octo pr merge<CR>",
+          desc = "Merge GitHub PullRequest",
+        },
       },
       config = function(_, opts)
         require("octo").setup(opts)

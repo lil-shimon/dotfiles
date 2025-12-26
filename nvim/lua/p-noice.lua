@@ -1,6 +1,7 @@
 -- nvim-notifyの背景色を設定（透過時の警告を防ぐ）
 require("notify").setup({
   background_colour = "#000000",
+  top_down = false, -- 通知を右下に表示
 })
 
 require("noice").setup({

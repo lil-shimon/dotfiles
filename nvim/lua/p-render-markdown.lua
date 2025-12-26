@@ -9,14 +9,7 @@ require('render-markdown').setup({
   render_modes = true,
   
   -- ファイルタイプの設定
-  file_types = { 'markdown' },
-  
-  -- レンダリングする要素の設定
-  render = {
-    min_width = 100,
-    left_pad = 0,
-    right_pad = 0,
-  },
+  file_types = { 'markdown', 'octo' },
   
   -- 見出しの設定
   heading = {

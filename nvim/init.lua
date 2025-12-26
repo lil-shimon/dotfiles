@@ -31,7 +31,10 @@ else
     "Shatur/neovim-ayu",
 
     -- Markdownレンダリング強化
-    "MeanderingProgrammer/render-markdown.nvim",
+    {
+      "MeanderingProgrammer/render-markdown.nvim",
+      ft = { "markdown", "octo" },
+    },
 
     -- ステータスラインのカスタマイズ
     "nvim-lualine/lualine.nvim",
@@ -353,6 +356,8 @@ else
       },
       config = function(_, opts)
         require("octo").setup(opts)
+        -- OctoバッファでTreesitterのmarkdownパーサーを使用 (render-markdown.nvim連携用)
+        vim.treesitter.language.register('markdown', 'octo')
         -- チームレビュワーをアサインするカスタムコマンド (Octo.nvim未サポートのため GitHub API を使用)
         vim.api.nvim_create_user_command("OctoTeamReviewer", function(cmd_opts)
           local team = cmd_opts.args

@@ -6,5 +6,14 @@ null_ls.setup({
     formatting.prettierd.with({
       -- 設定を追加しないのでプロジェクトのprettier設定を参照する
     }),
+    formatting.stylua,
   },
+})
+
+-- Luaファイル保存時に自動フォーマット
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.lua",
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
 })

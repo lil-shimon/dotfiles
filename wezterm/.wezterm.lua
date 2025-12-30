@@ -90,7 +90,7 @@ wezterm.on("format-tab-title", function(tab)
 
   local edge_foreground = background
 
-  local title = tab.active_pane.title
+  local title = "  " .. tab.active_pane.title .. "  "
 
   return {
     { Background = { Color = edge_background } },

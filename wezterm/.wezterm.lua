@@ -18,6 +18,7 @@ config.colors = {
 }
 config.font_size = 16
 config.font = wezterm.font("Monaspace Neon", { weight = "Bold", stretch = "Normal", style = "Normal" })
+config.use_ime = true
 config.line_height = 0.9
 
 -- 背景を半透明 + ぼかし（macOS）

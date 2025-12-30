@@ -54,6 +54,9 @@ config.window_padding = {
 -- タイトルバーを非表示にする
 config.window_decorations = "RESIZE"
 
+-- tabが一つの時は非表示にする
+config.hide_tab_bar_if_only_one_tab = true
+
 -- keybindings
 local act = wezterm.action
 

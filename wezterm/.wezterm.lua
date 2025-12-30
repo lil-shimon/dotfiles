@@ -58,6 +58,7 @@ config.window_decorations = "RESIZE"
 -- tabが一つの時は非表示にする
 config.hide_tab_bar_if_only_one_tab = true
 
+-- タイトルバーの背景を透明にする
 config.window_frame = {
 	inactive_titlebar_bg = "none",
 	active_titlebar_bg = "none",

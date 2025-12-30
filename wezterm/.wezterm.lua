@@ -64,6 +64,9 @@ config.window_frame = {
 	active_titlebar_bg = "none",
 }
 
+-- tabの新規作成ボタンを非表示にする
+config.show_new_tab_button_in_tab_bar = false
+
 -- keybindings
 local act = wezterm.action
 

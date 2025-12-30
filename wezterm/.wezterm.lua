@@ -80,12 +80,16 @@ local keys = {
 	{ key = "c", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	-- past
 	{ key = "v", mods = "LEADER", action = act.PasteFrom("Clipboard") },
+
+	-- Tab関連
+	--
 	-- 新しいタブを開く
 	{
 		key = "c",
 		mods = "LEADER",
 		action = act.SpawnTab("CurrentPaneDomain"),
 	},
+
 	-- Command+Wを無効化 (ウィンドウを閉じないようにする)
 	{
 		key = "w",
@@ -104,6 +108,7 @@ local mouse_bindings = {
 	},
 }
 -- keybindの設定
+-- Leaderキーの設定. Tmuxと同じにしてる
 config.leader = { key = "t", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = keys
 config.mouse_bindings = mouse_bindings

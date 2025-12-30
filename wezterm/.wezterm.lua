@@ -15,6 +15,9 @@ config.colors = {
   foreground = "#FFAD66",
   -- foreground = '#FFDFB3',
   -- foreground = '#CCA088',
+  tab_bar = {
+    inactive_tab_edge = "none",
+  },
 }
 config.font_size = 16
 config.font = wezterm.font("Monaspace Neon", { weight = "Bold", stretch = "Normal", style = "Normal" })

@@ -74,9 +74,13 @@ config.show_new_tab_button_in_tab_bar = false
 -- nightlyのみでサポート(2025/12/30時点)
 config.show_close_tab_button_in_tabs = false
 
+local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
+local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+
 wezterm.on("format-tab-title", function(tab)
   local background = "#5c6d74"
   local foreground = "#ffffff"
+  local edge_background = "none"
 
   -- TODO: 色を変える
   if tab.is_active then
@@ -84,12 +88,22 @@ wezterm.on("format-tab-title", function(tab)
     foreground = "#FFFFFF"
   end
 
+  local edge_foreground = background
+
   local title = tab.active_pane.title
 
   return {
+    { Background = { Color = edge_background } },
+    { Foreground = { Color = edge_foreground } },
+    { Text = SOLID_LEFT_ARROW },
+
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
     { Text = title },
+
+    { Background = { Color = edge_background } },
+    { Foreground = { Color = edge_foreground } },
+    { Text = SOLID_RIGHT_ARROW },
   }
 end)
 

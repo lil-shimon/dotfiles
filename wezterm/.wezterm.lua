@@ -167,6 +167,16 @@ local keys = {
     mods = "LEADER",
     action = act.ActivateTabRelative(1),
   },
+  {
+    key = "LeftArrow",
+    mods = "SHIFT",
+    action = act.ActivateTabRelative(-1),
+  },
+  {
+    key = "RightArrow",
+    mods = "SHIFT",
+    action = act.ActivateTabRelative(1),
+  },
 
   -- Pane関連
   {

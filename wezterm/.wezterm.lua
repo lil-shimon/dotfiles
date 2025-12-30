@@ -86,6 +86,11 @@ local keys = {
 		mods = "LEADER",
 		action = act.SpawnTab("CurrentPaneDomain"),
 	},
+	{
+		key = "q",
+		mods = "LEADER",
+		action = act.CloseCurrentTab({ confirm = true }),
+	},
 
 	-- Pane関連
 	{

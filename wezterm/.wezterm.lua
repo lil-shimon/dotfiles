@@ -65,6 +65,11 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
   inactive_titlebar_bg = "none",
   active_titlebar_bg = "none",
+  font = wezterm.font_with_fallback({
+    { family = "Monaspace Neon", weight = "Bold" },
+    "Hiragino Sans",
+  }),
+  font_size = 14,
 }
 
 -- tabの新規作成ボタンを非表示にする

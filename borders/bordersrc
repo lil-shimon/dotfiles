@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# bordersの設定
+# アクティブウィンドウにボーダーを表示する
+
+options=(
+  style=round        # round | square
+  width=6.0          # ボーダーの太さ
+  hidpi=on           # Retina対応
+  active_color=0xffbd93f9   # アクティブウィンドウのボーダー色 (パープル)
+  inactive_color=0x00000000 # 非アクティブは透明
+)
+
+borders "${options[@]}"

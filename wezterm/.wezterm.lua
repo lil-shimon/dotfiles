@@ -78,6 +78,12 @@ wezterm.on("format-tab-title", function(tab)
   local background = "#5c6d74"
   local foreground = "#ffffff"
 
+  -- TODO: 色を変える
+  if tab.is_active then
+    background = "#ae8b2d"
+    foreground = "#FFFFFF"
+  end
+
   local title = tab.active_pane.title
 
   return {

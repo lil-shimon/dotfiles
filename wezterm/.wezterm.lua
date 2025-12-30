@@ -91,6 +91,16 @@ local keys = {
 		mods = "LEADER",
 		action = act.CloseCurrentTab({ confirm = true }),
 	},
+	{
+		key = "p",
+		mods = "LEADER",
+		action = act.ActivateTabRelative(-1),
+	},
+	{
+		key = "n",
+		mods = "LEADER",
+		action = act.ActivateTabRelative(1),
+	},
 
 	-- Pane関連
 	{

@@ -74,6 +74,16 @@ config.show_new_tab_button_in_tab_bar = false
 -- nightlyのみでサポート(2025/12/30時点)
 config.show_close_tab_button_in_tabs = false
 
+wezterm.on("format-tab-title", function()
+  local background = "#5c6d74"
+  local foreground = "#ffffff"
+
+  return {
+    { Background = { Color = background } },
+    { Foreground = { Color = foreground } },
+  }
+end)
+
 -- keybindings
 local act = wezterm.action
 

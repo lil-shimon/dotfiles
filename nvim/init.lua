@@ -315,6 +315,11 @@ else
 					desc = "List GitHub Issues",
 				},
 				{
+					"gir",
+					"<CMD>Octo issue reload<CR>",
+					desc = "Reload GitHub Issues",
+				},
+				{
 					"gp",
 					"<CMD>Octo pr list<CR>",
 					desc = "List GitHub PullRequests",

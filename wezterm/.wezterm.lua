@@ -93,14 +93,17 @@ wezterm.on("format-tab-title", function(tab)
   local title = "  " .. tab.active_pane.title .. "  "
 
   return {
+    -- left edge
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_LEFT_ARROW },
 
+    -- main tab area
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
     { Text = title },
 
+    -- right edge
     { Background = { Color = edge_background } },
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_RIGHT_ARROW },

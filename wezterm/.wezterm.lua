@@ -51,6 +51,7 @@ config.window_padding = {
 	bottom = 0,
 }
 
+-- title bar, tab 周りのUI設定
 -- タイトルバーを非表示にする
 config.window_decorations = "RESIZE"
 

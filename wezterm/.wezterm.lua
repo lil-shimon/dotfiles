@@ -91,7 +91,7 @@ wezterm.on("format-tab-title", function(tab)
   local edge_background = "none"
 
   if tab.is_active then
-    background = "#7aa2f7" -- アクティブタブ背景（Tokyo Nightブルー）
+    background = "#bb9af7" -- アクティブタブ背景（Tokyo Night紫）
     foreground = "#16161e" -- アクティブタブ前景（暗い背景色）
   end
 

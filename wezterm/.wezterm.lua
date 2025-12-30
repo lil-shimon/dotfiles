@@ -70,6 +70,11 @@ config.window_frame = {
 -- tabの新規作成ボタンを非表示にする
 config.show_new_tab_button_in_tab_bar = false
 
+-- TODO: tokyo nightの背景色を調べて、tabの背景にグラデーションをつける
+-- config.window_background_gradient = {
+--   colors = {},
+-- }
+
 -- tabの閉じるボタンを非表示にする
 -- nightlyのみでサポート(2025/12/30時点)
 config.show_close_tab_button_in_tabs = false

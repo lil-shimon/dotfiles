@@ -72,11 +72,7 @@ local keys = {
 	{ key = "j", mods = "CTRL", action = send_key_with_esc("j") },
 	{ key = "k", mods = "CTRL", action = send_key_with_esc("k") },
 	{ key = "l", mods = "CTRL", action = send_key_with_esc("l") },
-	-- Leader + h/j/k/l: WezTermペイン移動
-	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
-	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
+
 	-- copy
 	{ key = "c", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	-- past
@@ -90,6 +86,21 @@ local keys = {
 		mods = "LEADER",
 		action = act.SpawnTab("CurrentPaneDomain"),
 	},
+
+	-- Pane関連
+	{
+		key = "|",
+		mods = "LEADER",
+		action = act.SplitPane({
+			direction = "Right",
+			size = { Percent = 50 },
+		}),
+	},
+	-- Leader + h/j/k/l: WezTermペイン移動
+	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 
 	-- Command+Wを無効化 (ウィンドウを閉じないようにする)
 	{

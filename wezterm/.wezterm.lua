@@ -5,6 +5,8 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.automatically_reload_config = true
+
 -- UI
 config.color_scheme = "Tokyo Night"
 
@@ -78,10 +80,10 @@ local keys = {
 	{ key = "c", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	-- past
 	{ key = "v", mods = "LEADER", action = act.PasteFrom("Clipboard") },
-	--  CTRL + SHIFT + tで新しいタブを開く
+	-- 新しいタブを開く
 	{
-		key = "t",
-		mods = "SHIFT|CTRL",
+		key = "c",
+		mods = "LEADER",
 		action = act.SpawnTab("CurrentPaneDomain"),
 	},
 	-- Command+Wを無効化 (ウィンドウを閉じないようにする)

@@ -16,12 +16,12 @@ local function get_today_commits()
     handle:close()
     local count = result:gsub("%s+", "")
     if count ~= "" and tonumber(count) then
-      commit_cache.value = " " .. count
+      commit_cache.value = " commits: " .. count
       commit_cache.updated_at = now
     end
   end
 
-  return commit_cache.value or " 0"
+  return commit_cache.value or " commits: 0"
 end
 
 require('lualine').setup {

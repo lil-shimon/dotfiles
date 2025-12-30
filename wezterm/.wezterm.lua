@@ -96,6 +96,14 @@ local keys = {
 			size = { Percent = 50 },
 		}),
 	},
+	{
+		key = "-",
+		mods = "LEADER",
+		action = act.SplitPane({
+			direction = "Down",
+			size = { Percent = 50 },
+		}),
+	},
 	-- Leader + h/j/k/l: WezTermペイン移動
 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },

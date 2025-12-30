@@ -70,10 +70,12 @@ config.window_frame = {
 -- tabの新規作成ボタンを非表示にする
 config.show_new_tab_button_in_tab_bar = false
 
--- TODO: tokyo nightの背景色を調べて、tabの背景にグラデーションをつける
--- config.window_background_gradient = {
---   colors = {},
--- }
+-- Tokyo Night背景色でウィンドウにグラデーションをつける
+config.window_background_gradient = {
+  colors = {
+    "#1a1b26", -- 中央（Tokyo Night背景色）
+  },
+}
 
 -- tabの閉じるボタンを非表示にする
 -- nightlyのみでサポート(2025/12/30時点)
@@ -82,15 +84,15 @@ config.show_close_tab_button_in_tabs = false
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
 
+-- Tokyo Night カラーでタブをフォーマット
 wezterm.on("format-tab-title", function(tab)
   local background = "#5c6d74"
   local foreground = "#ffffff"
   local edge_background = "none"
 
-  -- TODO: 色を変える
   if tab.is_active then
-    background = "#ae8b2d"
-    foreground = "#FFFFFF"
+    background = "#7aa2f7" -- アクティブタブ背景（Tokyo Nightブルー）
+    foreground = "#16161e" -- アクティブタブ前景（暗い背景色）
   end
 
   local edge_foreground = background

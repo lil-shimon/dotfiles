@@ -74,13 +74,16 @@ config.show_new_tab_button_in_tab_bar = false
 -- nightlyのみでサポート(2025/12/30時点)
 config.show_close_tab_button_in_tabs = false
 
-wezterm.on("format-tab-title", function()
+wezterm.on("format-tab-title", function(tab)
   local background = "#5c6d74"
   local foreground = "#ffffff"
+
+  local title = tab.active_pane.title
 
   return {
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
+    { Text = title },
   }
 end)
 

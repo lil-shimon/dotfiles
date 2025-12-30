@@ -51,6 +51,8 @@ config.window_padding = {
 	bottom = 0,
 }
 
+config.window_decorations = "RESIZE"
+
 -- keybindings
 local act = wezterm.action
 

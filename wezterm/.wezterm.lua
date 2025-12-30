@@ -110,6 +110,23 @@ local keys = {
 	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
 	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 	{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
+	-- Paneのサイズ変更
+	{
+		key = "H",
+		mods = "LEADER",
+		action = act.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "J",
+		mods = "LEADER",
+		action = act.AdjustPaneSize({ "Down", 5 }),
+	},
+	{ key = "K", mods = "LEADER", action = act.AdjustPaneSize({ "Up", 5 }) },
+	{
+		key = "L",
+		mods = "LEADER",
+		action = act.AdjustPaneSize({ "Right", 5 }),
+	},
 
 	-- Command+Wを無効化 (ウィンドウを閉じないようにする)
 	{

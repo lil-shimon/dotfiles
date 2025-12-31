@@ -1,27 +1,48 @@
--- GitHub今日のコミット数を取得（キャッシュ付き）
-local commit_cache = { value = nil, updated_at = 0 }
+-- GitHub今日のコミット数・PR数を取得（キャッシュ付き）
+local github_cache = { commits = 0, prs = 0, updated_at = 0 }
 local CACHE_TTL = 60 -- 60秒
 
-local function get_today_commits()
+local function fetch_github_stats()
   local now = os.time()
-  if commit_cache.value and (now - commit_cache.updated_at) < CACHE_TTL then
-    return commit_cache.value
+  if (now - github_cache.updated_at) < CACHE_TTL then
+    return
   end
 
   local today = os.date("%Y-%m-%d")
-  local cmd = 'gh api "/search/commits?q=author:@me+committer-date:' .. today .. '" --jq ".total_count" 2>/dev/null'
-  local handle = io.popen(cmd)
+
+  -- コミット数を取得
+  local commit_cmd = 'gh api "/search/commits?q=author:@me+committer-date:' .. today .. '" --jq ".total_count" 2>/dev/null'
+  local handle = io.popen(commit_cmd)
   if handle then
-    local result = handle:read("*a")
+    local result = handle:read("*a"):gsub("%s+", "")
     handle:close()
-    local count = result:gsub("%s+", "")
-    if count ~= "" and tonumber(count) then
-      commit_cache.value = " commits: " .. count
-      commit_cache.updated_at = now
+    if result ~= "" and tonumber(result) then
+      github_cache.commits = tonumber(result)
     end
   end
 
-  return commit_cache.value or " commits: 0"
+  -- PR数を取得
+  local pr_cmd = 'gh api "/search/issues?q=author:@me+type:pr+created:' .. today .. '" --jq ".total_count" 2>/dev/null'
+  handle = io.popen(pr_cmd)
+  if handle then
+    local result = handle:read("*a"):gsub("%s+", "")
+    handle:close()
+    if result ~= "" and tonumber(result) then
+      github_cache.prs = tonumber(result)
+    end
+  end
+
+  github_cache.updated_at = now
+end
+
+local function get_today_commits()
+  fetch_github_stats()
+  return " commits: " .. github_cache.commits
+end
+
+local function get_today_prs()
+  fetch_github_stats()
+  return " PRs: " .. github_cache.prs
 end
 
 require('lualine').setup {
@@ -47,7 +68,7 @@ require('lualine').setup {
     lualine_a = { 'mode' },
     lualine_b = { { 'filename', path = 3 } },
     lualine_c = { 'diagnostics' },
-    lualine_x = { get_today_commits },
+    lualine_x = { get_today_prs, get_today_commits },
     lualine_y = { '' },
     lualine_z = { 'filetype' }
   },

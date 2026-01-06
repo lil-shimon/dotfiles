@@ -14,6 +14,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- Copilot用：miseのNode 22を常に使用（プロジェクトのNode 20でも動作するように）
+vim.g.copilot_node_command = vim.fn.expand("~/.local/share/mise/installs/node/22/bin/node")
+
 if vim.g.vscode == 1 then
 else
 	require("lazy").setup({

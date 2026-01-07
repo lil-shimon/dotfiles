@@ -33,7 +33,7 @@ require('telescope').setup {
       "--column",
       "--smart-case"
     },
-    file_ignore_patterns = { "node_modules", "yarn.lock", ".git", "dist", "build", ".next", "coverage", "__screenshots__" },
+    file_ignore_patterns = { "node_modules", "yarn.lock", "%.git/", "dist", "build", ".next", "coverage", "__screenshots__" },
     dynamic_preview_title = true,
     path_display = { 'smart' },
     mappings = {

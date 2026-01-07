@@ -19,10 +19,16 @@ config.colors = {
     inactive_tab_edge = "none",
   },
 }
-config.font_size = 16
-config.font = wezterm.font("Monaspace Neon", { weight = "Bold", stretch = "Normal", style = "Normal" })
+config.font_size = 14
+config.font = wezterm.font_with_fallback({
+  {
+    family = "JetBrains Mono",
+    weight = "Bold",
+  },
+  "HackGen Console NF",
+})
 config.use_ime = true
-config.line_height = 0.9
+config.line_height = 0.85
 
 -- 背景を半透明 + ぼかし（macOS）
 local opacity_normal = 0.7

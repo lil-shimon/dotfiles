@@ -12,26 +12,28 @@ config.color_scheme = "Tokyo Night"
 
 -- 通常テキストを暖色系に変更（目に優しい）
 config.colors = {
-  foreground = "#FFAD66",
-  -- foreground = '#FFDFB3',
-  -- foreground = '#CCA088',
+  -- foreground = "#FFAD66",
+  -- foreground = "#FFDFB3",
+  -- foreground = "#CCA088",
   tab_bar = {
     inactive_tab_edge = "none",
   },
 }
-config.font_size = 14
+config.font_size = 16
 config.font = wezterm.font_with_fallback({
   {
     family = "JetBrains Mono",
+    -- family = "Monaspace Neon",
     weight = "Bold",
   },
-  "HackGen Console NF",
+  "UDEV Gothic NF",
+  -- "HackGen Console NF",
 })
 config.use_ime = true
 config.line_height = 0.85
 
 -- 背景を半透明 + ぼかし（macOS）
-local opacity_normal = 0.7
+local opacity_normal = 0.9
 local opacity_seethrough = 0.15 -- 透過モード（ブラウザが見えるレベル）
 config.window_background_opacity = opacity_normal
 config.macos_window_background_blur = 20

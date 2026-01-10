@@ -1,86 +1,82 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 -- Save and Quit
-keymap('n', '<leader>q', '<cmd>q<cr>')
-keymap('n', '<leader>w', '<cmd>w<cr>')
-keymap('n', '<leader>x', '<cmd>x<cr>')
+keymap("n", "<leader>q", "<cmd>q<cr>")
+keymap("n", "<leader>w", "<cmd>w<cr>")
+keymap("n", "<leader>x", "<cmd>x<cr>")
 
-keymap('n', '<c-a>', 'ggVG')
+keymap("n", "H", "^")
+keymap("n", "L", "$")
 
-keymap('n', 'H', '^')
-keymap('n', 'L', '$')
-
-keymap('n', "j", [[v:count?'j':'gj']], { noremap = true, expr = true })
-keymap('n', "k", [[v:count?'k':'gk']], { noremap = true, expr = true })
+keymap("n", "j", [[v:count?'j':'gj']], { noremap = true, expr = true })
+keymap("n", "k", [[v:count?'k':'gk']], { noremap = true, expr = true })
 
 -- Insert/Terminal to Normal
-keymap('i', 'jj', '<esc>')
-keymap('t', 'jj', '<C-\\><C-n>')
+keymap("i", "jj", "<esc>")
+keymap("t", "jj", "<C-\\><C-n>")
 
 -- New tab
-keymap('n', 'te', ':tabedit<Return>', { silent = true })
+keymap("n", "te", ":tabedit<Return>", { silent = true })
 -- Next tab
-keymap('n', 'tn', ':tabnext<Return>', { silent = true })
+keymap("n", "tn", ":tabnext<Return>", { silent = true })
 -- Previous tab
-keymap('n', 'tp', ':tabprevious<Return>', { silent = true })
+keymap("n", "tp", ":tabprevious<Return>", { silent = true })
 -- Close tab
-keymap('n', 'tq', ':tabclose<Return>', { silent = true })
+keymap("n", "tq", ":tabclose<Return>", { silent = true })
 
 -- Split window
-keymap('n', 'ss', ':split<Return><C-w>w', { silent = true })
-keymap('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
+keymap("n", "ss", ":split<Return><C-w>w", { silent = true })
+keymap("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
 
 -- Move window
-keymap('', 'sh', '<C-w>h')
-keymap('', 'sk', '<C-w>k')
-keymap('', 'sj', '<C-w>j')
-keymap('', 'sl', '<C-w>l')
-keymap('', ' j', '<C-w>j')
-keymap('', ' h', '<C-w>h')
-keymap('', ' l', '<C-w>l')
+keymap("", "sh", "<C-w>h")
+keymap("", "sk", "<C-w>k")
+keymap("", "sj", "<C-w>j")
+keymap("", "sl", "<C-w>l")
+keymap("", " j", "<C-w>j")
+keymap("", " h", "<C-w>h")
+keymap("", " l", "<C-w>l")
 -- Ctrl+h/j/k/l: ウィンドウ移動（Claude Code対応）
-keymap('n', '<C-h>', '<C-w>h')
-keymap('n', '<C-j>', '<C-w>j')
-keymap('n', '<C-k>', '<C-w>k')
-keymap('n', '<C-l>', '<C-w>l')
+keymap("n", "<C-h>", "<C-w>h")
+keymap("n", "<C-j>", "<C-w>j")
+keymap("n", "<C-k>", "<C-w>k")
+keymap("n", "<C-l>", "<C-w>l")
 
 -- Delete a word backwards
-keymap('n', 'dw', 'vb"_d')
+keymap("n", "dw", 'vb"_d')
 
 -- Select all ( just in case )
-keymap('n', '<C-a>', 'gg<S-v>G')
+keymap("n", "<C-a>", "gg<S-v>G")
 
 -- Do not yank with x
-keymap('n', 'x', '"_x')
+keymap("n", "x", '"_x')
 
 -- Oil ( file tree plugin ) keymaptings
-keymap("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory"})
+keymap("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory" })
 keymap("n", "<c-f>", function()
-  require("oil").open(".")
+	require("oil").open(".")
 end, { desc = "Oil ." })
 
 -- Barbar (tab plugin) keymaptings
-keymap('n', 'ap', '<Cmd>BufferPrevious<CR>', opts)
-keymap('n', 'an', '<Cmd>BufferNext<CR>', opts)
-keymap('n', 'Ap', '<Cmd>BufferPin<CR>', opts)
-keymap('n', 'bd', '<Cmd>BufferClose<CR>', opts)
+keymap("n", "ap", "<Cmd>BufferPrevious<CR>", opts)
+keymap("n", "an", "<Cmd>BufferNext<CR>", opts)
+keymap("n", "Ap", "<Cmd>BufferPin<CR>", opts)
+keymap("n", "bd", "<Cmd>BufferClose<CR>", opts)
 
 -- diffview (git diff view) keymaptings
-keymap('n', ',s', "<cmd>DiffviewOpen<CR>")
-keymap('n', ',a', "<cmd>DiffviewClose<CR>")
+keymap("n", ",s", "<cmd>DiffviewOpen<CR>")
+keymap("n", ",a", "<cmd>DiffviewClose<CR>")
 
 -- diagnostic keymaptings
-keymap("n", "<leader>e", vim.diagnostic.open_float, opts)  -- カーソル位置のエラーをフロートで表示
-keymap("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
-keymap("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR }) end, opts)  -- エラーのみジャンプ
-
--- camel case motion
-keymap("n", "w", "<Plug>CamelCaseMotion_w", opts)
-keymap("n", "e", "<Plug>CamelCaseMotion_e", opts)
-keymap("n", "b", "<Plug>CamelCaseMotion_b", opts)
-keymap("n", "ge", "<Plug>CamelCaseMotion_ge", opts)
+keymap("n", "<leader>e", vim.diagnostic.open_float, opts) -- カーソル位置のエラーをフロートで表示
+keymap("n", "[e", function()
+	vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, opts) -- エラーのみジャンプ
+keymap("n", "]e", function()
+	vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, opts) -- エラーのみジャンプ
 
 -- jump cursor
 keymap("n", "ff", "<Plug>(jumpcursor-jump)", opts)
@@ -104,7 +100,7 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 -- TODO: エラーになるので、確認する
 -- コマンド直打ちでは機能している
 keymap("n", "D", "<cmd>Lspsaga show_line_diagnostic<CR>", opts)
-keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)
+keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<cr>", opts)
 
 -- コードアクション
 keymap("n", "V", "<cmd>Lspsaga code_action<CR>", opts)
@@ -125,8 +121,7 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
 -- Gitのkeymapは`p-git.lua`
 
 -- smartword keymaps
-keymap('n', 'w', '<Plug>(smartword-w)', opts)
-keymap('n', 'e', '<Plug>(smartword-e)', opts)
-keymap('n', 'b', '<Plug>(smartword-b)', opts)
-keymap('n', 'ge', '<Plug>(smartword-ge)', opts)
-
+keymap("n", "w", "<Plug>(smartword-w)", opts)
+keymap("n", "e", "<Plug>(smartword-e)", opts)
+keymap("n", "b", "<Plug>(smartword-b)", opts)
+keymap("n", "ge", "<Plug>(smartword-ge)", opts)

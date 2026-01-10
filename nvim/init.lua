@@ -283,9 +283,9 @@ require("lazy").setup({
     event = { "CursorMoved", "CursorMovedI" },
     opts = {
       colors = {
-        copy = "#FFCC00",   -- yellow
+        copy = "#FFCC00", -- yellow
         delete = "#FC199A", -- pink
-        insert = "#72F1B8", -- green
+        insert = "#61E2FF", -- cyan
         visual = "#FF8B39", -- orange
       },
     },

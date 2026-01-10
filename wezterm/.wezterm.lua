@@ -152,8 +152,10 @@ local keys = {
 	{ key = "k", mods = "CTRL", action = send_key_with_esc("k") },
 	{ key = "l", mods = "CTRL", action = send_key_with_esc("l") },
 
+	-- copy mode (tmux風: LEADER + [ でコピーモード、y でコピー)
+	{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },
 	-- copy
-	{ key = "c", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
+	{ key = "y", mods = "LEADER", action = act.CopyTo("ClipboardAndPrimarySelection") },
 	-- paste
 	{ key = "v", mods = "LEADER", action = act.PasteFrom("Clipboard") },
 

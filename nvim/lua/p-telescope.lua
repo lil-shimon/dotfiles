@@ -88,3 +88,17 @@ require("telescope").setup({
 
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("fzf")
+
+-- file_browser keymap (extensions読み込み後に設定)
+keymap("n", "<leader><leader>", function()
+	require("telescope").extensions.file_browser.file_browser({
+		path = "%:p:h",
+		cwd = telescope_buffer_dir(),
+		respect_git_ignore = true,
+		hidden = true,
+		grouped = true,
+		previewer = false,
+		initial_mode = "normal",
+		layout_config = { height = 40 },
+	})
+end, opts)

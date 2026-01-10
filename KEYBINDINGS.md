@@ -69,7 +69,6 @@
 - `Ctrl+e` : Oil（現在のバッファのディレクトリ）
 - `Ctrl+f` : Oil（カレントディレクトリ）
 - `<leader>f` : ファイル検索（Telescope）
-- `<leader>g` : 文字列検索（Telescope live_grep）
 - `<leader>r` : 文字列検索（Telescope live_grep）
 - `<leader>d` : 診断一覧（Telescope）
 - `<leader><leader>` : ファイルブラウザ（Telescope）
@@ -113,8 +112,63 @@
 - `<leader>cs` : 選択範囲をClaude Codeに送信（visual mode）
 - `<leader>cb` : 現在のファイルをClaude Codeに追加
 
+## WezTerm
+
+### 基本設定
+- Leader: `Ctrl+t`
+
+### コピー/ペースト
+- `Leader + [` : コピーモードに入る
+- `y` : コピー（コピーモード中）
+- `Leader + v` : ペースト
+- マウスドラッグ選択でもクリップボードにコピー
+
+### タブ操作
+- `Leader + c` : 新しいタブ
+- `Leader + q` : タブを閉じる
+- `Leader + p` : 前のタブ
+- `Leader + n` : 次のタブ
+- `Shift+←,→` : タブ切り替え
+
+### ペイン操作
+- `Leader + |` : 縦分割
+- `Leader + -` : 横分割
+- `Leader + h,j,k,l` : ペイン移動
+- `Leader + H,J,K,L` : ペインリサイズ（5単位）
+- `Leader + x` : ペインを閉じる
+
+### その他
+- `Ctrl+Shift+o` : 透明度トグル（ブラウザ見ながら作業用）
+- `Ctrl+h,j,k,l` : Neovimウィンドウ移動（Claude Code対応）
+
+## AeroSpace（ウィンドウマネージャ）
+
+### フォーカス/移動
+- `Alt + h,j,k,l` : ウィンドウフォーカス移動
+- `Alt + Shift + h,j,k,l` : ウィンドウ移動
+
+### ワークスペース
+- `Alt + 1-9` : ワークスペース切り替え
+- `Alt + a-z` : ワークスペース切り替え（アルファベット）
+- `Alt + Shift + 1-9` : ウィンドウをワークスペースに移動
+- `Alt + Shift + a-z` : ウィンドウをワークスペースに移動
+- `Alt + Tab` : 前のワークスペースに戻る
+- `Alt + Shift + Tab` : ワークスペースを次のモニターに移動
+
+### レイアウト
+- `Alt + /` : タイル/アコーディオンレイアウト切り替え
+- `Alt + ,` : アコーディオンレイアウト
+- `Alt + -` : リサイズ（縮小）
+- `Alt + =` : リサイズ（拡大）
+
+### サービスモード（`Alt + Shift + ;` で入る）
+- `Esc` : 設定リロードして終了
+- `r` : レイアウトリセット
+- `f` : フローティング/タイリング切り替え
+- `Backspace` : 他のウィンドウを全て閉じる
+
 ## 共通操作
 
 ### macOS クリップボード
-- tmuxのコピーモードで `y` または `Y` でコピーした内容は、macOSのクリップボードにも保存される
+- WezTerm/tmuxのコピーモードでコピーした内容は、macOSのクリップボードにも保存される
 - `Cmd+V` で他のアプリケーションにペースト可能

@@ -22,12 +22,10 @@ config.colors = {
 config.font_size = 16
 config.font = wezterm.font_with_fallback({
 	{
-		family = "JetBrains Mono",
-		-- family = "Monaspace Neon",
+		family = "MesloLGLDZ Nerd Font Mono",
 		weight = "Bold",
 	},
 	"UDEV Gothic NF",
-	-- "HackGen Console NF",
 })
 config.use_ime = true
 config.line_height = 0.85
@@ -74,7 +72,7 @@ config.window_frame = {
 	inactive_titlebar_bg = "none",
 	active_titlebar_bg = "none",
 	font = wezterm.font_with_fallback({
-		{ family = "Monaspace Neon", weight = "Bold" },
+		{ family = "MesloLGLDZ Nerd Font Mono", weight = "Bold" },
 		"Hiragino Sans",
 	}),
 	font_size = 14,

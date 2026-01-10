@@ -284,9 +284,9 @@ require("lazy").setup({
     opts = {
       colors = {
         copy = "#FFCC00",   -- yellow
-        delete = "#FE4450", -- red
-        insert = "#61E2FF", -- cyan
-        visual = "#AF6DF9", -- purple
+        delete = "#FC199A", -- pink
+        insert = "#72F1B8", -- green
+        visual = "#FF8B39", -- orange
       },
     },
   },

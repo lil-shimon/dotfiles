@@ -45,6 +45,7 @@
 - `H` : 行頭へ移動
 - `L` : 行末へ移動
 - `x` : 削除（ヤンクしない）
+- `dw` : 単語を後方から削除
 
 ### ウィンドウ操作
 - `ss` : 水平分割
@@ -100,6 +101,17 @@
 - `,a` : DiffviewClose（差分を閉じる）
 - `<leader>gb` : Git blame
 - `<leader>go` : GitリポジトリをブラウザでOpen
+
+### GitHub操作（Octo）
+- `gi` : Issue一覧
+- `gir` : Issue再読み込み
+- `gp` : PR一覧
+- `gn` : 通知一覧
+- `gr` : レビュー開始
+- `gs` : レビュー送信
+- `gpr` : PR再読み込み
+- `gca` : コメント追加
+- `gpm` : PRマージ
 
 ### モーション
 - `w,e,b,ge` : smartword対応（CamelCase考慮）

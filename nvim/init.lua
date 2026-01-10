@@ -17,421 +17,418 @@ vim.opt.rtp:prepend(lazypath)
 -- Copilot用：miseのNode 22を常に使用（プロジェクトのNode 20でも動作するように）
 vim.g.copilot_node_command = vim.fn.expand("~/.local/share/mise/installs/node/22/bin/node")
 
-if vim.g.vscode == 1 then
-else
-  require("lazy").setup({
-    -- エディタのビジュアルテーマ
-    "navarasu/onedark.nvim",
-    "folke/tokyonight.nvim",
-    "Mofiqul/vscode.nvim",
-    "projekt0n/github-nvim-theme",
-    "tiagovla/tokyodark.nvim",
-    "olivercederborg/poimandres.nvim",
-    "morhetz/gruvbox",
-    "maxmx03/fluoromachine.nvim",
-    "rebelot/kanagawa.nvim",
+require("lazy").setup({
+  -- エディタのビジュアルテーマ
+  "navarasu/onedark.nvim",
+  "folke/tokyonight.nvim",
+  "Mofiqul/vscode.nvim",
+  "projekt0n/github-nvim-theme",
+  "tiagovla/tokyodark.nvim",
+  "olivercederborg/poimandres.nvim",
+  "morhetz/gruvbox",
+  "maxmx03/fluoromachine.nvim",
+  "rebelot/kanagawa.nvim",
 
-    -- https://github.com/Shatur/neovim-ayu
-    "Shatur/neovim-ayu",
+  -- https://github.com/Shatur/neovim-ayu
+  "Shatur/neovim-ayu",
 
-    -- Markdownレンダリング強化
-    {
-      "MeanderingProgrammer/render-markdown.nvim",
-      ft = { "markdown", "octo" },
+  -- Markdownレンダリング強化
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "octo" },
+  },
+
+  -- ステータスラインのカスタマイズ
+  "nvim-lualine/lualine.nvim",
+
+  -- LSP (Language Server Protocol) と関連ツールのインストールと管理
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
+
+  -- オートペアリング（括弧やクォートの自動補完）
+  "windwp/nvim-autopairs",
+
+  -- マルチカーソル機能
+  -- "mg979/vim-visual-multi",
+  --
+  -- -- テキスト選択の拡張機能
+  -- "gcmt/wildfire.vim",
+
+  -- テキスト周りの操作のカスタマイズ（サラウンド）
+  -- TODO: 使えるようにする
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end,
+  },
+
+  -- ファイル検索や様々なリスト表示のための拡張機能
+  "nvim-telescope/telescope.nvim",
+  "nvim-telescope/telescope-file-browser.nvim",
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  "nvim-lua/plenary.nvim",
+
+  -- オートコンプリート機能
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/nvim-cmp",
+  "onsails/lspkind-nvim",
+
+  -- lspのUIを拡張
+  -- hover_docやshow_line_diagnosticなどの機能を提供してくれる
+  "glepnir/lspsaga.nvim",
+
+  -- スニペット機能
+  "saadparwaiz1/cmp_luasnip",
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+  },
+
+  -- TypeScriptに特化したLSP機能 (archived, using ts_ls LSP instead)
+  "nvimtools/none-ls.nvim",
+
+  -- Treesitterベースの構文解析とハイライト
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {},
+  },
+  "nvim-treesitter/nvim-treesitter-context",
+  -- https://github.com/windwp/nvim-ts-autotag
+  -- tsxなどでタグを自動で追加する。必須級プラグイン
+  "windwp/nvim-ts-autotag",
+  "HiPhish/rainbow-delimiters.nvim",
+  "axelvc/template-string.nvim",
+
+  -- TODOコメントのハイライトと管理
+  "folke/todo-comments.nvim",
+
+  -- コメントの追加と管理
+  "numToStr/Comment.nvim",
+
+  -- Git blame情報の表示
+  "f-person/git-blame.nvim",
+
+  -- ファイルエクスプローラ
+  "nvim-tree/nvim-web-devicons",
+
+  -- クリップボード履歴の管理
+  "gbprod/yanky.nvim",
+
+  -- ノーティフィケーションとUI改善
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "munifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
+  },
 
-    -- ステータスラインのカスタマイズ
-    "nvim-lualine/lualine.nvim",
+  -- カーソルがいる場所のスコープを矢印で示してくれる
+  -- vscodeでいうところのindent raindowなどの機能も提供してくれる
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
+  },
 
-    -- LSP (Language Server Protocol) と関連ツールのインストールと管理
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  -- tablineを強力に拡張してくれる
+  {
+    "romgrk/barbar.nvim",
+  },
 
-    -- オートペアリング（括弧やクォートの自動補完）
-    "windwp/nvim-autopairs",
+  {
+    "dinhhuy258/git.nvim",
+  },
+  -- ファイルの変更箇所をおしゃれに表示
+  {
+    "lewis6991/gitsigns.nvim",
+  },
 
-    -- マルチカーソル機能
-    -- "mg979/vim-visual-multi",
-    --
-    -- -- テキスト選択の拡張機能
-    -- "gcmt/wildfire.vim",
+  -- カラーコードの色を再現
+  {
+    "norcalli/nvim-colorizer.lua",
+  },
 
-    -- テキスト周りの操作のカスタマイズ（サラウンド）
-    -- TODO: 使えるようにする
-    {
-      "kylechui/nvim-surround",
-      version = "*",
-      event = "VeryLazy",
-      config = function()
-        require("nvim-surround").setup({})
-      end,
-    },
-
-    -- ファイル検索や様々なリスト表示のための拡張機能
-    "nvim-telescope/telescope.nvim",
-    "nvim-telescope/telescope-file-browser.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-lua/plenary.nvim",
-
-    -- オートコンプリート機能
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/nvim-cmp",
-    "onsails/lspkind-nvim",
-
-    -- lspのUIを拡張
-    -- hover_docやshow_line_diagnosticなどの機能を提供してくれる
-    "glepnir/lspsaga.nvim",
-
-    -- スニペット機能
-    "saadparwaiz1/cmp_luasnip",
-    {
-      "L3MON4D3/LuaSnip",
-      -- follow latest release.
-      version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-      -- install jsregexp (optional!).
-      build = "make install_jsregexp",
-    },
-
-    -- TypeScriptに特化したLSP機能 (archived, using ts_ls LSP instead)
-    "nvimtools/none-ls.nvim",
-
-    -- Treesitterベースの構文解析とハイライト
-    {
-      "nvim-treesitter/nvim-treesitter",
-      dependencies = {},
-    },
-    "nvim-treesitter/nvim-treesitter-context",
-    -- https://github.com/windwp/nvim-ts-autotag
-    -- tsxなどでタグを自動で追加する。必須級プラグイン
-    "windwp/nvim-ts-autotag",
-    "HiPhish/rainbow-delimiters.nvim",
-    "axelvc/template-string.nvim",
-
-    -- TODOコメントのハイライトと管理
-    "folke/todo-comments.nvim",
-
-    -- コメントの追加と管理
-    "numToStr/Comment.nvim",
-
-    -- Git blame情報の表示
-    "f-person/git-blame.nvim",
-
-    -- ファイルエクスプローラ
-    "nvim-tree/nvim-web-devicons",
-
-    -- クリップボード履歴の管理
-    "gbprod/yanky.nvim",
-
-    -- ノーティフィケーションとUI改善
-    {
-      "folke/noice.nvim",
-      event = "VeryLazy",
-      opts = {},
-      dependencies = {
-        "munifTanjim/nui.nvim",
-        "rcarriga/nvim-notify",
-      },
-    },
-
-    -- カーソルがいる場所のスコープを矢印で示してくれる
-    -- vscodeでいうところのindent raindowなどの機能も提供してくれる
-    {
-      "shellRaining/hlchunk.nvim",
-      event = { "UIEnter" },
-    },
-
-    -- tablineを強力に拡張してくれる
-    {
-      "romgrk/barbar.nvim",
-    },
-
-    {
-      "dinhhuy258/git.nvim",
-    },
-    -- ファイルの変更箇所をおしゃれに表示
-    {
-      "lewis6991/gitsigns.nvim",
-    },
-
-    -- カラーコードの色を再現
-    {
-      "norcalli/nvim-colorizer.lua",
-    },
-
-    -- git diffをリッチに表示
-    {
-      "sindrets/diffview.nvim",
-    },
-    -- テキスト移動をより便利に
-    -- 文字の先頭にいく(fで設定)
-    {
-      "hrsh7th/vim-eft",
-    },
-    -- テキスト移動をより便利に
-    -- 画面上全体から移動できる(ffで設定)
-    {
-      "skanehira/jumpcursor.vim",
-    },
-    -- 移動で記号などを無視してアルファベットの頭に移動できる
-    {
-      "kana/vim-smartword",
-    },
-    -- camelCaseとかsnake_caseとかの単語の境界に移動できるプラグイン
-    {
-      "bkad/CamelCaseMotion",
-    },
-    -- denops
-    {
+  -- git diffをリッチに表示
+  {
+    "sindrets/diffview.nvim",
+  },
+  -- テキスト移動をより便利に
+  -- 文字の先頭にいく(fで設定)
+  {
+    "hrsh7th/vim-eft",
+  },
+  -- テキスト移動をより便利に
+  -- 画面上全体から移動できる(ffで設定)
+  {
+    "skanehira/jumpcursor.vim",
+  },
+  -- 移動で記号などを無視してアルファベットの頭に移動できる
+  {
+    "kana/vim-smartword",
+  },
+  -- camelCaseとかsnake_caseとかの単語の境界に移動できるプラグイン
+  {
+    "bkad/CamelCaseMotion",
+  },
+  -- denops
+  {
+    "vim-denops/denops.vim",
+  },
+  -- ローマ字で日本語を検索できるプラグイン
+  {
+    "lambdalisue/kensaku.vim",
+    dependencies = {
       "vim-denops/denops.vim",
     },
-    -- ローマ字で日本語を検索できるプラグイン
-    {
+  },
+  -- 下記が機能有効化のためのプラグイン
+  -- nihon -> 日本
+  {
+    "lambdalisue/kensaku-search.vim",
+    config = function()
+      vim.keymap.set("c", "<CR>", "<Plug>(kensaku-search-replace)<CR>")
+    end,
+    dependencies = {
       "lambdalisue/kensaku.vim",
-      dependencies = {
-        "vim-denops/denops.vim",
-      },
     },
-    -- 下記が機能有効化のためのプラグイン
-    -- nihon -> 日本
-    {
-      "lambdalisue/kensaku-search.vim",
-      config = function()
-        vim.keymap.set("c", "<CR>", "<Plug>(kensaku-search-replace)<CR>")
-      end,
-      dependencies = {
-        "lambdalisue/kensaku.vim",
-      },
+  },
+  -- Show match number and index for searching
+  {
+    "kevinhwang91/nvim-hlslens",
+    branch = "main",
+    keys = { "*", "#", "n", "N" },
+    config = function()
+      require("hlslens").setup({
+        calm_down = true,
+        nearest_only = true,
+        nearest_float_when = "always",
+      })
+    end,
+  },
+  -- Smooth scrolling
+  {
+    "gen740/SmoothCursor.nvim",
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "haydenmeade/neotest-jest", -- 正しいJestアダプター
     },
-    -- Show match number and index for searching
-    {
-      "kevinhwang91/nvim-hlslens",
-      branch = "main",
-      keys = { "*", "#", "n", "N" },
-      config = function()
-        require("hlslens").setup({
-          calm_down = true,
-          nearest_only = true,
-          nearest_float_when = "always",
-        })
-      end,
-    },
-    -- Smooth scrolling
-    {
-      "gen740/SmoothCursor.nvim",
-    },
-    {
-      "nvim-neotest/neotest",
-      dependencies = {
-        "nvim-neotest/nvim-nio",
-        "nvim-lua/plenary.nvim",
-        "antoinemadec/FixCursorHold.nvim",
-        "nvim-treesitter/nvim-treesitter",
-        "haydenmeade/neotest-jest", -- 正しいJestアダプター
-      },
-    },
-    {
-      "LhKipp/nvim-nu",
-      config = function()
-        require("nu").setup({})
-      end,
-    },
-    {
-      "lil-shimon/snapshot-runner",
-      dependencies = { "vim-denops/denops.vim" },
-    },
-    -- Claude Code AI integration
-    {
-      "coder/claudecode.nvim",
-      dependencies = { "folke/snacks.nvim" },
-      event = "VeryLazy",
-      opts = {
-        -- alias ではなくフルパスを指定
-        terminal_cmd = "/Users/shimonlil/.claude/local/claude",
-        terminal = {
-          snacks_win_opts = {
-            position = "bottom",
-            height = 0.4,
-          },
+  },
+  {
+    "LhKipp/nvim-nu",
+    config = function()
+      require("nu").setup({})
+    end,
+  },
+  {
+    "lil-shimon/snapshot-runner",
+    dependencies = { "vim-denops/denops.vim" },
+  },
+  -- Claude Code AI integration
+  {
+    "coder/claudecode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    event = "VeryLazy",
+    opts = {
+      -- alias ではなくフルパスを指定
+      terminal_cmd = "/Users/shimonlil/.claude/local/claude",
+      terminal = {
+        snacks_win_opts = {
+          position = "bottom",
+          height = 0.4,
         },
       },
-      keys = {
-        { "<leader>cc", "<cmd>ClaudeCode<cr>",      desc = "Toggle Claude" },
-        { "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
-        { "<leader>cs", "<cmd>ClaudeCodeSend<cr>",  desc = "Send selection",  mode = "v" },
-        { "<leader>cb", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current file" },
+    },
+    keys = {
+      { "<leader>cc", "<cmd>ClaudeCode<cr>",      desc = "Toggle Claude" },
+      { "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+      { "<leader>cs", "<cmd>ClaudeCodeSend<cr>",  desc = "Send selection",  mode = "v" },
+      { "<leader>cb", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current file" },
+    },
+  },
+  {
+    "stevearc/oil.nvim",
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    keys = {
+      "<leader>a",
+    },
+    -- Optional dependencies
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
+  },
+  -- TODO: 設定をする
+  -- FYI: https://zenn.dev/layerx/articles/8c29b0367238b8#modes.nvim%3A-%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E6%83%85%E5%A0%B1%E3%81%AF%E7%8F%BE%E5%9C%A8%E8%A1%8C%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E8%89%B2%E3%81%A7%E8%A1%A8%E3%81%99
+  {
+    "mvllow/modes.nvim",
+    tag = "v0.2.1",
+    config = function()
+      require("modes").setup()
+    end,
+  },
+  {
+    "github/copilot.vim",
+  },
+  -- 背景透過プラグイン
+  -- https://github.com/xiyaowong/transparent.nvim
+  "xiyaowong/transparent.nvim",
+  -- PRレビュープラグイン
+  -- https://github.com/pwntester/octo.nvim
+  {
+    "pwntester/octo.nvim",
+    cmd = "Octo",
+    opts = {
+      -- or "fzf-lua" or "snacks" or "default"
+      picker = "telescope",
+      -- bare Octo command opens picker of commands
+      enable_builtin = true,
+    },
+    keys = {
+      {
+        "gi",
+        "<CMD>Octo issue list<CR>",
+        desc = "List GitHub Issues",
+      },
+      {
+        "gir",
+        "<CMD>Octo issue reload<CR>",
+        desc = "Reload GitHub Issues",
+      },
+      {
+        "gp",
+        "<CMD>Octo pr list<CR>",
+        desc = "List GitHub PullRequests",
+      },
+      {
+        "gn",
+        "<CMD>Octo notification list<CR>",
+        desc = "List GitHub Notifications",
+      },
+      {
+        "gr",
+        "<CMD>Octo review start<CR>",
+        desc = "Start GitHub Review",
+      },
+      {
+        "gs",
+        "<CMD>Octo review submit<CR>",
+        desc = "Submit GitHub Review",
+      },
+      {
+        "gpr",
+        "<CMD>Octo pr reload<CR>",
+        desc = "Reload GitHub PullRequest",
+      },
+      {
+        "gir",
+        "<CMD>Octo issue reload<CR>",
+        desc = "Reload GitHub Issue",
+      },
+      {
+        "gca",
+        "<CMD>Octo comment add<CR>",
+        desc = "Add GitHub Comment",
+      },
+      {
+        "gpm",
+        "<CMD>Octo pr merge<CR>",
+        desc = "Merge GitHub PullRequest",
       },
     },
-    {
-      "stevearc/oil.nvim",
-      ---@module 'oil'
-      ---@type oil.SetupOpts
-      opts = {},
-      keys = {
-        "<leader>a",
-      },
-      -- Optional dependencies
-      dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-      -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-      lazy = false,
-    },
-    -- TODO: 設定をする
-    -- FYI: https://zenn.dev/layerx/articles/8c29b0367238b8#modes.nvim%3A-%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E6%83%85%E5%A0%B1%E3%81%AF%E7%8F%BE%E5%9C%A8%E8%A1%8C%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E8%89%B2%E3%81%A7%E8%A1%A8%E3%81%99
-    {
-      "mvllow/modes.nvim",
-      tag = "v0.2.1",
-      config = function()
-        require("modes").setup()
-      end,
-    },
-    {
-      "github/copilot.vim",
-    },
-    -- 背景透過プラグイン
-    -- https://github.com/xiyaowong/transparent.nvim
-    "xiyaowong/transparent.nvim",
-    -- PRレビュープラグイン
-    -- https://github.com/pwntester/octo.nvim
-    {
-      "pwntester/octo.nvim",
-      cmd = "Octo",
-      opts = {
-        -- or "fzf-lua" or "snacks" or "default"
-        picker = "telescope",
-        -- bare Octo command opens picker of commands
-        enable_builtin = true,
-      },
-      keys = {
-        {
-          "gi",
-          "<CMD>Octo issue list<CR>",
-          desc = "List GitHub Issues",
-        },
-        {
-          "gir",
-          "<CMD>Octo issue reload<CR>",
-          desc = "Reload GitHub Issues",
-        },
-        {
-          "gp",
-          "<CMD>Octo pr list<CR>",
-          desc = "List GitHub PullRequests",
-        },
-        {
-          "gn",
-          "<CMD>Octo notification list<CR>",
-          desc = "List GitHub Notifications",
-        },
-        {
-          "gr",
-          "<CMD>Octo review start<CR>",
-          desc = "Start GitHub Review",
-        },
-        {
-          "gs",
-          "<CMD>Octo review submit<CR>",
-          desc = "Submit GitHub Review",
-        },
-        {
-          "gpr",
-          "<CMD>Octo pr reload<CR>",
-          desc = "Reload GitHub PullRequest",
-        },
-        {
-          "gir",
-          "<CMD>Octo issue reload<CR>",
-          desc = "Reload GitHub Issue",
-        },
-        {
-          "gca",
-          "<CMD>Octo comment add<CR>",
-          desc = "Add GitHub Comment",
-        },
-        {
-          "gpm",
-          "<CMD>Octo pr merge<CR>",
-          desc = "Merge GitHub PullRequest",
-        },
-      },
-      config = function(_, opts)
-        require("octo").setup(opts)
-        -- OctoバッファでTreesitterのmarkdownパーサーを使用 (render-markdown.nvim連携用)
-        vim.treesitter.language.register("markdown", "octo")
-        -- チームレビュワーをアサインするカスタムコマンド (Octo.nvim未サポートのため GitHub API を使用)
-        vim.api.nvim_create_user_command("OctoTeamReviewer", function(cmd_opts)
-          local team = cmd_opts.args
-          -- org/team-name から team slug を取得
-          local _, team_slug = team:match("([^/]+)/(.+)")
-          if not team_slug then
-            vim.notify("Invalid format. Use: Org/team-name", vim.log.levels.ERROR)
-            return
-          end
+    config = function(_, opts)
+      require("octo").setup(opts)
+      -- OctoバッファでTreesitterのmarkdownパーサーを使用 (render-markdown.nvim連携用)
+      vim.treesitter.language.register("markdown", "octo")
+      -- チームレビュワーをアサインするカスタムコマンド (Octo.nvim未サポートのため GitHub API を使用)
+      vim.api.nvim_create_user_command("OctoTeamReviewer", function(cmd_opts)
+        local team = cmd_opts.args
+        -- org/team-name から team slug を取得
+        local _, team_slug = team:match("([^/]+)/(.+)")
+        if not team_slug then
+          vim.notify("Invalid format. Use: Org/team-name", vim.log.levels.ERROR)
+          return
+        end
 
-          -- Octoバッファからrepoとpr_numberを取得 (例: octo://Findy/Ifrit/pull/12171)
-          local bufname = vim.api.nvim_buf_get_name(0)
-          local owner, repo, pr_number = bufname:match("octo://([^/]+)/([^/]+)/pull/(%d+)")
-          if not pr_number then
-            vim.notify("Not in Octo PR buffer: " .. bufname, vim.log.levels.ERROR)
-            return
-          end
+        -- Octoバッファからrepoとpr_numberを取得 (例: octo://Findy/Ifrit/pull/12171)
+        local bufname = vim.api.nvim_buf_get_name(0)
+        local owner, repo, pr_number = bufname:match("octo://([^/]+)/([^/]+)/pull/(%d+)")
+        if not pr_number then
+          vim.notify("Not in Octo PR buffer: " .. bufname, vim.log.levels.ERROR)
+          return
+        end
 
-          -- GitHub APIでチームレビュワーを追加
-          local cmd = string.format(
-            'gh api repos/%s/%s/pulls/%s/requested_reviewers -f "team_reviewers[]=%s"',
-            owner,
-            repo,
-            pr_number,
-            team_slug
-          )
-          local result = vim.fn.system(cmd)
-          if vim.v.shell_error == 0 then
-            vim.notify("Team reviewer added: " .. team, vim.log.levels.INFO)
-          else
-            vim.notify("Failed to add team reviewer: " .. result, vim.log.levels.ERROR)
-          end
-        end, { nargs = 1, desc = "Add team reviewer to PR (e.g., Org/team-name)" })
-      end,
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim",
-        -- OR "ibhagwan/fzf-lua",
-        -- OR "folke/snacks.nvim",
-        "nvim-tree/nvim-web-devicons",
-      },
+        -- GitHub APIでチームレビュワーを追加
+        local cmd = string.format(
+          'gh api repos/%s/%s/pulls/%s/requested_reviewers -f "team_reviewers[]=%s"',
+          owner,
+          repo,
+          pr_number,
+          team_slug
+        )
+        local result = vim.fn.system(cmd)
+        if vim.v.shell_error == 0 then
+          vim.notify("Team reviewer added: " .. team, vim.log.levels.INFO)
+        else
+          vim.notify("Failed to add team reviewer: " .. result, vim.log.levels.ERROR)
+        end
+      end, { nargs = 1, desc = "Add team reviewer to PR (e.g., Org/team-name)" })
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      -- OR "ibhagwan/fzf-lua",
+      -- OR "folke/snacks.nvim",
+      "nvim-tree/nvim-web-devicons",
     },
-  })
+  },
+})
 
-  require("base")
-  require("maps")
-  require("p-mason")
-  require("p-null")
-  require("p-lsp")
-  require("p-lspsaga")
-  require("color")
-  require("text")
-  require("p-lualine")
-  require("p-telescope")
-  require("p-lspkind")
-  require("p-cmp")
-  require("p-snip")
-  require("p-treesitter")
-  require("p-yanky")
-  require("p-comment")
-  require("p-noice")
-  require("p-hlchunk")
-  require("p-gitsigns")
-  require("p-smoothcursor")
-  require("p-neotest")
-  require("p-git")
-  require("p-colorizer")
-  require("p-diagnostic")
-  require("p-render-markdown")
-  require("p-autotag")
-  require("p-oil")
-  require("p-transparent")
-end
+require("base")
+require("maps")
+require("p-mason")
+require("p-null")
+require("p-lsp")
+require("p-lspsaga")
+require("color")
+require("text")
+require("p-lualine")
+require("p-telescope")
+require("p-lspkind")
+require("p-cmp")
+require("p-snip")
+require("p-treesitter")
+require("p-yanky")
+require("p-comment")
+require("p-noice")
+require("p-hlchunk")
+require("p-gitsigns")
+require("p-smoothcursor")
+require("p-neotest")
+require("p-git")
+require("p-colorizer")
+require("p-diagnostic")
+require("p-render-markdown")
+require("p-autotag")
+require("p-oil")
+require("p-transparent")

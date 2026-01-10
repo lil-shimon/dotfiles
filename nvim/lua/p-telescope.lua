@@ -1,7 +1,13 @@
 local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
-keymap("n", "<leader>f", builtin.find_files, {})
-keymap("n", "<leader>g", builtin.live_grep, {})
+
+-- Telescope keymaps
+keymap("n", "<leader>f", function()
+	builtin.find_files({ no_ignore = false, hidden = true })
+end, opts)
+keymap("n", "<leader>r", builtin.live_grep, opts)
+keymap("n", "<leader>d", builtin.diagnostics, opts)
 
 function telescope_buffer_dir()
 	return vim.fn.expand("%:p:h")
@@ -82,19 +88,3 @@ require("telescope").setup({
 
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("fzf")
-
-local opts = { noremap = true, silent = true }
-vim.keymap.set(
-	"n",
-	" f",
-	'<cmd>lua require("telescope.builtin").find_files({ no_ignore = false, hidden = true })<cr>',
-	opts
-)
-vim.keymap.set("n", " r", '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
-vim.keymap.set("n", " d", '<cmd>lua require("telescope.builtin").diagnostics()<cr>', opts)
-vim.keymap.set(
-	"n",
-	"  ",
-	'<cmd>lua require("telescope").extensions.file_browser.file_browser({ path = "%:p:h", cmd = telescope_buffer_dir(), respect_git_ignore = true, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 40 } } )<cr>',
-	opts
-)

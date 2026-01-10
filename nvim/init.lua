@@ -275,14 +275,20 @@ require("lazy").setup({
     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
   },
-  -- TODO: 設定をする
-  -- FYI: https://zenn.dev/layerx/articles/8c29b0367238b8#modes.nvim%3A-%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E6%83%85%E5%A0%B1%E3%81%AF%E7%8F%BE%E5%9C%A8%E8%A1%8C%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%AE%E8%89%B2%E3%81%A7%E8%A1%A8%E3%81%99
+  -- モードに応じて現在行のハイライト色を変更
+  -- colors: fluoromachine palette
   {
     "mvllow/modes.nvim",
     tag = "v0.2.1",
-    config = function()
-      require("modes").setup()
-    end,
+    event = { "CursorMoved", "CursorMovedI" },
+    opts = {
+      colors = {
+        copy = "#FFCC00",   -- yellow
+        delete = "#FE4450", -- red
+        insert = "#61E2FF", -- cyan
+        visual = "#AF6DF9", -- purple
+      },
+    },
   },
   {
     "github/copilot.vim",

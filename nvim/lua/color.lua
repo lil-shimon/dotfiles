@@ -18,7 +18,7 @@ fm.setup {
   -- overrides = overrides
 }
 
-vim.cmd.colorscheme('ayu-mirage')
+vim.cmd.colorscheme('fluoromachine')
 
 -- Diff highlights（diffview用）
 vim.api.nvim_create_autocmd('User', {

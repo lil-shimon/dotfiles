@@ -165,6 +165,12 @@ local keys = {
     mods = "LEADER",
     action = act.SpawnTab("CurrentPaneDomain"),
   },
+  -- 新しいウィンドウを開く
+  {
+    key = "N",
+    mods = "LEADER",
+    action = act.SpawnWindow,
+  },
   {
     key = "q",
     mods = "LEADER",

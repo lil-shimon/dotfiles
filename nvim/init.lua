@@ -14,9 +14,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- Copilot用：miseのNode 22を常に使用（プロジェクトのNode 20でも動作するように）
-vim.g.copilot_node_command = vim.fn.expand("~/.local/share/mise/installs/node/22/bin/node")
-
 require("lazy").setup({
   -- エディタのビジュアルテーマ
   "navarasu/onedark.nvim",

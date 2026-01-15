@@ -3,7 +3,7 @@ local bufferOpt = vim.bo
 local windowOpt = vim.wo
 
 opt.number = true
-opt.relativenumber = false
+opt.relativenumber = true
 windowOpt.number = true
 
 vim.scriptencoding = 'utf-8'

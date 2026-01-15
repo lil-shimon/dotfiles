@@ -130,3 +130,16 @@ end, vim.tbl_extend("force", opts, { desc = "Run current project tests" }))
 keymap("n", "<leader>tw", function()
   neotest.run.run({ jestCommand = 'npx nx test --watch' })
 end, vim.tbl_extend("force", opts, { desc = "Run tests in watch mode" }))
+
+-- 開いている全テストファイルをウォッチモードで実行
+keymap("n", "<leader>twa", function()
+  local buffers = vim.api.nvim_list_bufs()
+  for _, buf in ipairs(buffers) do
+    if vim.api.nvim_buf_is_loaded(buf) then
+      local file = vim.api.nvim_buf_get_name(buf)
+      if isTestFile(file) then
+        neotest.run.run({ file, jestCommand = 'npx nx test --watch' })
+      end
+    end
+  end
+end, vim.tbl_extend("force", opts, { desc = "Watch all open test files" }))

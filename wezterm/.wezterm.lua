@@ -156,6 +156,8 @@ local keys = {
   { key = "y", mods = "LEADER",     action = act.CopyTo("ClipboardAndPrimarySelection") },
   -- paste
   { key = "v", mods = "LEADER",     action = act.PasteFrom("Clipboard") },
+  -- QuickSelect（URLやパスを素早くコピー）
+  { key = "s", mods = "LEADER",     action = act.QuickSelect },
 
   -- Tab関連
   --

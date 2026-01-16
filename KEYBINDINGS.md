@@ -125,6 +125,7 @@
 - `<leader>cf` : Claude Codeにフォーカス
 - `<leader>cs` : 選択範囲をClaude Codeに送信（visual mode）
 - `<leader>cb` : 現在のファイルをClaude Codeに追加
+- `<leader>yc` : `@ファイルパス` 形式でコピー（Claude Code用）
 
 ## WezTerm
 

@@ -125,3 +125,10 @@ keymap("n", "w", "<Plug>(smartword-w)", opts)
 keymap("n", "e", "<Plug>(smartword-e)", opts)
 keymap("n", "b", "<Plug>(smartword-b)", opts)
 keymap("n", "ge", "<Plug>(smartword-ge)", opts)
+
+-- ファイルパスをコピー（Claude Code用）
+keymap("n", "<leader>yc", function()
+	local path = vim.fn.expand("%")
+	vim.fn.setreg("+", "@" .. path)
+	print("Copied: @" .. path)
+end, { desc = "Copy @filepath for Claude" })

@@ -8,6 +8,7 @@ keymap("n", "<leader>f", function()
 end, opts)
 keymap("n", "<leader>r", builtin.live_grep, opts)
 keymap("n", "<leader>d", builtin.diagnostics, opts)
+keymap("n", "<leader>b", builtin.buffers, opts)
 
 function telescope_buffer_dir()
 	return vim.fn.expand("%:p:h")

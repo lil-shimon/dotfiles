@@ -72,6 +72,7 @@
 - `<leader>f` : ファイル検索（Telescope）
 - `<leader>r` : 文字列検索（Telescope live_grep）
 - `<leader>d` : 診断一覧（Telescope）
+- `<leader>b` : バッファ一覧（Telescope）
 - `<leader><leader>` : ファイルブラウザ（Telescope）
 
 ### LSP操作（Lspsaga）

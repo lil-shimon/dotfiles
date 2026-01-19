@@ -35,6 +35,12 @@ require("lazy").setup({
     ft = { "markdown", "octo" },
   },
 
+  -- Markdown箇条書き・チェックボックス自動継続
+  {
+    "bullets-vim/bullets.vim",
+    ft = { "markdown", "text" },
+  },
+
   -- ステータスラインのカスタマイズ
   "nvim-lualine/lualine.nvim",
 

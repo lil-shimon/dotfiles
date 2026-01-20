@@ -132,3 +132,17 @@ keymap("n", "<leader>yc", function()
 	vim.fn.setreg("+", "@" .. path)
 	print("Copied: @" .. path)
 end, { desc = "Copy @filepath for Claude" })
+
+-- カーソル下のファイルパスをQuick Lookでプレビュー (macOS)
+keymap("n", "<leader>ip", function()
+	local path = vim.fn.expand("<cfile>")
+	-- エスケープされたスペースを処理
+	path = path:gsub("\\%s", " ")
+	-- ~をホームディレクトリに展開
+	path = path:gsub("^~", vim.fn.expand("$HOME"))
+	if vim.fn.filereadable(path) == 1 then
+		vim.fn.jobstart({ "qlmanage", "-p", path }, { detach = true })
+	else
+		vim.notify("File not found: " .. path, vim.log.levels.WARN)
+	end
+end, { desc = "Preview file with Quick Look" })

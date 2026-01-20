@@ -106,6 +106,7 @@ keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<cr>", opts)
 keymap("n", "V", "<cmd>Lspsaga code_action<CR>", opts)
 
 keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
+keymap("n", "gr", "<cmd>Lspsaga finder<CR>", opts)
 keymap("n", "pd", "<cmd>Lspsaga peek_definition<CR>", opts)
 
 keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)

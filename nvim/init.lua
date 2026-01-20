@@ -317,7 +317,7 @@ require("lazy").setup({
         desc = "List GitHub Notifications",
       },
       {
-        "gr",
+        "grs",
         "<CMD>Octo review start<CR>",
         desc = "Start GitHub Review",
       },

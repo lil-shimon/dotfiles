@@ -281,6 +281,14 @@ require("lazy").setup({
   {
     "github/copilot.vim",
   },
+  -- AI Bot Integration and Orchestration for Neovim
+  -- Claude, Codex, Ollama などのAIツールをNeovim内で使用可能にする
+  {
+    "lambdalisue/nvim-aibo",
+    config = function()
+      require("aibo").setup()
+    end,
+  },
   -- 背景透過プラグイン
   -- https://github.com/xiyaowong/transparent.nvim
   "xiyaowong/transparent.nvim",

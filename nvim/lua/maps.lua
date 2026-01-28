@@ -36,6 +36,7 @@ keymap("", "sk", "<C-w>k")
 keymap("", "sj", "<C-w>j")
 keymap("", "sl", "<C-w>l")
 keymap("", " j", "<C-w>j")
+keymap("", " k", "<C-w>k")
 keymap("", " h", "<C-w>h")
 keymap("", " l", "<C-w>l")
 -- Ctrl+h/j/k/l: ウィンドウ移動（Claude Code対応）

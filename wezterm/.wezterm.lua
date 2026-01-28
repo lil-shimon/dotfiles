@@ -25,7 +25,10 @@ config.font = wezterm.font_with_fallback({
     family = "MesloLGLDZ Nerd Font Mono",
     weight = "Bold",
   },
-  "UDEV Gothic NF",
+  {
+    family = "UDEV Gothic NF",
+    weight = "Bold",
+  },
 })
 config.use_ime = true
 config.line_height = 0.85

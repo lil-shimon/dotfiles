@@ -250,6 +250,8 @@ require("lazy").setup({
     opts = {
       -- alias ではなくフルパスを指定
       terminal_cmd = "/Users/shimonlil/.claude/local/claude",
+      -- IDE連携を自動起動しない（手動で :ClaudeCode 時のみ接続）
+      auto_start = false,
       terminal = {
         snacks_win_opts = {
           position = "bottom",

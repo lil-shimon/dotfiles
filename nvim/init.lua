@@ -38,7 +38,10 @@ require("lazy").setup({
   -- Markdown箇条書き・チェックボックス自動継続
   {
     "bullets-vim/bullets.vim",
-    ft = { "markdown", "text" },
+    ft = { "markdown", "text", "octo" },
+    init = function()
+      vim.g.bullets_enabled_file_types = { "markdown", "text", "octo" }
+    end,
   },
 
   -- ステータスラインのカスタマイズ

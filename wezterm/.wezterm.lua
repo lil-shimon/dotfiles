@@ -78,7 +78,7 @@ config.window_frame = {
       weight = "Bold",
     },
   }),
-  font_size = 16,
+  font_size = 14,
 }
 
 -- tabの新規作成ボタンを非表示にする

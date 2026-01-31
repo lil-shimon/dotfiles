@@ -12,9 +12,6 @@ config.color_scheme = "Tokyo Night"
 
 -- 通常テキストを暖色系に変更（目に優しい）
 config.colors = {
-  -- foreground = "#FFAD66",
-  -- foreground = "#FFDFB3",
-  -- foreground = "#CCA088",
   tab_bar = {
     inactive_tab_edge = "none",
   },

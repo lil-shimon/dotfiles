@@ -95,39 +95,57 @@ config.window_background_gradient = {
 -- nightlyのみでサポート(2025/12/30時点)
 config.show_close_tab_button_in_tabs = false
 
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+-- カプセル（ピル）形状のタブ用グリフ
+local LEFT_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick
+local RIGHT_CIRCLE = wezterm.nerdfonts.ple_right_half_circle_thick
 
--- Tokyo Night カラーでタブをフォーマット
+-- Tokyo Night カラーでカプセル形状タブをフォーマット
 wezterm.on("format-tab-title", function(tab)
-  local background = "#5c6d74"
-  local foreground = "#ffffff"
   local edge_background = "none"
 
+  -- 左側セグメント（プロセス名）の色
+  local left_bg = "#3b4261" -- 暗い背景色
+  local left_fg = "#a9b1d6" -- Tokyo Night前景色
+
+  -- 右側セグメント（タブ番号）の色
+  local right_bg = "#5c6d74" -- 非アクティブ時
+  local right_fg = "#ffffff"
+
   if tab.is_active then
-    background = "#bb9af7" -- アクティブタブ背景（Tokyo Night紫）
-    foreground = "#16161e" -- アクティブタブ前景（暗い背景色）
+    right_bg = "#bb9af7" -- アクティブタブ背景（Tokyo Night紫）
+    right_fg = "#16161e" -- アクティブタブ前景（暗い背景色）
+    left_fg = "#c0caf5" -- アクティブ時は少し明るく
   end
 
-  local edge_foreground = background
+  -- タブタイトル（長すぎる場合は切り詰め、日本語対応）
+  local max_title_length = 15
+  local raw_title = tab.active_pane.title
+  raw_title = wezterm.truncate_right(raw_title, max_title_length)
+  local title = " " .. raw_title .. " "
 
-  local title = "  " .. tab.active_pane.title .. "  "
+  -- タブ番号
+  local tab_number = " " .. tostring(tab.tab_index + 1) .. " "
 
   return {
-    -- left edge
+    -- 左端の半円（カプセル左側）
     { Background = { Color = edge_background } },
-    { Foreground = { Color = edge_foreground } },
-    { Text = SOLID_LEFT_ARROW },
+    { Foreground = { Color = left_bg } },
+    { Text = LEFT_CIRCLE },
 
-    -- main tab area
-    { Background = { Color = background } },
-    { Foreground = { Color = foreground } },
+    -- 左側セグメント（プロセス名）
+    { Background = { Color = left_bg } },
+    { Foreground = { Color = left_fg } },
     { Text = title },
 
-    -- right edge
+    -- 右側セグメント（タブ番号）- 左側と直接つなげる
+    { Background = { Color = right_bg } },
+    { Foreground = { Color = right_fg } },
+    { Text = tab_number },
+
+    -- 右端の半円（カプセル右側）
     { Background = { Color = edge_background } },
-    { Foreground = { Color = edge_foreground } },
-    { Text = SOLID_RIGHT_ARROW },
+    { Foreground = { Color = right_bg } },
+    { Text = RIGHT_CIRCLE },
   }
 end)
 

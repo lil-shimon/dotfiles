@@ -60,11 +60,11 @@ keymap("n", "<c-f>", function()
 	require("oil").open(".")
 end, { desc = "Oil ." })
 
--- Barbar (tab plugin) keymaptings
-keymap("n", "ap", "<Cmd>BufferPrevious<CR>", opts)
-keymap("n", "an", "<Cmd>BufferNext<CR>", opts)
-keymap("n", "Ap", "<Cmd>BufferPin<CR>", opts)
-keymap("n", "bd", "<Cmd>BufferClose<CR>", opts)
+-- Bufferline (tab plugin) keymaptings
+keymap("n", "ap", "<Cmd>BufferLineCyclePrev<CR>", opts)
+keymap("n", "an", "<Cmd>BufferLineCycleNext<CR>", opts)
+keymap("n", "Ap", "<Cmd>BufferLineTogglePin<CR>", opts)
+keymap("n", "bd", "<Cmd>bdelete<CR>", opts)
 
 -- diffview (git diff view) keymaptings
 keymap("n", ",s", "<cmd>DiffviewOpen<CR>")

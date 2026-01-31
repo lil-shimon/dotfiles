@@ -148,7 +148,9 @@ require("lazy").setup({
 
   -- tablineを強力に拡張してくれる
   {
-    "romgrk/barbar.nvim",
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
 
   {
@@ -395,5 +397,5 @@ require("p-diagnostic")
 require("p-render-markdown")
 require("p-autotag")
 require("p-oil")
-require("p-barbar")
+require("p-bufferline")
 require("p-transparent")

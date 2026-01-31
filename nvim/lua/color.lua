@@ -1,24 +1,16 @@
----@type fluoromachine
-local fm = require 'fluoromachine'
-
--- https://github.com/maxmx03/fluoromachine.nvim
-fm.setup {
-  glow = true,
+-- Tokyo Night setup (目に優しいダークテーマ)
+require('tokyonight').setup({
+  style = "night", -- night / storm / day / moon
   transparent = true,
-  overrides = {
-       ['@type'] = { italic = true, bold = false },
-       ['@function'] = { italic = false, bold = false },
-       ['@comment'] = { italic = true },
-       ['@keyword'] = { italic = false },
-       ['@constant'] = { italic = false, bold = true },
-       ['@variable'] = { italic = true },
-       ['@field'] = { italic = true },
-       ['@parameter'] = { italic = true },
-  }
-  -- overrides = overrides
-}
+  styles = {
+    comments = { italic = true },
+    keywords = { italic = false },
+    functions = { bold = false },
+    variables = { italic = true },
+  },
+})
 
-vim.cmd.colorscheme('fluoromachine')
+vim.cmd.colorscheme('tokyonight')
 
 -- Diff highlights（diffview用）
 vim.api.nvim_create_autocmd('User', {
@@ -33,5 +25,3 @@ vim.api.nvim_create_autocmd('User', {
     end, 100)
   end,
 })
-
--- sign_defineはp-diagnostic.luaに移動（新しいAPI使用）

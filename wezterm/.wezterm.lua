@@ -13,11 +13,15 @@ config.color_scheme = "Tokyo Night"
 -- 通常テキストを暖色系に変更（目に優しい）
 config.colors = {
   split = "#bb9af7", -- Split pane border (Tokyo Night purple)
+  cursor_bg = "#bb9af7", -- カーソル背景色（紫）
+  cursor_fg = "#1a1b26", -- カーソル上の文字色
   tab_bar = {
     inactive_tab_edge = "none",
   },
 }
+config.default_cursor_style = "SteadyBlock"
 config.inactive_pane_hsb = {
+  saturation = 0.5, -- 非アクティブpaneの彩度を下げる
   brightness = 0.5, -- 非アクティブpaneをかなり暗く
 }
 config.font_size = 16

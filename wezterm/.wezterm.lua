@@ -73,9 +73,12 @@ config.window_frame = {
   active_titlebar_bg = "none",
   font = wezterm.font_with_fallback({
     { family = "MesloLGLDZ Nerd Font Mono", weight = "Bold" },
-    "Hiragino Sans",
+    {
+      family = "UDEV Gothic NF",
+      weight = "Bold",
+    },
   }),
-  font_size = 14,
+  font_size = 16,
 }
 
 -- tabの新規作成ボタンを非表示にする

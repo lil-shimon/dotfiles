@@ -36,7 +36,7 @@ config.font = wezterm.font_with_fallback({
   },
 })
 config.use_ime = true
-config.line_height = 0.85
+config.line_height = 1.0
 
 -- 背景を半透明 + ぼかし（macOS）
 local opacity_normal = 0.75

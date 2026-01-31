@@ -12,9 +12,13 @@ config.color_scheme = "Tokyo Night"
 
 -- 通常テキストを暖色系に変更（目に優しい）
 config.colors = {
+  split = "#bb9af7", -- Split pane border (Tokyo Night purple)
   tab_bar = {
     inactive_tab_edge = "none",
   },
+}
+config.inactive_pane_hsb = {
+  brightness = 0.5, -- 非アクティブpaneをかなり暗く
 }
 config.font_size = 16
 config.font = wezterm.font_with_fallback({

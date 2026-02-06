@@ -17,3 +17,5 @@
 [alias]
     # 新規ファイルも含めてdiff表示（終了後にintent-to-addを取り消す）
     diffn = "!git add -N . && git diff; git reset"
+[ghq]
+  root = /Users/shimonlil/src

@@ -12,7 +12,7 @@ config.color_scheme = "Tokyo Night"
 
 -- 通常テキストを暖色系に変更（目に優しい）
 config.colors = {
-  split = "#bb9af7", -- Split pane border (Tokyo Night purple)
+  split = "#bb9af7",    -- Split pane border (Tokyo Night purple)
   cursor_bg = "#bb9af7", -- カーソル背景色（紫）
   cursor_fg = "#1a1b26", -- カーソル上の文字色
   tab_bar = {
@@ -27,7 +27,8 @@ config.inactive_pane_hsb = {
 config.font_size = 16
 config.font = wezterm.font_with_fallback({
   {
-    family = "MesloLGLDZ Nerd Font Mono",
+    -- family = "MesloLGLDZ Nerd Font Mono",
+    family = "JetBrains Mono",
     weight = "Bold",
   },
   {
@@ -227,6 +228,16 @@ local keys = {
     mods = "SHIFT",
     action = act.ActivateTabRelative(1),
   },
+  -- Tab番号で直接ジャンプ (LEADER + 数字)
+  { key = "1", mods = "LEADER", action = act.ActivateTab(0) },
+  { key = "2", mods = "LEADER", action = act.ActivateTab(1) },
+  { key = "3", mods = "LEADER", action = act.ActivateTab(2) },
+  { key = "4", mods = "LEADER", action = act.ActivateTab(3) },
+  { key = "5", mods = "LEADER", action = act.ActivateTab(4) },
+  { key = "6", mods = "LEADER", action = act.ActivateTab(5) },
+  { key = "7", mods = "LEADER", action = act.ActivateTab(6) },
+  { key = "8", mods = "LEADER", action = act.ActivateTab(7) },
+  { key = "9", mods = "LEADER", action = act.ActivateTab(8) },
 
   -- Pane関連
   {

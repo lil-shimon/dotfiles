@@ -42,20 +42,24 @@ config.line_height = 1.0
 -- 背景を半透明 + ぼかし（macOS）
 local opacity_normal = 0.75
 local opacity_seethrough = 0.15 -- 透過モード（ブラウザが見えるレベル）
+local opacity_opaque = 1.0
 config.window_background_opacity = opacity_normal
 config.macos_window_background_blur = 20
 
 -- 透明度トグル用のイベント
-local is_transparent = false
+local opacity_state = 0  -- 0:normal, 1:seethrough, 2:opaque
 wezterm.on("toggle-opacity", function(window, pane)
-  is_transparent = not is_transparent
+  opacity_state = (opacity_state + 1) % 3
   local overrides = window:get_config_overrides() or {}
-  if is_transparent then
-    overrides.window_background_opacity = opacity_seethrough
-    overrides.macos_window_background_blur = 0 -- ぼかしなしでクリアに
-  else
+  if opacity_state == 0 then
     overrides.window_background_opacity = opacity_normal
     overrides.macos_window_background_blur = 20
+  elseif opacity_state == 1 then
+    overrides.window_background_opacity = opacity_seethrough
+    overrides.macos_window_background_blur = 0
+  else
+    overrides.window_background_opacity = opacity_opaque
+    overrides.macos_window_background_blur = 0
   end
   window:set_config_overrides(overrides)
 end)

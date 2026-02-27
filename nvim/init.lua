@@ -368,6 +368,10 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
     },
   },
+  {
+    "stevearc/conform.nvim",
+    opts = {},
+  },
 })
 
 require("base")

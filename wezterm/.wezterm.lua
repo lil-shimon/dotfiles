@@ -47,7 +47,7 @@ config.window_background_opacity = opacity_normal
 config.macos_window_background_blur = 20
 
 -- 透明度トグル用のイベント
-local opacity_state = 0  -- 0:normal, 1:seethrough, 2:opaque
+local opacity_state = 0 -- 0:normal, 1:seethrough, 2:opaque
 wezterm.on("toggle-opacity", function(window, pane)
   opacity_state = (opacity_state + 1) % 3
   local overrides = window:get_config_overrides() or {}

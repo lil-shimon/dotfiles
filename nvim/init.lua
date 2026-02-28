@@ -247,30 +247,6 @@ require("lazy").setup({
     "lil-shimon/snapshot-runner",
     dependencies = { "vim-denops/denops.vim" },
   },
-  -- Claude Code AI integration
-  {
-    "coder/claudecode.nvim",
-    dependencies = { "folke/snacks.nvim" },
-    event = "VeryLazy",
-    opts = {
-      -- alias ではなくフルパスを指定
-      terminal_cmd = "/Users/shimonlil/.claude/local/claude",
-      -- IDE連携を自動起動しない（手動で :ClaudeCode 時のみ接続）
-      auto_start = false,
-      terminal = {
-        snacks_win_opts = {
-          position = "bottom",
-          height = 0.4,
-        },
-      },
-    },
-    keys = {
-      { "<leader>cc", "<cmd>ClaudeCode<cr>",      desc = "Toggle Claude" },
-      { "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
-      { "<leader>cs", "<cmd>ClaudeCodeSend<cr>",  desc = "Send selection",  mode = "v" },
-      { "<leader>cb", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current file" },
-    },
-  },
   {
     "stevearc/oil.nvim",
     ---@module 'oil'

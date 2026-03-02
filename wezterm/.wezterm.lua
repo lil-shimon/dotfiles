@@ -48,9 +48,15 @@ config.macos_window_background_blur = 20
 
 -- カラースキームトグル用のイベント
 local colorscheme_list = {
-  { scheme = "Tokyo Night",     bg = "#1a1b26" },
-  { scheme = "Tokyo Night Day", bg = "#e1e2e7" },
-  { scheme = "Catppuccin Mocha", bg = "#1e1e2e" },
+  -- Dark
+  { scheme = "Tokyo Night",                       bg = "#1a1b26" },
+  { scheme = "rose-pine",                         bg = "#191724" },
+  -- Light
+  { scheme = "Tokyo Night Day",                   bg = "#e1e2e7" },
+  { scheme = "rose-pine-dawn",                    bg = "#faf4ed" },
+  { scheme = "Catppuccin Latte",                  bg = "#eff1f5" },
+  { scheme = "Everforest Light (Hard)",           bg = "#f2efdf" },
+  { scheme = "Solarized (light) (terminal.sexy)", bg = "#fdf6e3" },
 }
 local colorscheme_state = 0
 wezterm.on("toggle-colorscheme", function(window, pane)

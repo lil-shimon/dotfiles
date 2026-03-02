@@ -295,6 +295,16 @@ local keys = {
     mods = "CMD",
     action = act.Nop,
   },
+  {
+    key = "UpArrow",
+    mods = "SHIFT",
+    action = act.ScrollByLine(-1),
+  },
+  {
+    key = "DownArrow",
+    mods = "SHIFT",
+    action = act.ScrollByLine(1),
+  },
 }
 
 local mouse_bindings = {

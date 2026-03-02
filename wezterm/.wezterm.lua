@@ -24,7 +24,7 @@ config.inactive_pane_hsb = {
   saturation = 0.5, -- 非アクティブpaneの彩度を下げる
   brightness = 0.5, -- 非アクティブpaneをかなり暗く
 }
-config.font_size = 16
+config.font_size = 18
 config.font = wezterm.font_with_fallback({
   {
     -- family = "MesloLGLDZ Nerd Font Mono",
@@ -259,6 +259,11 @@ local keys = {
       direction = "Down",
       size = { Percent = 50 },
     }),
+  },
+  {
+    key = "z",
+    mods = "LEADER",
+    action = act.TogglePaneZoomState,
   },
   -- Leader + h/j/k/l: WezTermペイン移動
   { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },

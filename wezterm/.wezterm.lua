@@ -46,6 +46,22 @@ local opacity_opaque = 1.0
 config.window_background_opacity = opacity_normal
 config.macos_window_background_blur = 20
 
+-- カラースキームトグル用のイベント
+local colorscheme_list = {
+  { scheme = "Tokyo Night",     bg = "#1a1b26" },
+  { scheme = "Tokyo Night Day", bg = "#e1e2e7" },
+  { scheme = "Catppuccin Mocha", bg = "#1e1e2e" },
+}
+local colorscheme_state = 0
+wezterm.on("toggle-colorscheme", function(window, pane)
+  colorscheme_state = (colorscheme_state + 1) % #colorscheme_list
+  local entry = colorscheme_list[colorscheme_state + 1]
+  local overrides = window:get_config_overrides() or {}
+  overrides.color_scheme = entry.scheme
+  overrides.window_background_gradient = { colors = { entry.bg } }
+  window:set_config_overrides(overrides)
+end)
+
 -- 透明度トグル用のイベント
 local opacity_state = 0 -- 0:normal, 1:seethrough, 2:opaque
 wezterm.on("toggle-opacity", function(window, pane)
@@ -176,6 +192,8 @@ local function send_key_with_esc(key)
 end
 
 local keys = {
+  -- カラースキームトグル
+  { key = "p", mods = "CTRL|SHIFT", action = act.EmitEvent("toggle-colorscheme") },
   -- 透明度トグル（ブラウザを見ながら作業）
   { key = "o", mods = "CTRL|SHIFT", action = act.EmitEvent("toggle-opacity") },
   -- Ctrl+h/j/k/l: Neovimウィンドウ移動（Claude Code対応）

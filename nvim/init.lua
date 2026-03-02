@@ -387,6 +387,7 @@ require("lazy").setup({
       },
     },
   },
+  { "chrisgrieser/nvim-spider",                 lazy = true },
 })
 
 require("base")

@@ -388,6 +388,13 @@ require("lazy").setup({
     },
   },
   { "chrisgrieser/nvim-spider",                 lazy = true },
+  {
+    "declancm/cinnamon.nvim",
+    version = "*", -- use latest release
+    opts = {
+      -- change default options here
+    },
+  },
 })
 
 require("base")

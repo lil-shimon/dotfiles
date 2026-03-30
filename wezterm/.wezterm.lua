@@ -8,13 +8,13 @@ end
 config.automatically_reload_config = true
 
 -- UI
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Everforest Dark (Hard)"
 
--- 通常テキストを暖色系に変更（目に優しい）
+-- Everforest カラー
 config.colors = {
-  split = "#bb9af7",    -- Split pane border (Tokyo Night purple)
-  cursor_bg = "#bb9af7", -- カーソル背景色（紫）
-  cursor_fg = "#1a1b26", -- カーソル上の文字色
+  split = "#a7c080",    -- Split pane border (Everforest green)
+  cursor_bg = "#a7c080", -- カーソル背景色（緑）
+  cursor_fg = "#2d353b", -- カーソル上の文字色
   tab_bar = {
     inactive_tab_edge = "none",
   },
@@ -49,13 +49,14 @@ config.macos_window_background_blur = 20
 -- カラースキームトグル用のイベント
 local colorscheme_list = {
   -- Dark
+  { scheme = "Everforest Dark (Hard)",            bg = "#2d353b" },
   { scheme = "Tokyo Night",                       bg = "#1a1b26" },
   { scheme = "rose-pine",                         bg = "#191724" },
   -- Light
+  { scheme = "Everforest Light (Hard)",           bg = "#f2efdf" },
   { scheme = "Tokyo Night Day",                   bg = "#e1e2e7" },
   { scheme = "rose-pine-dawn",                    bg = "#faf4ed" },
   { scheme = "Catppuccin Latte",                  bg = "#eff1f5" },
-  { scheme = "Everforest Light (Hard)",           bg = "#f2efdf" },
   { scheme = "Solarized (light) (terminal.sexy)", bg = "#fdf6e3" },
 }
 local colorscheme_state = 0
@@ -119,10 +120,10 @@ config.window_frame = {
 -- tabの新規作成ボタンを非表示にする
 config.show_new_tab_button_in_tab_bar = false
 
--- Tokyo Night背景色でウィンドウにグラデーションをつける
+-- Everforest背景色でウィンドウにグラデーションをつける
 config.window_background_gradient = {
   colors = {
-    "#1a1b26", -- 中央（Tokyo Night背景色）
+    "#2d353b", -- 中央（Everforest Dark背景色）
   },
 }
 
@@ -139,17 +140,17 @@ wezterm.on("format-tab-title", function(tab)
   local edge_background = "none"
 
   -- 左側セグメント（プロセス名）の色
-  local left_bg = "#3b4261" -- 暗い背景色
-  local left_fg = "#a9b1d6" -- Tokyo Night前景色
+  local left_bg = "#3d484d" -- Everforest 暗め背景
+  local left_fg = "#9da9a0" -- Everforest 前景（グレー）
 
   -- 右側セグメント（タブ番号）の色
-  local right_bg = "#5c6d74" -- 非アクティブ時
-  local right_fg = "#ffffff"
+  local right_bg = "#475258" -- 非アクティブ時
+  local right_fg = "#d3c6aa"
 
   if tab.is_active then
-    right_bg = "#bb9af7" -- アクティブタブ背景（Tokyo Night紫）
-    right_fg = "#16161e" -- アクティブタブ前景（暗い背景色）
-    left_fg = "#c0caf5" -- アクティブ時は少し明るく
+    right_bg = "#a7c080" -- アクティブタブ背景（Everforest green）
+    right_fg = "#2d353b" -- アクティブタブ前景（暗い背景色）
+    left_fg = "#d3c6aa" -- アクティブ時は明るく
   end
 
   -- タブタイトル（長すぎる場合は切り詰め、日本語対応）

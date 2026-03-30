@@ -23,6 +23,7 @@ require("lazy").setup({
   "tiagovla/tokyodark.nvim",
   "olivercederborg/poimandres.nvim",
   "morhetz/gruvbox",
+  "sainnhe/everforest",
   "maxmx03/fluoromachine.nvim",
   "rebelot/kanagawa.nvim",
 
@@ -383,20 +384,6 @@ require("lazy").setup({
         desc = "Quickfix List (Trouble)",
       },
     },
-  },
-  {
-    "leonardcser/cursortab.nvim",
-    lazy = false, -- The server is already lazy loaded
-    build = "cd server && go build",
-    config = function()
-      require("cursortab").setup({
-        enabled = true,
-        provider = {
-          type = "sweepapi",
-          api_key_env = "SWEEPAPI_TOKEN",
-        },
-      })
-    end,
   },
 })
 

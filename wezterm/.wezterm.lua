@@ -24,20 +24,20 @@ config.inactive_pane_hsb = {
   saturation = 0.5, -- 非アクティブpaneの彩度を下げる
   brightness = 0.5, -- 非アクティブpaneをかなり暗く
 }
-config.font_size = 18
+config.font_size = 16
 config.font = wezterm.font_with_fallback({
   {
     -- family = "MesloLGLDZ Nerd Font Mono",
     family = "JetBrains Mono",
-    weight = "Bold",
+    weight = "Regular",
   },
   {
     family = "UDEV Gothic NF",
-    weight = "Bold",
+    weight = "Regular",
   },
 })
 config.use_ime = true
-config.line_height = 1.0
+config.line_height = 1.2
 
 -- 背景を半透明 + ぼかし（macOS）
 local opacity_normal = 0.75
@@ -89,10 +89,10 @@ end)
 -- window padding
 -- https://medium.com/@yusuke_h/%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%8C%E3%83%80%E3%82%B5%E3%81%84%E3%81%A8%E3%83%A2%E3%83%86%E3%81%AA%E3%81%84-wezterm%E7%B4%B9%E4%BB%8B%E7%B7%A8-11306091722a
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 16,
+  right = 16,
+  top = 12,
+  bottom = 12,
 }
 
 -- title bar, tab 周りのUI設定

@@ -1,11 +1,11 @@
 -- bufferline.nvim設定
 -- シンプルな透過スタイル + 文字色で区別
 
--- Tokyo Nightカラーパレット
+-- Everforestカラーパレット
 local colors = {
-  active = "#bb9af7",     -- Tokyo Night紫（アクティブタブ）
-  inactive = "#565f89",   -- 暗めの文字色（非アクティブタブ）
-  separator = "#3b4261",  -- セパレーター色
+  active = "#a7c080",     -- Everforest green（アクティブタブ）
+  inactive = "#859289",   -- Everforest グレー（非アクティブタブ）
+  separator = "#3d484d",  -- Everforest 暗めのボーダー
 }
 
 require("bufferline").setup({

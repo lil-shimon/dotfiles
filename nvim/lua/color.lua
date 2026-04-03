@@ -1,5 +1,5 @@
 -- Everforest setup (目に優しい緑系ダークテーマ)
-vim.g.everforest_background = 'hard'
+vim.g.everforest_background = 'medium'
 vim.g.everforest_better_performance = 1
 vim.g.everforest_enable_italic = 1
 vim.g.everforest_transparent_background = 1

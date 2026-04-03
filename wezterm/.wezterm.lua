@@ -8,7 +8,7 @@ end
 config.automatically_reload_config = true
 
 -- UI
-config.color_scheme = "Everforest Dark (Hard)"
+config.color_scheme = "Everforest Dark (Medium)"
 
 -- Everforest カラー
 config.colors = {
@@ -37,7 +37,8 @@ config.font = wezterm.font_with_fallback({
   },
 })
 config.use_ime = true
-config.line_height = 1.2
+config.line_height = 1.35
+config.cell_width = 1.05
 
 -- 背景を半透明 + ぼかし（macOS）
 local opacity_normal = 0.75
@@ -330,6 +331,12 @@ local keys = {
     mods = "SHIFT",
     action = act.ScrollByLine(1),
   },
+
+  -- スクロール（vim風: LEADER + u/d でハーフページ, g/G でトップ/ボトム）
+  { key = "u", mods = "LEADER", action = act.ScrollByPage(-0.5) },
+  { key = "d", mods = "LEADER", action = act.ScrollByPage(0.5) },
+  { key = "g", mods = "LEADER", action = act.ScrollToTop },
+  { key = "G", mods = "LEADER", action = act.ScrollToBottom },
 }
 
 local mouse_bindings = {

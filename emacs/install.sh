@@ -5,8 +5,12 @@ set -e
 DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
 # Symlink
-ln -sf "$DOTFILES_DIR/emacs" ~/.emacs.d
-echo "Linked ~/.emacs.d -> $DOTFILES_DIR/emacs"
+if [ -L ~/.emacs.d ]; then
+  echo "~/.emacs.d symlink already exists, skipping"
+else
+  ln -sf "$DOTFILES_DIR/emacs" ~/.emacs.d
+  echo "Linked ~/.emacs.d -> $DOTFILES_DIR/emacs"
+fi
 
 # Everforest theme
 if [ ! -d ~/.emacs.d/everforest-theme ]; then

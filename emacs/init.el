@@ -109,6 +109,10 @@
   (web-mode-enable-block-face . t)
 )
 
+;;; color scheme settings
+(add-to-list 'custom-theme-load-path "~/.emacs.d/everforest-theme")
+(load-theme 'everforest-hard-dark t)
+
 ;;; disable backup files
 (setq make-backup-files nil)
 (setq auto-save-default nil)

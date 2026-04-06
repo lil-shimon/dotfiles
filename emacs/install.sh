@@ -17,5 +17,5 @@ if [ ! -d ~/.emacs.d/everforest-theme ]; then
     git clone https://github.com/Theory-of-Everything/everforest-emacs.git ~/.emacs.d/everforest-theme
     echo "Cloned everforest-theme"
 else
-    echo "everforest-theme is already exists, skipping"
+    echo "everforest-theme is already exists, skipping:"
 fi

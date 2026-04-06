@@ -117,6 +117,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+;;; ウィンドウ幅で折り返し
 (global-visual-line-mode t)
 
 (provide 'init)

@@ -45,9 +45,21 @@
 
 (global-display-line-numbers-mode t)
 
-(leaf vterm
-  :ensure t
-  :bind (("C-'" . vterm)))
+(defun toggle-zsh-window ()
+  (interactive)
+  (if (get-buffer-window "*terminal*")
+      (progn
+	(switch-to-buffer (other-buffer))
+	(delete-window (get-buffer-window "*terminal*")))
+    (progn
+      (split-window-below)
+      (other-window 1)
+      (term "/bin/zsh")
+      (rename-buffer "*terminal*"))))
+(global-set-key (kbd "C-'") 'toggle-zsh-window)
+(add-hook 'term-mode-hook
+	  (lambda ()
+	    (define-key global-map (kbd "C-'") 'toggle-zsh-window)))
 
 ;;; auto complete
 (leaf company

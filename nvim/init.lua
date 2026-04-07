@@ -160,7 +160,7 @@ require("lazy").setup({
   {
     "bkad/CamelCaseMotion",
     init = function()
-      vim.g.camelcasemotion = ","
+      vim.g.camelcasemotion_key = ","
     end,
   },
   -- denops

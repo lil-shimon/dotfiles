@@ -31,19 +31,10 @@ keymap("n", "ss", ":split<Return><C-w>w", { silent = true })
 keymap("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
 
 -- Move window
-keymap("", "sh", "<C-w>h")
-keymap("", "sk", "<C-w>k")
-keymap("", "sj", "<C-w>j")
-keymap("", "sl", "<C-w>l")
 keymap("", " j", "<C-w>j")
 keymap("", " k", "<C-w>k")
 keymap("", " h", "<C-w>h")
 keymap("", " l", "<C-w>l")
--- Ctrl+h/j/k/l: ウィンドウ移動（Claude Code対応）
-keymap("n", "<C-h>", "<C-w>h")
-keymap("n", "<C-j>", "<C-w>j")
-keymap("n", "<C-k>", "<C-w>k")
-keymap("n", "<C-l>", "<C-w>l")
 
 -- Delete a word backwards
 keymap("n", "dw", 'vb"_d')

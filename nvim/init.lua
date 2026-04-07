@@ -159,6 +159,9 @@ require("lazy").setup({
   -- camelCaseとかsnake_caseとかの単語の境界に移動できるプラグイン
   {
     "bkad/CamelCaseMotion",
+    init = function()
+      vim.g.camelcasemotion = ","
+    end,
   },
   -- denops
   {
@@ -198,16 +201,6 @@ require("lazy").setup({
   -- Smooth scrolling
   {
     "gen740/SmoothCursor.nvim",
-  },
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "haydenmeade/neotest-jest", -- 正しいJestアダプター
-    },
   },
   {
     "LhKipp/nvim-nu",

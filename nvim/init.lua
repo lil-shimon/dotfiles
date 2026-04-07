@@ -16,16 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- エディタのビジュアルテーマ
-  "navarasu/onedark.nvim",
-  "folke/tokyonight.nvim",
-  "Mofiqul/vscode.nvim",
-  "projekt0n/github-nvim-theme",
-  "tiagovla/tokyodark.nvim",
-  "olivercederborg/poimandres.nvim",
-  "morhetz/gruvbox",
   "sainnhe/everforest",
-  "maxmx03/fluoromachine.nvim",
-  "rebelot/kanagawa.nvim",
 
   -- https://github.com/Shatur/neovim-ayu
   "Shatur/neovim-ayu",

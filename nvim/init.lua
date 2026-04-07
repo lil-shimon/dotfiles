@@ -241,53 +241,6 @@ require("lazy").setup({
       -- bare Octo command opens picker of commands
       enable_builtin = true,
     },
-    keys = {
-      {
-        "gi",
-        "<CMD>Octo issue list<CR>",
-        desc = "List GitHub Issues",
-      },
-      {
-        "gir",
-        "<CMD>Octo issue reload<CR>",
-        desc = "Reload GitHub Issues",
-      },
-      {
-        "gp",
-        "<CMD>Octo pr list<CR>",
-        desc = "List GitHub PullRequests",
-      },
-      {
-        "gn",
-        "<CMD>Octo notification list<CR>",
-        desc = "List GitHub Notifications",
-      },
-      {
-        "grs",
-        "<CMD>Octo review start<CR>",
-        desc = "Start GitHub Review",
-      },
-      {
-        "gs",
-        "<CMD>Octo review submit<CR>",
-        desc = "Submit GitHub Review",
-      },
-      {
-        "gpr",
-        "<CMD>Octo pr reload<CR>",
-        desc = "Reload GitHub PullRequest",
-      },
-      {
-        "gca",
-        "<CMD>Octo comment add<CR>",
-        desc = "Add GitHub Comment",
-      },
-      {
-        "gpm",
-        "<CMD>Octo pr merge<CR>",
-        desc = "Merge GitHub PullRequest",
-      },
-    },
     config = function(_, opts)
       require("p-octo").setup(opts)
     end,
@@ -310,43 +263,6 @@ require("lazy").setup({
       bind = true,
       handler_opts = {
         border = "rounded",
-      },
-    },
-  },
-  {
-    "folke/trouble.nvim",
-    opts = {}, -- for default options, refer to the configuration section for custom setup.
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>ee",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>xX",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>xQ",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
       },
     },
   },

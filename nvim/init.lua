@@ -18,9 +18,6 @@ require("lazy").setup({
   -- エディタのビジュアルテーマ
   "sainnhe/everforest",
 
-  -- https://github.com/Shatur/neovim-ayu
-  "Shatur/neovim-ayu",
-
   -- Markdownレンダリング強化
   {
     "MeanderingProgrammer/render-markdown.nvim",

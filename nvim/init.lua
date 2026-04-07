@@ -45,12 +45,6 @@ require("lazy").setup({
   -- オートペアリング（括弧やクォートの自動補完）
   "windwp/nvim-autopairs",
 
-  -- マルチカーソル機能
-  -- "mg979/vim-visual-multi",
-  --
-  -- -- テキスト選択の拡張機能
-  -- "gcmt/wildfire.vim",
-
   -- テキスト周りの操作のカスタマイズ（サラウンド）
   -- TODO: 使えるようにする
   {

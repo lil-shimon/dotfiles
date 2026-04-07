@@ -232,8 +232,6 @@ require("lazy").setup({
   -- 背景透過プラグイン
   -- https://github.com/xiyaowong/transparent.nvim
   "xiyaowong/transparent.nvim",
-  -- PRレビュープラグイン
-  -- https://github.com/pwntester/octo.nvim
   {
     "pwntester/octo.nvim",
     cmd = "Octo",

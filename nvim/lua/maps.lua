@@ -44,9 +44,6 @@ keymap("n", "x", '"_x')
 
 -- Oil ( file tree plugin ) keymaptings
 keymap("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory" })
-keymap("n", "<c-f>", function()
-	require("oil").open(".")
-end, { desc = "Oil ." })
 
 -- Bufferline (tab plugin) keymaptings
 keymap("n", "ap", "<Cmd>BufferLineCyclePrev<CR>", opts)

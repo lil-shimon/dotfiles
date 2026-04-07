@@ -39,9 +39,6 @@ keymap("", " l", "<C-w>l")
 -- Delete a word backwards
 keymap("n", "dw", 'vb"_d')
 
--- Select all ( just in case )
-keymap("n", "<C-a>", "gg<S-v>G")
-
 -- Do not yank with x
 keymap("n", "x", '"_x')
 

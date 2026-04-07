@@ -216,10 +216,6 @@ require("lazy").setup({
     end,
   },
   {
-    "lil-shimon/snapshot-runner",
-    dependencies = { "vim-denops/denops.vim" },
-  },
-  {
     "stevearc/oil.nvim",
     ---@module 'oil'
     ---@type oil.SetupOpts

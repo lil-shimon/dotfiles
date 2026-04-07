@@ -45,17 +45,6 @@ require("lazy").setup({
   -- オートペアリング（括弧やクォートの自動補完）
   "windwp/nvim-autopairs",
 
-  -- テキスト周りの操作のカスタマイズ（サラウンド）
-  -- TODO: 使えるようにする
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({})
-    end,
-  },
-
   -- ファイル検索や様々なリスト表示のための拡張機能
   "nvim-telescope/telescope.nvim",
   "nvim-telescope/telescope-file-browser.nvim",

@@ -160,6 +160,7 @@ require("lazy").setup({
   {
     "bkad/CamelCaseMotion",
     init = function()
+      -- https://github.com/bkad/CamelCaseMotion?tab=readme-ov-file#usage
       vim.g.camelcasemotion_key = ","
     end,
   },

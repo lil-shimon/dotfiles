@@ -24,7 +24,7 @@ config.inactive_pane_hsb = {
   saturation = 0.5, -- 非アクティブpaneの彩度を下げる
   brightness = 0.5, -- 非アクティブpaneをかなり暗く
 }
-config.font_size = 16
+config.font_size = 14
 config.font = wezterm.font_with_fallback({
   {
     -- family = "MesloLGLDZ Nerd Font Mono",

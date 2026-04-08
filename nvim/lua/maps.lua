@@ -49,7 +49,36 @@ keymap("n", "<c-e>", "<CMD>Oil<CR>", { desc = "Oil current buffer's directory" }
 keymap("n", "ap", "<Cmd>BufferLineCyclePrev<CR>", opts)
 keymap("n", "an", "<Cmd>BufferLineCycleNext<CR>", opts)
 keymap("n", "Ap", "<Cmd>BufferLineTogglePin<CR>", opts)
-keymap("n", "bd", "<Cmd>bdelete<CR>", opts)
+-- bd: 現在の window を閉じず、他 window に表示されていないバッファを優先表示してから削除
+local function smart_bdelete()
+	local curbuf = vim.api.nvim_get_current_buf()
+	local curwin = vim.api.nvim_get_current_win()
+
+	-- 他 window に表示されているバッファを集める
+	local shown_elsewhere = {}
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		if win ~= curwin then
+			shown_elsewhere[vim.api.nvim_win_get_buf(win)] = true
+		end
+	end
+
+	-- listed かつ他 window に出ていないバッファを探す
+	local target
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if buf ~= curbuf and vim.bo[buf].buflisted and not shown_elsewhere[buf] then
+			target = buf
+			break
+		end
+	end
+
+	if target then
+		vim.api.nvim_win_set_buf(curwin, target)
+	end
+	-- 見つからなければデフォルト挙動 (代替バッファ or enew) に任せる
+
+	vim.cmd("bdelete " .. curbuf)
+end
+keymap("n", "bd", smart_bdelete, opts)
 
 -- diffview (git diff view) keymaptings
 keymap("n", ",s", "<cmd>DiffviewOpen<CR>")

@@ -1,8 +1,5 @@
 # CLAUDE.md
 
-## GitHub系の操作
-GitHubの情報を取得するときとかは原則GitHub MCPを利用すること
-
 # ファイル構造
 
 ```

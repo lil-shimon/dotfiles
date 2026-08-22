@@ -1,0 +1,13 @@
+onboarding = false
+# herdr configuration
+# ~/.config/herdr/config.toml へシンボリックリンク
+
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
+description = "toggle herdr-reviewr sidebar"
+
+[theme]
+name = "catppuccin"
+auto_switch = false

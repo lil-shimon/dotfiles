@@ -13,17 +13,13 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-local lsp_config = {
-  capabilities = capabilities,
-  group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
+-- 全サーバー共通のデフォルト設定 (旧: require('lspconfig').xxx.setup(lsp_config))
+vim.lsp.config("*", {
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
   on_attach = on_attach,
-}
+})
 
-local mason_lspconfig = require("mason-lspconfig")
-
-mason_lspconfig.setup({
+require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "ts_ls", -- Updated from deprecated 'tsserver'
@@ -33,11 +29,8 @@ mason_lspconfig.setup({
   },
 })
 
--- Manual LSP setup since mason-lspconfig handlers might not be working
-local lspconfig = require("lspconfig")
-
 -- Lua LSP
-lspconfig.lua_ls.setup(vim.tbl_extend("force", lsp_config, {
+vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
       diagnostics = {
@@ -45,25 +38,19 @@ lspconfig.lua_ls.setup(vim.tbl_extend("force", lsp_config, {
       },
     },
   },
-}))
+})
 
 -- TypeScript LSP (using native ts_ls instead of typescript.nvim)
-lspconfig.ts_ls.setup(vim.tbl_extend("force", lsp_config, {
+vim.lsp.config("ts_ls", {
   init_options = {
     preferences = {
       jsxAttributeCompletionStyle = "none",
     },
   },
-}))
-
--- ESLint LSP
-lspconfig.eslint.setup(lsp_config)
-
--- JSON LSP
-lspconfig.jsonls.setup(lsp_config)
+})
 
 -- CSS LSP
-lspconfig.cssls.setup(vim.tbl_extend("force", lsp_config, {
+vim.lsp.config("cssls", {
   settings = {
     css = {
       validate = true,
@@ -84,7 +71,6 @@ lspconfig.cssls.setup(vim.tbl_extend("force", lsp_config, {
       },
     },
   },
-}))
+})
 
--- Typos LSP for spell checking
-vim.lsp.enable("typos_lsp")
+vim.lsp.enable({ "lua_ls", "ts_ls", "eslint", "jsonls", "cssls", "typos_lsp" })

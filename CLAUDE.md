@@ -3,6 +3,7 @@
 # ファイル構造
 
 ```
+aerospace/    # AeroSpace (タイル型ウィンドウマネージャ)
 emacs/        # Emacs
 git/          # Git設定
 herdr/        # herdr (ターミナルマルチプレクサ)

@@ -8,6 +8,7 @@ GitHubの情報を取得するときとかは原則GitHub MCPを利用するこ�
 ```
 emacs/        # Emacs
 git/          # Git設定
+herdr/        # herdr (ターミナルマルチプレクサ)
 nvim/         # Neovim (Lazy.nvim)
 wezterm/      # ターミナル
 mise.toml     # ツールバージョン管理

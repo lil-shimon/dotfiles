@@ -52,12 +52,6 @@ local colorscheme_list = {
   { scheme = "Everforest Dark (Hard)",            bg = "#2d353b" },
   { scheme = "Tokyo Night",                       bg = "#1a1b26" },
   { scheme = "rose-pine",                         bg = "#191724" },
-  -- Light
-  { scheme = "Everforest Light (Hard)",           bg = "#f2efdf" },
-  { scheme = "Tokyo Night Day",                   bg = "#e1e2e7" },
-  { scheme = "rose-pine-dawn",                    bg = "#faf4ed" },
-  { scheme = "Catppuccin Latte",                  bg = "#eff1f5" },
-  { scheme = "Solarized (light) (terminal.sexy)", bg = "#fdf6e3" },
 }
 local colorscheme_state = 0
 wezterm.on("toggle-colorscheme", function(window, pane)

@@ -24,21 +24,20 @@ config.inactive_pane_hsb = {
   saturation = 0.5, -- 非アクティブpaneの彩度を下げる
   brightness = 0.5, -- 非アクティブpaneをかなり暗く
 }
-config.font_size = 14
+config.font_size = 16
 config.font = wezterm.font_with_fallback({
   {
-    -- family = "MesloLGLDZ Nerd Font Mono",
-    family = "JetBrains Mono",
+    family = "Monaspace Neon",
     weight = "Regular",
   },
   {
-    family = "UDEV Gothic NF",
+    family = "Moralerspace Neon JPDOC",
     weight = "Regular",
   },
 })
 config.use_ime = true
-config.line_height = 1.35
-config.cell_width = 1.05
+config.line_height = 1.0
+config.cell_width = 1.0
 
 -- 背景を半透明 + ぼかし（macOS）
 local opacity_normal = 0.75

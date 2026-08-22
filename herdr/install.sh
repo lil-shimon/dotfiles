@@ -32,3 +32,18 @@ else
     ln -s ~/dotfiles/herdr/config.toml ~/.config/herdr/config.toml
     echo "シンボリックリンクを作成しました: ~/.config/herdr/config.toml"
 fi
+
+# Claude Code の hook をシンボリックリンクします。
+mkdir -p ~/.claude/hooks
+if [ -L ~/.claude/hooks/herdr-agent-name.sh ]; then
+    echo "既にシンボリックリンクが存在します: ~/.claude/hooks/herdr-agent-name.sh"
+elif [ -f ~/.claude/hooks/herdr-agent-name.sh ]; then
+    echo "既存のherdr-agent-name.shファイルが存在します。バックアップを作成します..."
+    mv ~/.claude/hooks/herdr-agent-name.sh ~/.claude/hooks/herdr-agent-name.sh.backup
+    echo "バックアップを作成しました: ~/.claude/hooks/herdr-agent-name.sh.backup"
+    ln -s ~/dotfiles/herdr/hooks/herdr-agent-name.sh ~/.claude/hooks/herdr-agent-name.sh
+    echo "シンボリックリンクを作成しました: ~/.claude/hooks/herdr-agent-name.sh"
+else
+    ln -s ~/dotfiles/herdr/hooks/herdr-agent-name.sh ~/.claude/hooks/herdr-agent-name.sh
+    echo "シンボリックリンクを作成しました: ~/.claude/hooks/herdr-agent-name.sh"
+fi

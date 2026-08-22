@@ -72,7 +72,7 @@ on-mode-changed = []
     inner.vertical =   30
     outer.left =       30
     outer.bottom =     30
-    outer.top =        50  # sketchybarのアイコン表示用
+    outer.top =        30
     outer.right =      30
 
 # 'main' binding mode declaration

@@ -77,7 +77,44 @@ git -C ~/dotfiles diff nvim/flake.lock
 - ここで初めてビルドが走るので、初回は数分かかることがある
 - 一致しなければ rev の選定ミス。手順 2 に戻る
 
-### 6. commit する
+### 6. 機能を検証する
+
+`nvim --version` が通ることは「動く」証拠にならない。バージョンの載せ替えで壊れるのは
+treesitter parser のコンパイル・mason の新規取得・ネイティブビルドを伴うプラグインで、
+どれも通常の編集操作では踏まない経路にある。明示的に叩いて確認する。
+
+**マイナーバージョンをまたぐ場合（0.11 → 0.12 等）は隔離環境で行う。**
+既存の `~/.local/share/nvim` を共有すると treesitter parser が新 ABI で焼き直され、
+lazy の state も書き換わる。この変更は `nix profile rollback` では戻らない（「ロールバック」参照）。
+
+```bash
+NVIM_BIN="$(nix build ~/dotfiles/nvim --no-link --print-out-paths)/bin/nvim"
+ln -sfn ~/dotfiles/nvim ~/.config/nvim-nix
+NVIM_APPNAME=nvim-nix "$NVIM_BIN"
+```
+
+設定は共有したまま、データは `~/.local/share/nvim-nix/` 以下に分離されるので既存環境は無傷。
+背景と詳細は Issue #59 の「後続 Issue（0.12 系へのアップグレード）に引き継ぐ内容」を参照。
+
+起動したら以下を実行する。
+
+- `:checkhealth` — エラーが無いこと（provider 系の warn は unwrapped を選んだ結果なので許容）
+- `:Lazy sync` — プラグインの取得が通る
+- `:TSInstall <未導入の言語>` — parser が新 ABI でコンパイルできる
+- `:MasonInstall <未導入の LSP>` — 新規取得して実際に起動する
+- `:Lazy build telescope-fzf-native.nvim` — ネイティブビルドを伴うプラグインが通る
+
+検証が終わったら片付ける。
+
+```bash
+rm ~/.config/nvim-nix
+rm -rf ~/.local/share/nvim-nix ~/.local/state/nvim-nix ~/.cache/nvim-nix
+```
+
+パッチバージョンのみの更新（0.11.5 → 0.11.6 等）は隔離を省略してよい。
+その場合も上のチェック自体は手順 9 の後に本番環境で行う。
+
+### 7. commit する
 
 `flake.nix` と `flake.lock` は **1 コミットにまとめる**（片方だけ commit すると
 lock と宣言が食い違った状態が履歴に残る）。
@@ -90,12 +127,13 @@ bump neovim to 0.12.4
 0.11.5 pin は Nix 化の移行期間の一時措置だったため、追随を再開する。
 ```
 
-### 7. PR を出す
+### 8. PR を出す
 
 - PR 本文には **旧バージョン → 新バージョン** と、手順 5 で実測した `nvim --version` の出力を貼る
 - `flake.lock` の diff だけでは neovim 単体のバージョン差は読めないため、この実測値が唯一の根拠になる
+- 手順 6 で叩いたチェック項目と結果も併記する（隔離環境で行ったか本番で行ったかも書く）
 
-### 8. マージ後に反映する
+### 9. マージ後に反映する
 
 profile の locked URL は `git+file:///Users/shimonlil/dotfiles?dir=nvim&ref=refs/heads/master`
 なので、**ローカル master にマージが取り込まれるまで upgrade は拾わない**。
@@ -106,7 +144,10 @@ nix profile upgrade nvim
 nvim --version | head -1
 ```
 
-### 9. 差分を確認する
+- 手順 6 を隔離環境で行った場合、本番の `~/.local/share/nvim` はまだ旧バージョンのまま。
+  起動して treesitter のハイライトが崩れていたら `:TSUpdate` で parser を焼き直す
+
+### 10. 差分を確認する
 
 ```bash
 nix profile diff-closures | tail -20
@@ -124,8 +165,14 @@ nix profile rollback
 nvim --version | head -1
 ```
 
-**リポジトリごと戻す**: `flake.nix` の rev を旧 hash に戻して手順 4〜8 をやり直す。
+**リポジトリごと戻す**: `flake.nix` の rev を旧 hash に戻して手順 4〜9 をやり直す。
 profile の rollback だけでは宣言（flake.nix）が新しいバージョンのままなので、次の upgrade でまた上がる。
+
+**データディレクトリは戻らない**: 上のどちらもバイナリと宣言を戻すだけで、
+`~/.local/share/nvim` は戻らない。新しいバージョンで一度でも起動していれば、
+treesitter parser は新 ABI で焼き直され lazy の state も書き換わっている。
+旧バージョンに戻した後にハイライトが壊れていたら `:TSUpdate` で焼き直す。
+手順 6 で隔離環境を挟むのは、この非対称性を踏まないため。
 
 ## メモ
 

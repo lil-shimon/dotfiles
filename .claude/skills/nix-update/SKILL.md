@@ -5,7 +5,7 @@ description: >
   「neovim のバージョン上げて」「nvim を X.Y.Z にして」「flake 更新して」「/nix-update」
   などのトリガーで起動する。
   nixhub で目標バージョンを含む nixpkgs revision を特定 → flake.nix の rev 差し替え →
-  nix flake lock → build で版を実測 → commit / PR → マージ後に nix profile upgrade、
+  nix flake lock → build でバージョンを実測 → commit / PR → マージ後に nix profile upgrade、
   という一連の流れを実行する。
 ---
 
@@ -35,7 +35,7 @@ nvim --version | head -1
 nix profile list
 ```
 
-- 今の版と、profile の `Store paths`（`neovim-unwrapped-X.Y.Z`）を控える
+- 今のバージョンと、profile の `Store paths`（`neovim-unwrapped-X.Y.Z`）を控える
 - 作業ツリーが汚れていないか `git -C ~/dotfiles status --short` で確認する
 
 ### 2. 目標バージョンを含む nixpkgs revision を特定する
@@ -50,7 +50,7 @@ https://www.nixhub.io/packages/neovim を引く（WebFetch で可）。
 
 `nvim/flake.nix` を編集する。
 
-- `description = "neovim pinned to X.Y.Z";` の版表記を更新
+- `description = "neovim pinned to X.Y.Z";` のバージョン表記を更新
 - `nixpkgs.url` の rev を手順 2 で取った hash に差し替え
 - rev の特定方法を書いた既存コメントは残す（削らない）
 - `packages.${system}.default = pkgs.neovim-unwrapped;` は触らない
@@ -67,7 +67,7 @@ git -C ~/dotfiles diff nvim/flake.lock
 - **diff が出なかったら rev の差し替えに失敗している**（手順 3 に戻る）
 - `warning: Git tree '/Users/shimonlil/dotfiles' is dirty` は commit 前なので正常。無視してよい
 
-### 5. build して版を実測する
+### 5. build してバージョンを実測する
 
 ```bash
 "$(nix build ~/dotfiles/nvim --no-link --print-out-paths)"/bin/nvim --version | head -1
@@ -92,8 +92,8 @@ bump neovim to 0.12.4
 
 ### 7. PR を出す
 
-- PR 本文には **旧版 → 新版** と、手順 5 で実測した `nvim --version` の出力を貼る
-- `flake.lock` の diff だけでは neovim 単体の版差は読めないため、この実測値が唯一の根拠になる
+- PR 本文には **旧バージョン → 新バージョン** と、手順 5 で実測した `nvim --version` の出力を貼る
+- `flake.lock` の diff だけでは neovim 単体のバージョン差は読めないため、この実測値が唯一の根拠になる
 
 ### 8. マージ後に反映する
 
@@ -112,7 +112,7 @@ nvim --version | head -1
 nix profile diff-closures | tail -20
 ```
 
-- クロージャに入った / 消えたパッケージと版差が出る
+- クロージャに入った / 消えたパッケージとバージョン差が出る
 - 履歴を見たい時は `nix profile history`
 
 ## ロールバック
@@ -125,13 +125,13 @@ nvim --version | head -1
 ```
 
 **リポジトリごと戻す**: `flake.nix` の rev を旧 hash に戻して手順 4〜8 をやり直す。
-profile の rollback だけでは宣言（flake.nix）が新版のままなので、次の upgrade でまた上がる。
+profile の rollback だけでは宣言（flake.nix）が新しいバージョンのままなので、次の upgrade でまた上がる。
 
 ## メモ
 
 - nix store が数 GB 消費するので、たまに `nix-collect-garbage -d` を打つ
   （ただし打つと `nix profile rollback` 先の世代も消える。ロールバックの目が無くなってから打つ）
 - mason が取ってくる LSP バイナリは `~/.local/share/nvim/mason` 以下で Nix の管理外。
-  版を上げても mason 側は追随しない
-- マイナー版をまたぐ更新（0.11 → 0.12 等）では treesitter parser の ABI がズレうる。
+  バージョンを上げても mason 側は追随しない
+- マイナーバージョンをまたぐ更新（0.11 → 0.12 等）では treesitter parser の ABI がズレうる。
   起動後に `:TSUpdate` を打って parser を再生成する

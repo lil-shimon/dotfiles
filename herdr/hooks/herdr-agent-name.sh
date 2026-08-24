@@ -1,5 +1,7 @@
 #!/bin/sh
 # UserPromptSubmit hook: herdr の agents 欄の表示名を、入力したプロンプト先頭で置き換える。
+# 同じ名前をペイン名にも付ける。config.toml の window_title = "{pane} — {hostname}" が
+# これを読んで外側のターミナルのウィンドウタイトルに出す。
 # herdr が自動インストールする herdr-agent-state.sh とは別ファイル（あちらは更新で上書きされる）。
 
 set -eu
@@ -50,4 +52,5 @@ PY
 
 [ -n "$name" ] || exit 0
 herdr agent rename "$HERDR_PANE_ID" "$name" >/dev/null 2>&1 || true
+herdr pane rename "$HERDR_PANE_ID" "$name" >/dev/null 2>&1 || true
 exit 0

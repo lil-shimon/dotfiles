@@ -12,5 +12,10 @@ description = "toggle herdr-reviewr sidebar"
 name = "terminal"
 auto_switch = false
 
+[ui]
+# 外側のターミナルのウィンドウタイトル。{pane} は herdr-agent-name.sh が
+# プロンプト先頭から付けるペイン名。
+window_title = "{pane} — {hostname}"
+
 [ui.toast]
 delivery = "terminal"

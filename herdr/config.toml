@@ -9,5 +9,5 @@ command = "persiyanov.reviewr.toggle"
 description = "toggle herdr-reviewr sidebar"
 
 [theme]
-name = "catppuccin"
+name = "terminal"
 auto_switch = false

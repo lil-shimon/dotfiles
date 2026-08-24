@@ -11,3 +11,6 @@ description = "toggle herdr-reviewr sidebar"
 [theme]
 name = "terminal"
 auto_switch = false
+
+[ui.toast]
+delivery = "terminal"

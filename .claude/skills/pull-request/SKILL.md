@@ -65,22 +65,28 @@ git commit
 - 複数ファイルを1コミットに含めてよい。ただし文脈が同じものに限る
 - 分けたコミットが残っている間は手順を繰り返す（`git status` が空になるまで）
 
-メッセージの形式はこのリポジトリの既存コミットに揃える。
+メッセージは **サマリが英語、本文が日本語**。
 
 ```
 show the prompt in the herdr agent sidebar rows
 
-Swap the tokens in the agent sidebar entries so the first row carries the
-pane name (the truncated prompt herdr-agent-name.sh sets) and the second
-row carries the space name, instead of the space name and the agent kind.
+既定の「スペース名 + エージェント種別」では、どのペインで何を走らせているかが
+サイドバーから読み取れない。トークンを差し替えて、1行目にプロンプト先頭が
+来るようにした。
 
 Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
 ```
 
 - **サマリは英語・小文字始まりの命令形**。`feat:` のような prefix は付けない（type はブランチ名が持っている）
-- 本文は英語、72 桁で折り返し、**What ではなく Why を書く**。差分を読めば分かることは書かない
+- **本文は日本語で Why だけを書く。** 何を変えたか（What）とどう変えたか（How）は
+  差分を読めば分かるので書かない。書くのは「なぜその判断に至ったか」だけ
+- 1行が長くなりすぎない位置で折り返す
 - `Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>` を末尾に入れる
-- 1行で足りる変更なら本文は省いてよい
+- Why が自明な変更なら本文は省いてよい
+
+`#62` 以前のコミットは本文も英語だが、**そちらには揃えない**。
+読み返す速度を優先して日本語に寄せる。サマリだけ英語なのは、
+ログを1行で流し読みする時に `git log --oneline` が横に伸びないため。
 
 ### 4. push して PR を作る
 

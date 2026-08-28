@@ -16,7 +16,6 @@ require 'nvim-treesitter.configs'.setup {
     disable = {}
   },
   -- autotag moved to p-autotag.lua (new API)
-  -- rainbow moved to separate plugin (rainbow-delimiters.nvim)
   -- context_commentstring is built-in to Neovim 0.10+ (no longer needed)
 }
 

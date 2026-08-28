@@ -82,7 +82,6 @@ require("lazy").setup({
   -- https://github.com/windwp/nvim-ts-autotag
   -- tsxなどでタグを自動で追加する。必須級プラグイン
   "windwp/nvim-ts-autotag",
-  "HiPhish/rainbow-delimiters.nvim",
   "axelvc/template-string.nvim",
 
   -- TODOコメントのハイライトと管理

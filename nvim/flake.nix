@@ -1,11 +1,11 @@
 {
-  description = "neovim pinned to 0.11.5";
+  description = "neovim pinned to 0.12.5";
 
   inputs = {
-    # neovim 0.11.5 を含む nixpkgs revision。
+    # neovim 0.12.5 を含む nixpkgs revision。
     # 特定には https://www.nixhub.io/packages/neovim を使う。
     # バージョンを上げる時はこの rev を差し替えて `nix flake lock` を実行する。
-    nixpkgs.url = "github:NixOS/nixpkgs/a1bab9e494f5f4939442a57a58d0449a109593fe";
+    nixpkgs.url = "github:NixOS/nixpkgs/c27cdad491a991b11ed731760aa2ef8db0cb0410";
   };
 
   outputs =

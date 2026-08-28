@@ -8,13 +8,13 @@ end
 config.automatically_reload_config = true
 
 -- UI
-config.color_scheme = "Everforest Dark (Medium)"
+config.color_scheme = "Tokyo Night"
 
--- Everforest カラー
+-- Tokyo Night カラー
 config.colors = {
-  split = "#a7c080",    -- Split pane border (Everforest green)
-  cursor_bg = "#a7c080", -- カーソル背景色（緑）
-  cursor_fg = "#2d353b", -- カーソル上の文字色
+  split = "#7aa2f7",    -- Split pane border (Tokyo Night blue)
+  cursor_bg = "#7aa2f7", -- カーソル背景色（青）
+  cursor_fg = "#1a1b26", -- カーソル上の文字色
   tab_bar = {
     inactive_tab_edge = "none",
   },
@@ -45,23 +45,6 @@ local opacity_seethrough = 0.15 -- 透過モード（ブラウザが見えるレ
 local opacity_opaque = 1.0
 config.window_background_opacity = opacity_normal
 config.macos_window_background_blur = 20
-
--- カラースキームトグル用のイベント
-local colorscheme_list = {
-  -- Dark
-  { scheme = "Everforest Dark (Hard)",            bg = "#2d353b" },
-  { scheme = "Tokyo Night",                       bg = "#1a1b26" },
-  { scheme = "rose-pine",                         bg = "#191724" },
-}
-local colorscheme_state = 0
-wezterm.on("toggle-colorscheme", function(window, pane)
-  colorscheme_state = (colorscheme_state + 1) % #colorscheme_list
-  local entry = colorscheme_list[colorscheme_state + 1]
-  local overrides = window:get_config_overrides() or {}
-  overrides.color_scheme = entry.scheme
-  overrides.window_background_gradient = { colors = { entry.bg } }
-  window:set_config_overrides(overrides)
-end)
 
 -- 透明度トグル用のイベント
 local opacity_state = 0 -- 0:normal, 1:seethrough, 2:opaque
@@ -114,10 +97,10 @@ config.window_frame = {
 -- tabの新規作成ボタンを非表示にする
 config.show_new_tab_button_in_tab_bar = false
 
--- Everforest背景色でウィンドウにグラデーションをつける
+-- Tokyo Night背景色でウィンドウにグラデーションをつける
 config.window_background_gradient = {
   colors = {
-    "#2d353b", -- 中央（Everforest Dark背景色）
+    "#1a1b26", -- 中央（Tokyo Night背景色）
   },
 }
 
@@ -134,17 +117,17 @@ wezterm.on("format-tab-title", function(tab)
   local edge_background = "none"
 
   -- 左側セグメント（プロセス名）の色
-  local left_bg = "#3d484d" -- Everforest 暗め背景
-  local left_fg = "#9da9a0" -- Everforest 前景（グレー）
+  local left_bg = "#292e42" -- Tokyo Night 暗め背景
+  local left_fg = "#a9b1d6" -- Tokyo Night 前景（グレー）
 
   -- 右側セグメント（タブ番号）の色
-  local right_bg = "#475258" -- 非アクティブ時
-  local right_fg = "#d3c6aa"
+  local right_bg = "#3b4261" -- 非アクティブ時
+  local right_fg = "#c0caf5"
 
   if tab.is_active then
-    right_bg = "#a7c080" -- アクティブタブ背景（Everforest green）
-    right_fg = "#2d353b" -- アクティブタブ前景（暗い背景色）
-    left_fg = "#d3c6aa" -- アクティブ時は明るく
+    right_bg = "#7aa2f7" -- アクティブタブ背景（Tokyo Night blue）
+    right_fg = "#1a1b26" -- アクティブタブ前景（暗い背景色）
+    left_fg = "#c0caf5" -- アクティブ時は明るく
   end
 
   -- タブタイトル（長すぎる場合は切り詰め、日本語対応）
@@ -193,8 +176,6 @@ local function send_key_with_esc(key)
 end
 
 local keys = {
-  -- カラースキームトグル
-  { key = "p", mods = "CTRL|SHIFT", action = act.EmitEvent("toggle-colorscheme") },
   -- 透明度トグル（ブラウザを見ながら作業）
   { key = "o", mods = "CTRL|SHIFT", action = act.EmitEvent("toggle-opacity") },
   -- Ctrl+h/j/k/l: Neovimウィンドウ移動（Claude Code対応）

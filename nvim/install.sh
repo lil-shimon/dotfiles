@@ -19,14 +19,6 @@ if [ "$nvim_path" != "$HOME/.nix-profile/bin/nvim" ]; then
     echo "Warning: nvim resolves to ${nvim_path:-none}, not $HOME/.nix-profile/bin/nvim." >&2
 fi
 
-if brew list ripgrep &>/dev/null; then
-    echo "Ripgrep is already installed."
-else
-    echo "Installing Ripgrep for faster file search..."
-    brew install ripgrep
-    echo "Ripgrep has been installed."
-fi
-
 if [ -L ~/.config/nvim ]; then
     echo "Symbolic link already exists: ~/.config/nvim"
 else

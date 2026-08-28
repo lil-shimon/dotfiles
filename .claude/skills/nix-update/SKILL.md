@@ -89,26 +89,45 @@ lazy の state も書き換わる。この変更は `nix profile rollback` で�
 
 ```bash
 NVIM_BIN="$(nix build ~/dotfiles/nvim --no-link --print-out-paths)/bin/nvim"
-ln -sfn ~/dotfiles/nvim ~/.config/nvim-nix
+cp -R ~/dotfiles/nvim ~/.config/nvim-nix
 NVIM_APPNAME=nvim-nix "$NVIM_BIN"
 ```
 
-設定は共有したまま、データは `~/.local/share/nvim-nix/` 以下に分離されるので既存環境は無傷。
+**config は symlink ではなくコピーにする。** lazy.nvim のロックファイルは
+`stdpath("config")/lazy-lock.json`、つまり `~/dotfiles/nvim/lazy-lock.json` そのものなので、
+symlink で共有すると隔離環境の `:Lazy sync` がリポジトリの lock を書き換えてしまう。
+コピーなら書き込みは `~/.config/nvim-nix/` に閉じ、リポジトリは無傷のまま。
+
+データは `~/.local/share/nvim-nix/` 以下に分離されるので既存環境も無傷。
 背景と詳細は Issue #59 の「後続 Issue（0.12 系へのアップグレード）に引き継ぐ内容」を参照。
 
 起動したら以下を実行する。
 
 - `:checkhealth` — エラーが無いこと（provider 系の warn は unwrapped を選んだ結果なので許容）
-- `:Lazy sync` — プラグインの取得が通る
+- `:Lazy restore` — lock 固定のままプラグインの取得が通る
 - `:TSInstall <未導入の言語>` — parser が新 ABI でコンパイルできる
 - `:MasonInstall <未導入の LSP>` — 新規取得して実際に起動する
 - `:Lazy build telescope-fzf-native.nvim` — ネイティブビルドを伴うプラグインが通る
 
+**`:Lazy sync` ではなく `:Lazy restore` を打つ。** sync はプラグインを最新へ動かすため、
+「neovim を上げた結果」と「プラグインを上げた結果」が混ざって切り分けできなくなる。
+検証したいのは neovim の載せ替えだけなので、プラグインは lock のバージョンに固定する。
+
 検証が終わったら片付ける。
 
 ```bash
-rm ~/.config/nvim-nix
+rm -rf ~/.config/nvim-nix
 rm -rf ~/.local/share/nvim-nix ~/.local/state/nvim-nix ~/.cache/nvim-nix
+```
+
+エラーが出た時に「新バージョン固有か」を切り分けたい場合は、**旧バージョンのバイナリで
+同じことを別の APPNAME でもう一度回す**。両方で出るなら neovim の載せ替えとは無関係。
+
+```bash
+# 手順 1 の `nix profile list` で控えた Store paths がそのまま旧バイナリ
+OLD_BIN="/nix/store/<旧 hash>-neovim-unwrapped-<旧バージョン>/bin/nvim"
+cp -R ~/dotfiles/nvim ~/.config/nvim-old
+NVIM_APPNAME=nvim-old "$OLD_BIN"
 ```
 
 パッチバージョンのみの更新（0.11.5 → 0.11.6 等）は隔離を省略してよい。

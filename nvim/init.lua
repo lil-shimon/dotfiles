@@ -77,7 +77,6 @@ require("lazy").setup({
   "nvimtools/none-ls.nvim",
 
   -- Treesitterベースの構文解析とハイライト
-  -- main ブランチは lazy-load 非対応。パーサ更新は build の :TSUpdate に任せる。
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,

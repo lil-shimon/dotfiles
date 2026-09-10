@@ -5,7 +5,7 @@ nvim_treesitter.install({
   "prisma", "markdown", "markdown_inline",
   "go", "gomod", "gosum", "gowork",
   "bash", "csv", "dockerfile", "elixir", "git_config", "gitignore", "ini", "nix",
-  "php", "python", "ruby", "scss", "toml", "vim", "vimdoc", "yaml", "zig",
+  "php", "python", "ruby", "scss", "toml", "vim", "vimdoc", "yaml",
 })
 
 vim.api.nvim_create_autocmd("FileType", {

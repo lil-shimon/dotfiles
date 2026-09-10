@@ -77,7 +77,12 @@ require("lazy").setup({
   "nvimtools/none-ls.nvim",
 
   -- Treesitterベースの構文解析とハイライト
-  "nvim-treesitter/nvim-treesitter",
+  -- main ブランチは lazy-load 非対応。パーサ更新は build の :TSUpdate に任せる。
+  {
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
+  },
   "nvim-treesitter/nvim-treesitter-context",
   -- https://github.com/windwp/nvim-ts-autotag
   -- tsxなどでタグを自動で追加する。必須級プラグイン

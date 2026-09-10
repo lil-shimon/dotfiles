@@ -4,7 +4,7 @@
 
 ## Requirements
 
-- [Neovim 0.8+](https://github.com/neovim/neovim/releases/tag/v0.8.1)
+- [Neovim 0.12+](https://github.com/neovim/neovim/releases/tag/v0.12.0)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)

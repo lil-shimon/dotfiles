@@ -8,6 +8,7 @@ emacs/        # Emacs
 git/          # Git設定
 herdr/        # herdr (ターミナルマルチプレクサ)
 nvim/         # Neovim (Lazy.nvim)
+rg/           # ripgrep (telescope の検索経路)
 wezterm/      # ターミナル
 mise.toml     # ツールバージョン管理
 ```

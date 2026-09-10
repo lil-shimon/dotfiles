@@ -8,3 +8,4 @@
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [tree-sitter CLI 0.26.1+](https://github.com/tree-sitter/tree-sitter) (nvim-treesitter main のパーサビルドに必要)

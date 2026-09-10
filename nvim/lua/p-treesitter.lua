@@ -1,23 +1,24 @@
-require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "typescript", "javascript", "html", "css", "tsx", "lua", "rust", "json", "graphql", "regex",
-    "prisma", "markdown", "markdown_inline",
-    "go", "gomod", "gosum", "gowork" },
+local nvim_treesitter = require("nvim-treesitter")
 
-  sync_install = false,
-  auto_install = true,
+nvim_treesitter.install({
+  "typescript", "javascript", "html", "css", "tsx", "lua", "rust", "json", "graphql", "regex",
+  "prisma", "markdown", "markdown_inline",
+  "go", "gomod", "gosum", "gowork",
+  "bash", "csv", "dockerfile", "elixir", "git_config", "gitignore", "ini", "nix",
+  "php", "python", "ruby", "scss", "toml", "vim", "vimdoc", "yaml",
+})
 
-  highlight = {
-    enable = true,
-    disable = {},
-    additional_vim_regex_highlighting = false,
-  },
-  indent = {
-    enable = true,
-    disable = {}
-  },
-  -- autotag moved to p-autotag.lua (new API)
-  -- context_commentstring is built-in to Neovim 0.10+ (no longer needed)
-}
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    local lang = vim.treesitter.language.get_lang(args.match)
+    if not lang or not vim.tbl_contains(nvim_treesitter.get_installed("parsers"), lang) then
+      return
+    end
+
+    vim.treesitter.start(args.buf)
+    vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
 
 require('template-string').setup({
   filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'python' }, -- filetypes where the plugin is active

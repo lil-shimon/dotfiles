@@ -77,7 +77,11 @@ require("lazy").setup({
   "nvimtools/none-ls.nvim",
 
   -- Treesitterベースの構文解析とハイライト
-  "nvim-treesitter/nvim-treesitter",
+  {
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
+  },
   "nvim-treesitter/nvim-treesitter-context",
   -- https://github.com/windwp/nvim-ts-autotag
   -- tsxなどでタグを自動で追加する。必須級プラグイン

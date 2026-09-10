@@ -64,7 +64,7 @@ opt.updatetime = 300
 opt.timeoutlen = 500
 
 opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- 端までコードが届いたら折り返す
 opt.wrap = true

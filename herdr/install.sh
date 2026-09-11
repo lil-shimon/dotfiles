@@ -1,13 +1,37 @@
 #!/bin/bash
 
-# herdrがインストールされているかどうかをチェックします。
-if brew list herdr &>/dev/null; then
+if ! command -v nix &>/dev/null; then
+    echo "Error: nix is required to install herdr." >&2
+    echo "Install Nix first, then re-run this script: https://determinate.systems/nix" >&2
+    exit 1
+fi
+
+# herdr本体をインストールします。
+if nix profile list --json 2>/dev/null | grep -q "dotfiles?dir=herdr"; then
     echo "herdrは既にインストールされています。"
 else
     echo "herdrをインストールしています..."
-    brew install herdr
+    nix profile add ~/dotfiles/herdr
     echo "herdrのインストールが完了しました。"
 fi
+
+herdr_path="$(command -v herdr)"
+if [ "$herdr_path" != "$HOME/.nix-profile/bin/herdr" ]; then
+    echo "Warning: herdr resolves to ${herdr_path:-none}, not $HOME/.nix-profile/bin/herdr." >&2
+    if brew list herdr &>/dev/null; then
+        echo "Warning: brew版のherdrが残っています。'brew uninstall herdr' で削除してください。" >&2
+    fi
+fi
+
+# Agent Skill をインストールします。flake の herdr と同じ rev から取得されます。
+mkdir -p ~/.claude/skills
+if [ -e ~/.claude/skills/herdr ] && [ ! -L ~/.claude/skills/herdr ]; then
+    echo "既存のherdrスキルが存在します。バックアップを作成します..."
+    mv ~/.claude/skills/herdr ~/.claude/skills/herdr.backup
+    echo "バックアップを作成しました: ~/.claude/skills/herdr.backup"
+fi
+nix build ~/dotfiles/herdr#skill --out-link ~/.claude/skills/herdr
+echo "Agent Skillをインストールしました: ~/.claude/skills/herdr"
 
 # herdr-reviewrプラグインがインストールされているかどうかをチェックします。
 if [ -d ~/.config/herdr/plugins/config/persiyanov.reviewr ]; then

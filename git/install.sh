@@ -20,7 +20,7 @@ for cmd in git gh ghq; do
     if [ "$cmd_path" != "$HOME/.nix-profile/bin/$cmd" ]; then
         echo "Warning: $cmd resolves to ${cmd_path:-none}, not $HOME/.nix-profile/bin/$cmd." >&2
         if brew list "$cmd" &>/dev/null; then
-            echo "Warning: brew版の$cmdが残っています。'brew uninstall $cmd' で削除してください。" >&2
+            echo "Warning: brew版の${cmd}が残っています。'brew uninstall $cmd' で削除してください。" >&2
         fi
     fi
 done

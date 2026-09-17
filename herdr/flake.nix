@@ -1,8 +1,8 @@
 {
-  description = "herdr pinned to 0.9.0";
+  description = "herdr";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/d5dfd8e6716dde34398bc14bc87c10dece9c8c68";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   outputs =

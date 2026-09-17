@@ -1,11 +1,8 @@
 {
-  description = "ripgrep pinned to 15.1.0";
+  description = "ripgrep";
 
   inputs = {
-    # ripgrep 15.1.0 を含む nixpkgs revision。
-    # 特定には https://www.nixhub.io/packages/ripgrep を使う。
-    # バージョンを上げる時はこの rev を差し替えて `nix flake lock` を実行する。
-    nixpkgs.url = "github:NixOS/nixpkgs/389ed85304b281ca7f306cf8a1eb4378651ca44e";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   outputs =

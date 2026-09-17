@@ -1,8 +1,8 @@
 {
-  description = "tree-sitter CLI pinned to 0.26.11";
+  description = "tree-sitter CLI";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/c27cdad491a991b11ed731760aa2ef8db0cb0410";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   outputs =

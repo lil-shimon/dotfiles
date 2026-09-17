@@ -1,11 +1,8 @@
 {
-  description = "git 2.55.0, gh 2.100.0, ghq 1.10.1";
+  description = "git, gh and ghq";
 
   inputs = {
-    # git / gh / ghq の上記バージョンを含む nixpkgs revision。
-    # 特定には https://www.nixhub.io を使う。
-    # バージョンを上げる時はこの rev を差し替えて `nix flake lock` を実行する。
-    nixpkgs.url = "github:NixOS/nixpkgs/c7def046b9a883d46974757852106483d741586f";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   outputs =

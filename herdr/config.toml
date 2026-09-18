@@ -15,6 +15,12 @@ description = "toggle herdr-reviewr sidebar"
 [theme]
 name = "terminal"
 
+[theme.custom]
+accent = "#e95420"
+sidebar_bg = "#2c001e"
+active_row_bg = "#5e2750"
+selection_bg = "#77216f"
+
 [ui]
 window_title = "{pane} — {hostname}"
 

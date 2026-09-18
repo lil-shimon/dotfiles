@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- エディタのビジュアルテーマ
-  "sainnhe/everforest",
+  "nvim-mini/mini.base16",
 
   -- Markdownレンダリング強化
   {

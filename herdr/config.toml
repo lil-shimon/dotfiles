@@ -2,6 +2,10 @@ onboarding = false
 # herdr configuration
 # ~/.config/herdr/config.toml へシンボリックリンク
 
+[keys]
+rename_tab = "prefix+r"
+resize_mode = ""
+
 [[keys.command]]
 key = "prefix+a"
 type = "plugin_action"

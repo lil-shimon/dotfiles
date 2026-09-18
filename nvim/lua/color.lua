@@ -1,10 +1,12 @@
--- Everforest setup (目に優しい緑系ダークテーマ)
-vim.g.everforest_background = 'medium'
-vim.g.everforest_better_performance = 1
-vim.g.everforest_enable_italic = 1
-vim.g.everforest_transparent_background = 1
-
-vim.cmd.colorscheme('everforest')
+-- Ubuntu setup (aubergine + Tango パレット)
+require('mini.base16').setup({
+  palette = {
+    base00 = '#300a24', base01 = '#3e1133', base02 = '#5e2750', base03 = '#888a85',
+    base04 = '#babdb6', base05 = '#eeeeec', base06 = '#d3d7cf', base07 = '#ffffff',
+    base08 = '#ef2929', base09 = '#e95420', base0A = '#fce94f', base0B = '#8ae234',
+    base0C = '#34e2e2', base0D = '#729fcf', base0E = '#ad7fa8', base0F = '#cc0000',
+  },
+})
 
 -- Diff highlights（diffview用）
 vim.api.nvim_create_autocmd('User', {

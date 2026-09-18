@@ -1,11 +1,11 @@
 -- bufferline.nvim設定
 -- シンプルな透過スタイル + 文字色で区別
 
--- Everforestカラーパレット
+-- Ubuntuカラーパレット
 local colors = {
-  active = "#a7c080",     -- Everforest green（アクティブタブ）
-  inactive = "#859289",   -- Everforest グレー（非アクティブタブ）
-  separator = "#3d484d",  -- Everforest 暗めのボーダー
+  active = "#e95420",     -- Ubuntu orange（アクティブタブ）
+  inactive = "#888a85",   -- Tango グレー（非アクティブタブ）
+  separator = "#5e2750",  -- Ubuntu mid aubergine（ボーダー）
 }
 
 require("bufferline").setup({

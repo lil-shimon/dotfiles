@@ -8,13 +8,13 @@ end
 config.automatically_reload_config = true
 
 -- UI
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Ubuntu"
 
--- Tokyo Night カラー
+-- Ubuntu カラー
 config.colors = {
-  split = "#7aa2f7",    -- Split pane border (Tokyo Night blue)
-  cursor_bg = "#7aa2f7", -- カーソル背景色（青）
-  cursor_fg = "#1a1b26", -- カーソル上の文字色
+  split = "#e95420",    -- Split pane border (Ubuntu orange)
+  cursor_bg = "#e95420", -- カーソル背景色（オレンジ）
+  cursor_fg = "#300a24", -- カーソル上の文字色
   tab_bar = {
     inactive_tab_edge = "none",
   },
@@ -97,10 +97,10 @@ config.window_frame = {
 -- tabの新規作成ボタンを非表示にする
 config.show_new_tab_button_in_tab_bar = false
 
--- Tokyo Night背景色でウィンドウにグラデーションをつける
+-- Ubuntu背景色でウィンドウにグラデーションをつける
 config.window_background_gradient = {
   colors = {
-    "#1a1b26", -- 中央（Tokyo Night背景色）
+    "#300a24", -- 中央（Ubuntu aubergine）
   },
 }
 
@@ -112,22 +112,22 @@ config.show_close_tab_button_in_tabs = false
 local LEFT_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick
 local RIGHT_CIRCLE = wezterm.nerdfonts.ple_right_half_circle_thick
 
--- Tokyo Night カラーでカプセル形状タブをフォーマット
+-- Ubuntu カラーでカプセル形状タブをフォーマット
 wezterm.on("format-tab-title", function(tab)
   local edge_background = "none"
 
   -- 左側セグメント（プロセス名）の色
-  local left_bg = "#292e42" -- Tokyo Night 暗め背景
-  local left_fg = "#a9b1d6" -- Tokyo Night 前景（グレー）
+  local left_bg = "#5e2750" -- Ubuntu mid aubergine
+  local left_fg = "#d3d7cf" -- Ubuntu 前景（グレー）
 
   -- 右側セグメント（タブ番号）の色
-  local right_bg = "#3b4261" -- 非アクティブ時
-  local right_fg = "#c0caf5"
+  local right_bg = "#77216f" -- 非アクティブ時
+  local right_fg = "#eeeeec"
 
   if tab.is_active then
-    right_bg = "#7aa2f7" -- アクティブタブ背景（Tokyo Night blue）
-    right_fg = "#1a1b26" -- アクティブタブ前景（暗い背景色）
-    left_fg = "#c0caf5" -- アクティブ時は明るく
+    right_bg = "#e95420" -- アクティブタブ背景（Ubuntu orange）
+    right_fg = "#300a24" -- アクティブタブ前景（暗い背景色）
+    left_fg = "#eeeeec" -- アクティブ時は明るく
   end
 
   -- タブタイトル（長すぎる場合は切り詰め、日本語対応）

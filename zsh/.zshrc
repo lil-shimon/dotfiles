@@ -130,7 +130,7 @@ eval "$(pyenv init -)"
 
 
 # bun completions
-[ -s "/Users/shimonlil/.bun/_bun" ] && source "/Users/shimonlil/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -152,7 +152,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 
 # Added by Antigravity
-export PATH="/Users/shimonlil/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # export GOROOT=`go1.25.5 env GOROOT`  # Homebrew go のデフォルト GOROOT を使用
 
 # zoxide
@@ -196,3 +196,5 @@ autoload -Uz compinit && compinit -C
 # ファイルディスクリプタ上限を引き上げる
 # macOS の既定は soft 256（launchctl limit maxfiles）。
 ulimit -n 10240
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

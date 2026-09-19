@@ -22,7 +22,7 @@ clone_if_missing "zsh-autosuggestions" https://github.com/zsh-users/zsh-autosugg
 # シンボリックリンクを作成する前に、既存のファイル/リンクをチェックします。
 timestamp="$(date +%Y%m%d%H%M%S)"
 
-for file in .zshenv .zprofile .zshrc .p10k.zsh; do
+for file in .zprofile .zshrc .p10k.zsh; do
     if [ -L ~/"$file" ]; then
         echo "既にシンボリックリンクが存在します: ~/$file"
         continue

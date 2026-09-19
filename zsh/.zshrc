@@ -122,12 +122,6 @@ alias vi="nvim"
 
 
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -138,21 +132,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(mise activate zsh)"
 
-# https://github.com/direnv/direnv
-# https://zenn.dev/masuda1112/articles/2024-11-29-direnv
-# eval "$(direnv hook zsh)"
-
-
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 export PATH="$PATH:$(go env GOPATH)/bin"
 
 . "$HOME/.local/bin/env"
 export PATH="$HOME/.local/bin:$PATH"
 
 
-# Added by Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # export GOROOT=`go1.25.5 env GOROOT`  # Homebrew go のデフォルト GOROOT を使用
 
 # zoxide
@@ -161,37 +146,7 @@ eval "$(zoxide init zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export PATH=$PATH:$HOME/.maestro/bin
-
-# Elixir
-export PATH="$PATH:/path/to/elixir/bin"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# >>> grok installer >>>
-export PATH="$HOME/.grok/bin:$PATH"
-fpath=(~/.grok/completions/zsh $fpath)
-autoload -Uz compinit && compinit -C
-# <<< grok installer <<<
 
 # ファイルディスクリプタ上限を引き上げる
 # macOS の既定は soft 256（launchctl limit maxfiles）。

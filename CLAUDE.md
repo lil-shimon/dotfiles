@@ -11,5 +11,6 @@ nvim/         # Neovim (Lazy.nvim)
 rg/           # ripgrep (telescope の検索経路)
 tree-sitter/  # tree-sitter CLI (nvim-treesitter のパーサビルド)
 wezterm/      # ターミナル
+zsh/          # zsh (Oh My Zsh + powerlevel10k)
 mise.toml     # ツールバージョン管理
 ```

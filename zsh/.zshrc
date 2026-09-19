@@ -126,18 +126,6 @@ alias vi="nvim"
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-eval "$(mise activate zsh)"
-
-export PATH="$PATH:$(go env GOPATH)/bin"
-
-. "$HOME/.local/bin/env"
-export PATH="$HOME/.local/bin:$PATH"
-
-
 # export GOROOT=`go1.25.5 env GOROOT`  # Homebrew go のデフォルト GOROOT を使用
 
 # zoxide
@@ -145,8 +133,6 @@ eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # ファイルディスクリプタ上限を引き上げる
 # macOS の既定は soft 256（launchctl limit maxfiles）。

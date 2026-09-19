@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: nix
+    directories:
+      - /nvim
+      - /rg
+      - /herdr
+      - /tree-sitter
+      - /git
+    schedule:
+      interval: weekly

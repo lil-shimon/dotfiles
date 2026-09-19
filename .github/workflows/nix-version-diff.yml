@@ -1,0 +1,45 @@
+name: nix version diff
+
+on:
+  pull_request:
+    paths:
+      - "*/flake.lock"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  diff:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+      MARKER: "<!-- nix-version-diff -->"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ github.token }}
+
+      # pull_request では merge commit が checkout されるので、HEAD^1 が base になる
+      - id: diff
+        run: .github/scripts/nix-version-diff.sh HEAD^1 >"$RUNNER_TEMP/body.md"
+
+      - name: comment
+        run: |
+          id=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --paginate \
+            --jq '.[] | select(.body | startswith(env.MARKER)) | .id' | head -n1)
+          if [ -n "$id" ]; then
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$id" -F body=@"$RUNNER_TEMP/body.md"
+          else
+            gh pr comment "$PR" --body-file "$RUNNER_TEMP/body.md"
+          fi
+
+      - name: close
+        if: steps.diff.outputs.changed == 'false'
+        run: gh pr close "$PR"

@@ -8,6 +8,7 @@ emacs/        # Emacs
 git/          # Git設定
 herdr/        # herdr (ターミナルマルチプレクサ)
 nvim/         # Neovim (Lazy.nvim)
+orca/         # Orca (ADE: 並列エージェント用デスクトップアプリ)
 rg/           # ripgrep (telescope の検索経路)
 tree-sitter/  # tree-sitter CLI (nvim-treesitter のパーサビルド)
 wezterm/      # ターミナル

@@ -129,7 +129,7 @@ alias vi="nvim"
 # export GOROOT=`go1.25.5 env GOROOT`  # Homebrew go のデフォルト GOROOT を使用
 
 # zoxide
-eval "$(zoxide init zsh)"
+command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

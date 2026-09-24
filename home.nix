@@ -21,6 +21,7 @@
     # 設定側で provider を使っていないため、差分を最小にする unwrapped を採る。
     pkgs.neovim-unwrapped
     pkgs.herdr
+    pkgs.wezterm
   ];
 
   home.file.".gitconfig".source =

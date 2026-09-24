@@ -5,6 +5,5 @@ updates:
       - /
       - /nvim
       - /herdr
-      - /git
     schedule:
       interval: weekly

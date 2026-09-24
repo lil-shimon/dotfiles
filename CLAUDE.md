@@ -4,7 +4,6 @@
 
 ```
 aerospace/    # AeroSpace (タイル型ウィンドウマネージャ)
-emacs/        # Emacs
 git/          # Git設定
 herdr/        # herdr (ターミナルマルチプレクサ)
 mise/         # mise のグローバル設定 (~/.config/mise/config.toml へ symlink)

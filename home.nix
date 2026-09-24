@@ -18,5 +18,8 @@
   home.file.".wezterm.lua".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/wezterm/.wezterm.lua";
 
+  xdg.configFile."aerospace/aerospace.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/aerospace/.aerospace.toml";
+
   programs.home-manager.enable = true;
 }

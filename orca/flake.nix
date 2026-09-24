@@ -14,11 +14,11 @@
     {
       packages.${system}.default = pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
         pname = "orca";
-        version = "1.4.207";
+        version = "1.4.209";
 
         src = pkgs.fetchurl {
           url = "https://github.com/stablyai/orca/releases/download/v${finalAttrs.version}/Orca-${finalAttrs.version}-arm64-mac.zip";
-          hash = "sha256-KtwP0zwnCkRmTPatP6A0BSMuVj4yfuHSaWTphbSF0Cg=";
+          hash = "sha256-fAqTMSM2qAcIkzvvm3vnJvx7LLFOSh+DJB7cCgCqDP8=";
         };
 
         nativeBuildInputs = [ pkgs.unzip ];

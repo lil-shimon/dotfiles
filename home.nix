@@ -6,6 +6,7 @@
 
   home.packages = [
     pkgs.ripgrep
+    pkgs.tree-sitter
   ];
 
   home.file.".wezterm.lua".source =

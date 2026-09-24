@@ -10,7 +10,6 @@ herdr/        # herdr (ターミナルマルチプレクサ)
 mise/         # mise のグローバル設定 (~/.config/mise/config.toml へ symlink)
 nvim/         # Neovim (Lazy.nvim)
 orca/         # Orca (ADE: 並列エージェント用デスクトップアプリ)
-tree-sitter/  # tree-sitter CLI (nvim-treesitter のパーサビルド)
 wezterm/      # ターミナル
 zsh/          # zsh (Oh My Zsh + powerlevel10k)
 mise.toml     # このリポジトリ内でだけ効くプロジェクト設定 (mise/ はグローバル側)

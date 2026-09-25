@@ -22,6 +22,7 @@
     pkgs.neovim-unwrapped
     pkgs.herdr
     pkgs.wezterm
+    pkgs.aerospace
   ];
 
   home.file.".gitconfig".source =

@@ -17,7 +17,7 @@ home.nix      # home-manager のホーム設定
 
 # home-manager
 
-`install.sh` から home-manager への移行中 (#108)。移行が済むまで両者は併存する。
+パッケージと設定ファイルの配置は、すべて home-manager で管理する。
 
 ```bash
 home-manager switch --flake ~/dotfiles   # 設定名が $USER と同じなので #shimonlil は省略できる

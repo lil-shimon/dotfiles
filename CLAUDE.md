@@ -9,7 +9,7 @@ herdr/        # herdr (ターミナルマルチプレクサ)
 mise/         # mise のグローバル設定 (~/.config/mise/config.toml へ symlink)
 nvim/         # Neovim (Lazy.nvim)
 wezterm/      # ターミナル
-zsh/          # zsh (Oh My Zsh + powerlevel10k)
+zsh/          # powerlevel10k の設定 (.p10k.zsh)。zsh 自体は home.nix の programs.zsh で生成
 mise.toml     # このリポジトリ内でだけ効くプロジェクト設定 (mise/ はグローバル側)
 flake.nix     # home-manager (standalone + flakes) の入口。homeConfigurations."shimonlil"
 home.nix      # home-manager のホーム設定

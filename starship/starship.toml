@@ -1,0 +1,70 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline = true
+
+format = """
+[╭─](fg:240)\
+[](fg:#d3d7cf)\
+$os\
+[](fg:#d3d7cf bg:#5e2750)\
+$directory\
+[](fg:#5e2750 bg:#ad7fa8)\
+$git_branch\
+$git_status\
+[▓▒░ ](fg:#ad7fa8)\
+$fill\
+$status\
+$cmd_duration\
+$jobs\
+$time
+[╰─ ](fg:240)"""
+
+[fill]
+symbol = "─"
+style = "fg:240"
+
+[os]
+disabled = false
+style = "fg:#300a24 bg:#d3d7cf"
+format = "[ $symbol]($style)"
+
+[os.symbols]
+Macos = " "
+
+[directory]
+style = "bold fg:#eeeeec bg:#5e2750"
+format = "[ $path$read_only ]($style)"
+truncation_length = 3
+truncate_to_repo = false
+read_only = " 󰌾"
+
+[git_branch]
+symbol = " "
+style = "fg:#300a24 bg:#ad7fa8"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "fg:#300a24 bg:#e95420"
+format = "([ $all_status$ahead_behind ]($style))"
+
+[status]
+disabled = false
+symbol = "✘ "
+style = "fg:#fce94f bg:#cc0000"
+format = "[ $symbol$status ]($style)"
+
+[cmd_duration]
+min_time = 3_000
+style = "fg:#300a24 bg:#c4a000"
+format = "[  $duration ]($style)"
+
+[jobs]
+symbol = " "
+style = "fg:#06989a bg:#300a24"
+format = "[ $symbol$number ]($style)"
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "fg:#300a24 bg:#d3d7cf"
+format = "[ $time  ]($style)"

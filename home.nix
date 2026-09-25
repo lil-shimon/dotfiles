@@ -54,9 +54,6 @@
     fi
   '';
 
-  home.file.".p10k.zsh".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/zsh/.p10k.zsh";
-
   programs.zsh = {
     enable = true;
     # ログインシェルの /bin/zsh をそのまま使う。
@@ -103,22 +100,13 @@
     '';
 
     initContent = lib.mkMerge [
-      (lib.mkBefore ''
-        if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-          source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-        fi
-      '')
       (lib.mkOrder 750 ''
         [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
       '')
       ''
-        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-
         [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
         command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
-
-        [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
         # macOS の既定は soft 256（launchctl limit maxfiles）。
         ulimit -n 10240
@@ -128,6 +116,11 @@
       '')
     ];
   };
+
+  programs.starship.enable = true;
+
+  xdg.configFile."starship.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/starship/starship.toml";
 
   programs.home-manager.enable = true;
 }

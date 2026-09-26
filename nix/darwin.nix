@@ -9,6 +9,8 @@
   programs.zsh.enable = false;
   programs.bash.enable = false;
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   system.primaryUser = "shimonlil";
   system.stateVersion = 7;
 }

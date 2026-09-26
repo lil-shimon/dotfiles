@@ -3,7 +3,7 @@ name: nix version diff
 on:
   pull_request:
     paths:
-      - "*/flake.lock"
+      - "nix/flake.lock"
 
 permissions:
   contents: read

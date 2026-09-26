@@ -21,7 +21,7 @@
 3. home-manager で適用する（初回は `home-manager` コマンドが無いので `nix run` で呼ぶ）
 
    ```bash
-   nix run home-manager/master -- switch --flake ~/dotfiles
+   nix run home-manager/master -- switch --flake ~/dotfiles/nix
    ```
 
    既存の `~/.zshrc` などがあると、中身が違う場合は適用が止まる。退避してからやり直す。
@@ -35,6 +35,6 @@
 ## 更新
 
 ```bash
-home-manager switch --flake ~/dotfiles   # home.nix を変えたとき
-nix flake update --flake ~/dotfiles       # パッケージの版を上げるとき（通常は Dependabot の PR で）
+home-manager switch --flake ~/dotfiles/nix   # nix/home.nix を変えたとき
+nix flake update --flake ~/dotfiles/nix      # パッケージの版を上げるとき（通常は Dependabot の PR で）
 ```

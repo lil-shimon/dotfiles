@@ -2,6 +2,6 @@ version: 2
 updates:
   - package-ecosystem: nix
     directories:
-      - /
+      - /nix
     schedule:
       interval: weekly

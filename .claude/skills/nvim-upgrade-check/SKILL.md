@@ -1,7 +1,7 @@
 ---
 name: nvim-upgrade-check
 description: >
-  直下の flake.lock の更新（Dependabot の PR や手動の nix flake update）で neovim のバージョンが
+  `nix/flake.lock` の更新（Dependabot の PR や手動の nix flake update）で neovim のバージョンが
   上がるときに、マージ・switch の前に新しい neovim で設定が壊れないかを検証するスキル。
   「nvim 上がる PR 見て」「Dependabot の flake.lock の PR 確認して」「neovim のバージョンアップ大丈夫？」
   「/nvim-upgrade-check」などのトリガーで起動する。flake.lock を動かす PR をマージしようとしている時は、
@@ -10,7 +10,7 @@ description: >
 
 # nvim-upgrade-check
 
-neovim は直下の flake（`home.nix` の `pkgs.neovim-unwrapped`）で入っていて、
+neovim は `nix/` の flake（`nix/home.nix` の `pkgs.neovim-unwrapped`）で入っていて、
 nixpkgs は全ツールで共通の1つ。**lock の更新で neovim のバージョンが黙って動く**ので、
 マージ・`switch` の前にバージョン差を見て、必要なときだけ検証する。
 
@@ -20,8 +20,8 @@ PR のブランチ（または lock を更新した作業ツリー）で:
 
 ```bash
 cd ~/dotfiles
-nix eval --raw --inputs-from "git+file://$HOME/dotfiles?rev=$(git rev-parse origin/master)" nixpkgs#neovim-unwrapped.version; echo
-nix eval --raw --inputs-from . nixpkgs#neovim-unwrapped.version; echo
+nix eval --raw --inputs-from "git+file://$HOME/dotfiles?dir=nix&rev=$(git rev-parse origin/master)" nixpkgs#neovim-unwrapped.version; echo
+nix eval --raw --inputs-from ./nix nixpkgs#neovim-unwrapped.version; echo
 ```
 
 1 行目が master、2 行目が変更後。
@@ -40,7 +40,7 @@ nix eval --raw --inputs-from . nixpkgs#neovim-unwrapped.version; echo
 switch せずに、新しいバイナリだけを取り出して実 UI で起動する。設定もデータも本番のものを使う。
 
 ```bash
-NEW=$(nix build --no-link --print-out-paths --inputs-from . nixpkgs#neovim-unwrapped)
+NEW=$(nix build --no-link --print-out-paths --inputs-from ./nix nixpkgs#neovim-unwrapped)
 "$NEW/bin/nvim" --version | head -1
 "$NEW/bin/nvim" <普段よく開くファイル>
 ```

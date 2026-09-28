@@ -23,8 +23,6 @@
     pkgs.herdr
     pkgs.wezterm
     pkgs.aerospace
-    # nixpkgs の orca は GNOME のスクリーンリーダーで別物。
-    (pkgs.callPackage ./pkgs/orca.nix { })
   ];
 
   home.file.".gitconfig".source =

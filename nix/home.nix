@@ -52,8 +52,11 @@
     cp -r ${pkgs.herdr.src}/skills/herdr $out
   '';
 
+  xdg.configFile."herdr/plugins/config/persiyanov.reviewr/config.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/herdr/reviewr/config.toml";
+
   home.activation.herdrReviewr = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -d "${config.xdg.configHome}/herdr/plugins/config/persiyanov.reviewr" ]; then
+    if ! ls -d "${config.xdg.configHome}"/herdr/plugins/github/persiyanov.reviewr-* >/dev/null 2>&1; then
       run ${pkgs.herdr}/bin/herdr plugin install persiyanov/herdr-reviewr --yes
     fi
   '';

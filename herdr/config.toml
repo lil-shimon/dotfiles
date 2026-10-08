@@ -8,9 +8,11 @@ resize_mode = ""
 
 [[keys.command]]
 key = "prefix+a"
-type = "plugin_action"
-command = "persiyanov.reviewr.toggle"
-description = "toggle herdr-reviewr sidebar"
+type = "popup"
+command = "exec \"$HOME/dotfiles/herdr/reviewr-worktree.sh\""
+description = "toggle herdr-reviewr sidebar for a chosen worktree"
+width = "70%"
+height = "50%"
 
 [theme]
 name = "terminal"

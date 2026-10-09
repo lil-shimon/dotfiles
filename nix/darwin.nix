@@ -43,6 +43,9 @@
     };
     NSGlobalDomain = {
       _HIHideMenuBar = true;
+      KeyRepeat = 2;
+      InitialKeyRepeat = 15;
+      ApplePressAndHoldEnabled = false;
     };
   };
 

@@ -46,6 +46,14 @@
       KeyRepeat = 2;
       InitialKeyRepeat = 15;
       ApplePressAndHoldEnabled = false;
+      "com.apple.trackpad.scaling" = 1.5;
+      AppleInterfaceStyle = "Dark";
+    };
+    trackpad = {
+      Clicking = true;
+    };
+    finder = {
+      FXPreferredViewStyle = "Nlsv";
     };
   };
 

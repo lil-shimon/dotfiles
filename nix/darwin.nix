@@ -23,6 +23,7 @@
       "font-plemol-jp-nf"
       "font-source-han-code-jp"
       "font-udev-gothic-nf"
+      "wezterm@nightly"
     ];
   };
 

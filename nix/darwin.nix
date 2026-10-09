@@ -34,6 +34,18 @@
     ];
   };
 
+  system.defaults = {
+    dock = {
+      autohide = true;
+      tilesize = 16;
+      show-recents = true;
+      mru-spaces = false;
+    };
+    NSGlobalDomain = {
+      _HIHideMenuBar = true;
+    };
+  };
+
   system.primaryUser = "shimonlil";
   system.stateVersion = 7;
 }

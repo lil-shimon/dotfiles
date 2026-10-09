@@ -14,6 +14,9 @@
   homebrew = {
     enable = true;
     casks = [
+      "1password-cli"
+      "db-browser-for-sqlite"
+      "entireio/tap/entire"
       "font-fira-code"
       "font-hackgen-nerd"
       "font-m-plus-1-code"
@@ -23,6 +26,10 @@
       "font-plemol-jp-nf"
       "font-source-han-code-jp"
       "font-udev-gothic-nf"
+      "ghostty"
+      "miniconda"
+      "sf-symbols"
+      "warp"
       "wezterm@nightly"
     ];
   };

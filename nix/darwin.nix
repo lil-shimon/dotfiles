@@ -57,6 +57,8 @@
     };
   };
 
+  users.users.shimonlil.home = "/Users/shimonlil";
+
   system.primaryUser = "shimonlil";
   system.stateVersion = 7;
 }

@@ -94,7 +94,7 @@
 
       typeset -U path
       path=(
-        $HOME/.nix-profile/bin
+        /etc/profiles/per-user/$USER/bin
         $HOME/.composer/vendor/bin
         /opt/homebrew/opt/ruby/bin
         $HOME/.local/bin

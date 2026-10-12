@@ -7,7 +7,7 @@ aerospace/    # AeroSpace (タイル型ウィンドウマネージャ)
 git/          # Git設定
 herdr/        # herdr (ターミナルマルチプレクサ)
 mise/         # mise のグローバル設定 (~/.config/mise/config.toml へ symlink)
-nix/          # nix-darwin と home-manager (standalone + flakes)。flake.nix が入口、darwin.nix が macOS 全体、home.nix がホーム設定
+nix/          # nix-darwin と、その中に組み込んだ home-manager (flakes)。flake.nix が入口、darwin.nix が macOS 全体、home.nix がホーム設定
 nvim/         # Neovim (Lazy.nvim)
 starship/     # starship (プロンプト) の設定
 wezterm/      # ターミナル
@@ -19,7 +19,8 @@ mise.toml     # このリポジトリ内でだけ効くプロジェクト設定 
 パッケージと設定ファイルの配置は、すべて home-manager で管理する。macOS 全体の設定は nix-darwin で管理する。
 
 ```bash
-sudo darwin-rebuild switch --flake ~/dotfiles/nix#shimonlil   # 設定名はホスト名ではなく固定の shimonlil。#shimonlil は省略できない
-home-manager switch --flake ~/dotfiles/nix                     # 設定名が $USER と同じなので #shimonlil は省略できる
-home-manager generations                                       # 世代の一覧。戻すときは該当世代の activate を叩く
+sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ~/dotfiles/nix#shimonlil   # home-manager もこの 1 回で適用される。設定名は固定の shimonlil で省略できない
+/run/current-system/sw/bin/darwin-rebuild --list-generations                             # 世代の一覧。戻すときは sudo で --rollback
 ```
+
+sudo は `secure_path` で PATH を置き換えるので、`darwin-rebuild` はフルパスで呼ぶ。

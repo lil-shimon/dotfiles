@@ -50,26 +50,21 @@ vim.lsp.config("ts_ls", {
 })
 
 -- CSS LSP
+-- 言語ごとに別の表を返す（1 つの表を共有すると、片方への変更が他の言語にも及ぶ）
+local function css_language_settings()
+  return {
+    validate = true,
+    lint = {
+      unknownAtRules = "ignore", -- CSS Modules対応
+    },
+  }
+end
+
 vim.lsp.config("cssls", {
   settings = {
-    css = {
-      validate = true,
-      lint = {
-        unknownAtRules = "ignore", -- CSS Modules対応
-      },
-    },
-    scss = {
-      validate = true,
-      lint = {
-        unknownAtRules = "ignore",
-      },
-    },
-    less = {
-      validate = true,
-      lint = {
-        unknownAtRules = "ignore",
-      },
-    },
+    css = css_language_settings(),
+    scss = css_language_settings(),
+    less = css_language_settings(),
   },
 })
 

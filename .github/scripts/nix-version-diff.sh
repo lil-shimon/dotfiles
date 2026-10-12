@@ -19,7 +19,7 @@ git worktree add --quiet --detach "$base_tree" "$base"
 
 eval_names() {
   local json
-  json=$(nix eval --no-update-lock-file --json "$1#homeConfigurations.shimonlil.config.home.packages" --apply "$apply")
+  json=$(nix eval --no-update-lock-file --json "$1#darwinConfigurations.shimonlil.config.home-manager.users.shimonlil.home.packages" --apply "$apply")
   jq -r '.[]' <<<"$json"
 }
 

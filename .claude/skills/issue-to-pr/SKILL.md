@@ -16,6 +16,29 @@ Issue を起点に、実装から PR までを1本で通す。
 commit / PR / マージ判定は `pull-request` スキルに任せ、このスキルは
 **その手前（読む・決める・作る・確かめる）と、最後の報告**を受け持つ。
 
+## クラウド実行時
+
+環境変数 `CLAUDE_CODE_REMOTE` が `true` のとき（`/schedule` の夜間実行など）は、
+次の点だけ手順を変える。誰も見ていないので、**迷ったら実装せずに止める側に倒す**。
+
+- GitHub の中継が GraphQL を拒否するため、`gh issue view` と `gh api graphql` は使えない。
+  REST で読む
+
+  ```bash
+  gh api repos/lil-shimon/dotfiles/issues/<N>
+  gh api repos/lil-shimon/dotfiles/issues/<N>/parent
+  gh api repos/lil-shimon/dotfiles/issues/<P>/sub_issues
+  ```
+
+- 実行環境は Linux。手順 5 の段階は 1（構文 / 評価）までしか進めない。
+  Nix・Homebrew・macOS の実機が要る Issue は実装せずに止める
+- 手順 2 で本人にしか決められない判断事項が残ったら、質問せずに止める
+- 止めるときは Issue に理由をコメントして終える
+
+  ```bash
+  gh api repos/lil-shimon/dotfiles/issues/<N>/comments -f body="..."
+  ```
+
 ## 1. Issue を読む
 
 ```bash

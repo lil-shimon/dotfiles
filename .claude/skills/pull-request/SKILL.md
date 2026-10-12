@@ -18,6 +18,25 @@ description: >
 - `deleteBranchOnMerge: true` — マージ後にリモートブランチは自動で消える。ローカルは残る
 - `gh` は認証済み
 
+## クラウド実行時
+
+環境変数 `CLAUDE_CODE_REMOTE` が `true` のとき（`/schedule` の夜間実行など）は、
+**手順 4 で PR を作ったら、手順 7 の「マージを保留する」に進んで終える。手順 5・6 は行わない。**
+夜間はマージ判定を見る人がおらず、マージされた変更は次の `switch` で確かめないまま手元に入るため。
+
+GitHub の中継が `gh pr` などの GraphQL を使うコマンドを拒否するため、手順 4・7 は REST で代える。
+
+```bash
+gh api repos/lil-shimon/dotfiles/pulls -f base=master -f head=<branch> -f title="<title>" -f body="$(cat <<'EOF'
+...
+EOF
+)"
+gh api repos/lil-shimon/dotfiles/issues/<N>/assignees -f 'assignees[]=lil-shimon'
+gh api repos/lil-shimon/dotfiles/issues/<N>/comments -f body="..."
+```
+
+ブランチ名は手順 2 の規約に従う。`claude/` プレフィックスには変えない。
+
 ## 手順
 
 ### 1. 現状を把握する

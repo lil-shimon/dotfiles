@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- エディタのビジュアルテーマ
-  "nvim-mini/mini.base16",
+  "projekt0n/github-nvim-theme",
 
   -- Markdownレンダリング強化
   {

@@ -8,13 +8,13 @@ end
 config.automatically_reload_config = true
 
 -- UI
-config.color_scheme = "Ubuntu"
+config.color_scheme = "GitHub Dark"
 
--- Ubuntu カラー
+-- GitHub Dark カラー
 config.colors = {
-  split = "#e95420",    -- Split pane border (Ubuntu orange)
-  cursor_bg = "#e95420", -- カーソル背景色（オレンジ）
-  cursor_fg = "#300a24", -- カーソル上の文字色
+  split = "#30363d",    -- Split pane border
+  cursor_bg = "#58a6ff", -- カーソル背景色（青）
+  cursor_fg = "#0d1117", -- カーソル上の文字色
   tab_bar = {
     inactive_tab_edge = "none",
   },
@@ -97,10 +97,10 @@ config.window_frame = {
 -- tabの新規作成ボタンを非表示にする
 config.show_new_tab_button_in_tab_bar = false
 
--- Ubuntu背景色でウィンドウにグラデーションをつける
+-- GitHub Dark の背景色でウィンドウにグラデーションをつける
 config.window_background_gradient = {
   colors = {
-    "#300a24", -- 中央（Ubuntu aubergine）
+    "#0d1117", -- 中央
   },
 }
 
@@ -112,22 +112,22 @@ config.show_close_tab_button_in_tabs = false
 local LEFT_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick
 local RIGHT_CIRCLE = wezterm.nerdfonts.ple_right_half_circle_thick
 
--- Ubuntu カラーでカプセル形状タブをフォーマット
+-- GitHub Dark カラーでカプセル形状タブをフォーマット
 wezterm.on("format-tab-title", function(tab)
   local edge_background = "none"
 
   -- 左側セグメント（プロセス名）の色
-  local left_bg = "#5e2750" -- Ubuntu mid aubergine
-  local left_fg = "#d3d7cf" -- Ubuntu 前景（グレー）
+  local left_bg = "#21262d"
+  local left_fg = "#8b949e" -- 前景（グレー）
 
   -- 右側セグメント（タブ番号）の色
-  local right_bg = "#77216f" -- 非アクティブ時
-  local right_fg = "#eeeeec"
+  local right_bg = "#30363d" -- 非アクティブ時
+  local right_fg = "#c9d1d9"
 
   if tab.is_active then
-    right_bg = "#e95420" -- アクティブタブ背景（Ubuntu orange）
-    right_fg = "#300a24" -- アクティブタブ前景（暗い背景色）
-    left_fg = "#eeeeec" -- アクティブ時は明るく
+    right_bg = "#58a6ff" -- アクティブタブ背景（青）
+    right_fg = "#0d1117" -- アクティブタブ前景（暗い背景色）
+    left_fg = "#e6edf3" -- アクティブ時は明るく
   end
 
   -- タブタイトル（長すぎる場合は切り詰め、日本語対応）

@@ -15,19 +15,21 @@
 
   outputs =
     {
-      nixpkgs,
       nix-darwin,
       home-manager,
       ...
     }:
     {
       darwinConfigurations."shimonlil" = nix-darwin.lib.darwinSystem {
-        modules = [ ./darwin.nix ];
-      };
-
-      homeConfigurations."shimonlil" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        modules = [ ./home.nix ];
+        modules = [
+          ./darwin.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.shimonlil = import ./home.nix;
+          }
+        ];
       };
     };
 }

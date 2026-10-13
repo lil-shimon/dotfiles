@@ -32,6 +32,12 @@
    open ~/Applications/"Home Manager Apps"/AeroSpace.app
    ```
 
+5. 画面ロックまでの猶予を即時にする。nix-darwin の `system.defaults.screensaver.askForPasswordDelay` は macOS 26 では効かないので、一度だけ手で実行する（ログインパスワードを聞かれる）
+
+   ```bash
+   sysadminctl -screenLock immediate -password -
+   ```
+
 ## 更新
 
 ```bash

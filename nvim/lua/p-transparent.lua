@@ -1,6 +1,6 @@
 -- 背景透過設定
 -- https://github.com/xiyaowong/transparent.nvim
--- 調査メモ: wezterm/todo/neovim-transparency.md
+-- 調査メモ: wezterm/todo/done/neovim-transparency.md
 require("transparent").setup({
   groups = {
     'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',

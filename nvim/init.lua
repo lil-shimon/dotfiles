@@ -73,7 +73,7 @@ require("lazy").setup({
     build = "make install_jsregexp",
   },
 
-  -- TypeScriptに特化したLSP機能 (archived, using ts_ls LSP instead)
+  -- フォーマッタ（prettierd / stylua）をLSP経由で実行する
   "nvimtools/none-ls.nvim",
 
   -- Treesitterベースの構文解析とハイライト

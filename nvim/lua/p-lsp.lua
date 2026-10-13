@@ -50,26 +50,20 @@ vim.lsp.config("ts_ls", {
 })
 
 -- CSS LSP
+local function css_language_settings()
+  return {
+    validate = true,
+    lint = {
+      unknownAtRules = "ignore", -- CSS Modules対応
+    },
+  }
+end
+
 vim.lsp.config("cssls", {
   settings = {
-    css = {
-      validate = true,
-      lint = {
-        unknownAtRules = "ignore", -- CSS Modules対応
-      },
-    },
-    scss = {
-      validate = true,
-      lint = {
-        unknownAtRules = "ignore",
-      },
-    },
-    less = {
-      validate = true,
-      lint = {
-        unknownAtRules = "ignore",
-      },
-    },
+    css = css_language_settings(),
+    scss = css_language_settings(),
+    less = css_language_settings(),
   },
 })
 

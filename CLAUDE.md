@@ -24,3 +24,7 @@ sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ~/dotfiles/nix#shi
 ```
 
 sudo は `secure_path` で PATH を置き換えるので、`darwin-rebuild` はフルパスで呼ぶ。
+
+# コードのコメント
+
+新しく書くコードには、頼まれない限りコメントを付けない。差分の意図はコミットメッセージと PR に書く。既存のコメントは勝手に消さず、編集するファイルのコメントの量に合わせる。移行の途中経過のように、時間が経つと古くなる説明は書かない。

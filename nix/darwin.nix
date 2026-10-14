@@ -57,6 +57,10 @@
     };
   };
 
+  system.activationScripts.postActivation.text = ''
+    launchctl asuser "$(id -u -- shimonlil)" sudo --user=shimonlil -- defaults -currentHost write com.apple.screensaver idleTime -int 600
+  '';
+
   users.users.shimonlil.home = "/Users/shimonlil";
 
   system.primaryUser = "shimonlil";

@@ -4,6 +4,38 @@
   pkgs,
   ...
 }:
+let
+  logDailySync = pkgs.writeShellApplication {
+    name = "log-daily-sync";
+    runtimeInputs = [ pkgs.git ];
+    text = ''
+      cd "${config.home.homeDirectory}/src/github.com/lil-shimon/log"
+
+      if [ "$(git branch --show-current)" != "master" ]; then
+        echo "log-daily-sync: master 以外のブランチなのでスキップした" >&2
+        exit 0
+      fi
+
+      if [ -n "$(git status --porcelain -- log/daily)" ]; then
+        git add -- log/daily
+        git commit -q -m "日記を自動保存 ($(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M'))" -- log/daily
+      fi
+
+      git fetch -q origin master
+      if [ "$(git rev-list --count HEAD..origin/master)" -gt 0 ]; then
+        git pull -q --rebase --autostash origin master || {
+          git rebase --abort 2>/dev/null || true
+          echo "log-daily-sync: rebase に失敗した" >&2
+          exit 1
+        }
+      fi
+
+      if [ "$(git rev-list --count origin/master..HEAD)" -gt 0 ]; then
+        git push -q origin master
+      fi
+    '';
+  };
+in
 {
   home.username = "shimonlil";
   home.homeDirectory = "/Users/shimonlil";
@@ -22,7 +54,23 @@
     pkgs.neovim-unwrapped
     pkgs.herdr
     pkgs.aerospace
+    logDailySync
   ];
+
+  launchd.agents.log-daily-sync = {
+    enable = true;
+    config = {
+      ProgramArguments = [ "${logDailySync}/bin/log-daily-sync" ];
+      StartCalendarInterval = [
+        {
+          Hour = 23;
+          Minute = 30;
+        }
+      ];
+      StandardOutPath = "${config.home.homeDirectory}/Library/Logs/log-daily-sync.log";
+      StandardErrorPath = "${config.home.homeDirectory}/Library/Logs/log-daily-sync.log";
+    };
+  };
 
   home.file.".gitconfig".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/git/.gitconfig";

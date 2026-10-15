@@ -57,21 +57,6 @@ in
     logDailySync
   ];
 
-  launchd.agents.log-daily-sync = {
-    enable = true;
-    config = {
-      ProgramArguments = [ "${logDailySync}/bin/log-daily-sync" ];
-      StartCalendarInterval = [
-        {
-          Hour = 23;
-          Minute = 30;
-        }
-      ];
-      StandardOutPath = "${config.home.homeDirectory}/Library/Logs/log-daily-sync.log";
-      StandardErrorPath = "${config.home.homeDirectory}/Library/Logs/log-daily-sync.log";
-    };
-  };
-
   home.file.".gitconfig".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/git/.gitconfig";
 

@@ -31,7 +31,21 @@ commit / PR / マージ判定は `pull-request` スキルに任せ、このス�
   ```
 
 - 実行環境は Linux。手順 5 の段階は 1（構文 / 評価）までしか進めない。
-  Nix・Homebrew・macOS の実機が要る Issue は実装せずに止める
+  `nix/flake.lock` は変えない。実装そのものに macOS の実機が要る（現状の値を Mac で調べないと書けない）Issue は止める
+- `nix eval` は、先に次を実行してから使う。プロキシが `cache.nixos.org` と GitHub の tarball を拒否するため、
+  flake.lock と同じ rev を git で取得しておく。narHash が一致しなければ止める
+
+  ```bash
+  export NIX_CONFIG=$'experimental-features = nix-command flakes\nflake-registry ='
+  for n in nixpkgs nix-darwin home-manager; do
+    read -r owner repo rev want < <(python3 -c "import json,sys;l=json.load(open('nix/flake.lock'))['nodes'][sys.argv[1]]['locked'];print(l['owner'],l['repo'],l['rev'],l['narHash'])" "$n")
+    got=$(nix flake prefetch --json "git+https://github.com/$owner/$repo?rev=$rev&shallow=1" 2>/dev/null | python3 -c "import json,sys;print(json.load(sys.stdin)['hash'])")
+    [ "$got" = "$want" ] && echo "ok $n" || { echo "narHash mismatch $n: $got != $want"; exit 1; }
+  done
+  ```
+
+- `darwin-rebuild` や `defaults read` など Mac でしか確かめられない受入基準は、実行せずに PR の `## 動作確認` に
+  「手元で確認」として操作手順を書く。夜間に確かめた受入基準と混ぜない
 - 手順 2 で本人にしか決められない判断事項が残ったら、質問せずに止める
 - 止めるときは Issue に理由をコメントして終える
 

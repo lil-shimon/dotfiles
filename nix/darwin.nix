@@ -60,6 +60,9 @@
     finder = {
       FXPreferredViewStyle = "Nlsv";
     };
+    loginwindow = {
+      GuestEnabled = false;
+    };
   };
 
   system.activationScripts.postActivation.text = ''

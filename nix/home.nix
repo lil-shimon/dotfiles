@@ -54,6 +54,7 @@ in
     pkgs.neovim-unwrapped
     pkgs.herdr
     pkgs.aerospace
+    pkgs.codex
     logDailySync
   ];
 

@@ -124,6 +124,23 @@ git switch -c <type>/<kebab-case-summary>
 **受入基準の1項目ごとに、それを満たしたことを示すコマンドと出力を1つ以上用意する。**
 これがそのまま PR の `## 動作確認` になる。
 
+### 変更したファイルの構文チェック（必須）
+
+受入基準とは別に、**変更したファイルすべて**に、種類ごとの次のチェックを通す。
+受入基準が手元での確認だけの Issue でも省かない。通らなければ PR を作らない。
+
+| ファイル | コマンド |
+|---|---|
+| `*.lua` | `luac -p <file>` |
+| `nvim/` 配下 | 上に加えて、nvim の起動確認（`nightly-label` スキルの手順 3 の symlink の形で、2 回目の起動にエラーが出ない） |
+| `*.nix` | `nix eval --no-update-lock-file --raw ./nix#darwinConfigurations.shimonlil.config.system.build.toplevel.drvPath` |
+| `*.toml` | `python3 -c 'import sys,tomllib;tomllib.load(open(sys.argv[1],"rb"))' <file>` |
+| `*.sh` | `bash -n <file>` |
+| `*.json` | `python3 -m json.tool <file> >/dev/null` |
+| `git/.gitconfig` | `git config -f git/.gitconfig --list >/dev/null` |
+
+表に無い種類（`*.yml` など）を変えたときは、PR の `## 動作確認` にチェックできなかったことを書く。
+
 ### 段階を踏む
 
 ホームや環境を書き換える操作は、**無害な段階から順に**進める。

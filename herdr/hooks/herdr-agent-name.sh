@@ -3,7 +3,7 @@
 # config.toml がこれを pane トークンとして読み、agents 欄の1行目
 # ([ui.sidebar.agents] rows) と外側のターミナルのウィンドウタイトル
 # ([ui] window_title) の両方に出す。
-# タブ名も同じ文字列で付け、プロンプトに Issue (#123 か URL) があればタイトルの要約で差し替える。
+# タブ名も同じ文字列で付け、プロンプトに Issue か PR (#123 か URL) があればタイトルの要約で差し替える。
 # herdr が自動インストールする herdr-agent-state.sh とは別ファイル（あちらは更新で上書きされる）。
 
 set -eu
@@ -59,7 +59,7 @@ except Exception:
 prompt = data.get("prompt") or ""
 first = prompt.strip().splitlines()[0].strip() if prompt.strip() else ""
 repo, num = "", ""
-m = re.search(r"https://github\.com/([\w.-]+/[\w.-]+)/issues/(\d+)", prompt)
+m = re.search(r"https://github\.com/([\w.-]+/[\w.-]+)/(?:issues|pull)/(\d+)", prompt)
 if m:
     repo, num = m.group(1), m.group(2)
 else:
@@ -129,7 +129,7 @@ command -v claude >/dev/null 2>&1 || exit 0
   [ -n "$title" ] || exit 0
   cd "${TMPDIR:-/tmp}"
   summary="$(claude -p --model haiku --settings '{"disableAllHooks":true}' \
-    "次の GitHub Issue のタイトルを、ターミナルのタブ名として全角$((HERDR_AGENT_NAME_WIDTH / 2))文字以内に要約してください。タブ名だけを1行で出力し、説明や記号の装飾は付けないでください。
+    "次の GitHub の Issue か PR のタイトルを、ターミナルのタブ名として全角$((HERDR_AGENT_NAME_WIDTH / 2))文字以内に要約してください。タブ名だけを1行で出力し、説明や記号の装飾は付けないでください。
 
 タイトル: $title" | fit)" || exit 0
   [ -n "$summary" ] || exit 0

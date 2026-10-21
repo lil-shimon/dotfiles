@@ -102,15 +102,12 @@ show the prompt in the herdr agent sidebar rows
 既定の「スペース名 + エージェント種別」では、どのペインで何を走らせているかが
 サイドバーから読み取れない。トークンを差し替えて、1行目にプロンプト先頭が
 来るようにした。
-
-Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
 ```
 
 - **サマリは英語・小文字始まりの命令形**。`feat:` のような prefix は付けない（type はブランチ名が持っている）
 - **本文は日本語で Why だけを書く。** 何を変えたか（What）とどう変えたか（How）は
   差分を読めば分かるので書かない。書くのは「なぜその判断に至ったか」だけ
 - 1行が長くなりすぎない位置で折り返す
-- `Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>` を末尾に入れる
 - Why が自明な変更なら本文は省いてよい
 
 `#62` 以前のコミットは本文も英語だが、**そちらには揃えない**。

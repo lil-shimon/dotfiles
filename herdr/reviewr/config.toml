@@ -1,1 +1,0 @@
-base_branches = ["origin/develop", "origin/main", "origin/master", "main", "master"]

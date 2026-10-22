@@ -6,14 +6,6 @@ onboarding = false
 rename_tab = "prefix+r"
 resize_mode = ""
 
-[[keys.command]]
-key = "prefix+a"
-type = "popup"
-command = "exec \"$HOME/dotfiles/herdr/reviewr-worktree.sh\""
-description = "toggle herdr-reviewr sidebar for a chosen worktree"
-width = "70%"
-height = "50%"
-
 [theme]
 name = "terminal"
 

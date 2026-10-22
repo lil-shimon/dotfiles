@@ -63,6 +63,16 @@
     loginwindow = {
       GuestEnabled = false;
     };
+    SoftwareUpdate = {
+      AutomaticallyInstallMacOSUpdates = true;
+    };
+    CustomSystemPreferences = {
+      "/Library/Preferences/com.apple.SoftwareUpdate" = {
+        AutomaticDownload = true;
+        ConfigDataInstall = true;
+        CriticalUpdateInstall = true;
+      };
+    };
   };
 
   system.activationScripts.postActivation.text = ''

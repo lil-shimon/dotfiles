@@ -46,7 +46,7 @@ sys.stdout.write("".join(out))
 '
 }
 
-# 入力 JSON から「プロンプト」「cwd」「Issue のリポジトリ」「Issue 番号」をタブ区切りで取り出す
+# 入力 JSON から「プロンプト」「cwd」「Issue のリポジトリ」「Issue 番号」「セッション ID」をタブ区切りで取り出す
 fields="$(python3 - "$hook_input_file" <<'PY'
 import json, re, sys
 
@@ -68,15 +68,16 @@ else:
         num = m.group(1)
 
 clean = lambda s: s.replace("\t", " ")
-print("\t".join([clean(first), clean(data.get("cwd") or ""), repo, num]))
+print("\t".join([clean(first), clean(data.get("cwd") or ""), repo, num, clean(data.get("session_id") or "")]))
 PY
 )" || exit 0
 
 sep="$(printf '\t')"
 prompt_line="${fields%%"$sep"*}"; rest="${fields#*"$sep"}"
 cwd="${rest%%"$sep"*}"; rest="${rest#*"$sep"}"
-issue_repo="${rest%%"$sep"*}"
-issue_num="${rest#*"$sep"}"
+issue_repo="${rest%%"$sep"*}"; rest="${rest#*"$sep"}"
+issue_num="${rest%%"$sep"*}"
+session_id="${rest#*"$sep"}"
 
 name="$(printf '%s' "$prompt_line" | fit)" || exit 0
 [ -n "$name" ] || exit 0
@@ -84,7 +85,7 @@ herdr pane rename "$HERDR_PANE_ID" "$name" >/dev/null 2>&1 || true
 
 [ -n "${HERDR_TAB_ID:-}" ] || exit 0
 
-# 自動で付けたタブ名を覚えておき、prefix+r で付けた名前と見分ける
+# 自動で付けたタブ名とセッション ID を覚えておき、prefix+r で付けた名前と新しいセッションを見分ける
 auto_dir="${TMPDIR:-/tmp}/herdr-tab-auto"
 auto_file="$auto_dir/$(printf '%s' "$HERDR_TAB_ID" | tr -c 'A-Za-z0-9' '_')"
 
@@ -94,8 +95,8 @@ tab_renamable() {
 import json, os, sys
 t = json.load(sys.stdin)["result"]["tab"]
 try:
-    auto = open(os.environ["AUTO_FILE"], encoding="utf-8").read()
-except OSError:
+    auto = open(os.environ["AUTO_FILE"], encoding="utf-8").read().split("\n", 1)[1]
+except (OSError, IndexError):
     auto = None
 sys.exit(0 if t["label"].isdigit() or t["label"] == auto else 1)
 ' 2>/dev/null
@@ -103,18 +104,19 @@ sys.exit(0 if t["label"].isdigit() or t["label"] == auto else 1)
 
 set_tab() {
   herdr tab rename "$HERDR_TAB_ID" "$1" >/dev/null 2>&1 || return 0
-  mkdir -p "$auto_dir" && printf '%s' "$1" >"$auto_file"
+  mkdir -p "$auto_dir" && printf '%s\n%s' "$session_id" "$1" >"$auto_file"
 }
 
-if [ -z "$issue_num" ]; then
-  # Issue の指定がないときは、最初のプロンプトでだけ付ける
-  [ -f "$auto_file" ] && exit 0
-  tab_renamable && set_tab "$name"
-  exit 0
+if [ -f "$auto_file" ] && [ "$(head -n 1 "$auto_file")" = "$session_id" ]; then
+  # 同じセッションの2回目以降は、Issue の指定があり、手入力の名前でないときだけ付け直す
+  [ -n "$issue_num" ] || exit 0
+  tab_renamable || exit 0
+  set_tab "$name"
+else
+  # 新しいセッションの最初のプロンプトでは、手入力の名前も上書きする
+  set_tab "$name"
+  [ -n "$issue_num" ] || exit 0
 fi
-
-tab_renamable || exit 0
-set_tab "$name"
 command -v gh >/dev/null 2>&1 || exit 0
 command -v claude >/dev/null 2>&1 || exit 0
 

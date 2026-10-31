@@ -10,7 +10,12 @@
    curl -fsSL https://install.determinate.systems/nix | sh -s -- install
    ```
 
-   Homebrew も入れておく。生成される `.zprofile` が `/opt/homebrew/bin/brew shellenv` を読む（Nix に無い cask などは Homebrew で入れている）。
+   Homebrew も入れておく。
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+   生成される `.zprofile` が `/opt/homebrew/bin/brew shellenv` を読む（Nix に無い cask などは Homebrew で入れている）。
 
 2. このリポジトリを `~/dotfiles` に clone する（設定ファイルは `~/dotfiles` を絶対パスで指している）
 

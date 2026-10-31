@@ -137,8 +137,6 @@ in
       ''
         [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-        command -v zoxide > /dev/null && eval "$(zoxide init zsh)"
-
         # macOS の既定は soft 256（launchctl limit maxfiles）。
         ulimit -n 10240
       ''
@@ -152,6 +150,8 @@ in
 
   xdg.configFile."starship.toml".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/starship/starship.toml";
+
+  programs.zoxide.enable = true;
 
   programs.home-manager.enable = true;
 }

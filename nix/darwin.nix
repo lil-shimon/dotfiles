@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
@@ -32,6 +32,7 @@
       "font-source-han-code-jp"
       "font-udev-gothic-nf"
       "ghostty"
+      "google-chrome"
       "miniconda"
       "sf-symbols"
       "warp"
@@ -67,6 +68,7 @@
 
   system.activationScripts.postActivation.text = ''
     launchctl asuser "$(id -u -- lilshimon)" sudo --user=lilshimon -- defaults -currentHost write com.apple.screensaver idleTime -int 600
+    launchctl asuser "$(id -u -- lilshimon)" sudo --user=lilshimon -- ${pkgs.defaultbrowser}/bin/defaultbrowser chrome
   '';
 
   users.users.lilshimon.home = "/Users/lilshimon";

@@ -37,8 +37,8 @@ let
   };
 in
 {
-  home.username = "shimonlil";
-  home.homeDirectory = "/Users/shimonlil";
+  home.username = "lilshimon";
+  home.homeDirectory = "/Users/lilshimon";
   home.stateVersion = "26.11";
 
   home.packages = [

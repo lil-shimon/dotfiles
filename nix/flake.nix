@@ -27,7 +27,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.shimonlil = import ./home.nix;
+            home-manager.users.lilshimon = import ./home.nix;
           }
         ];
       };

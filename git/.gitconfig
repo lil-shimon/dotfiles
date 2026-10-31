@@ -2,7 +2,7 @@
 	name = lil-shimon
 	email = shimon101018@gmail.com
 [core]
-	excludesfile = /Users/shimonlil/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [init]
 	defaultBranch = main
 [merge]
@@ -11,4 +11,4 @@
     # 新規ファイルも含めてdiff表示（終了後にintent-to-addを取り消す）
     diffn = "!git add -N . && git diff; git reset"
 [ghq]
-  root = /Users/shimonlil/src
+  root = ~/src

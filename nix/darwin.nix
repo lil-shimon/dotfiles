@@ -73,4 +73,8 @@
 
   system.primaryUser = "lilshimon";
   system.stateVersion = 7;
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToControl = true;
+  };
 }

@@ -66,11 +66,11 @@
   };
 
   system.activationScripts.postActivation.text = ''
-    launchctl asuser "$(id -u -- shimonlil)" sudo --user=shimonlil -- defaults -currentHost write com.apple.screensaver idleTime -int 600
+    launchctl asuser "$(id -u -- lilshimon)" sudo --user=lilshimon -- defaults -currentHost write com.apple.screensaver idleTime -int 600
   '';
 
-  users.users.shimonlil.home = "/Users/shimonlil";
+  users.users.lilshimon.home = "/Users/lilshimon";
 
-  system.primaryUser = "shimonlil";
+  system.primaryUser = "lilshimon";
   system.stateVersion = 7;
 }

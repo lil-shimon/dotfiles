@@ -55,6 +55,7 @@ in
     pkgs.herdr
     pkgs.aerospace
     pkgs.codex
+    pkgs.mise
     logDailySync
   ];
 

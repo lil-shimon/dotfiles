@@ -9,6 +9,7 @@ herdr/        # herdr (ターミナルマルチプレクサ)
 mise/         # mise のグローバル設定 (~/.config/mise/config.toml へ symlink)
 nix/          # nix-darwin と、その中に組み込んだ home-manager (flakes)。flake.nix が入口、darwin.nix が macOS 全体、home.nix がホーム設定
 nvim/         # Neovim (Lazy.nvim)
+nvim-minimal/ # プラグインなしの Neovim。vm (NVIM_APPNAME=nvim-minimal nvim) で起動
 starship/     # starship (プロンプト) の設定
 wezterm/      # ターミナル
 mise.toml     # このリポジトリ内でだけ効くプロジェクト設定 (mise/ はグローバル側)

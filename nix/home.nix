@@ -68,6 +68,9 @@ in
   xdg.configFile."nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
 
+  xdg.configFile."nvim-minimal".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim-minimal";
+
   xdg.configFile."aerospace/aerospace.toml".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/aerospace/.aerospace.toml";
 
@@ -111,6 +114,7 @@ in
       sts = "git status";
       cc = "claude";
       vi = "nvim";
+      vm = "NVIM_APPNAME=nvim-minimal nvim";
     };
 
     profileExtra = ''

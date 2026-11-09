@@ -26,7 +26,7 @@ gh pr list --state open --json number,title,body
 
 - 番号を渡されたらそれだけ、無ければ open な Issue すべてが対象
 - 既に `nightly` が付いている Issue も判定し直す（付け直しの要否を見る）
-- `gh` が見つからないときは `/etc/profiles/per-user/shimonlil/bin/gh` を使う
+- `gh` が見つからないときは `/etc/profiles/per-user/$USER/bin/gh` を使う
 
 Issue ごとに本文と、親 Issue があれば親の本文も読む。
 

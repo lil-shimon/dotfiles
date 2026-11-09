@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  username,
   ...
 }:
 let
@@ -37,8 +38,8 @@ let
   };
 in
 {
-  home.username = "lilshimon";
-  home.homeDirectory = "/Users/lilshimon";
+  home.username = username;
+  home.homeDirectory = "/Users/${username}";
   home.stateVersion = "26.11";
 
   home.packages = [

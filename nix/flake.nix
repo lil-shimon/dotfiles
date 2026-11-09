@@ -19,17 +19,26 @@
       home-manager,
       ...
     }:
+    let
+      mkDarwin =
+        username:
+        nix-darwin.lib.darwinSystem {
+          specialArgs = { inherit username; };
+          modules = [
+            ./darwin.nix
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit username; };
+              home-manager.users.${username} = import ./home.nix;
+            }
+          ];
+        };
+    in
     {
-      darwinConfigurations."shimonlil" = nix-darwin.lib.darwinSystem {
-        modules = [
-          ./darwin.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.lilshimon = import ./home.nix;
-          }
-        ];
+      darwinConfigurations = {
+        shimonlil = mkDarwin "lilshimon";
       };
     };
 }

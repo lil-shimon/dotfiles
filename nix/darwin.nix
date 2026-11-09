@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
@@ -67,13 +67,13 @@
   };
 
   system.activationScripts.postActivation.text = ''
-    launchctl asuser "$(id -u -- lilshimon)" sudo --user=lilshimon -- defaults -currentHost write com.apple.screensaver idleTime -int 600
-    launchctl asuser "$(id -u -- lilshimon)" sudo --user=lilshimon -- ${pkgs.defaultbrowser}/bin/defaultbrowser chrome
+    launchctl asuser "$(id -u -- ${username})" sudo --user=${username} -- defaults -currentHost write com.apple.screensaver idleTime -int 600
+    launchctl asuser "$(id -u -- ${username})" sudo --user=${username} -- ${pkgs.defaultbrowser}/bin/defaultbrowser chrome
   '';
 
-  users.users.lilshimon.home = "/Users/lilshimon";
+  users.users.${username}.home = "/Users/${username}";
 
-  system.primaryUser = "lilshimon";
+  system.primaryUser = username;
   system.stateVersion = 7;
   system.keyboard = {
     enableKeyMapping = true;

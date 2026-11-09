@@ -1,14 +1,8 @@
 [user]
-	name = lil-shimon
-	email = shimon101018@gmail.com
-[core]
-	excludesfile = ~/.gitignore_global
-[init]
-	defaultBranch = main
+	useConfigOnly = true
 [merge]
     conflictStyle = zdiff3
-[alias]
-    # 新規ファイルも含めてdiff表示（終了後にintent-to-addを取り消す）
-    diffn = "!git add -N . && git diff; git reset"
 [ghq]
   root = ~/src
+[include]
+	path = ~/.gitconfig.local

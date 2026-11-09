@@ -1,5 +1,9 @@
 [user]
 	useConfigOnly = true
+[core]
+	excludesfile = ~/.gitignore_global
+[init]
+	defaultBranch = main
 [merge]
     conflictStyle = zdiff3
 [ghq]

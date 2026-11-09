@@ -43,6 +43,14 @@
    sysadminctl -screenLock immediate -password -
    ```
 
+6. コミットの作者を `~/.gitconfig.local` に書く（Git 管理外。無いと `git commit` が `Author identity unknown` で止まる）
+
+   ```ini
+   [user]
+       name = <名前>
+       email = <メール>
+   ```
+
 ## 更新
 
 ```bash

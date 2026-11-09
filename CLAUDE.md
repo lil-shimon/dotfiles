@@ -20,7 +20,7 @@ mise.toml     # このリポジトリ内でだけ効くプロジェクト設定 
 パッケージと設定ファイルの配置は、すべて home-manager で管理する。macOS 全体の設定は nix-darwin で管理する。
 
 ```bash
-sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ~/dotfiles/nix#shimonlil   # home-manager もこの 1 回で適用される。設定名は固定の shimonlil で省略できない
+sudo /run/current-system/sw/bin/darwin-rebuild switch --flake ~/dotfiles/nix#shimonlil   # home-manager もこの 1 回で適用される。設定名は省略できない。アカウントごとに flake.nix の darwinConfigurations へ mkDarwin で登録する
 /run/current-system/sw/bin/darwin-rebuild --list-generations                             # 世代の一覧。戻すときは sudo で --rollback
 ```
 

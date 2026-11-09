@@ -23,7 +23,7 @@
    git clone https://github.com/lil-shimon/dotfiles.git ~/dotfiles
    ```
 
-3. nix-darwin で適用する（初回は `darwin-rebuild` コマンドが無いので `nix run` で呼ぶ）。home-manager の設定もこの 1 回で適用される
+3. nix-darwin で適用する（初回は `darwin-rebuild` コマンドが無いので `nix run` で呼ぶ）。home-manager の設定もこの 1 回で適用される。アカウント名が未登録の PC では、先に `nix/flake.nix` の `darwinConfigurations` に `設定名 = mkDarwin "アカウント名";` を 1 行足し、`#` の後ろをその設定名にする
 
    ```bash
    sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/dotfiles/nix#shimonlil
